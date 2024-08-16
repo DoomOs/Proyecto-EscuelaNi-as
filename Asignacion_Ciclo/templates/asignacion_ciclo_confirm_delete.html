@@ -1,0 +1,14 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Eliminar Asignación de Ciclo</h1>
+    <p>¿Estás seguro que deseas eliminar la asignación de ciclo "{{ object }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="{% url 'asignacionciclo-list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

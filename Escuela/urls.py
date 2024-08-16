@@ -1,5 +1,5 @@
 """
-URL configuration for Escuela project.
+URL configuration for escuela project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -14,10 +14,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('',include('Web.urls')),
+    path('usuarios/',include('user.urls')),
+    path('login/',include('Login.urls')),
+    path('inicio/',include('Inicio.urls')), 
+    
+    path('Actividad/',include('Actividad.urls')), 
+    path('Asignacion_Ciclo/',include('Asignacion_Ciclo.urls')), 
+    path('Persona/',include('Persona.urls')), 
+    path('Curso/',include('Curso.urls')), 
+    path('inicio/',include('Inicio.urls')), 
+    
 ]

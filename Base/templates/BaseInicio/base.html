@@ -1,0 +1,188 @@
+<!doctype html>
+<html class="no-js" lang="en">
+{% load static %}
+<html lang="en" data-bs-theme="auto">
+<link rel="icon" type="image/x-icon" href="{% static 'Inicio/assets/img/favicon.png' %}" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'Base/assets/img/apple-icon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'Base/assets/img/favicon.png' %}">
+  <title>
+  Escuela
+  </title>
+  <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <link rel="stylesheet" href="{% static 'Inicio/vendors/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Inicio/vendors/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Inicio/vendors/themify-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'Inicio/vendors/flag-icon-css/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Inicio/vendors/selectFX/css/cs-skin-elastic.css' %}">
+    <link rel="stylesheet" href="{% static 'Inicio/vendors/jqvmap/dist/jqvmap.min.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'Inicio/assets/css/style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="{% url 'Inicio' %}"><img src="{% static 'Inicio/assets/img/logo.jpg' %}"
+                        alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{% static 'Inicio/assets/img/logo.jpg' %}"
+                        alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+                    <h3 class="menu-title">Menu</h3><!-- /.menu-title -->
+                  
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-id-card-o "></i>Actividades</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-list"></i><a href="{% url 'actividad-create' %}">Nueva Actividad</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'actividad-list' %}">Lista de Actividades</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'calificacionactividad-list' %}">Lista de Calificaciones</a></li>
+                        </ul>
+                    </li>
+            
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-id-card-o "></i>Alumnos y Ciclo</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'alumna-list' %}">Lista alumnos</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'persona-create' %}">Crear Alumna</a></li>
+                            <li><i class="menu-icon fa fa-list"></i><a href="#">Lista de Asignaciones</a></li>
+                        </ul>
+                    </li>
+
+                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-id-card-o "></i>Cursos y Grados</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'curso-create' %}">Crear Curso</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'curso-list' %}">Lista Cursos</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu-item-has-childre">
+                        <a href="{% url 'Salir' %}" aria-haspopup="true" aria-expanded="false"> <i
+                                class="menu-icon fa fa-power-off"></i>Salir</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+    </aside><!-- /#left-panel -->
+   
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">Usuario:
+                        <!--     <button class="search-trigger"><i class="fa fa-search"></i></button> -->
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..."
+                                    aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>{{user.first_name}} {{user.last_name}}
+                        <a href="javascript:;" class="btn btn-sm btn-outline-primary">{{user.rol}}</a>
+                        <a href="javascript:;" class="btn btn-sm btn-outline-primary">{{user.categoria}}</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="{% static 'Inicio/images/admin.jpg' %}"
+                                alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> {{user.first_name}}
+                                {{user.last_name}}</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Configuracion</a>
+
+                            <a class="nav-link" href="{% url 'Salir' %}"><i class="fa fa-power-off"></i> Salir</a>
+                        </div>
+                    
+                    </div>
+                    <div class="user-menu dropdown-menu"></div>
+
+
+                </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+
+        {% block content %} {% endblock %}
+
+
+        <!-- Right Panel -->
+
+        <script src="{% static 'Inicio/vendors/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'Inicio/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+        <script src="{% static 'Inicio/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'Inicio/assets/js/main.js' %}"></script>
+
+
+        <script src="{% static 'Inicio/vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
+        <script src="{% static 'Inicio/assets/js/dashboard.js' %}"></script>
+        <script src="{% static 'Inicio/assets/js/widgets.js' %}"></script>
+        <script src="{% static 'Inicio/vendors/jqvmap/dist/jquery.vmap.min.js' %}"></script>
+        <script src="{% static 'Inicio/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
+        <script src="{% static 'Inicio/vendors/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+
+        <script>
+            (function ($) {
+                "use strict";
+
+                jQuery('#vmap').vectorMap({
+                    map: 'world_en',
+                    backgroundColor: null,
+                    color: '#ffffff',
+                    hoverOpacity: 0.7,
+                    selectedColor: '#1de9b6',
+                    enableZoom: true,
+                    showTooltip: true,
+                    values: sample_data,
+                    scaleColors: ['#1de9b6', '#03a9f5'],
+                    normalizeFunction: 'polynomial'
+                });
+            })(jQuery);
+        </script>
+
+</body>
+
+</html>

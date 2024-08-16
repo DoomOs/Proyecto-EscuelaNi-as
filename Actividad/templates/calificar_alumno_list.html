@@ -1,0 +1,56 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Calificar Alumnos - {{ actividad.actividad }}</h1>
+    <h2>Alumnos No Calificados</h2>
+    <form method="post">
+        {% csrf_token %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Alumna</th>
+                    <th>Punteo</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asignacion in alumnos_no_calificados %}
+                <tr>
+                    <td>{{ asignacion.alumna.persona.nombre }} {{ asignacion.alumna.persona.apellido }}</td>
+                    <td><input type="number" name="punteo_{{ asignacion.id }}" class="form-control"></td>
+                    <td><input type="text" name="descripcion_{{ asignacion.id }}" class="form-control"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary">Guardar Calificaciones</button>
+    </form>
+
+    <h2 class="mt-4">Alumnos Calificados</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Alumna</th>
+                <th>Punteo</th>
+                <th>Descripción</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for calificacion in alumnos_calificados %}
+            <tr>
+                <td>{{ calificacion.asignacion_ciclo.alumna.persona.nombre }} {{ calificacion.asignacion_ciclo.alumna.persona.apellido }}</td>
+                <td>{{ calificacion.punteo }}</td>
+                <td>{{ calificacion.descripcion }}</td>
+                <td>
+                    <a href="{% url 'calificacionactividad-update' calificacion.id %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'calificacionactividad-delete' calificacion.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

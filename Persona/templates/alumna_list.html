@@ -1,0 +1,34 @@
+{% extends 'BaseInicio/base.html' %}
+{% block content %}
+
+<h2>Listado de Alumnas</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Asignación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alumna in alumnas %}
+        <tr>
+            <td>{{ alumna.codigo }}</td>
+            <td>{{ alumna.persona.nombre }}</td>
+            <td>{{ alumna.persona.apellido }}</td>
+            <td>{{ alumna.edad }}</td>
+            <td>{{ alumna.asignacion }}</td>
+            <td>
+                <a href="{% url 'asignacionciclo-create' alumna.id %}" class="btn btn-success">Asignar</a>
+                <a href="{% url 'alumna-edit' alumna.id %}" class="btn btn-warning">Editar</a>
+                <a href="{% url 'contacto-create' alumna.id %}" class="btn btn-info">Contactos</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

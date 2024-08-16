@@ -1,0 +1,42 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Listado de Usuarios</h1>
+    <a href="{% url 'user-create' %}" class="btn btn-primary mb-3">Nuevo Usuario</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre de Usuario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Rol</th>
+                <th>Activo</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in object_list %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.telefono }}</td>
+                <td>{{ user.id_rol }}</td>
+                <td>{{ user.is_active }}</td>
+                <td>
+                    <a href="{% url 'user-update' user.id %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'user-delete' user.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

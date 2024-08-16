@@ -1,0 +1,24 @@
+#antes de empezar, tener instalado python yo tengo la 3.12.3
+#######NOTA###########
+#cuando instalen python seleccionen el check que dice path
+
+#algun servidor y gestor de base de datos 
+#(yo tengo el xampp, para lanzar ambos)
+
+#primero tenemos que activar el entorno virtual 
+#estando en vl visual code, con el proyecto abierto, abren una terminal
+#y escriben el comando   .\venv\Scripts\activate 
+
+#en la consola, la linea de comandos deberia de tener un (venv)
+#si ese es el caso, ejecutar pip install -r requirements.txt
+
+#el cotejamienti de la base de datos es utf8mb4_spanish_ci
+#encender/activar servidor y gestor de base de datos
+#cargar el archivo slq 
+#por si las moscas ejecutar,   python manage.py makemigrations
+#luego, python manage.py migrate
+
+#y por ultimo, python manage.py runserver
+
+#usuario admin
+#contraseña admin

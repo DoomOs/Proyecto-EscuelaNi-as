@@ -1,0 +1,49 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Asignar Ciclo a Alumnas</h1>
+    <form method="post">
+        {% csrf_token %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Grado</th>
+                    <th>Año</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for alumna in alumnas %}
+                <tr>
+                    <td>{{ alumna.codigo }}</td>
+                    <td>{{ alumna.persona.nombre }}</td>
+                    <td>{{ alumna.persona.apellido }}</td>
+                    <td>{{ alumna.persona.fecha_nacimiento }}</td>
+                    <td>
+                        <select name="grado" class="form-control">
+                            {% for grado in grados %}
+                            <option value="{{ grado.id }}">{{ grado.nombre_grado }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    
+                    <td>
+                        <input type="number" name="year" class="form-control" placeholder="Año" required>
+                    </td>
+                    <td>
+                        <input type="hidden" name="alumna_id" value="{{ alumna.id }}">
+                        <button type="submit" class="btn btn-success">Asignar</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</div>
+{% endblock %}

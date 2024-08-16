@@ -1,0 +1,34 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Listado de Asistencias</h1>
+    <a href="{% url 'asistencia-create' %}" class="btn btn-primary mb-3">Nueva Asistencia</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Presente</th>
+                <th>Asignación de Ciclo</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asistencia in object_list %}
+            <tr>
+                <td>{{ asistencia.id }}</td>
+                <td>{{ asistencia.fecha }}</td>
+                <td>{{ asistencia.presente }}</td>
+                <td>{{ asistencia.asignacion_ciclo }}</td>
+                <td>
+                    <a href="{% url 'asistencia-update' asistencia.id %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'asistencia-delete' asistencia.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

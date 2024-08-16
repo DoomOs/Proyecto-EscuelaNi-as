@@ -1,0 +1,14 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>{% if object %}Editar{% else %}Nuevo{% endif %} Usuario</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">{% if object %}Actualizar{% else %}Crear{% endif %}</button>
+        <a href="{% url 'user-list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

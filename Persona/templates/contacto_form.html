@@ -1,0 +1,72 @@
+{% extends 'BaseInicio/base.html' %}
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function confirmDelete(event, formId) {
+        event.preventDefault(); // Previene el comportamiento por defecto del enlace
+
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById(formId).submit(); // Envía el formulario si se confirma
+            }
+        });
+    }
+</script>
+
+<h2>Crear/Editar Contacto</h2>
+<form method="post">
+    {% csrf_token %}
+    
+    {% if persona_form %}
+        <h3>Datos de la Persona</h3>
+        {{ persona_form.as_p }}
+    {% endif %}
+    
+    <h3>Datos del Contacto</h3>
+    {{ contacto_form.as_p }}
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+<h3>Contactos de la Alumna</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Parentesco</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contacto in contactos %}
+        <tr>
+            <td>{{ contacto.persona.nombre }}</td>
+            <td>{{ contacto.persona.apellido }}</td>
+            <td>{{ contacto.parentesco }}</td>
+            <td>{{ contacto.telefono }}</td>
+            <td>{{ contacto.email }}</td>
+            <td>
+                <a href="{% url 'contacto-edit' contacto.id %}" class="btn btn-warning">Editar</a>
+                <form action="{% url 'contacto-delete' contacto.id %}" method="post" id="delete-form-{{ contacto.id }}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete(event, 'delete-form-{{ contacto.id }}')">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
