@@ -1,0 +1,26 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2>Listas de Asistencia</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asistencia in fechas_asistencias %}
+            <tr>
+                <td>{{ asistencia.fecha }}</td>
+                <td>
+                    <a href="{% url 'detalle_asistencia' asistencia.fecha %}" class="btn btn-primary">Ver</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

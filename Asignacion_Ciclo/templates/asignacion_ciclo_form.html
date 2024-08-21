@@ -10,16 +10,16 @@
             <label for="grado">Grado:</label>
             <select name="grado" id="grado" class="form-control">
                 {% for grado in grados %}
-                <option value="{{ grado.id }}">{{ grado.nombre_grado }}</option>
+                <option value="{{ grado.id }}" {% if grado.id == form.instance.grado.id %}selected{% endif %}>{{ grado.nombre_grado }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="form-group">
             <label for="year">Año:</label>
-            <input type="number" name="year" id="year" class="form-control" placeholder="Año" required>
+            {{ form.year }}
         </div>
-        <button type="submit" class="btn btn-success">Asignar</button>
-        <a href="{% url 'alumna-list' %}" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="{% url 'asignacionciclo-list' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 {% endblock %}

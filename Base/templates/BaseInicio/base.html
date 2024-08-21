@@ -67,7 +67,16 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="{% url 'alumna-list' %}">Lista alumnos</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="{% url 'persona-create' %}">Crear Alumna</a></li>
-                            <li><i class="menu-icon fa fa-list"></i><a href="#">Lista de Asignaciones</a></li>
+                            <li><i class="menu-icon fa fa-list"></i><a href="{% url 'asignacionciclo-list' %}">Lista de Asignaciones</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-id-card-o "></i>Asistecia</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'lista_asistencia' %}">Hoy</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'ver_asistencias' %}">Listado de asistencia</a></li>
                         </ul>
                     </li>
 

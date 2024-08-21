@@ -1,8 +1,11 @@
 from django import forms
-
-from Asistencia.models import Asistencia
+from .models import Asistencia
 
 class AsistenciaForm(forms.ModelForm):
     class Meta:
         model = Asistencia
-        fields = '__all__'
+        fields = ['presente']
+
+        widgets = {
+            'presente': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+        }

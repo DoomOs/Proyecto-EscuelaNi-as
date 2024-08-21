@@ -737,14 +737,6 @@
         "documentation": {}
     },
     {
-        "label": "reverse_lazy",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -866,6 +858,38 @@
     },
     {
         "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -1073,38 +1097,6 @@
         "documentation": {}
     },
     {
-        "label": "ListView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "CreateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "UpdateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DeleteView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
         "label": "CreateView",
         "importPath": "django.views.generic",
         "description": "django.views.generic",
@@ -1241,11 +1233,35 @@
         "documentation": {}
     },
     {
-        "label": "Asistencia",
-        "importPath": "Asistencia.models",
-        "description": "Asistencia.models",
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
         "isExtraImport": true,
-        "detail": "Asistencia.models",
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -1422,14 +1438,6 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -1798,17 +1806,8 @@
         "kind": 5,
         "importPath": "Asignacion_Ciclo.urls",
         "description": "Asignacion_Ciclo.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', AsignacionCicloListView.as_view(), name='asignacionciclo-list'),\n    #path('nueva/', AsignacionCicloCreateView.as_view(), name='asignacionciclo-create'),\n    path('<int:pk>/editar/', AsignacionCicloUpdateView.as_view(), name='asignacionciclo-update'),\n    path('<int:pk>/eliminar/', AsignacionCicloDeleteView.as_view(), name='asignacionciclo-delete'),\n    path('asignar/<int:pk>/', AsignacionCicloCreateView.as_view(), name='asignacionciclo-create'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', AsignacionCicloListView, name='asignacionciclo-list'),\n    #path('nueva/', AsignacionCicloCreateView.as_view(), name='asignacionciclo-create'),\n    path('<int:pk>/editar/', AsignacionCicloUpdateView.as_view(), name='asignacionciclo-update'),\n    path('<int:pk>/eliminar/', AsignacionCicloDeleteView.as_view(), name='asignacionciclo-delete'),\n    path('asignar/<int:pk>/', AsignacionCicloCreateView.as_view(), name='asignacionciclo-create'),\n]",
         "detail": "Asignacion_Ciclo.urls",
-        "documentation": {}
-    },
-    {
-        "label": "AsignacionCicloListView",
-        "kind": 6,
-        "importPath": "Asignacion_Ciclo.views",
-        "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "class AsignacionCicloListView(ListView):\n    model = AsignacionCiclo\n    template_name = 'asignacion_ciclo_list.html'\nclass AsignacionCicloCreateView(LoginRequiredMixin, CreateView):\n    model = AsignacionCiclo\n    form_class = AsignacionCicloForm\n    template_name = 'asignacion_ciclo_form.html'\n    success_url = reverse_lazy('alumna-list')\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)",
-        "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
     {
@@ -1825,7 +1824,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "class AsignacionCicloUpdateView(LoginRequiredMixin, UpdateView):\n    model = AsignacionCiclo\n    form_class = AsignacionCicloForm\n    template_name = 'asignacion_ciclo_form.html'\n    success_url = reverse_lazy('asignacionciclo-list')\nclass AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):\n    model = AsignacionCiclo\n    template_name = 'asignacion_ciclo_confirm_delete.html'\n    success_url = reverse_lazy('asignacionciclo-list')",
+        "peekOfCode": "class AsignacionCicloUpdateView(UpdateView):\n    model = AsignacionCiclo\n    form_class = AsignacionCicloForm\n    template_name = 'asignacion_ciclo_form.html'\n    success_url = reverse_lazy('asignacionciclo-list')\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        context['grados'] = Grado.objects.all()\n        context['alumna'] = self.object.alumna\n        return context",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -1835,6 +1834,15 @@
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
         "peekOfCode": "class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):\n    model = AsignacionCiclo\n    template_name = 'asignacion_ciclo_confirm_delete.html'\n    success_url = reverse_lazy('asignacionciclo-list')",
+        "detail": "Asignacion_Ciclo.views",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCicloListView",
+        "kind": 2,
+        "importPath": "Asignacion_Ciclo.views",
+        "description": "Asignacion_Ciclo.views",
+        "peekOfCode": "def AsignacionCicloListView(request):\n    query = Q()\n    grados = Grado.objects.all()\n    year = request.GET.get('year')\n    grado = request.GET.get('grado')\n    search_query = request.GET.get('q')\n    if year:\n        query &= Q(year=year)\n    if grado:\n        query &= Q(grado__id=grado)",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -1861,7 +1869,7 @@
         "kind": 6,
         "importPath": "Asistencia.forms",
         "description": "Asistencia.forms",
-        "peekOfCode": "class AsistenciaForm(forms.ModelForm):\n    class Meta:\n        model = Asistencia\n        fields = '__all__'",
+        "peekOfCode": "class AsistenciaForm(forms.ModelForm):\n    class Meta:\n        model = Asistencia\n        fields = ['presente']\n        widgets = {\n            'presente': forms.CheckboxInput(attrs={'class': 'form-check-input'}),\n        }",
         "detail": "Asistencia.forms",
         "documentation": {}
     },
@@ -1879,43 +1887,43 @@
         "kind": 5,
         "importPath": "Asistencia.urls",
         "description": "Asistencia.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', AsistenciaListView.as_view(), name='asistencia-list'),\n    path('nueva/', AsistenciaCreateView.as_view(), name='asistencia-create'),\n    path('<int:pk>/editar/', AsistenciaUpdateView.as_view(), name='asistencia-update'),\n    path('<int:pk>/eliminar/', AsistenciaDeleteView.as_view(), name='asistencia-delete'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('asistencia/', views.lista_asistencia, name='lista_asistencia'),\n    path('asistencia/ver/', views.ver_asistencias, name='ver_asistencias'),\n    path('asistencia/actualizar/<int:asignacion_id>/', views.actualizar_asistencia, name='actualizar_asistencia'),\n    path('asistencia/<str:fecha>/', views.detalle_asistencia, name='detalle_asistencia'),\n]",
         "detail": "Asistencia.urls",
         "documentation": {}
     },
     {
-        "label": "AsistenciaListView",
-        "kind": 6,
+        "label": "lista_asistencia",
+        "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "class AsistenciaListView(ListView):\n    model = Asistencia\n    template_name = 'asistencia/asistencia_list.html'\nclass AsistenciaCreateView(CreateView):\n    model = Asistencia\n    form_class = AsistenciaForm\n    template_name = 'asistencia/asistencia_form.html'\n    success_url = reverse_lazy('asistencia-list')\nclass AsistenciaUpdateView(UpdateView):\n    model = Asistencia",
+        "peekOfCode": "def lista_asistencia(request):\n    hoy = timezone.now().date()\n    asignaciones = AsignacionCiclo.objects.filter(user=request.user, year=hoy.year)\n    asistencias_hoy = Asistencia.objects.filter(fecha=hoy, asignacion_ciclo__in=asignaciones)\n    asignaciones_sin_asistencia = asignaciones.exclude(id__in=asistencias_hoy.values_list('asignacion_ciclo_id', flat=True))\n    context = {\n        'asignaciones_sin_asistencia': asignaciones_sin_asistencia,\n        'asistencias_hoy': asistencias_hoy,\n        'hoy': hoy,\n    }",
         "detail": "Asistencia.views",
         "documentation": {}
     },
     {
-        "label": "AsistenciaCreateView",
-        "kind": 6,
+        "label": "actualizar_asistencia",
+        "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "class AsistenciaCreateView(CreateView):\n    model = Asistencia\n    form_class = AsistenciaForm\n    template_name = 'asistencia/asistencia_form.html'\n    success_url = reverse_lazy('asistencia-list')\nclass AsistenciaUpdateView(UpdateView):\n    model = Asistencia\n    form_class = AsistenciaForm\n    template_name = 'asistencia/asistencia_form.html'\n    success_url = reverse_lazy('asistencia-list')",
+        "peekOfCode": "def actualizar_asistencia(request, asignacion_id):\n    hoy = timezone.now().date()\n    asignacion = get_object_or_404(AsignacionCiclo, id=asignacion_id)\n    asistencia, created = Asistencia.objects.get_or_create(fecha=hoy, asignacion_ciclo=asignacion)\n    asistencia.presente = not asistencia.presente\n    asistencia.save()\n    return redirect('lista_asistencia')\n@login_required\ndef ver_asistencias(request):\n    fechas_asistencias = Asistencia.objects.values('fecha').distinct().order_by('-fecha')",
         "detail": "Asistencia.views",
         "documentation": {}
     },
     {
-        "label": "AsistenciaUpdateView",
-        "kind": 6,
+        "label": "ver_asistencias",
+        "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "class AsistenciaUpdateView(UpdateView):\n    model = Asistencia\n    form_class = AsistenciaForm\n    template_name = 'asistencia/asistencia_form.html'\n    success_url = reverse_lazy('asistencia-list')\nclass AsistenciaDeleteView(DeleteView):\n    model = Asistencia\n    template_name = 'asistencia/asistencia_confirm_delete.html'\n    success_url = reverse_lazy('asistencia-list')",
+        "peekOfCode": "def ver_asistencias(request):\n    fechas_asistencias = Asistencia.objects.values('fecha').distinct().order_by('-fecha')\n    context = {\n        'fechas_asistencias': fechas_asistencias,\n    }\n    return render(request, 'ver_asistencias.html', context)\n@login_required\ndef detalle_asistencia(request, fecha):\n    asistencias = Asistencia.objects.filter(fecha=fecha, asignacion_ciclo__user=request.user)\n    context = {",
         "detail": "Asistencia.views",
         "documentation": {}
     },
     {
-        "label": "AsistenciaDeleteView",
-        "kind": 6,
+        "label": "detalle_asistencia",
+        "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "class AsistenciaDeleteView(DeleteView):\n    model = Asistencia\n    template_name = 'asistencia/asistencia_confirm_delete.html'\n    success_url = reverse_lazy('asistencia-list')",
+        "peekOfCode": "def detalle_asistencia(request, fecha):\n    asistencias = Asistencia.objects.filter(fecha=fecha, asignacion_ciclo__user=request.user)\n    context = {\n        'asistencias': asistencias,\n        'fecha': fecha,\n    }\n    return render(request, 'detalle_asistencia.html', context)",
         "detail": "Asistencia.views",
         "documentation": {}
     },

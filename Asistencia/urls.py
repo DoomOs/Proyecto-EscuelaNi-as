@@ -1,11 +1,9 @@
 from django.urls import path
-from .views import (
-    AsistenciaListView, AsistenciaCreateView, AsistenciaUpdateView, AsistenciaDeleteView
-)
+from . import views
 
 urlpatterns = [
-    path('', AsistenciaListView.as_view(), name='asistencia-list'),
-    path('nueva/', AsistenciaCreateView.as_view(), name='asistencia-create'),
-    path('<int:pk>/editar/', AsistenciaUpdateView.as_view(), name='asistencia-update'),
-    path('<int:pk>/eliminar/', AsistenciaDeleteView.as_view(), name='asistencia-delete'),
+    path('asistencia/', views.lista_asistencia, name='lista_asistencia'),
+    path('asistencia/ver/', views.ver_asistencias, name='ver_asistencias'),
+    path('asistencia/actualizar/<int:asignacion_id>/', views.actualizar_asistencia, name='actualizar_asistencia'),
+    path('asistencia/<str:fecha>/', views.detalle_asistencia, name='detalle_asistencia'),
 ]

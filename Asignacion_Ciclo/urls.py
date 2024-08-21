@@ -1,10 +1,11 @@
 from django.urls import path
 from .views import (
-    AsignacionCicloListView, AsignacionCicloCreateView, AsignacionCicloUpdateView, AsignacionCicloDeleteView
+     AsignacionCicloCreateView, AsignacionCicloUpdateView, AsignacionCicloDeleteView
 )
+from .views import AsignacionCicloListView
 
 urlpatterns = [
-    path('', AsignacionCicloListView.as_view(), name='asignacionciclo-list'),
+    path('', AsignacionCicloListView, name='asignacionciclo-list'),
     #path('nueva/', AsignacionCicloCreateView.as_view(), name='asignacionciclo-create'),
     path('<int:pk>/editar/', AsignacionCicloUpdateView.as_view(), name='asignacionciclo-update'),
     path('<int:pk>/eliminar/', AsignacionCicloDeleteView.as_view(), name='asignacionciclo-delete'),

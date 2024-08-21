@@ -28,6 +28,6 @@ urlpatterns = [
     path('Asignacion_Ciclo/',include('Asignacion_Ciclo.urls')), 
     path('Persona/',include('Persona.urls')), 
     path('Curso/',include('Curso.urls')), 
-    path('inicio/',include('Inicio.urls')), 
+    path('Asistencia/',include('Asistencia.urls')), 
     
 ]

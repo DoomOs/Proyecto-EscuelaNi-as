@@ -1,0 +1,71 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Asistencia para el {{ hoy }}</h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th>Alumno</th>
+                    <th>Presente</th>
+                    <th>Ausente</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asignacion in asignaciones_sin_asistencia %}
+                <tr class="text-center">
+                    <td>{{ asignacion }}</td>
+                    <td>
+                        <a href="{% url 'actualizar_asistencia' asignacion.id %}" class="btn btn-success">
+                            <i class="fa fa-check"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'actualizar_asistencia' asignacion.id %}" class="btn btn-danger">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <h3 class="text-center">Asistencia registrada hoy</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th>Alumno</th>
+                    <th>Asistencia</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asistencia in asistencias_hoy %}
+                <tr class="text-center">
+                    <td>{{ asistencia.asignacion_ciclo }}</td>
+                    <td class="fs-4">
+                        {% if asistencia.presente %}
+                        <span class="text-success"><i class="fa fa-check"></i></span>
+                        {% else %}
+                        <span class="text-danger"><i class="fa fa-times"></i></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'actualizar_asistencia' asistencia.asignacion_ciclo.id %}" class="btn btn-warning">
+                            Cambiar asistencia
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

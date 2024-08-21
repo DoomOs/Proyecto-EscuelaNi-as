@@ -1,0 +1,31 @@
+{% extends 'BaseInicio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2>Asistencia del {{ fecha }}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Presente</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asistencia in asistencias %}
+            <tr >
+                <td>{{ asistencia.asignacion_ciclo }}</td>
+                <td class="fs-4">
+                    {% if asistencia.presente %}
+                    <span class="text-success"><i class="fa fa-check"></i></span>
+                    {% else %}
+                    <span class="text-danger"><i class="fa fa-times"></i></span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
