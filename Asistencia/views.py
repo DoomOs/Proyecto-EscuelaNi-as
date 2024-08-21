@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def lista_asistencia(request):
-    hoy = timezone.now().date()
+    hoy = timezone.localtime(timezone.now()).date()
     asignaciones = AsignacionCiclo.objects.filter(user=request.user, year=hoy.year)
 
     asistencias_hoy = Asistencia.objects.filter(fecha=hoy, asignacion_ciclo__in=asignaciones)

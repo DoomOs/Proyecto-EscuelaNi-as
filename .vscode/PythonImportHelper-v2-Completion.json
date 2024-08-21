@@ -1896,7 +1896,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def lista_asistencia(request):\n    hoy = timezone.now().date()\n    asignaciones = AsignacionCiclo.objects.filter(user=request.user, year=hoy.year)\n    asistencias_hoy = Asistencia.objects.filter(fecha=hoy, asignacion_ciclo__in=asignaciones)\n    asignaciones_sin_asistencia = asignaciones.exclude(id__in=asistencias_hoy.values_list('asignacion_ciclo_id', flat=True))\n    context = {\n        'asignaciones_sin_asistencia': asignaciones_sin_asistencia,\n        'asistencias_hoy': asistencias_hoy,\n        'hoy': hoy,\n    }",
+        "peekOfCode": "def lista_asistencia(request):\n    hoy = timezone.localtime(timezone.now()).date()\n    asignaciones = AsignacionCiclo.objects.filter(user=request.user, year=hoy.year)\n    asistencias_hoy = Asistencia.objects.filter(fecha=hoy, asignacion_ciclo__in=asignaciones)\n    asignaciones_sin_asistencia = asignaciones.exclude(id__in=asistencias_hoy.values_list('asignacion_ciclo_id', flat=True))\n    context = {\n        'asignaciones_sin_asistencia': asignaciones_sin_asistencia,\n        'asistencias_hoy': asistencias_hoy,\n        'hoy': hoy,\n    }",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2274,7 +2274,7 @@
         "kind": 5,
         "importPath": "escuela.settings",
         "description": "escuela.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Default primary key field type",
+        "peekOfCode": "LANGUAGE_CODE = 'es'\nTIME_ZONE = 'America/Guatemala'\nUSE_TZ = True\nUSE_I18N = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Default primary key field type",
         "detail": "escuela.settings",
         "documentation": {}
     },
@@ -2283,16 +2283,7 @@
         "kind": 5,
         "importPath": "escuela.settings",
         "description": "escuela.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field",
-        "detail": "escuela.settings",
-        "documentation": {}
-    },
-    {
-        "label": "USE_I18N",
-        "kind": 5,
-        "importPath": "escuela.settings",
-        "description": "escuela.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'America/Guatemala'\nUSE_TZ = True\nUSE_I18N = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field",
         "detail": "escuela.settings",
         "documentation": {}
     },
@@ -2301,7 +2292,16 @@
         "kind": 5,
         "importPath": "escuela.settings",
         "description": "escuela.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'user.User'",
+        "peekOfCode": "USE_TZ = True\nUSE_I18N = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "escuela.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "escuela.settings",
+        "description": "escuela.settings",
+        "peekOfCode": "USE_I18N = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = '/static/'\nMEDIA_URL = '/media/'\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'user.User'",
         "detail": "escuela.settings",
         "documentation": {}
     },
