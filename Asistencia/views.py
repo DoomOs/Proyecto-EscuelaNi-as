@@ -20,15 +20,17 @@ def lista_asistencia(request):
     return render(request, 'lista_asistencia.html', context)
 
 @login_required
-def actualizar_asistencia(request, asignacion_id):
-    hoy = timezone.now().date()
+def actualizar_asistencia(request, asignacion_id, presente):
+    hoy = timezone.localtime(timezone.now()).date()
     asignacion = get_object_or_404(AsignacionCiclo, id=asignacion_id)
+    
     asistencia, created = Asistencia.objects.get_or_create(fecha=hoy, asignacion_ciclo=asignacion)
 
-    asistencia.presente = not asistencia.presente
+    asistencia.presente = bool(int(presente))
     asistencia.save()
 
     return redirect('lista_asistencia')
+
 
 @login_required
 def ver_asistencias(request):

@@ -1887,7 +1887,7 @@
         "kind": 5,
         "importPath": "Asistencia.urls",
         "description": "Asistencia.urls",
-        "peekOfCode": "urlpatterns = [\n    path('asistencia/', views.lista_asistencia, name='lista_asistencia'),\n    path('asistencia/ver/', views.ver_asistencias, name='ver_asistencias'),\n    path('asistencia/actualizar/<int:asignacion_id>/', views.actualizar_asistencia, name='actualizar_asistencia'),\n    path('asistencia/<str:fecha>/', views.detalle_asistencia, name='detalle_asistencia'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('asistencia/', views.lista_asistencia, name='lista_asistencia'),\n    path('asistencia/ver/', views.ver_asistencias, name='ver_asistencias'),\n    path('asistencia/actualizar/<int:asignacion_id>/<int:presente>/', views.actualizar_asistencia, name='actualizar_asistencia'),\n    path('asistencia/<str:fecha>/', views.detalle_asistencia, name='detalle_asistencia'),\n]",
         "detail": "Asistencia.urls",
         "documentation": {}
     },
@@ -1905,7 +1905,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def actualizar_asistencia(request, asignacion_id):\n    hoy = timezone.now().date()\n    asignacion = get_object_or_404(AsignacionCiclo, id=asignacion_id)\n    asistencia, created = Asistencia.objects.get_or_create(fecha=hoy, asignacion_ciclo=asignacion)\n    asistencia.presente = not asistencia.presente\n    asistencia.save()\n    return redirect('lista_asistencia')\n@login_required\ndef ver_asistencias(request):\n    fechas_asistencias = Asistencia.objects.values('fecha').distinct().order_by('-fecha')",
+        "peekOfCode": "def actualizar_asistencia(request, asignacion_id, presente):\n    hoy = timezone.localtime(timezone.now()).date()\n    asignacion = get_object_or_404(AsignacionCiclo, id=asignacion_id)\n    asistencia, created = Asistencia.objects.get_or_create(fecha=hoy, asignacion_ciclo=asignacion)\n    asistencia.presente = bool(int(presente))\n    asistencia.save()\n    return redirect('lista_asistencia')\n@login_required\ndef ver_asistencias(request):\n    fechas_asistencias = Asistencia.objects.values('fecha').distinct().order_by('-fecha')",
         "detail": "Asistencia.views",
         "documentation": {}
     },
