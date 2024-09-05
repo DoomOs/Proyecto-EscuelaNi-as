@@ -113,6 +113,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -753,6 +769,14 @@
         "documentation": {}
     },
     {
+        "label": "reverse_lazy",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -898,6 +922,22 @@
     },
     {
         "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -1390,6 +1430,14 @@
         "description": "booleano.operations",
         "isExtraImport": true,
         "detail": "booleano.operations",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views",
+        "description": "django.views",
+        "isExtraImport": true,
+        "detail": "django.views",
         "documentation": {}
     },
     {
@@ -2036,6 +2084,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Curso.migrations.0002_curso_estado_grado_estado",
+        "description": "Curso.migrations.0002_curso_estado_grado_estado",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"Curso\", \"0001_initial\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"curso\",\n            name=\"estado\",\n            field=models.BooleanField(default=True),\n        ),",
+        "detail": "Curso.migrations.0002_curso_estado_grado_estado",
+        "documentation": {}
+    },
+    {
         "label": "CursoConfig",
         "kind": 6,
         "importPath": "Curso.apps",
@@ -2067,7 +2124,7 @@
         "kind": 6,
         "importPath": "Curso.models",
         "description": "Curso.models",
-        "peekOfCode": "class Grado(models.Model):\n    nombre_grado = models.CharField(max_length=50)\n    def __str__(self):\n        return self.nombre_grado\nclass Curso(models.Model):\n    nombre_curso = models.CharField(max_length=100)\n    grado = models.ForeignKey(Grado, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.nombre_curso",
+        "peekOfCode": "class Grado(models.Model):\n    nombre_grado = models.CharField(max_length=50)\n    estado = models.BooleanField(default=True)  # Estado: activo/inactivo\n    def __str__(self):\n        return self.nombre_grado\nclass Curso(models.Model):\n    nombre_curso = models.CharField(max_length=100)\n    grado = models.ForeignKey(Grado, on_delete=models.CASCADE)\n    estado = models.BooleanField(default=True)  # Estado: activo/inactivo\n    def __str__(self):",
         "detail": "Curso.models",
         "documentation": {}
     },
@@ -2076,7 +2133,7 @@
         "kind": 6,
         "importPath": "Curso.models",
         "description": "Curso.models",
-        "peekOfCode": "class Curso(models.Model):\n    nombre_curso = models.CharField(max_length=100)\n    grado = models.ForeignKey(Grado, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.nombre_curso",
+        "peekOfCode": "class Curso(models.Model):\n    nombre_curso = models.CharField(max_length=100)\n    grado = models.ForeignKey(Grado, on_delete=models.CASCADE)\n    estado = models.BooleanField(default=True)  # Estado: activo/inactivo\n    def __str__(self):\n        return self.nombre_curso",
         "detail": "Curso.models",
         "documentation": {}
     },
@@ -2085,7 +2142,7 @@
         "kind": 5,
         "importPath": "Curso.urls",
         "description": "Curso.urls",
-        "peekOfCode": "urlpatterns = [\n    path('cursos/', CursoListView.as_view(), name='curso-list'),\n    path('cursos/nuevo/', CursoCreateView.as_view(), name='curso-create'),\n    path('cursos/<int:pk>/editar/', CursoUpdateView.as_view(), name='curso-update'),\n    path('cursos/<int:pk>/eliminar/', CursoDeleteView.as_view(), name='curso-delete'),\n    path('grados/', GradoListView.as_view(), name='grado-list'),\n    path('grados/nuevo/', GradoCreateView.as_view(), name='grado-create'),\n    path('grados/<int:pk>/editar/', GradoUpdateView.as_view(), name='grado-update'),\n    path('grados/<int:pk>/eliminar/', GradoDeleteView.as_view(), name='grado-delete'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('cursos/', CursoListView.as_view(), name='curso-list'),\n    path('cursos/nuevo/', CursoCreateView.as_view(), name='curso-create'),\n    path('cursos/<int:pk>/editar/', CursoUpdateView.as_view(), name='curso-update'),\n    path('cursos/<int:pk>/eliminar/', CursoDeleteView.as_view(), name='curso-delete'),\n    path('cursos/inactivos/', CursoInactivoListView.as_view(), name='curso-inactivo-list'),  # Cursos inactivos\n    path('cursos/<int:pk>/activar/', CursoActivateView.as_view(), name='curso-activar'),\n    path('grados/', GradoListView.as_view(), name='grado-list'),\n    path('grados/nuevo/', GradoCreateView.as_view(), name='grado-create'),\n    path('grados/<int:pk>/editar/', GradoUpdateView.as_view(), name='grado-update'),",
         "detail": "Curso.urls",
         "documentation": {}
     },
@@ -2094,7 +2151,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoListView(ListView):\n    model = Curso\n    template_name = 'curso_list.html'\nclass CursoCreateView(CreateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')\nclass CursoUpdateView(UpdateView):\n    model = Curso",
+        "peekOfCode": "class CursoListView(ListView):\n    model = Curso\n    template_name = 'curso_list.html'\n    def get_queryset(self):\n        return Curso.objects.filter(estado=True)  # Mostrar solo cursos activos\nclass CursoCreateView(CreateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2112,7 +2169,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoUpdateView(UpdateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')\nclass CursoDeleteView(DeleteView):\n    model = Curso\n    template_name = 'curso_confirm_delete.html'\n    success_url = reverse_lazy('curso-list')\nclass GradoListView(ListView):",
+        "peekOfCode": "class CursoUpdateView(UpdateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')\nclass CursoDeleteView(View):\n    success_url = reverse_lazy('curso-list')\n    def get(self, request, *args, **kwargs):\n        #curso que deseas desactivar\n        curso = get_object_or_404(Curso, pk=kwargs['pk'])",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2121,7 +2178,16 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoDeleteView(DeleteView):\n    model = Curso\n    template_name = 'curso_confirm_delete.html'\n    success_url = reverse_lazy('curso-list')\nclass GradoListView(ListView):\n    model = Grado\n    template_name = 'grado_list.html'\nclass GradoCreateView(CreateView):\n    model = Grado\n    form_class = GradoForm",
+        "peekOfCode": "class CursoDeleteView(View):\n    success_url = reverse_lazy('curso-list')\n    def get(self, request, *args, **kwargs):\n        #curso que deseas desactivar\n        curso = get_object_or_404(Curso, pk=kwargs['pk'])\n        curso.estado = False  # Cambia el estado a inactivo\n        curso.save()\n        return redirect(self.success_url)\nclass CursoActivateView(View):\n    success_url = reverse_lazy('curso-list')",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "CursoActivateView",
+        "kind": 6,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "class CursoActivateView(View):\n    success_url = reverse_lazy('curso-list')\n    def get(self, request, *args, **kwargs):\n        curso = get_object_or_404(Curso, pk=self.kwargs['pk'])  \n        curso.estado = True  # Cambia el estado a activo\n        curso.save()\n        return redirect(self.success_url)\nclass GradoListView(ListView):\n    model = Grado\n    template_name = 'grado_list.html'",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2130,7 +2196,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoListView(ListView):\n    model = Grado\n    template_name = 'grado_list.html'\nclass GradoCreateView(CreateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')\nclass GradoUpdateView(UpdateView):\n    model = Grado",
+        "peekOfCode": "class GradoListView(ListView):\n    model = Grado\n    template_name = 'grado_list.html'\n    def get_queryset(self):\n        return Grado.objects.filter(estado=True)  # Mostrar solo grados activos\nclass GradoCreateView(CreateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2148,7 +2214,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoUpdateView(UpdateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')\nclass GradoDeleteView(DeleteView):\n    model = Grado\n    template_name = 'grado_confirm_delete.html'\n    success_url = reverse_lazy('grado-list')",
+        "peekOfCode": "class GradoUpdateView(UpdateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')\nclass GradoDeleteView(View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        # Obtén el grado que deseas desactivar\n        grado = get_object_or_404(Grado, pk=kwargs['pk'])",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2157,7 +2223,34 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoDeleteView(DeleteView):\n    model = Grado\n    template_name = 'grado_confirm_delete.html'\n    success_url = reverse_lazy('grado-list')",
+        "peekOfCode": "class GradoDeleteView(View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        # Obtén el grado que deseas desactivar\n        grado = get_object_or_404(Grado, pk=kwargs['pk'])\n        grado.estado = False  # Cambia el estado a inactivo\n        grado.save()\n        return redirect(self.success_url)\nclass CursoInactivoListView(ListView):\n    model = Curso",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "CursoInactivoListView",
+        "kind": 6,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "class CursoInactivoListView(ListView):\n    model = Curso\n    template_name = 'curso_inactivo_list.html'\n    def get_queryset(self):\n        return Curso.objects.filter(estado=False)  \nclass GradoInactivoListView(ListView):\n    model = Grado\n    template_name = 'grado_inactivo_list.html'\n    def get_queryset(self):\n        return Grado.objects.filter(estado=False)  # Mostrar solo grados inactivos",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "GradoInactivoListView",
+        "kind": 6,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "class GradoInactivoListView(ListView):\n    model = Grado\n    template_name = 'grado_inactivo_list.html'\n    def get_queryset(self):\n        return Grado.objects.filter(estado=False)  # Mostrar solo grados inactivos\nclass GradoActivateView(View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        grado = get_object_or_404(Grado, pk=self.kwargs['pk']) \n        grado.estado = True  # Reactivar el grado",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "GradoActivateView",
+        "kind": 6,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "class GradoActivateView(View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        grado = get_object_or_404(Grado, pk=self.kwargs['pk']) \n        grado.estado = True  # Reactivar el grado\n        grado.save()\n        return redirect(self.success_url)",
         "detail": "Curso.views",
         "documentation": {}
     },

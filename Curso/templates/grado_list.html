@@ -1,0 +1,52 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Listado de Grados</h1>
+    <a href="{% url 'grado-create' %}" class="btn btn-primary mb-3">Nuevo Grado</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Grado</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for grado in object_list %}
+            <tr>
+                <td>{{ grado.id }}</td>
+                <td>{{ grado.nombre_grado }}</td>
+                <td>
+                    <a href="{% url 'grado-update' grado.id %}" class="btn btn-warning btn-sm">Editar</a>
+                    <button class="btn btn-danger btn-sm" onclick="confirmDeletion({{ grado.id }}, '{{ grado.nombre_grado }}')">Desactivar</button>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function confirmDeletion(id, nombre) {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Estás a punto de desactivar el grado: " + nombre,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, desactivar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirige a la URL de eliminación del grado
+                window.location.href = "{% url 'grado-delete' 0 %}".replace(0, id);
+            }
+        })
+    }
+    </script>
+    
+{% endblock %}

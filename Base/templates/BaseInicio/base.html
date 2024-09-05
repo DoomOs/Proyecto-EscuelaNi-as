@@ -12,6 +12,8 @@
   Escuela
   </title>
   <!--     Fonts and icons     -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <link rel="stylesheet" href="{% static 'Inicio/vendors/bootstrap/dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'Inicio/vendors/font-awesome/css/font-awesome.min.css' %}">
@@ -88,7 +90,11 @@
                             aria-expanded="false"> <i class="menu-icon fa fa-id-card-o "></i>Cursos y Grados</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="{% url 'curso-create' %}">Crear Curso</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'curso-list' %}">Lista Cursos</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'curso-list' %}">Lista Cursos Activos</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'curso-inactivo-list' %}">Lista Cursos Inactivos</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'grado-create' %}">Crear Grado</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'grado-list' %}">Lista Grado Activo</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'grado-inactivo-list' %}">Lista Grado Inactivo</a></li>
                         </ul>
                     </li>
                     

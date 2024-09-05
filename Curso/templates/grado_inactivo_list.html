@@ -1,0 +1,47 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<script>
+    function confirmActivate(id, nombre) {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Estás a punto de reactivar el grado: " + nombre,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, reactivar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "{% url 'grado-activar' 0 %}".replace(0, id);
+            }
+        })
+    }
+</script>
+
+<div class="container mt-4">
+    <h1>Listado de Grados Inactivos</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Grado</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for grado in object_list %}
+            <tr>
+                <td>{{ grado.id }}</td>
+                <td>{{ grado.nombre_grado }}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="confirmActivate({{ grado.id }}, '{{ grado.nombre_grado }}')">Reactivar</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
