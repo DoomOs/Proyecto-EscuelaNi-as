@@ -1,5 +1,7 @@
 from django import forms
 from .models import Persona, Alumna, Contacto
+from django.core.validators import RegexValidator
+
 
 class PersonaForm(forms.ModelForm):
     class Meta:
@@ -17,10 +19,24 @@ class AlumnaForm(forms.ModelForm):
         model = Alumna
         fields = ['codigo']
 
+
+
 class ContactoForm(forms.ModelForm):
+    telefono = forms.CharField(
+        max_length=8,
+        validators=[RegexValidator(r'^\d{8}$', 'Ingrese un número de teléfono válido de 8 dígitos.')],
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Ingrese solo números',
+            'maxlength': '8',  # Limita la entrada a 8 caracteres en el frontend
+            'pattern': '[0-9]{8}',  # Solo permite números
+            'title': 'El número debe tener 8 dígitos'
+        })
+    )
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'nombre@ejemplo.com'}))
+
     class Meta:
         model = Contacto
-        fields = ['parentesco', 'telefono', 'email']
+        fields = ['nombre', 'apellido', 'parentesco', 'telefono', 'email']
         widgets = {
             'parentesco': forms.Select(choices=[
                 ('Mamá', 'Mamá'),

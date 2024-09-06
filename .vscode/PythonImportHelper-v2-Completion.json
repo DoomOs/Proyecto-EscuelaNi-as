@@ -193,6 +193,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -609,6 +625,14 @@
         "documentation": {}
     },
     {
+        "label": "Grado",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
+        "isExtraImport": true,
+        "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
         "label": "Curso",
         "importPath": "Curso.models",
         "description": "Curso.models",
@@ -670,6 +694,335 @@
         "description": "Asignacion_Ciclo.models",
         "isExtraImport": true,
         "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "Workbook",
+        "importPath": "openpyxl",
+        "description": "openpyxl",
+        "isExtraImport": true,
+        "detail": "openpyxl",
+        "documentation": {}
+    },
+    {
+        "label": "dataframe_to_rows",
+        "importPath": "openpyxl.utils.dataframe",
+        "description": "openpyxl.utils.dataframe",
+        "isExtraImport": true,
+        "detail": "openpyxl.utils.dataframe",
+        "documentation": {}
+    },
+    {
+        "label": "get_column_letter",
+        "importPath": "openpyxl.utils",
+        "description": "openpyxl.utils",
+        "isExtraImport": true,
+        "detail": "openpyxl.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Font",
+        "importPath": "openpyxl.styles",
+        "description": "openpyxl.styles",
+        "isExtraImport": true,
+        "detail": "openpyxl.styles",
+        "documentation": {}
+    },
+    {
+        "label": "PatternFill",
+        "importPath": "openpyxl.styles",
+        "description": "openpyxl.styles",
+        "isExtraImport": true,
+        "detail": "openpyxl.styles",
+        "documentation": {}
+    },
+    {
+        "label": "Alignment",
+        "importPath": "openpyxl.styles",
+        "description": "openpyxl.styles",
+        "isExtraImport": true,
+        "detail": "openpyxl.styles",
+        "documentation": {}
+    },
+    {
+        "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "Sum",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
         "documentation": {}
     },
     {
@@ -897,171 +1250,19 @@
         "documentation": {}
     },
     {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "exportar_calificaciones_excel",
+        "importPath": "Actividad.reportes",
+        "description": "Actividad.reportes",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "Actividad.reportes",
         "documentation": {}
     },
     {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "exportar_punteo_acumulado_excel",
+        "importPath": "Actividad.reportes",
+        "description": "Actividad.reportes",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "Actividad.reportes",
         "documentation": {}
     },
     {
@@ -1249,22 +1450,6 @@
         "documentation": {}
     },
     {
-        "label": "Q",
-        "importPath": "django.db.models",
-        "description": "django.db.models",
-        "isExtraImport": true,
-        "detail": "django.db.models",
-        "documentation": {}
-    },
-    {
-        "label": "Q",
-        "importPath": "django.db.models",
-        "description": "django.db.models",
-        "isExtraImport": true,
-        "detail": "django.db.models",
-        "documentation": {}
-    },
-    {
         "label": "settings",
         "importPath": "django.conf",
         "description": "django.conf",
@@ -1294,22 +1479,6 @@
         "description": "django.conf",
         "isExtraImport": true,
         "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "Alumna",
-        "importPath": "Persona.models",
-        "description": "Persona.models",
-        "isExtraImport": true,
-        "detail": "Persona.models",
-        "documentation": {}
-    },
-    {
-        "label": "Alumna",
-        "importPath": "Persona.models",
-        "description": "Persona.models",
-        "isExtraImport": true,
-        "detail": "Persona.models",
         "documentation": {}
     },
     {
@@ -1553,22 +1722,6 @@
         "documentation": {}
     },
     {
-        "label": "HttpResponse",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
-        "label": "HttpResponseRedirect",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
         "label": "*",
         "importPath": "decimal",
         "description": "decimal",
@@ -1655,6 +1808,14 @@
         "description": "django.contrib.auth.models",
         "isExtraImport": true,
         "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "RegexValidator",
+        "importPath": "django.core.validators",
+        "description": "django.core.validators",
+        "isExtraImport": true,
+        "detail": "django.core.validators",
         "documentation": {}
     },
     {
@@ -1788,6 +1949,24 @@
         "documentation": {}
     },
     {
+        "label": "exportar_calificaciones_excel",
+        "kind": 2,
+        "importPath": "Actividad.reportes",
+        "description": "Actividad.reportes",
+        "peekOfCode": "def exportar_calificaciones_excel(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    # Obtener los filtros\n    grado_id = request.GET.get('grado')\n    year = request.GET.get('year')\n    curso_id = request.GET.get('curso')\n    # Obtener calificaciones según los filtros\n    calificaciones = CalificacionActividad.objects.filter(asignacion_ciclo__alumna=alumna).order_by('-actividad__fecha')\n    if grado_id:\n        calificaciones = calificaciones.filter(asignacion_ciclo__grado_id=grado_id)",
+        "detail": "Actividad.reportes",
+        "documentation": {}
+    },
+    {
+        "label": "exportar_punteo_acumulado_excel",
+        "kind": 2,
+        "importPath": "Actividad.reportes",
+        "description": "Actividad.reportes",
+        "peekOfCode": "def exportar_punteo_acumulado_excel(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    # Obtener los filtros\n    grado_id = request.GET.get('grado')\n    year = request.GET.get('year')\n    curso_id = request.GET.get('curso')\n    # Imprimir valores para depuración\n    print(f\"Grado ID: {grado_id}\")\n    print(f\"Año: {year}\")\n    print(f\"Curso ID: {curso_id}\")",
+        "detail": "Actividad.reportes",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "Actividad.urls",
@@ -1891,7 +2070,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):\n    model = CalificacionActividad\n    form_class = CalificacionActividadForm\n    template_name = 'calificacionactividad_form.html'\n    success_url = reverse_lazy('calificacionactividad-list')\nclass CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_confirm_delete.html'\n    success_url = reverse_lazy('calificacionactividad-list')",
+        "peekOfCode": "class CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):\n    model = CalificacionActividad\n    form_class = CalificacionActividadForm\n    template_name = 'calificacionactividad_form.html'\n    success_url = reverse_lazy('calificacionactividad-list')\nclass CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_confirm_delete.html'\n    success_url = reverse_lazy('calificacionactividad-list')\ndef calificaciones_alumna_view(request, alumna_id):",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -1900,7 +2079,34 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_confirm_delete.html'\n    success_url = reverse_lazy('calificacionactividad-list')",
+        "peekOfCode": "class CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_confirm_delete.html'\n    success_url = reverse_lazy('calificacionactividad-list')\ndef calificaciones_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    grado_id = request.GET.get('grado')\n    year = request.GET.get('year')\n    curso_id = request.GET.get('curso')\n    calificaciones = CalificacionActividad.objects.filter(asignacion_ciclo__alumna=alumna).order_by('-actividad__fecha')",
+        "detail": "Actividad.views",
+        "documentation": {}
+    },
+    {
+        "label": "calificaciones_alumna_view",
+        "kind": 2,
+        "importPath": "Actividad.views",
+        "description": "Actividad.views",
+        "peekOfCode": "def calificaciones_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    grado_id = request.GET.get('grado')\n    year = request.GET.get('year')\n    curso_id = request.GET.get('curso')\n    calificaciones = CalificacionActividad.objects.filter(asignacion_ciclo__alumna=alumna).order_by('-actividad__fecha')\n    if grado_id:\n        calificaciones = calificaciones.filter(asignacion_ciclo__grado_id=grado_id)\n    if year:\n        calificaciones = calificaciones.filter(asignacion_ciclo__year=year)",
+        "detail": "Actividad.views",
+        "documentation": {}
+    },
+    {
+        "label": "get_anos_cursos",
+        "kind": 2,
+        "importPath": "Actividad.views",
+        "description": "Actividad.views",
+        "peekOfCode": "def get_anos_cursos(request):\n    grado_id = request.GET.get('grado_id')\n    asignaciones = AsignacionCiclo.objects.filter(grado_id=grado_id).distinct()\n    anos_list = list(asignaciones.values_list('year', flat=True).distinct())\n    return JsonResponse({'years': anos_list})\ndef get_cursos(request):\n    grado_id = request.GET.get('grado_id')\n    year = request.GET.get('year')\n    cursos = Curso.objects.filter(grado_id=grado_id, estado=True)\n    cursos_list = [{'id': curso.id, 'nombre': curso.nombre_curso} for curso in cursos]",
+        "detail": "Actividad.views",
+        "documentation": {}
+    },
+    {
+        "label": "get_cursos",
+        "kind": 2,
+        "importPath": "Actividad.views",
+        "description": "Actividad.views",
+        "peekOfCode": "def get_cursos(request):\n    grado_id = request.GET.get('grado_id')\n    year = request.GET.get('year')\n    cursos = Curso.objects.filter(grado_id=grado_id, estado=True)\n    cursos_list = [{'id': curso.id, 'nombre': curso.nombre_curso} for curso in cursos]\n    return JsonResponse({'cursos': cursos_list})",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2652,6 +2858,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Persona.migrations.0003_remove_contacto_persona_remove_contacto_user_and_more",
+        "description": "Persona.migrations.0003_remove_contacto_persona_remove_contacto_user_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"Persona\", \"0002_remove_alumna_grado\"),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name=\"contacto\",\n            name=\"persona\",\n        ),\n        migrations.RemoveField(",
+        "detail": "Persona.migrations.0003_remove_contacto_persona_remove_contacto_user_and_more",
+        "documentation": {}
+    },
+    {
         "label": "PersonaConfig",
         "kind": 6,
         "importPath": "Persona.apps",
@@ -2674,7 +2889,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class AlumnaForm(forms.ModelForm):\n    persona = forms.ModelChoiceField(queryset=Persona.objects.all(), widget=forms.HiddenInput())\n    class Meta:\n        model = Alumna\n        fields = ['codigo']\nclass ContactoForm(forms.ModelForm):\n    class Meta:\n        model = Contacto\n        fields = ['parentesco', 'telefono', 'email']\n        widgets = {",
+        "peekOfCode": "class AlumnaForm(forms.ModelForm):\n    persona = forms.ModelChoiceField(queryset=Persona.objects.all(), widget=forms.HiddenInput())\n    class Meta:\n        model = Alumna\n        fields = ['codigo']\nclass ContactoForm(forms.ModelForm):\n    telefono = forms.CharField(\n        max_length=8,\n        validators=[RegexValidator(r'^\\d{8}$', 'Ingrese un número de teléfono válido de 8 dígitos.')],\n        widget=forms.TextInput(attrs={",
         "detail": "Persona.forms",
         "documentation": {}
     },
@@ -2683,7 +2898,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class ContactoForm(forms.ModelForm):\n    class Meta:\n        model = Contacto\n        fields = ['parentesco', 'telefono', 'email']\n        widgets = {\n            'parentesco': forms.Select(choices=[\n                ('Mamá', 'Mamá'),\n                ('Papá', 'Papá'),\n                ('Hermano', 'Hermano'),\n                ('Hermana', 'Hermana'),",
+        "peekOfCode": "class ContactoForm(forms.ModelForm):\n    telefono = forms.CharField(\n        max_length=8,\n        validators=[RegexValidator(r'^\\d{8}$', 'Ingrese un número de teléfono válido de 8 dígitos.')],\n        widget=forms.TextInput(attrs={\n            'placeholder': 'Ingrese solo números',\n            'maxlength': '8',  # Limita la entrada a 8 caracteres en el frontend\n            'pattern': '[0-9]{8}',  # Solo permite números\n            'title': 'El número debe tener 8 dígitos'\n        })",
         "detail": "Persona.forms",
         "documentation": {}
     },
@@ -2701,7 +2916,7 @@
         "kind": 6,
         "importPath": "Persona.models",
         "description": "Persona.models",
-        "peekOfCode": "class Alumna(models.Model):\n    persona = models.OneToOneField(Persona, on_delete=models.CASCADE)\n    codigo = models.CharField(max_length=30)\n    def __str__(self):\n        return self.codigo\nclass Contacto(models.Model):\n    persona = models.ForeignKey(Persona, on_delete=models.CASCADE)\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE, null=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)\n    parentesco = models.CharField(max_length=50)",
+        "peekOfCode": "class Alumna(models.Model):\n    persona = models.OneToOneField(Persona, on_delete=models.CASCADE)\n    codigo = models.CharField(max_length=30)\n    def __str__(self):\n        return self.codigo\nclass Contacto(models.Model):\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)\n    nombre = models.CharField(max_length=100)\n    apellido = models.CharField(max_length=100)\n    parentesco = models.CharField(max_length=100)",
         "detail": "Persona.models",
         "documentation": {}
     },
@@ -2710,7 +2925,7 @@
         "kind": 6,
         "importPath": "Persona.models",
         "description": "Persona.models",
-        "peekOfCode": "class Contacto(models.Model):\n    persona = models.ForeignKey(Persona, on_delete=models.CASCADE)\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE, null=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)\n    parentesco = models.CharField(max_length=50)\n    telefono = models.CharField(max_length=10)\n    email = models.CharField(max_length=50)\n    def __str__(self):\n        return self.parentesco",
+        "peekOfCode": "class Contacto(models.Model):\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)\n    nombre = models.CharField(max_length=100)\n    apellido = models.CharField(max_length=100)\n    parentesco = models.CharField(max_length=100)\n    telefono = models.CharField(max_length=15)\n    email = models.EmailField()\n    def __str__(self):\n        return f\"{self.nombre} {self.apellido}\"",
         "detail": "Persona.models",
         "documentation": {}
     },
@@ -2746,7 +2961,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def contacto_create_view(request, alumna_id):\n    alumno = get_object_or_404(Alumna, id=alumna_id)\n    if request.method == 'POST':\n        persona_form = PersonaForm(request.POST)\n        contacto_form = ContactoForm(request.POST)\n        if persona_form.is_valid() and contacto_form.is_valid():\n            persona = persona_form.save()\n            contacto = contacto_form.save(commit=False)\n            contacto.persona = persona\n            contacto.alumna = alumno  # Asocia el contacto con la alumna",
+        "peekOfCode": "def contacto_create_view(request, alumna_id):\n    alumno = get_object_or_404(Alumna, id=alumna_id)\n    if request.method == 'POST':\n        contacto_form = ContactoForm(request.POST)\n        if contacto_form.is_valid():\n            contacto = contacto_form.save(commit=False)\n            contacto.alumna = alumno\n            contacto.save()\n            return redirect('contacto-create', alumna_id=alumna_id)\n        else:",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -2755,7 +2970,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def contacto_edit_view(request, contacto_id):\n    contacto = get_object_or_404(Contacto, id=contacto_id)\n    persona = contacto.persona\n    if request.method == 'POST':\n        persona_form = PersonaForm(request.POST, instance=persona)\n        contacto_form = ContactoForm(request.POST, instance=contacto)\n        if persona_form.is_valid() and contacto_form.is_valid():\n            persona_form.save()\n            contacto_form.save()\n            messages.success(request, 'Contacto y persona actualizados correctamente.')",
+        "peekOfCode": "def contacto_edit_view(request, contacto_id):\n    contacto = get_object_or_404(Contacto, id=contacto_id)\n    if request.method == 'POST':\n        contacto_form = ContactoForm(request.POST, instance=contacto)\n        if contacto_form.is_valid():\n            contacto_form.save()\n            messages.success(request, 'Contacto actualizado correctamente.')\n            return redirect('contacto-create', alumna_id=contacto.alumna.id)\n    else:\n        contacto_form = ContactoForm(instance=contacto)",
         "detail": "Persona.views",
         "documentation": {}
     },

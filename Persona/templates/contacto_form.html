@@ -23,23 +23,54 @@
     }
 </script>
 
-<h2>Crear/Editar Contacto</h2>
-<form method="post">
+<h2>{{ form_title }}</h2>
+
+<form method="post" class="form-container container-fluid bg-light p-4 rounded shadow-sm">
     {% csrf_token %}
     
-    {% if persona_form %}
-        <h3>Datos de la Persona</h3>
-        {{ persona_form.as_p }}
-    {% endif %}
-    
-    <h3>Datos del Contacto</h3>
-    {{ contacto_form.as_p }}
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="{{ contacto_form.nombre.id_for_label }}">Nombre</label>
+            {{ contacto_form.nombre }}
+            <div class="invalid-feedback">{{ contacto_form.nombre.errors }}</div>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Guardar</button>
+        <div class="col-md-4 mb-3">
+            <label for="{{ contacto_form.apellido.id_for_label }}">Apellido</label>
+            {{ contacto_form.apellido }}
+            <div class="invalid-feedback">{{ contacto_form.apellido.errors }}</div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="{{ contacto_form.parentesco.id_for_label }}">Parentesco</label>
+            {{ contacto_form.parentesco }}
+            <div class="invalid-feedback">{{ contacto_form.parentesco.errors }}</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="{{ contacto_form.telefono.id_for_label }}">Teléfono</label>
+            {{ contacto_form.telefono }}
+            <div class="invalid-feedback">{{ contacto_form.telefono.errors }}</div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="{{ contacto_form.email.id_for_label }}">Email</label>
+            {{ contacto_form.email }}
+            <div class="invalid-feedback">{{ contacto_form.email.errors }}</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary w-40">Guardar</button>
+        </div>
+    </div>
 </form>
 
 <h3>Contactos de la Alumna</h3>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Nombre</th>
@@ -53,20 +84,46 @@
     <tbody>
         {% for contacto in contactos %}
         <tr>
-            <td>{{ contacto.persona.nombre }}</td>
-            <td>{{ contacto.persona.apellido }}</td>
+            <td>{{ contacto.nombre }}</td>
+            <td>{{ contacto.apellido }}</td>
             <td>{{ contacto.parentesco }}</td>
             <td>{{ contacto.telefono }}</td>
             <td>{{ contacto.email }}</td>
             <td>
-                <a href="{% url 'contacto-edit' contacto.id %}" class="btn btn-warning">Editar</a>
+                <a href="{% url 'contacto-edit' contacto.id %}" class="btn btn-warning btn-sm">Editar</a>
                 <form action="{% url 'contacto-delete' contacto.id %}" method="post" id="delete-form-{{ contacto.id }}" style="display:inline;">
                     {% csrf_token %}
-                    <button type="button" class="btn btn-danger" onclick="confirmDelete(event, 'delete-form-{{ contacto.id }}')">Eliminar</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(event, 'delete-form-{{ contacto.id }}')">Eliminar</button>
                 </form>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .table {
+        margin-top: 2rem;
+    }
+    .btn-sm {
+        padding: .25rem .5rem;
+        font-size: .875rem;
+        line-height: 1.5;
+        border-radius: .2rem;
+    }
+</style>
+
+<style>
+    .form-container {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+</style>
 {% endblock %}

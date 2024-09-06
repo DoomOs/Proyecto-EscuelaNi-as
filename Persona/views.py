@@ -42,50 +42,39 @@ def contacto_create_view(request, alumna_id):
     alumno = get_object_or_404(Alumna, id=alumna_id)
 
     if request.method == 'POST':
-        persona_form = PersonaForm(request.POST)
         contacto_form = ContactoForm(request.POST)
-        if persona_form.is_valid() and contacto_form.is_valid():
-            persona = persona_form.save()
+        if contacto_form.is_valid():
             contacto = contacto_form.save(commit=False)
-            contacto.persona = persona
-            contacto.alumna = alumno  # Asocia el contacto con la alumna
+            contacto.alumna = alumno
             contacto.save()
             return redirect('contacto-create', alumna_id=alumna_id)
         else:
             messages.error(request, 'Hay errores en el formulario.')
     else:
-        persona_form = PersonaForm()
         contacto_form = ContactoForm()
 
-    # Filtrar contactos asociados al `alumna_id` y pasar a la plantilla
     contactos = Contacto.objects.filter(alumna_id=alumna_id)
 
     return render(request, 'contacto_form.html', {
-        'persona_form': persona_form,
+        'form_title': 'Crear Contacto',
         'contacto_form': contacto_form,
         'contactos': contactos
     })
-    
-    
+
 def contacto_edit_view(request, contacto_id):
     contacto = get_object_or_404(Contacto, id=contacto_id)
-    persona = contacto.persona
     
     if request.method == 'POST':
-        persona_form = PersonaForm(request.POST, instance=persona)
         contacto_form = ContactoForm(request.POST, instance=contacto)
-        
-        if persona_form.is_valid() and contacto_form.is_valid():
-            persona_form.save()
+        if contacto_form.is_valid():
             contacto_form.save()
-            messages.success(request, 'Contacto y persona actualizados correctamente.')
+            messages.success(request, 'Contacto actualizado correctamente.')
             return redirect('contacto-create', alumna_id=contacto.alumna.id)
     else:
-        persona_form = PersonaForm(instance=persona)
         contacto_form = ContactoForm(instance=contacto)
 
     return render(request, 'contacto_form.html', {
-        'persona_form': persona_form,
+        'form_title': 'Editar Contacto',
         'contacto_form': contacto_form,
         'contactos': Contacto.objects.filter(alumna_id=contacto.alumna.id),
     })

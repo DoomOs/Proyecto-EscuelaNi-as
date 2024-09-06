@@ -22,12 +22,12 @@ class Alumna(models.Model):
         return self.codigo
 
 class Contacto(models.Model):
-    persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
-    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
-    parentesco = models.CharField(max_length=50)
-    telefono = models.CharField(max_length=10)
-    email = models.CharField(max_length=50)
+    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
+    parentesco = models.CharField(max_length=100)
+    telefono = models.CharField(max_length=15)
+    email = models.EmailField()
 
     def __str__(self):
-        return self.parentesco
+        return f"{self.nombre} {self.apellido}"

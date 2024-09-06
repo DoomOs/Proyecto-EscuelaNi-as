@@ -1,8 +1,12 @@
 from django.urls import path
+
+from Actividad.reportes import exportar_calificaciones_excel, exportar_punteo_acumulado_excel
 from .views import (
     ActividadInactivaListView, ActividadInactivarView, ActividadListView, ActividadCreateView, ActividadReactivarView, ActividadUpdateView, ActividadDeleteView,
-    CalificacionActividadListView, CalificacionActividadCreateView, CalificacionActividadUpdateView, CalificacionActividadDeleteView, CalificarAlumnoView
+    CalificacionActividadListView, CalificacionActividadCreateView, CalificacionActividadUpdateView, CalificacionActividadDeleteView, CalificarAlumnoView, get_anos_cursos, get_cursos
 )
+from .views import  calificaciones_alumna_view
+from . import views
 
 urlpatterns = [
     path('actividades/', ActividadListView.as_view(), name='actividad-list'),
@@ -17,4 +21,12 @@ urlpatterns = [
     path('calificaciones/<int:pk>/editar/', CalificacionActividadUpdateView.as_view(), name='calificacionactividad-update'),
     path('calificaciones/<int:pk>/eliminar/', CalificacionActividadDeleteView.as_view(), name='calificacionactividad-delete'),
     path('calificar/<int:actividad_id>/', CalificarAlumnoView.as_view(), name='calificar-alumno'),
+    
+    
+    path('calificaciones/<int:alumna_id>/', calificaciones_alumna_view, name='calificaciones-alumna'),
+    path('get_anos_cursos/', get_anos_cursos, name='get_anos_cursos'),
+    path('get_cursos/', get_cursos, name='get_cursos'),
+    
+    path('exportar_calificaciones/<int:alumna_id>/', exportar_calificaciones_excel, name='exportar_calificaciones'),
+    path('exportar_punteo_acumulado/<int:alumna_id>/', exportar_punteo_acumulado_excel, name='exportar_punteo_acumulado'),
 ]

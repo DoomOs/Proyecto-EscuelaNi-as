@@ -13,6 +13,7 @@
   </title>
   <!--     Fonts and icons     -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <link rel="stylesheet" href="{% static 'Inicio/vendors/bootstrap/dist/css/bootstrap.min.css' %}">
@@ -41,9 +42,9 @@
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{% url 'Inicio' %}"><img src="{% static 'Inicio/assets/img/logo.jpg' %}"
+                <a class="navbar-brand" href="{% url 'Inicio' %}"><img src="{% static 'Inicio/images/logo.png' %}"
                         alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="{% static 'Inicio/assets/img/logo.jpg' %}"
+                <a class="navbar-brand hidden" href="./"><img src="{% static 'Inicio/images/logo.png' %}"
                         alt="Logo"></a>
             </div>
 
@@ -127,8 +128,7 @@
                                 <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                             </form>
                         </div>{{user.first_name}} {{user.last_name}}
-                        <a href="javascript:;" class="btn btn-sm btn-outline-primary">{{user.rol}}</a>
-                        <a href="javascript:;" class="btn btn-sm btn-outline-primary">{{user.categoria}}</a>
+                        
                     </div>
                 </div>
 
@@ -136,7 +136,7 @@
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{% static 'Inicio/images/admin.jpg' %}"
+                            <img class="user-avatar rounded-circle" src="{% static 'Inicio/images/logo.png' %}"
                                 alt="User Avatar">
                         </a>
 
