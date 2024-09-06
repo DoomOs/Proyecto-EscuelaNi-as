@@ -5,12 +5,19 @@ from Curso.models import Curso
 
 # Create your models here.
 class Actividad(models.Model):
+    ACTIVIDAD_ESTADOS = (
+        (1, 'Activa'),
+        (0, 'Inactiva')
+    )
     actividad = models.CharField(max_length=100)
     punteo = models.IntegerField()
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     fecha = models.DateField(auto_now_add=True)
+    estado = models.IntegerField(choices=ACTIVIDAD_ESTADOS, default=1)  # Estado por defecto: activa
+    
     def __str__(self):
         return self.actividad
+
     
 class CalificacionActividad(models.Model):
     descripcion = models.CharField(max_length=100, null=True)
