@@ -25,6 +25,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -274,6 +290,14 @@
     },
     {
         "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
         "importPath": "django.contrib",
         "description": "django.contrib",
         "isExtraImport": true,
@@ -545,43 +569,19 @@
         "documentation": {}
     },
     {
-        "label": "AsignacionCiclo",
-        "importPath": "Asignacion_Ciclo.models",
-        "description": "Asignacion_Ciclo.models",
+        "label": "Curso",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
         "isExtraImport": true,
-        "detail": "Asignacion_Ciclo.models",
+        "detail": "Curso.models",
         "documentation": {}
     },
     {
-        "label": "AsignacionCiclo",
-        "importPath": "Asignacion_Ciclo.models",
-        "description": "Asignacion_Ciclo.models",
+        "label": "Curso",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
         "isExtraImport": true,
-        "detail": "Asignacion_Ciclo.models",
-        "documentation": {}
-    },
-    {
-        "label": "AsignacionCiclo",
-        "importPath": "Asignacion_Ciclo.models",
-        "description": "Asignacion_Ciclo.models",
-        "isExtraImport": true,
-        "detail": "Asignacion_Ciclo.models",
-        "documentation": {}
-    },
-    {
-        "label": "AsignacionCiclo",
-        "importPath": "Asignacion_Ciclo.models",
-        "description": "Asignacion_Ciclo.models",
-        "isExtraImport": true,
-        "detail": "Asignacion_Ciclo.models",
-        "documentation": {}
-    },
-    {
-        "label": "AsignacionCiclo",
-        "importPath": "Asignacion_Ciclo.models",
-        "description": "Asignacion_Ciclo.models",
-        "isExtraImport": true,
-        "detail": "Asignacion_Ciclo.models",
+        "detail": "Curso.models",
         "documentation": {}
     },
     {
@@ -630,6 +630,46 @@
         "description": "Curso.models",
         "isExtraImport": true,
         "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCiclo",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCiclo",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCiclo",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCiclo",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCiclo",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
         "documentation": {}
     },
     {
@@ -873,6 +913,14 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -1030,6 +1078,22 @@
         "description": "django.contrib.auth.mixins",
         "isExtraImport": true,
         "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views",
+        "description": "django.views",
+        "isExtraImport": true,
+        "detail": "django.views",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views",
+        "description": "django.views",
+        "isExtraImport": true,
+        "detail": "django.views",
         "documentation": {}
     },
     {
@@ -1185,91 +1249,11 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
         "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "Alumna",
-        "importPath": "Persona.models",
-        "description": "Persona.models",
-        "isExtraImport": true,
-        "detail": "Persona.models",
-        "documentation": {}
-    },
-    {
-        "label": "Alumna",
-        "importPath": "Persona.models",
-        "description": "Persona.models",
-        "isExtraImport": true,
-        "detail": "Persona.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "user.models",
-        "description": "user.models",
-        "isExtraImport": true,
-        "detail": "user.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "user.models",
-        "description": "user.models",
-        "isExtraImport": true,
-        "detail": "user.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "user.models",
-        "description": "user.models",
-        "isExtraImport": true,
-        "detail": "user.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "user.models",
-        "description": "user.models",
-        "isExtraImport": true,
-        "detail": "user.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "user.models",
-        "description": "user.models",
-        "isExtraImport": true,
-        "detail": "user.models",
+        "detail": "django.db.models",
         "documentation": {}
     },
     {
@@ -1278,6 +1262,94 @@
         "description": "django.db.models",
         "isExtraImport": true,
         "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "user.models",
+        "description": "user.models",
+        "isExtraImport": true,
+        "detail": "user.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "user.models",
+        "description": "user.models",
+        "isExtraImport": true,
+        "detail": "user.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "user.models",
+        "description": "user.models",
+        "isExtraImport": true,
+        "detail": "user.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "user.models",
+        "description": "user.models",
+        "isExtraImport": true,
+        "detail": "user.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "user.models",
+        "description": "user.models",
+        "isExtraImport": true,
+        "detail": "user.models",
         "documentation": {}
     },
     {
@@ -1430,14 +1502,6 @@
         "description": "booleano.operations",
         "isExtraImport": true,
         "detail": "booleano.operations",
-        "documentation": {}
-    },
-    {
-        "label": "View",
-        "importPath": "django.views",
-        "description": "django.views",
-        "isExtraImport": true,
-        "detail": "django.views",
         "documentation": {}
     },
     {
@@ -1670,6 +1734,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Actividad.migrations.0002_actividad_estado",
+        "description": "Actividad.migrations.0002_actividad_estado",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"Actividad\", \"0001_initial\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"actividad\",\n            name=\"estado\",\n            field=models.IntegerField(\n                choices=[(1, \"Activa\"), (0, \"Inactiva\")], default=1",
+        "detail": "Actividad.migrations.0002_actividad_estado",
+        "documentation": {}
+    },
+    {
         "label": "ActividadConfig",
         "kind": 6,
         "importPath": "Actividad.apps",
@@ -1683,7 +1756,7 @@
         "kind": 6,
         "importPath": "Actividad.forms",
         "description": "Actividad.forms",
-        "peekOfCode": "class ActividadForm(forms.ModelForm):\n    class Meta:\n        model = Actividad\n        fields = '__all__'\nclass CalificacionActividadForm(forms.ModelForm):\n    class Meta:\n        model = CalificacionActividad\n        fields = '__all__'",
+        "peekOfCode": "class ActividadForm(forms.ModelForm):\n    class Meta:\n        model = Actividad\n        fields = ['actividad', 'punteo', 'curso']\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        # Filtrar los cursos activos en el campo 'curso'\n        self.fields['curso'].queryset = Curso.objects.filter(estado=1)\nclass CalificacionActividadForm(forms.ModelForm):\n    class Meta:",
         "detail": "Actividad.forms",
         "documentation": {}
     },
@@ -1701,7 +1774,7 @@
         "kind": 6,
         "importPath": "Actividad.models",
         "description": "Actividad.models",
-        "peekOfCode": "class Actividad(models.Model):\n    actividad = models.CharField(max_length=100)\n    punteo = models.IntegerField()\n    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)\n    fecha = models.DateField(auto_now_add=True)\n    def __str__(self):\n        return self.actividad\nclass CalificacionActividad(models.Model):\n    descripcion = models.CharField(max_length=100, null=True)\n    punteo = models.IntegerField()",
+        "peekOfCode": "class Actividad(models.Model):\n    ACTIVIDAD_ESTADOS = (\n        (1, 'Activa'),\n        (0, 'Inactiva')\n    )\n    actividad = models.CharField(max_length=100)\n    punteo = models.IntegerField()\n    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)\n    fecha = models.DateField(auto_now_add=True)\n    estado = models.IntegerField(choices=ACTIVIDAD_ESTADOS, default=1)  # Estado por defecto: activa",
         "detail": "Actividad.models",
         "documentation": {}
     },
@@ -1719,7 +1792,7 @@
         "kind": 5,
         "importPath": "Actividad.urls",
         "description": "Actividad.urls",
-        "peekOfCode": "urlpatterns = [\n    path('actividades/', ActividadListView.as_view(), name='actividad-list'),\n    path('actividades/nueva/', ActividadCreateView.as_view(), name='actividad-create'),\n    path('actividades/<int:pk>/editar/', ActividadUpdateView.as_view(), name='actividad-update'),\n    path('actividades/<int:pk>/eliminar/', ActividadDeleteView.as_view(), name='actividad-delete'),\n    path('calificaciones/', CalificacionActividadListView.as_view(), name='calificacionactividad-list'),\n    path('calificaciones/nueva/', CalificacionActividadCreateView.as_view(), name='calificacionactividad-create'),\n    path('calificaciones/<int:pk>/editar/', CalificacionActividadUpdateView.as_view(), name='calificacionactividad-update'),\n    path('calificaciones/<int:pk>/eliminar/', CalificacionActividadDeleteView.as_view(), name='calificacionactividad-delete'),\n    path('calificar/<int:actividad_id>/', CalificarAlumnoView.as_view(), name='calificar-alumno'),",
+        "peekOfCode": "urlpatterns = [\n    path('actividades/', ActividadListView.as_view(), name='actividad-list'),\n    path('actividades/nueva/', ActividadCreateView.as_view(), name='actividad-create'),\n    path('actividades/<int:pk>/editar/', ActividadUpdateView.as_view(), name='actividad-update'),\n    path('actividad/inactivar/<int:pk>/', ActividadInactivarView.as_view(), name='actividad-inactivar'),\n    path('reactivar/<int:actividad_id>/', ActividadReactivarView.as_view(), name='actividad-reactivar'),\n    path('actividades-inactivas/', ActividadInactivaListView.as_view(), name='actividad-inactiva-list'),\n    path('calificaciones/', CalificacionActividadListView.as_view(), name='calificacionactividad-list'),\n    path('calificaciones/nueva/', CalificacionActividadCreateView.as_view(), name='calificacionactividad-create'),\n    path('calificaciones/<int:pk>/editar/', CalificacionActividadUpdateView.as_view(), name='calificacionactividad-update'),",
         "detail": "Actividad.urls",
         "documentation": {}
     },
@@ -1728,7 +1801,34 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadListView(LoginRequiredMixin, ListView):\n    model = Actividad\n    template_name = 'actividad_list.html'\nclass ActividadCreateView(LoginRequiredMixin,CreateView):\n    model = Actividad\n    form_class = ActividadForm\n    template_name = 'actividad_form.html'\n    success_url = reverse_lazy('actividad-list')\nclass ActividadUpdateView(LoginRequiredMixin, UpdateView):\n    model = Actividad",
+        "peekOfCode": "class ActividadListView(LoginRequiredMixin, ListView):\n    model = Actividad\n    template_name = 'actividad_list.html'\n    context_object_name = 'actividades'\n    def get_queryset(self):\n        queryset = super().get_queryset().order_by('-fecha')  # Ordenar por fecha descendente\n        # Obtener parámetros de filtrado\n        curso_id = self.request.GET.get('curso')\n        fecha = self.request.GET.get('fecha')\n        if curso_id:",
+        "detail": "Actividad.views",
+        "documentation": {}
+    },
+    {
+        "label": "ActividadInactivaListView",
+        "kind": 6,
+        "importPath": "Actividad.views",
+        "description": "Actividad.views",
+        "peekOfCode": "class ActividadInactivaListView(LoginRequiredMixin, ListView):\n    model = Actividad\n    template_name = 'actividad_inactiva_list.html'\n    context_object_name = 'actividades'\n    def get_queryset(self):\n        queryset = super().get_queryset().order_by('-fecha')  # Ordenar por fecha descendente\n        # Obtener parámetro de filtrado\n        curso_id = self.request.GET.get('curso')\n        if curso_id:\n            queryset = queryset.filter(curso_id=curso_id)",
+        "detail": "Actividad.views",
+        "documentation": {}
+    },
+    {
+        "label": "ActividadInactivarView",
+        "kind": 6,
+        "importPath": "Actividad.views",
+        "description": "Actividad.views",
+        "peekOfCode": "class ActividadInactivarView(View):\n    success_url = reverse_lazy('actividad-list')\n    def get(self, request, *args, **kwargs):\n        actividad = get_object_or_404(Actividad, pk=self.kwargs['pk'])\n        actividad.estado = 0  # Inactivar la actividad\n        actividad.save()\n        return redirect(self.success_url)\nclass ActividadReactivarView(View):\n    success_url = reverse_lazy('actividad-inactiva-list')\n    def get(self, request, *args, **kwargs):",
+        "detail": "Actividad.views",
+        "documentation": {}
+    },
+    {
+        "label": "ActividadReactivarView",
+        "kind": 6,
+        "importPath": "Actividad.views",
+        "description": "Actividad.views",
+        "peekOfCode": "class ActividadReactivarView(View):\n    success_url = reverse_lazy('actividad-inactiva-list')\n    def get(self, request, *args, **kwargs):\n        actividad = get_object_or_404(Actividad, pk=self.kwargs['actividad_id'])\n        actividad.estado = 1  # Reactivar la actividad\n        actividad.save()\n        return redirect(self.success_url)\nclass ActividadCreateView(LoginRequiredMixin,CreateView):\n    model = Actividad\n    form_class = ActividadForm",
         "detail": "Actividad.views",
         "documentation": {}
     },

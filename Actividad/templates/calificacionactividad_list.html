@@ -2,6 +2,30 @@
 {% load static %}
 
 {% block content %}
+
+
+<form method="GET">
+    <div class="form-row">
+        <div class="col">
+            <input type="text" name="alumno" class="form-control" placeholder="Alumno">
+        </div>
+        <div class="col">
+            <input type="text" name="curso" class="form-control" placeholder="Curso">
+        </div>
+        <div class="col">
+            <input type="date" name="fecha" class="form-control">
+        </div>
+        <div class="col">
+            <input type="text" name="ciclo" class="form-control" placeholder="Ciclo">
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+        </div>
+    </div>
+</form>
+
+
+
 <div class="container mt-4">
     <h1>Listado de Calificaciones de Actividad</h1>
     <table class="table table-striped">
