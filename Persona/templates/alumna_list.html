@@ -1,7 +1,13 @@
 {% extends 'BaseInicio/base.html' %}
 {% block content %}
-
 <h2>Listado de Alumnas</h2>
+
+<div class="form-group row">
+    <div class="col-sm-4">
+        <input type="text" id="search" class="form-control" placeholder="Buscar Alumna...">
+    </div>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -13,7 +19,7 @@
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="alumna-list">
         {% for alumna in alumnas %}
         <tr>
             <td>{{ alumna.codigo }}</td>
@@ -25,10 +31,28 @@
                 <a href="{% url 'asignacionciclo-create' alumna.id %}" class="btn btn-success">Asignar</a>
                 <a href="{% url 'alumna-edit' alumna.id %}" class="btn btn-warning">Editar</a>
                 <a href="{% url 'contacto-create' alumna.id %}" class="btn btn-info">Contactos</a>
+                <a href="{% url 'calificaciones-alumna' alumna.id %}" class="btn btn-primary">Calificaciones</a>
+
+
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("search").addEventListener("keyup", function() {
+            var input = this.value.toLowerCase();
+            var rows = document.querySelectorAll("#alumna-list tr");
+            rows.forEach(row => {
+                let codigo = row.querySelector("td:nth-child(1)").innerText.toLowerCase();
+                let nombre = row.querySelector("td:nth-child(2)").innerText.toLowerCase();
+                let apellido = row.querySelector("td:nth-child(3)").innerText.toLowerCase();
+                row.style.display = (codigo.includes(input) || nombre.includes(input) || apellido.includes(input)) ? "" : "none";
+            });
+        });
+    });
+    
+</script>
 {% endblock %}

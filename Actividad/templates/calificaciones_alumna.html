@@ -1,0 +1,189 @@
+{% extends 'BaseInicio/base.html' %}
+{% block content %}
+<div class="container">
+    <h2 class="my-4 text-center">Calificaciones de {{ alumna.persona.nombre }} {{ alumna.persona.apellido }}</h2>
+
+    <!-- Datos del Alumna -->
+    <div class="row bg-light p-3 mb-4 rounded shadow-sm">
+        <div class="col-md-3">
+            <strong>Nombre:</strong> {{ alumna.persona.nombre }}
+        </div>
+        <div class="col-md-3">
+            <strong>Apellido:</strong> {{ alumna.persona.apellido }}
+        </div>
+        <div class="col-md-3">
+            <strong>Fecha de Nacimiento:</strong> {{ alumna.persona.fecha_nacimiento }}
+        </div>
+        <div class="col-md-3">
+            <strong>Código:</strong> {{ alumna.codigo }}
+        </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <label for="grado-select" class="form-label">Grado</label>
+            <select id="grado-select" class="form-select">
+                <option value="">Todos</option>
+                {% for grado in grados %}
+                <option value="{{ grado.id }}">{{ grado.nombre_grado }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="year-select" class="form-label">Año</label>
+            <select id="year-select" class="form-select">
+                <option value="">Todos</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="curso-select" class="form-label">Curso</label>
+            <select id="curso-select" class="form-select">
+                <option value="">Todos</option>
+            </select>
+        </div>
+    </div>
+    <!-- Botones de Exportación -->
+    <div class="mb-4 text-end">
+        <a id="export-button" href="{% url 'exportar_calificaciones' alumna.id %}?grado=&year=&curso=" class="btn btn-success">Exportar a Excel</a>
+    </div>
+    <div class="mb-4 text-end">
+        <a id="export-punteo-button" href="{% url 'exportar_punteo_acumulado' alumna.id %}?grado=&year=&curso=" class="btn btn-primary">Exportar Punteo Acumulado</a>
+    </div>
+
+    <!-- Tabla de Calificaciones -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Curso</th>
+                    <th>Fecha</th>
+                    <th>Descripción</th>
+                    <th>Punteo</th>
+                    <th>Ciclo</th>
+                    <th>Año</th>
+                </tr>
+            </thead>
+            <tbody id="calificaciones-list">
+                {% for calificacion in calificaciones %}
+                <tr>
+                    <td>{{ calificacion.actividad.curso.nombre_curso }}</td>
+                    <td>{{ calificacion.actividad.fecha|date:"j N Y" }}</td>
+                    <td>{{ calificacion.descripcion }}</td>
+                    <td>{{ calificacion.punteo }}</td>
+                    <td>{{ calificacion.asignacion_ciclo.grado.nombre_grado }}</td>
+                    <td>{{ calificacion.asignacion_ciclo.year }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = $.trim(cookies[i]);
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        
+        function loadCalificaciones() {
+            var gradoId = $('#grado-select').val();
+            var year = $('#year-select').val();
+            var cursoId = $('#curso-select').val();
+            var url = "{% url 'calificaciones-alumna' alumna.id %}";
+
+            $.ajax({
+                url: url,
+                data: {
+                    'grado': gradoId,
+                    'year': year,
+                    'curso': cursoId
+                },
+                dataType: 'html',
+                success: function (data) {
+                    $('#calificaciones-list').html($(data).find('#calificaciones-list').html());
+                    // Actualizar los botones de exportación con los filtros aplicados
+                    var exportUrl = "{% url 'exportar_calificaciones' alumna.id %}?grado=" + gradoId + "&year=" + year + "&curso=" + cursoId;
+                    $('#export-button').attr('href', exportUrl);
+
+                    var exportPunteoUrl = "{% url 'exportar_punteo_acumulado' alumna.id %}?grado=" + gradoId + "&year=" + year + "&curso=" + cursoId;
+                    $('#export-punteo-button').attr('href', exportPunteoUrl);
+                },
+                error: function () {
+                    console.log('Error al cargar las calificaciones');
+                }
+            });
+        }
+        
+        $('#grado-select').change(function () {
+            var gradoId = $(this).val();
+            var csrftoken = getCookie('csrftoken');
+
+            $('#year-select').empty().append('<option value="">Todos</option>');
+            $('#curso-select').empty().append('<option value="">Todos</option>');
+
+            if (gradoId) {
+                $.ajax({
+                    url: '{% url "get_anos_cursos" %}',
+                    data: { 'grado_id': gradoId },
+                    dataType: 'json',
+                    headers: { 'X-CSRFToken': csrftoken },
+                    success: function (data) {
+                        for (var i = 0; i < data.years.length; i++) {
+                            $('#year-select').append('<option value="' + data.years[i] + '">' + data.years[i] + '</option>');
+                        }
+                    },
+                    error: function () {
+                        console.log('Error en la llamada AJAX para años');
+                    }
+                });
+            }
+        });
+
+        $('#year-select').change(function () {
+            var gradoId = $('#grado-select').val();
+            var year = $(this).val();
+            var csrftoken = getCookie('csrftoken');
+
+            if (gradoId && year) {
+                $.ajax({
+                    url: '{% url "get_cursos" %}',
+                    data: { 'grado_id': gradoId, 'year': year },
+                    dataType: 'json',
+                    headers: { 'X-CSRFToken': csrftoken },
+                    success: function (data) {
+                        $('#curso-select').empty().append('<option value="">Todos</option>');
+                        for (var i = 0; i < data.cursos.length; i++) {
+                            $('#curso-select').append('<option value="' + data.cursos[i].id + '">' + data.cursos[i].nombre + '</option>');
+                        }
+                    },
+                    error: function () {
+                        console.log('Error en la llamada AJAX para cursos');
+                    }
+                });
+            }
+        });
+
+        $('#grado-select, #year-select, #curso-select').change(loadCalificaciones);
+
+        // Inicializar los botones de exportación con los filtros por defecto
+        var exportUrl = "{% url 'exportar_calificaciones' alumna.id %}?grado=&year=&curso=";
+        $('#export-button').attr('href', exportUrl);
+
+        var exportPunteoUrl = "{% url 'exportar_punteo_acumulado' alumna.id %}?grado=&year=&curso=";
+        $('#export-punteo-button').attr('href', exportPunteoUrl);
+    });
+</script>
+
+{% endblock %}

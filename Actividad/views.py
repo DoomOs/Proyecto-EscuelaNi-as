@@ -1,3 +1,4 @@
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -6,7 +7,8 @@ from django.views import View
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.views.generic import TemplateView
 from Asignacion_Ciclo.models import AsignacionCiclo
-from Curso.models import Curso
+from Curso.models import Curso, Grado
+from Persona.models import Alumna
 from .models import Actividad, CalificacionActividad
 from .forms import ActividadForm, CalificacionActividadForm
 
@@ -195,3 +197,42 @@ class CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):
     model = CalificacionActividad
     template_name = 'calificacionactividad_confirm_delete.html'
     success_url = reverse_lazy('calificacionactividad-list')
+
+
+
+
+def calificaciones_alumna_view(request, alumna_id):
+    alumna = get_object_or_404(Alumna, id=alumna_id)
+    grado_id = request.GET.get('grado')
+    year = request.GET.get('year')
+    curso_id = request.GET.get('curso')
+
+    calificaciones = CalificacionActividad.objects.filter(asignacion_ciclo__alumna=alumna).order_by('-actividad__fecha')
+
+    if grado_id:
+        calificaciones = calificaciones.filter(asignacion_ciclo__grado_id=grado_id)
+    if year:
+        calificaciones = calificaciones.filter(asignacion_ciclo__year=year)
+    if curso_id:
+        calificaciones = calificaciones.filter(actividad__curso_id=curso_id)
+
+    grados = Grado.objects.all()
+
+    return render(request, 'calificaciones_alumna.html', {
+        'alumna': alumna,
+        'calificaciones': calificaciones,
+        'grados': grados
+    })
+
+def get_anos_cursos(request):
+    grado_id = request.GET.get('grado_id')
+    asignaciones = AsignacionCiclo.objects.filter(grado_id=grado_id).distinct()
+    anos_list = list(asignaciones.values_list('year', flat=True).distinct())
+    return JsonResponse({'years': anos_list})
+
+def get_cursos(request):
+    grado_id = request.GET.get('grado_id')
+    year = request.GET.get('year')
+    cursos = Curso.objects.filter(grado_id=grado_id, estado=True)
+    cursos_list = [{'id': curso.id, 'nombre': curso.nombre_curso} for curso in cursos]
+    return JsonResponse({'cursos': cursos_list})
