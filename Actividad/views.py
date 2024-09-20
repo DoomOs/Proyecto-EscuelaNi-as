@@ -114,7 +114,9 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         actividad_id = self.kwargs['actividad_id']
         actividad = get_object_or_404(Actividad, id=actividad_id)
-        asignaciones = AsignacionCiclo.objects.filter(grado=actividad.curso.grado)
+        
+        # Solo alumnas activas
+        asignaciones = AsignacionCiclo.objects.filter(grado=actividad.curso.grado, alumna__estado=True)
 
         # Filtrando alumnos calificados y no calificados
         alumnos_calificados = CalificacionActividad.objects.filter(actividad=actividad)
@@ -125,9 +127,12 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
         context['alumnos_calificados'] = alumnos_calificados
         return context
 
+
     def post(self, request, *args, **kwargs):
         actividad = get_object_or_404(Actividad, id=self.kwargs['actividad_id'])
-        asignaciones = AsignacionCiclo.objects.filter(grado=actividad.curso.grado)
+        
+        # Solo alumnas activas
+        asignaciones = AsignacionCiclo.objects.filter(grado=actividad.curso.grado, alumna__estado=True)
 
         errores = []
         for asignacion in asignaciones:

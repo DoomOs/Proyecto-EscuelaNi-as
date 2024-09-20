@@ -1,0 +1,31 @@
+{% extends 'BaseInicio/base.html' %}
+{% block content %}
+<h2>Listado de Alumnas Inactivas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Asignación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alumna in alumnas %}
+        <tr>
+            <td>{{ alumna.codigo }}</td>
+            <td>{{ alumna.persona.nombre }}</td>
+            <td>{{ alumna.persona.apellido }}</td>
+            <td>{{ alumna.edad }}</td>
+            <td>{{ alumna.asignacion }}</td>
+            <td>
+                <a href="{% url 'alumna-activar' alumna.id %}" class="btn btn-success">Activar</a>  <!-- Botón para activar -->
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
