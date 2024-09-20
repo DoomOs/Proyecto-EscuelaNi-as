@@ -17,6 +17,7 @@ class Persona(models.Model):
 class Alumna(models.Model):
     persona = models.OneToOneField(Persona, on_delete=models.CASCADE)
     codigo = models.CharField(max_length=30)
+    estado = models.BooleanField(default=True) 
 
     def __str__(self):
         return self.codigo

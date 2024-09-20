@@ -209,6 +209,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -2043,7 +2059,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadListView(LoginRequiredMixin, ListView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_list.html'\nclass CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    template_name = 'calificar_alumno_list.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        actividad_id = self.kwargs['actividad_id']\n        actividad = get_object_or_404(Actividad, id=actividad_id)\n        asignaciones = AsignacionCiclo.objects.filter(grado=actividad.curso.grado)",
+        "peekOfCode": "class CalificacionActividadListView(LoginRequiredMixin, ListView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_list.html'\nclass CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    template_name = 'calificar_alumno_list.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        actividad_id = self.kwargs['actividad_id']\n        actividad = get_object_or_404(Actividad, id=actividad_id)\n        # Solo alumnas activas",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2052,7 +2068,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    template_name = 'calificar_alumno_list.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        actividad_id = self.kwargs['actividad_id']\n        actividad = get_object_or_404(Actividad, id=actividad_id)\n        asignaciones = AsignacionCiclo.objects.filter(grado=actividad.curso.grado)\n        # Filtrando alumnos calificados y no calificados\n        alumnos_calificados = CalificacionActividad.objects.filter(actividad=actividad)\n        alumnos_no_calificados = asignaciones.exclude(id__in=alumnos_calificados.values_list('asignacion_ciclo', flat=True))",
+        "peekOfCode": "class CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    template_name = 'calificar_alumno_list.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        actividad_id = self.kwargs['actividad_id']\n        actividad = get_object_or_404(Actividad, id=actividad_id)\n        # Solo alumnas activas\n        asignaciones = AsignacionCiclo.objects.filter(grado=actividad.curso.grado, alumna__estado=True)\n        # Filtrando alumnos calificados y no calificados\n        alumnos_calificados = CalificacionActividad.objects.filter(actividad=actividad)",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2867,6 +2883,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Persona.migrations.0004_alumna_estado",
+        "description": "Persona.migrations.0004_alumna_estado",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"Persona\", \"0003_remove_contacto_persona_remove_contacto_user_and_more\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"alumna\",\n            name=\"estado\",\n            field=models.BooleanField(default=True),\n        ),",
+        "detail": "Persona.migrations.0004_alumna_estado",
+        "documentation": {}
+    },
+    {
         "label": "PersonaConfig",
         "kind": 6,
         "importPath": "Persona.apps",
@@ -2916,7 +2941,7 @@
         "kind": 6,
         "importPath": "Persona.models",
         "description": "Persona.models",
-        "peekOfCode": "class Alumna(models.Model):\n    persona = models.OneToOneField(Persona, on_delete=models.CASCADE)\n    codigo = models.CharField(max_length=30)\n    def __str__(self):\n        return self.codigo\nclass Contacto(models.Model):\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)\n    nombre = models.CharField(max_length=100)\n    apellido = models.CharField(max_length=100)\n    parentesco = models.CharField(max_length=100)",
+        "peekOfCode": "class Alumna(models.Model):\n    persona = models.OneToOneField(Persona, on_delete=models.CASCADE)\n    codigo = models.CharField(max_length=30)\n    estado = models.BooleanField(default=True) \n    def __str__(self):\n        return self.codigo\nclass Contacto(models.Model):\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)\n    nombre = models.CharField(max_length=100)\n    apellido = models.CharField(max_length=100)",
         "detail": "Persona.models",
         "documentation": {}
     },
@@ -2934,7 +2959,7 @@
         "kind": 5,
         "importPath": "Persona.urls",
         "description": "Persona.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', alumna_list_view, name='alumna-list'),\n    path('alumna/create/', alumna_create_view, name='alumna-create'),\n    path('<int:alumna_id>/editar/', alumna_edit_view, name='alumna-edit'),\n    path('persona/create/', persona_create_view, name='persona-create'),\n    path('contacto/create/<int:alumna_id>/', contacto_create_view, name='contacto-create'),\n    path('contacto/edit/<int:contacto_id>/', contacto_edit_view, name='contacto-edit'),\n    path('contacto/delete/<int:contacto_id>/', contacto_delete_view, name='contacto-delete'),\n    ]",
+        "peekOfCode": "urlpatterns = [\n    path('', alumna_list_view, name='alumna-list'),\n    path('alumna/create/', alumna_create_view, name='alumna-create'),\n    path('<int:alumna_id>/editar/', alumna_edit_view, name='alumna-edit'),\n    path('persona/create/', persona_create_view, name='persona-create'),\n    path('contacto/create/<int:alumna_id>/', contacto_create_view, name='contacto-create'),\n    path('contacto/edit/<int:contacto_id>/', contacto_edit_view, name='contacto-edit'),\n    path('contacto/delete/<int:contacto_id>/', contacto_delete_view, name='contacto-delete'),\n    path('alumnas/inactivas/', alumna_inactive_list_view, name='alumna-inactive-list'),\n    path('alumna/desactivar/<int:alumna_id>/', desactivar_alumna_view, name='alumna-desactivar'),",
         "detail": "Persona.urls",
         "documentation": {}
     },
@@ -2988,7 +3013,34 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_list_view(request):\n    alumnas = Alumna.objects.all()\n    for alumna in alumnas:\n        alumna.edad = now().year - alumna.persona.fecha_nacimiento.year\n        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).first()\n        alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'\n    return render(request, 'alumna_list.html', {\n        'alumnas': alumnas\n    })\ndef alumna_edit_view(request, alumna_id):",
+        "peekOfCode": "def alumna_list_view(request):\n    alumnas = Alumna.objects.filter(estado=True)\n    for alumna in alumnas:\n        alumna.edad = now().year - alumna.persona.fecha_nacimiento.year\n        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).first()\n        alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'\n    return render(request, 'alumna_list.html', {\n        'alumnas': alumnas\n    })\ndef alumna_inactive_list_view(request):",
+        "detail": "Persona.views",
+        "documentation": {}
+    },
+    {
+        "label": "alumna_inactive_list_view",
+        "kind": 2,
+        "importPath": "Persona.views",
+        "description": "Persona.views",
+        "peekOfCode": "def alumna_inactive_list_view(request):\n    alumnas = Alumna.objects.filter(estado=False)  # Solo alumnas inactivas\n    for alumna in alumnas:\n        alumna.edad = now().year - alumna.persona.fecha_nacimiento.year\n        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).first()\n        alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'\n    return render(request, 'alumna_inactive_list.html', {'alumnas': alumnas})\ndef desactivar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = False",
+        "detail": "Persona.views",
+        "documentation": {}
+    },
+    {
+        "label": "desactivar_alumna_view",
+        "kind": 2,
+        "importPath": "Persona.views",
+        "description": "Persona.views",
+        "peekOfCode": "def desactivar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = False\n    alumna.save()\n    return redirect('alumna-list')  # Redirige al listado de alumnas activas\ndef activar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = True\n    alumna.save()\n    return redirect('alumna-inactive-list')  # Redirige al listado de alumnas inactivas",
+        "detail": "Persona.views",
+        "documentation": {}
+    },
+    {
+        "label": "activar_alumna_view",
+        "kind": 2,
+        "importPath": "Persona.views",
+        "description": "Persona.views",
+        "peekOfCode": "def activar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = True\n    alumna.save()\n    return redirect('alumna-inactive-list')  # Redirige al listado de alumnas inactivas\ndef alumna_edit_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    persona = alumna.persona\n    if request.method == 'POST':\n        # Incluye el valor del campo oculto 'persona' en los datos del formulario",
         "detail": "Persona.views",
         "documentation": {}
     },

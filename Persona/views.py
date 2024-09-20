@@ -92,7 +92,7 @@ def contacto_delete_view(request, contacto_id):
 
 
 def alumna_list_view(request):
-    alumnas = Alumna.objects.all()
+    alumnas = Alumna.objects.filter(estado=True)
     for alumna in alumnas:
         alumna.edad = now().year - alumna.persona.fecha_nacimiento.year
         asignacion = AsignacionCiclo.objects.filter(alumna=alumna).first()
@@ -102,6 +102,29 @@ def alumna_list_view(request):
         'alumnas': alumnas
     })
     
+    
+def alumna_inactive_list_view(request):
+    alumnas = Alumna.objects.filter(estado=False)  # Solo alumnas inactivas
+    for alumna in alumnas:
+        alumna.edad = now().year - alumna.persona.fecha_nacimiento.year
+        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).first()
+        alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'
+
+    return render(request, 'alumna_inactive_list.html', {'alumnas': alumnas})
+
+    
+
+def desactivar_alumna_view(request, alumna_id):
+    alumna = get_object_or_404(Alumna, id=alumna_id)
+    alumna.estado = False
+    alumna.save()
+    return redirect('alumna-list')  # Redirige al listado de alumnas activas
+
+def activar_alumna_view(request, alumna_id):
+    alumna = get_object_or_404(Alumna, id=alumna_id)
+    alumna.estado = True
+    alumna.save()
+    return redirect('alumna-inactive-list')  # Redirige al listado de alumnas inactivas
     
     
 
