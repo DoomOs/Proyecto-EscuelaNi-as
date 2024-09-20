@@ -45,7 +45,7 @@
     </div>
     <!-- Botones de Exportación -->
     <div class="mb-4 text-end">
-        <a id="export-button" href="{% url 'exportar_calificaciones' alumna.id %}?grado=&year=&curso=" class="btn btn-success">Exportar a Excel</a>
+        <a id="export-button" href="{% url 'exportar_calificaciones' alumna.id %}?grado=&year=&curso=" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Exportar a Excel</a>
     </div>
     <div class="mb-4 text-end">
         <a id="export-punteo-button" href="{% url 'exportar_punteo_acumulado' alumna.id %}?grado=&year=&curso=" class="btn btn-primary">Exportar Punteo Acumulado</a>

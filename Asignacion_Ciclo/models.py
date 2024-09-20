@@ -4,7 +4,6 @@ from Curso.models import Grado
 from Persona.models import Alumna
 from user.models import User
 
-# Create your models here.
 class AsignacionCiclo(models.Model):
     grado = models.ForeignKey(Grado, on_delete=models.CASCADE)
     alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)
@@ -12,7 +11,7 @@ class AsignacionCiclo(models.Model):
     year = models.IntegerField()
 
     class Meta:
-        unique_together = ('alumna', 'year')
+        unique_together = ('alumna', 'grado', 'year')  # Modificamos la restricción de unicidad
 
     def __str__(self):
         return f"{self.alumna.persona.nombre} {self.alumna.persona.apellido} - {self.grado.nombre_grado} ({self.year})"

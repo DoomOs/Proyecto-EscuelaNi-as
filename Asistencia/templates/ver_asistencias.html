@@ -17,6 +17,13 @@
                 <td>{{ asistencia.fecha }}</td>
                 <td>
                     <a href="{% url 'detalle_asistencia' asistencia.fecha %}" class="btn btn-primary">Ver</a>
+                    <a href="{% url 'generar_pdf' asistencia.fecha %}" class="btn btn-danger">
+                        <i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF
+                    </a>
+                    <a href="{% url 'generar_excel' asistencia.fecha %}" class="btn btn-success">
+                        <i class="fa fa-file-excel-o" aria-hidden="true"></i> Excel
+                    </a>
+
                 </td>
             </tr>
             {% endfor %}

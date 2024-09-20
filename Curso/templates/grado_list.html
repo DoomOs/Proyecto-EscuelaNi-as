@@ -21,7 +21,7 @@
                 <td>
                     <a href="{% url 'grado-update' grado.id %}" class="btn btn-warning btn-sm">Editar</a>
                     <button class="btn btn-danger btn-sm" onclick="confirmDeletion({{ grado.id }}, '{{ grado.nombre_grado }}')">Desactivar</button>
-
+                    <a href="{% url 'asignar-alumnas' grado.id %}" class="btn btn-info btn-sm">Asignar Alumnas</a>
                 </td>
             </tr>
             {% endfor %}

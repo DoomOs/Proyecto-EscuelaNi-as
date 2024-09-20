@@ -2,33 +2,12 @@
 {% load static %}
 
 {% block content %}
-
-
-<form method="GET">
-    <div class="form-row">
-        <div class="col">
-            <input type="text" name="alumno" class="form-control" placeholder="Alumno">
-        </div>
-        <div class="col">
-            <input type="text" name="curso" class="form-control" placeholder="Curso">
-        </div>
-        <div class="col">
-            <input type="date" name="fecha" class="form-control">
-        </div>
-        <div class="col">
-            <input type="text" name="ciclo" class="form-control" placeholder="Ciclo">
-        </div>
-        <div class="col">
-            <button type="submit" class="btn btn-primary">Filtrar</button>
-        </div>
-    </div>
-</form>
-
-
-
 <div class="container mt-4">
     <h1>Listado de Calificaciones de Actividad</h1>
-    <table class="table table-striped">
+
+    <input type="text" id="buscador" class="form-control" placeholder="Buscar " onkeyup="filtrarCalificaciones()">
+
+    <table class="table table-striped mt-3" id="tabla-calificaciones">
         <thead>
             <tr>
                 <th>ID</th>
@@ -56,4 +35,30 @@
         </tbody>
     </table>
 </div>
+
+<script>
+function filtrarCalificaciones() {
+    const input = document.getElementById('buscador');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('tabla-calificaciones');
+    const tr = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < tr.length; i++) { // Empezar desde 1 para omitir el encabezado
+        const td = tr[i].getElementsByTagName('td');
+        let mostrar = false;
+
+        for (let j = 0; j < td.length; j++) {
+            if (td[j]) {
+                const textoValor = td[j].textContent || td[j].innerText;
+                if (textoValor.toLowerCase().indexOf(filter) > -1) {
+                    mostrar = true;
+                    break;
+                }
+            }
+        }
+        
+        tr[i].style.display = mostrar ? "" : "none";
+    }
+}
+</script>
 {% endblock %}
