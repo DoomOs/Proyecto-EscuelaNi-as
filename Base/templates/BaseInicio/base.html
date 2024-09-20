@@ -90,14 +90,24 @@
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-id-card-o "></i>Cursos y Grados</a>
+                            aria-expanded="false"> <i class="menu-icon fa fa-id-card-o "></i>Cursos</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="{% url 'curso-create' %}">Crear Curso</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="{% url 'curso-list' %}">Lista Cursos Activos</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="{% url 'curso-inactivo-list' %}">Lista Cursos Inactivos</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-id-card-o "></i>Grados</a>
+                        <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="{% url 'grado-create' %}">Crear Grado</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="{% url 'grado-list' %}">Lista Grado Activo</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="{% url 'grado-inactivo-list' %}">Lista Grado Inactivo</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{% url 'asignar-grado-usuario' %}">Grado Docente</a></li>
                         </ul>
                     </li>
                     

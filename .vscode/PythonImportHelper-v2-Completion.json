@@ -73,6 +73,14 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -754,6 +762,14 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "HttpResponseRedirect",
         "importPath": "django.http",
         "description": "django.http",
@@ -835,6 +851,14 @@
     },
     {
         "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -1027,6 +1051,30 @@
     },
     {
         "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Max",
         "importPath": "django.db.models",
         "description": "django.db.models",
         "isExtraImport": true,
@@ -1546,6 +1594,14 @@
         "documentation": {}
     },
     {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
         "label": "login_required",
         "importPath": "django.contrib.auth.decorators",
         "description": "django.contrib.auth.decorators",
@@ -1559,6 +1615,78 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "letter",
+        "importPath": "reportlab.lib.pagesizes",
+        "description": "reportlab.lib.pagesizes",
+        "isExtraImport": true,
+        "detail": "reportlab.lib.pagesizes",
+        "documentation": {}
+    },
+    {
+        "label": "colors",
+        "importPath": "reportlab.lib",
+        "description": "reportlab.lib",
+        "isExtraImport": true,
+        "detail": "reportlab.lib",
+        "documentation": {}
+    },
+    {
+        "label": "inch",
+        "importPath": "reportlab.lib.units",
+        "description": "reportlab.lib.units",
+        "isExtraImport": true,
+        "detail": "reportlab.lib.units",
+        "documentation": {}
+    },
+    {
+        "label": "SimpleDocTemplate",
+        "importPath": "reportlab.platypus",
+        "description": "reportlab.platypus",
+        "isExtraImport": true,
+        "detail": "reportlab.platypus",
+        "documentation": {}
+    },
+    {
+        "label": "Table",
+        "importPath": "reportlab.platypus",
+        "description": "reportlab.platypus",
+        "isExtraImport": true,
+        "detail": "reportlab.platypus",
+        "documentation": {}
+    },
+    {
+        "label": "TableStyle",
+        "importPath": "reportlab.platypus",
+        "description": "reportlab.platypus",
+        "isExtraImport": true,
+        "detail": "reportlab.platypus",
+        "documentation": {}
+    },
+    {
+        "label": "canvas",
+        "importPath": "reportlab.pdfgen",
+        "description": "reportlab.pdfgen",
+        "isExtraImport": true,
+        "detail": "reportlab.pdfgen",
         "documentation": {}
     },
     {
@@ -2145,6 +2273,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Asignacion_Ciclo.migrations.0003_alter_asignacionciclo_unique_together",
+        "description": "Asignacion_Ciclo.migrations.0003_alter_asignacionciclo_unique_together",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"Asignacion_Ciclo\", \"0002_alter_asignacionciclo_unique_together\"),\n        (\"Curso\", \"0002_curso_estado_grado_estado\"),\n        (\"Persona\", \"0004_alumna_estado\"),\n    ]\n    operations = [\n        migrations.AlterUniqueTogether(\n            name=\"asignacionciclo\",\n            unique_together={(\"alumna\", \"grado\", \"year\")},",
+        "detail": "Asignacion_Ciclo.migrations.0003_alter_asignacionciclo_unique_together",
+        "documentation": {}
+    },
+    {
         "label": "AsignacionCicloConfig",
         "kind": 6,
         "importPath": "Asignacion_Ciclo.apps",
@@ -2167,7 +2304,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.models",
         "description": "Asignacion_Ciclo.models",
-        "peekOfCode": "class AsignacionCiclo(models.Model):\n    grado = models.ForeignKey(Grado, on_delete=models.CASCADE)\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    year = models.IntegerField()\n    class Meta:\n        unique_together = ('alumna', 'year')\n    def __str__(self):\n        return f\"{self.alumna.persona.nombre} {self.alumna.persona.apellido} - {self.grado.nombre_grado} ({self.year})\"",
+        "peekOfCode": "class AsignacionCiclo(models.Model):\n    grado = models.ForeignKey(Grado, on_delete=models.CASCADE)\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    year = models.IntegerField()\n    class Meta:\n        unique_together = ('alumna', 'grado', 'year')  # Modificamos la restricción de unicidad\n    def __str__(self):\n        return f\"{self.alumna.persona.nombre} {self.alumna.persona.apellido} - {self.grado.nombre_grado} ({self.year})\"",
         "detail": "Asignacion_Ciclo.models",
         "documentation": {}
     },
@@ -2176,7 +2313,7 @@
         "kind": 5,
         "importPath": "Asignacion_Ciclo.urls",
         "description": "Asignacion_Ciclo.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', AsignacionCicloListView, name='asignacionciclo-list'),\n    #path('nueva/', AsignacionCicloCreateView.as_view(), name='asignacionciclo-create'),\n    path('<int:pk>/editar/', AsignacionCicloUpdateView.as_view(), name='asignacionciclo-update'),\n    path('<int:pk>/eliminar/', AsignacionCicloDeleteView.as_view(), name='asignacionciclo-delete'),\n    path('asignar/<int:pk>/', AsignacionCicloCreateView.as_view(), name='asignacionciclo-create'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', AsignacionCicloListView, name='asignacionciclo-list'),\n    #path('nueva/', AsignacionCicloCreateView.as_view(), name='asignacionciclo-create'),\n    path('<int:pk>/editar/', AsignacionCicloUpdateView.as_view(), name='asignacionciclo-update'),\n    path('<int:pk>/eliminar/', AsignacionCicloDeleteView.as_view(), name='asignacionciclo-delete'),\n    path('asignar/<int:pk>/', AsignacionCicloCreateView.as_view(), name='asignacionciclo-create'),\n     # URL para asignar alumnas al ciclo de un grado\n    path('grado/<int:grado_id>/asignar-alumnas/', asignar_alumnas, name='asignar-alumnas'),\n    # URL para asignar el ciclo al docente (user)\n    path('asignar-grado-usuario/', asignar_grado_usuario, name='asignar-grado-usuario'),",
         "detail": "Asignacion_Ciclo.urls",
         "documentation": {}
     },
@@ -2203,7 +2340,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):\n    model = AsignacionCiclo\n    template_name = 'asignacion_ciclo_confirm_delete.html'\n    success_url = reverse_lazy('asignacionciclo-list')",
+        "peekOfCode": "class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):\n    model = AsignacionCiclo\n    template_name = 'asignacion_ciclo_confirm_delete.html'\n    success_url = reverse_lazy('asignacionciclo-list')\n@login_required\ndef asignar_alumnas(request, grado_id):\n    grado = Grado.objects.get(id=grado_id)\n    year_actual = timezone.localtime(timezone.now()).year\n    # Alumnas asignadas al grado\n    alumnas_asignadas = AsignacionCiclo.objects.filter(grado=grado, year=year_actual)",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2213,6 +2350,24 @@
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
         "peekOfCode": "def AsignacionCicloListView(request):\n    query = Q()\n    grados = Grado.objects.all()\n    year = request.GET.get('year')\n    grado = request.GET.get('grado')\n    search_query = request.GET.get('q')\n    if year:\n        query &= Q(year=year)\n    if grado:\n        query &= Q(grado__id=grado)",
+        "detail": "Asignacion_Ciclo.views",
+        "documentation": {}
+    },
+    {
+        "label": "asignar_alumnas",
+        "kind": 2,
+        "importPath": "Asignacion_Ciclo.views",
+        "description": "Asignacion_Ciclo.views",
+        "peekOfCode": "def asignar_alumnas(request, grado_id):\n    grado = Grado.objects.get(id=grado_id)\n    year_actual = timezone.localtime(timezone.now()).year\n    # Alumnas asignadas al grado\n    alumnas_asignadas = AsignacionCiclo.objects.filter(grado=grado, year=year_actual)\n    # Alumnas activas que no están asignadas al grado\n    alumnas_no_asignadas = Alumna.objects.filter(estado=True).exclude(id__in=alumnas_asignadas.values_list('alumna_id', flat=True))\n    if request.method == 'POST':\n        alumna_id = request.POST.get('alumna_id')\n        accion = request.POST.get('accion')",
+        "detail": "Asignacion_Ciclo.views",
+        "documentation": {}
+    },
+    {
+        "label": "asignar_grado_usuario",
+        "kind": 2,
+        "importPath": "Asignacion_Ciclo.views",
+        "description": "Asignacion_Ciclo.views",
+        "peekOfCode": "def asignar_grado_usuario(request):\n    user = request.user  # Usuario logueado\n    grados_activos = Grado.objects.filter(estado=True)  \n    if request.method == 'POST':\n        grado_id = request.POST.get('grado')  \n        if grado_id:\n            user.id_ciclo = grado_id  \n            user.save()  \n        return redirect('grado-list')  \n    context = {",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2257,7 +2412,7 @@
         "kind": 5,
         "importPath": "Asistencia.urls",
         "description": "Asistencia.urls",
-        "peekOfCode": "urlpatterns = [\n    path('asistencia/', views.lista_asistencia, name='lista_asistencia'),\n    path('asistencia/ver/', views.ver_asistencias, name='ver_asistencias'),\n    path('asistencia/actualizar/<int:asignacion_id>/<int:presente>/', views.actualizar_asistencia, name='actualizar_asistencia'),\n    path('asistencia/<str:fecha>/', views.detalle_asistencia, name='detalle_asistencia'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('asistencia/', views.lista_asistencia, name='lista_asistencia'),\n    path('asistencia/ver/', views.ver_asistencias, name='ver_asistencias'),\n    path('asistencia/actualizar/<int:asignacion_id>/<int:presente>/', views.actualizar_asistencia, name='actualizar_asistencia'),\n    path('asistencia/<str:fecha>/', views.detalle_asistencia, name='detalle_asistencia'),\n     path('asistencia/pdf/<str:fecha>/', views.generar_pdf, name='generar_pdf'),\n    path('asistencia/excel/<str:fecha>/', views.generar_excel, name='generar_excel'),\n]",
         "detail": "Asistencia.urls",
         "documentation": {}
     },
@@ -2266,7 +2421,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def lista_asistencia(request):\n    hoy = timezone.localtime(timezone.now()).date()\n    asignaciones = AsignacionCiclo.objects.filter(user=request.user, year=hoy.year)\n    asistencias_hoy = Asistencia.objects.filter(fecha=hoy, asignacion_ciclo__in=asignaciones)\n    asignaciones_sin_asistencia = asignaciones.exclude(id__in=asistencias_hoy.values_list('asignacion_ciclo_id', flat=True))\n    context = {\n        'asignaciones_sin_asistencia': asignaciones_sin_asistencia,\n        'asistencias_hoy': asistencias_hoy,\n        'hoy': hoy,\n    }",
+        "peekOfCode": "def lista_asistencia(request):\n    hoy = timezone.localtime(timezone.now()).date()\n    user = request.user  # Usuario logueado\n    # Obtener el grado asignado al usuario (docente)\n    grado_usuario = user.id_ciclo\n    if grado_usuario is not None:\n        # Filtrar asignaciones de alumnas activas que pertenecen al grado del usuario logueado\n        asignaciones = AsignacionCiclo.objects.filter(grado_id=grado_usuario, year=hoy.year, alumna__estado=True)\n        # Asistencias registradas hoy\n        asistencias_hoy = Asistencia.objects.filter(fecha=hoy, asignacion_ciclo__in=asignaciones)",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2293,7 +2448,25 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def detalle_asistencia(request, fecha):\n    asistencias = Asistencia.objects.filter(fecha=fecha, asignacion_ciclo__user=request.user)\n    context = {\n        'asistencias': asistencias,\n        'fecha': fecha,\n    }\n    return render(request, 'detalle_asistencia.html', context)",
+        "peekOfCode": "def detalle_asistencia(request, fecha):\n    asistencias = Asistencia.objects.filter(fecha=fecha, asignacion_ciclo__user=request.user)\n    context = {\n        'asistencias': asistencias,\n        'fecha': fecha,\n    }\n    return render(request, 'detalle_asistencia.html', context)\n@login_required\ndef generar_pdf(request, fecha):\n    # Filtrar asistencias por fecha",
+        "detail": "Asistencia.views",
+        "documentation": {}
+    },
+    {
+        "label": "generar_pdf",
+        "kind": 2,
+        "importPath": "Asistencia.views",
+        "description": "Asistencia.views",
+        "peekOfCode": "def generar_pdf(request, fecha):\n    # Filtrar asistencias por fecha\n    asistencias = Asistencia.objects.filter(fecha=fecha)\n    # Crear el PDF\n    response = HttpResponse(content_type='application/pdf')\n    response['Content-Disposition'] = f'attachment; filename=\"asistencia_{fecha}.pdf\"'\n    pdf = SimpleDocTemplate(response, pagesize=letter)\n    elements = []\n    # Títulos de la tabla\n    data = [[\"Alumno\", \"Presente\"]]",
+        "detail": "Asistencia.views",
+        "documentation": {}
+    },
+    {
+        "label": "generar_excel",
+        "kind": 2,
+        "importPath": "Asistencia.views",
+        "description": "Asistencia.views",
+        "peekOfCode": "def generar_excel(request, fecha):\n    # Filtrar asistencias por fecha\n    asistencias = Asistencia.objects.filter(fecha=fecha)\n    # Crear un DataFrame\n    data = {\n        'Alumno': [],\n        'Presente': [],\n    }\n    for asistencia in asistencias:\n        alumno = asistencia.asignacion_ciclo.alumna",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -3004,7 +3177,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def contacto_delete_view(request, contacto_id):\n    contacto = get_object_or_404(Contacto, id=contacto_id)\n    if request.method == 'POST':\n        alumno_id = contacto.alumna.id\n        contacto.delete()\n        messages.success(request, 'Contacto eliminado correctamente.')\n        return redirect('contacto-create', alumna_id=alumno_id)\n    # Si no es POST, no debe llegar a esta vista por el enlace\n    return redirect('contacto-create', alumna_id=contacto.alumna.id)\ndef alumna_list_view(request):",
+        "peekOfCode": "def contacto_delete_view(request, contacto_id):\n    contacto = get_object_or_404(Contacto, id=contacto_id)\n    if request.method == 'POST':\n        alumno_id = contacto.alumna.id\n        contacto.delete()\n        messages.success(request, 'Contacto eliminado correctamente.')\n        return redirect('contacto-create', alumna_id=alumno_id)\n    # Si no es POST, no debe llegar a esta vista por el enlace\n    return redirect('contacto-create', alumna_id=contacto.alumna.id)\n@login_required",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3013,7 +3186,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_list_view(request):\n    alumnas = Alumna.objects.filter(estado=True)\n    for alumna in alumnas:\n        alumna.edad = now().year - alumna.persona.fecha_nacimiento.year\n        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).first()\n        alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'\n    return render(request, 'alumna_list.html', {\n        'alumnas': alumnas\n    })\ndef alumna_inactive_list_view(request):",
+        "peekOfCode": "def alumna_list_view(request):\n    user = request.user  # Obtener el usuario logueado\n    grado_usuario_id = user.id_ciclo  # Obtener el grado asignado al usuario\n    # Obtener todas las alumnas activas\n    alumnas = Alumna.objects.filter(estado=True)\n    # Crear un diccionario para almacenar la mejor asignación por alumna\n    mejor_asignacion = {}\n    for alumna in alumnas:\n        # Obtener todas las asignaciones de la alumna, ordenadas por grado (mayor ID primero)\n        asignaciones = AsignacionCiclo.objects.filter(alumna=alumna).order_by('-grado_id')",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3022,7 +3195,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_inactive_list_view(request):\n    alumnas = Alumna.objects.filter(estado=False)  # Solo alumnas inactivas\n    for alumna in alumnas:\n        alumna.edad = now().year - alumna.persona.fecha_nacimiento.year\n        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).first()\n        alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'\n    return render(request, 'alumna_inactive_list.html', {'alumnas': alumnas})\ndef desactivar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = False",
+        "peekOfCode": "def alumna_inactive_list_view(request):\n    alumnas = Alumna.objects.filter(estado=False)  # Solo alumnas inactivas\n    for alumna in alumnas:\n        alumna.edad = now().year - alumna.persona.fecha_nacimiento.year\n        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).last()\n        alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'\n    return render(request, 'alumna_inactive_list.html', {'alumnas': alumnas})\ndef desactivar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = False",
         "detail": "Persona.views",
         "documentation": {}
     },

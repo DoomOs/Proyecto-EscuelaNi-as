@@ -1,0 +1,64 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Asignación de Alumnas al Grado {{ grado.nombre_grado }} ({{ year_actual }})</h2>
+
+    <!-- Tabla de Alumnas No Asignadas -->
+    <div class="table-responsive">
+        <h4>Alumnas No Asignadas</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th>Alumno</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for alumna in alumnas_no_asignadas %}
+                <tr class="text-center">
+                    <td>{{ alumna.persona.nombre }} {{ alumna.persona.apellido }}</td>
+                    <td>
+                        <form method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="alumna_id" value="{{ alumna.id }}">
+                            <input type="hidden" name="accion" value="agregar">
+                            <button type="submit" class="btn btn-success">Asignar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Tabla de Alumnas Asignadas -->
+    <div class="table-responsive">
+        <h4>Alumnas Asignadas</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th>Alumno</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asignacion in alumnas_asignadas %}
+                <tr class="text-center">
+                    <td>{{ asignacion.alumna.persona.nombre }} {{ asignacion.alumna.persona.apellido }}</td>
+                    <td>
+                        <form method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="alumna_id" value="{{ asignacion.alumna.id }}">
+                            <input type="hidden" name="accion" value="remover">
+                            <button type="submit" class="btn btn-danger">Quitar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

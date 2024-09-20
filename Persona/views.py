@@ -10,6 +10,8 @@ from .forms import PersonaForm, AlumnaForm, ContactoForm
 from django.contrib import messages
 from django.urls import reverse
 from django.utils.timezone import now
+from django.db.models import Max, Q
+from django.contrib.auth.decorators import login_required
 
 def persona_create_view(request):
     if request.method == 'POST':
@@ -91,23 +93,60 @@ def contacto_delete_view(request, contacto_id):
     return redirect('contacto-create', alumna_id=contacto.alumna.id)
 
 
+@login_required
 def alumna_list_view(request):
+    user = request.user  # Obtener el usuario logueado
+    grado_usuario_id = user.id_ciclo  # Obtener el grado asignado al usuario
+
+    # Obtener todas las alumnas activas
     alumnas = Alumna.objects.filter(estado=True)
+
+    # Crear un diccionario para almacenar la mejor asignación por alumna
+    mejor_asignacion = {}
+
     for alumna in alumnas:
+        # Obtener todas las asignaciones de la alumna, ordenadas por grado (mayor ID primero)
+        asignaciones = AsignacionCiclo.objects.filter(alumna=alumna).order_by('-grado_id')
+
+        if asignaciones.exists():
+            mejor_asignacion[alumna.id] = asignaciones.first()  # Tomar la mejor asignación
+        else:
+            mejor_asignacion[alumna.id] = None  # Sin asignación
+
+    # Listas para alumnas en el mismo grado y las demás
+    alumnas_en_mismo_grado = []
+    alumnas_otros_grados = []
+
+    for alumna in alumnas:
+        asignacion = mejor_asignacion[alumna.id]
+        if asignacion:
+            alumna.asignacion = asignacion.grado.nombre_grado
+        else:
+            alumna.asignacion = 'No asignada'
+
+        # Calcular la edad
         alumna.edad = now().year - alumna.persona.fecha_nacimiento.year
-        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).first()
-        alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'
-    
+
+        # Agregar a la lista correspondiente
+        if asignacion and asignacion.grado.id == grado_usuario_id:
+            alumnas_en_mismo_grado.append(alumna)
+        else:
+            alumnas_otros_grados.append(alumna)
+
+    # Combinar las listas, priorizando las alumnas en el mismo grado
+    alumnas_finales = alumnas_en_mismo_grado + alumnas_otros_grados
+
     return render(request, 'alumna_list.html', {
-        'alumnas': alumnas
+        'alumnas': alumnas_finales
     })
-    
+
+
     
 def alumna_inactive_list_view(request):
     alumnas = Alumna.objects.filter(estado=False)  # Solo alumnas inactivas
     for alumna in alumnas:
         alumna.edad = now().year - alumna.persona.fecha_nacimiento.year
-        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).first()
+        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).last()
         alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'
 
     return render(request, 'alumna_inactive_list.html', {'alumnas': alumnas})
