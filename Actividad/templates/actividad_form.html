@@ -3,12 +3,39 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h1>{% if object %}Editar{% else %}Nueva{% endif %} Actividad</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">{% if object %}Actualizar{% else %}Crear{% endif %}</button>
-        <a href="{% url 'actividad-list' %}" class="btn btn-secondary">Cancelar</a>
-    </form>
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h4 class="mb-0">{% if object %}Editar{% else %}Nueva{% endif %} Actividad</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            <label for="id_actividad" class="form-label">Actividad</label>
+                            {{ form.actividad }}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="id_punteo" class="form-label">Punteo</label>
+                            {{ form.punteo }}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="id_curso" class="form-label">Curso</label>
+                            {{ form.curso }}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="submit" class="btn btn-success me-2">{% if object %}Actualizar{% else %}Crear{% endif %}</button>
+                    <a href="{% url 'actividad-list' %}" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}

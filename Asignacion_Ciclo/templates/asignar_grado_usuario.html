@@ -2,37 +2,42 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <h2 class="text-center">Asignar Grado al Docente</h2>
-    
-    <div class="col-md-6 offset-md-3">
-        <form method="post">
-            {% csrf_token %}
-            
-            <div class="form-group">
-                <label for="username">Nombre de Docente</label>
-                <input type="text" class="form-control" id="username" value="{{ user.first_name }}" disabled>
-            </div>
-            
-            <div class="form-group">
-                <label for="username">Apellido de Docente</label>
-                <input type="text" class="form-control" id="username" value="{{ user.last_name }}" disabled>
-            </div>
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h4 class="mb-0">Asignar Grado al Docente</h4>
+        </div>
+        <div class="card-body">
+            <div class="col-md-8 offset-md-2">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <label for="nombre_docente">Nombre del Docente</label>
+                        <input type="text" class="form-control" id="nombre_docente" value="{{ user.first_name }}" disabled>
+                    </div>
+                    
+                    <div class="form-group mt-3">
+                        <label for="apellido_docente">Apellido del Docente</label>
+                        <input type="text" class="form-control" id="apellido_docente" value="{{ user.last_name }}" disabled>
+                    </div>
 
-            <div class="form-group">
-                <label for="grado">Seleccionar Grado</label>
-                <select class="form-control" id="grado" name="grado">
-                    <option value="">-- Selecciona un grado --</option>
-                    {% for grado in grados_activos %}
-                        <option value="{{ grado.id }}" {% if grado.id == user.id_ciclo %}selected{% endif %}>
-                            {{ grado.nombre_grado }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
+                    <div class="form-group mt-3">
+                        <label for="grado">Seleccionar Grado</label>
+                        <select class="form-control" id="grado" name="grado">
+                            <option value="">-- Selecciona un grado --</option>
+                            {% for grado in grados_activos %}
+                                <option value="{{ grado.id }}" {% if grado.id == user.id_ciclo %}selected{% endif %}>
+                                    {{ grado.nombre_grado }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Guardar</button>
-        </form>
+                    <button type="submit" class="btn btn-primary mt-3 w-100">Guardar</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

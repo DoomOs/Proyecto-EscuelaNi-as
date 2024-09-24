@@ -1,9 +1,56 @@
 {% extends 'BaseInicio/base.html' %}
 {% block content %}
-<h2>Crear Persona</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Guardar y Continuar</button>
-</form>
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h4 class="mb-0">Crear Persona</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            <label for="id_nombre" class="form-label">Nombre</label>
+                            {{ form.nombre }}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            <label for="id_apellido" class="form-label">Apellido</label>
+                            {{ form.apellido }}
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="id_fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                            {{ form.fecha_nacimiento }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="id_genero" class="form-label">Género</label>
+                            {{ form.genero }}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="id_direccion" class="form-label">Dirección</label>
+                            {{ form.direccion }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="submit" class="btn btn-primary">Guardar y Continuar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

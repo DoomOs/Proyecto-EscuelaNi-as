@@ -2952,7 +2952,7 @@
         "kind": 5,
         "importPath": "escuela.urls",
         "description": "escuela.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('',include('Web.urls')),\n    path('usuarios/',include('user.urls')),\n    path('login/',include('Login.urls')),\n    path('inicio/',include('Inicio.urls')), \n    path('Actividad/',include('Actividad.urls')), \n    path('Asignacion_Ciclo/',include('Asignacion_Ciclo.urls')), \n    path('Persona/',include('Persona.urls')), \n    path('Curso/',include('Curso.urls')), ",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('web',include('Web.urls')),\n    path('usuarios/',include('user.urls')),\n    path('',include('Login.urls')),\n    path('inicio/',include('Inicio.urls')), \n    path('Actividad/',include('Actividad.urls')), \n    path('Asignacion_Ciclo/',include('Asignacion_Ciclo.urls')), \n    path('Persona/',include('Persona.urls')), \n    path('Curso/',include('Curso.urls')), ",
         "detail": "escuela.urls",
         "documentation": {}
     },
