@@ -3014,7 +3014,7 @@
         "kind": 2,
         "importPath": "Login.views",
         "description": "Login.views",
-        "peekOfCode": "def login_in(request):\n   try:\n    if request.method == 'POST':\n        form = AuthenticationForm(request,data=request.POST)\n        if form.is_valid():\n            usuario = form.cleaned_data.get('username')\n            clave = form.cleaned_data.get('password')\n            user = authenticate(username=usuario,password=clave)\n            if user is not None :\n               if user.is_active:",
+        "peekOfCode": "def login_in(request):\n    \"\"\"\n        Maneja el proceso de inicio de sesión de un usuario.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene datos del formulario de inicio de sesión.\n    Retorna:\n        HttpResponse: Redirige a la página de inicio si las credenciales son válidas, o de lo contrario, renderiza el formulario de inicio de sesión con un mensaje de error.\n    Excepciones:\n        AttributeError: Si hay un problema al acceder a los datos del formulario, muestra un mensaje de error de credenciales inválidas.\n    Proceso:",
         "detail": "Login.views",
         "documentation": {}
     },
@@ -3023,7 +3023,7 @@
         "kind": 2,
         "importPath": "Login.views",
         "description": "Login.views",
-        "peekOfCode": "def logout_out(request):\n   try: \n    del request.session['member_id']\n    logout(request)\n    messages.success(request,'Sesion Finalizada con Exito')\n    return redirect('Login')\n   except AttributeError:\n     return redirect('/')",
+        "peekOfCode": "def logout_out(request):\n    \"\"\"\n        Maneja el proceso de cierre de sesión de un usuario.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene la información de la sesión del usuario.\n    Retorna:\n        HttpResponse: Redirige a la página de inicio de sesión después de cerrar la sesión.\n    Excepciones:\n        AttributeError: Si hay un problema al acceder a la sesión, redirige a la página principal.\n    Proceso:",
         "detail": "Login.views",
         "documentation": {}
     },
