@@ -2061,7 +2061,7 @@
         "kind": 6,
         "importPath": "Actividad.forms",
         "description": "Actividad.forms",
-        "peekOfCode": "class ActividadForm(forms.ModelForm):\n    class Meta:\n        model = Actividad\n        fields = ['actividad', 'punteo', 'curso']\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        # Filtrar los cursos activos en el campo 'curso'\n        self.fields['curso'].queryset = Curso.objects.filter(estado=1)\nclass CalificacionActividadForm(forms.ModelForm):\n    class Meta:",
+        "peekOfCode": "class ActividadForm(forms.ModelForm):\n    \"\"\"\nFormulario para crear o actualizar instancias del modelo `Actividad`.\nAtributos:\n    model (Actividad): El modelo asociado al formulario, que es `Actividad`.\n    fields (list): Lista de campos que serán incluidos en el formulario (`actividad`, `punteo`, `curso`).\nMétodos:\n    __init__: Inicializa el formulario. Sobrescribe el queryset del campo `curso` para mostrar solo los cursos activos.\n    Args:\n        *args: Argumentos posicionales.",
         "detail": "Actividad.forms",
         "documentation": {}
     },
@@ -2070,7 +2070,7 @@
         "kind": 6,
         "importPath": "Actividad.forms",
         "description": "Actividad.forms",
-        "peekOfCode": "class CalificacionActividadForm(forms.ModelForm):\n    class Meta:\n        model = CalificacionActividad\n        fields = '__all__'",
+        "peekOfCode": "class CalificacionActividadForm(forms.ModelForm):\n    \"\"\"\nFormulario para crear o actualizar instancias del modelo `CalificacionActividad`.\nAtributos:\n    model (CalificacionActividad): El modelo asociado al formulario, que es `CalificacionActividad`.\n    fields (str): Especifica que todos los campos del modelo serán incluidos en el formulario.\n\"\"\"\n    class Meta:\n        model = CalificacionActividad\n        fields = '__all__'",
         "detail": "Actividad.forms",
         "documentation": {}
     },
@@ -2079,7 +2079,7 @@
         "kind": 6,
         "importPath": "Actividad.models",
         "description": "Actividad.models",
-        "peekOfCode": "class Actividad(models.Model):\n    ACTIVIDAD_ESTADOS = (\n        (1, 'Activa'),\n        (0, 'Inactiva')\n    )\n    actividad = models.CharField(max_length=100)\n    punteo = models.IntegerField()\n    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)\n    fecha = models.DateField(auto_now_add=True)\n    estado = models.IntegerField(choices=ACTIVIDAD_ESTADOS, default=1)  # Estado por defecto: activa",
+        "peekOfCode": "class Actividad(models.Model):\n    \"\"\"\nModelo que representa una actividad asignada en un curso.\nAtributos:\n    ACTIVIDAD_ESTADOS (tuple): Opciones de estado de la actividad (activa o inactiva).\n    actividad (str): Nombre de la actividad, con un máximo de 100 caracteres.\n    punteo (int): Valor máximo de punteo asignado a la actividad.\n    curso (ForeignKey): Relación con el modelo `Curso`. La actividad pertenece a un curso específico.\n    fecha (date): Fecha en la que se creó la actividad, asignada automáticamente.\n    estado (int): Estado de la actividad (1 para activa, 0 para inactiva). Por defecto, el valor es 1 (activa).",
         "detail": "Actividad.models",
         "documentation": {}
     },
@@ -2088,7 +2088,7 @@
         "kind": 6,
         "importPath": "Actividad.models",
         "description": "Actividad.models",
-        "peekOfCode": "class CalificacionActividad(models.Model):\n    descripcion = models.CharField(max_length=100, null=True)\n    punteo = models.IntegerField()\n    actividad = models.ForeignKey(Actividad, on_delete=models.CASCADE)\n    asignacion_ciclo = models.ForeignKey(AsignacionCiclo, on_delete=models.CASCADE)\n    class Meta:\n        unique_together = ('actividad', 'asignacion_ciclo')\n    def __str__(self):\n        return f\"{self.asignacion_ciclo.alumna} - {self.descripcion}\"",
+        "peekOfCode": "class CalificacionActividad(models.Model):\n    \"\"\"\nModelo que representa la calificación de una actividad para una alumna específica.\nAtributos:\n    descripcion (str): Descripción de la calificación, con un máximo de 100 caracteres. Puede ser nula.\n    punteo (int): Punteo otorgado a la alumna para la actividad.\n    actividad (ForeignKey): Relación con el modelo `Actividad`. La calificación pertenece a una actividad específica.\n    asignacion_ciclo (ForeignKey): Relación con el modelo `AsignacionCiclo`. Identifica a la alumna a la que pertenece la calificación.\nMeta:\n    unique_together: Garantiza que cada alumna tenga una única calificación por actividad.",
         "detail": "Actividad.models",
         "documentation": {}
     },
@@ -2115,7 +2115,7 @@
         "kind": 5,
         "importPath": "Actividad.urls",
         "description": "Actividad.urls",
-        "peekOfCode": "urlpatterns = [\n    path('actividades/', ActividadListView.as_view(), name='actividad-list'),\n    path('actividades/nueva/', ActividadCreateView.as_view(), name='actividad-create'),\n    path('actividades/<int:pk>/editar/', ActividadUpdateView.as_view(), name='actividad-update'),\n    path('actividad/inactivar/<int:pk>/', ActividadInactivarView.as_view(), name='actividad-inactivar'),\n    path('reactivar/<int:actividad_id>/', ActividadReactivarView.as_view(), name='actividad-reactivar'),\n    path('actividades-inactivas/', ActividadInactivaListView.as_view(), name='actividad-inactiva-list'),\n    path('calificaciones/', CalificacionActividadListView.as_view(), name='calificacionactividad-list'),\n    path('calificaciones/nueva/', CalificacionActividadCreateView.as_view(), name='calificacionactividad-create'),\n    path('calificaciones/<int:pk>/editar/', CalificacionActividadUpdateView.as_view(), name='calificacionactividad-update'),",
+        "peekOfCode": "urlpatterns = [\n    path('actividades/', ActividadListView.as_view(), name='actividad-list'),\n    path('actividades/nueva/', ActividadCreateView.as_view(), name='actividad-create'),\n    path('actividades/<int:pk>/editar/', ActividadUpdateView.as_view(), name='actividad-update'),\n    path('actividad/inactivar/<int:pk>/', ActividadInactivarView.as_view(), name='actividad-inactivar'),\n    path('reactivar/<int:actividad_id>/', ActividadReactivarView.as_view(), name='actividad-reactivar'),\n    path('actividades-inactivas/', ActividadInactivaListView.as_view(), name='actividad-inactiva-list'),\n    path('calificaciones/', CalificacionActividadListView.as_view(), name='calificacionactividad-list'),\n    path('calificaciones/<int:pk>/editar/', CalificacionActividadUpdateView.as_view(), name='calificacionactividad-update'),\n    path('calificaciones/<int:pk>/eliminar/', CalificacionActividadDeleteView.as_view(), name='calificacionactividad-delete'),",
         "detail": "Actividad.urls",
         "documentation": {}
     },
@@ -2124,7 +2124,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadListView(LoginRequiredMixin, ListView):\n    model = Actividad\n    template_name = 'actividad_list.html'\n    context_object_name = 'actividades'\n    def get_queryset(self):\n        queryset = super().get_queryset().order_by('-fecha')  # Ordenar por fecha descendente\n        # Obtener parámetros de filtrado\n        curso_id = self.request.GET.get('curso')\n        fecha = self.request.GET.get('fecha')\n        if curso_id:",
+        "peekOfCode": "class ActividadListView(LoginRequiredMixin, ListView):\n    \"\"\"\n    ActividadListView muestra una lista de actividades activas ordenadas por fecha descendente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        ListView: Vista genérica para mostrar una lista de objetos.\n    Atributos:\n        model (Actividad): El modelo utilizado para generar la lista de actividades.\n        template_name (str): La plantilla utilizada para renderizar la vista de lista.\n        context_object_name (str): Nombre del contexto para acceder a las actividades en la plantilla.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2133,7 +2133,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadInactivaListView(LoginRequiredMixin, ListView):\n    model = Actividad\n    template_name = 'actividad_inactiva_list.html'\n    context_object_name = 'actividades'\n    def get_queryset(self):\n        queryset = super().get_queryset().order_by('-fecha')  # Ordenar por fecha descendente\n        # Obtener parámetro de filtrado\n        curso_id = self.request.GET.get('curso')\n        if curso_id:\n            queryset = queryset.filter(curso_id=curso_id)",
+        "peekOfCode": "class ActividadInactivaListView(LoginRequiredMixin, ListView):\n    \"\"\"\nActividadInactivaListView muestra una lista de actividades inactivas, ordenadas por fecha descendente.\nHereda:\n    LoginRequiredMixin: Requiere que el usuario esté autenticado.\n    ListView: Vista genérica para mostrar una lista de objetos.\nAtributos:\n    model (Actividad): El modelo utilizado para generar la lista de actividades.\n    template_name (str): La plantilla utilizada para renderizar la vista de lista.\n    context_object_name (str): Nombre del contexto para acceder a las actividades en la plantilla.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2142,7 +2142,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadInactivarView(View):\n    success_url = reverse_lazy('actividad-list')\n    def get(self, request, *args, **kwargs):\n        actividad = get_object_or_404(Actividad, pk=self.kwargs['pk'])\n        actividad.estado = 0  # Inactivar la actividad\n        actividad.save()\n        return redirect(self.success_url)\nclass ActividadReactivarView(View):\n    success_url = reverse_lazy('actividad-inactiva-list')\n    def get(self, request, *args, **kwargs):",
+        "peekOfCode": "class ActividadInactivarView(View):\n    \"\"\"\nActividadInactivarView inactiva una actividad específica.\nHereda:\n    View: Vista genérica de Django.\nAtributos:\n    success_url (str): URL a la que se redirige después de inactivar la actividad.\nMétodos:\n    get(request, *args, **kwargs):\n        Inactiva la actividad estableciendo su estado a 0 y redirige a la URL de éxito.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2151,7 +2151,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadReactivarView(View):\n    success_url = reverse_lazy('actividad-inactiva-list')\n    def get(self, request, *args, **kwargs):\n        actividad = get_object_or_404(Actividad, pk=self.kwargs['actividad_id'])\n        actividad.estado = 1  # Reactivar la actividad\n        actividad.save()\n        return redirect(self.success_url)\nclass ActividadCreateView(LoginRequiredMixin,CreateView):\n    model = Actividad\n    form_class = ActividadForm",
+        "peekOfCode": "class ActividadReactivarView(View):\n    \"\"\"\nActividadReactivarView reactiva una actividad inactiva.\nHereda:\n    View: Vista genérica de Django.\nAtributos:\n    success_url (str): URL a la que se redirige después de reactivar la actividad.\nMétodos:\n    get(request, *args, **kwargs):\n        Reactiva la actividad estableciendo su estado a 1 y redirige a la URL de éxito.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2160,7 +2160,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadCreateView(LoginRequiredMixin,CreateView):\n    model = Actividad\n    form_class = ActividadForm\n    template_name = 'actividad_form.html'\n    success_url = reverse_lazy('actividad-list')\nclass ActividadUpdateView(LoginRequiredMixin, UpdateView):\n    model = Actividad\n    form_class = ActividadForm\n    template_name = 'actividad_form.html'\n    success_url = reverse_lazy('actividad-list')",
+        "peekOfCode": "class ActividadCreateView(LoginRequiredMixin,CreateView):\n    \"\"\"\nActividadCreateView crea una nueva actividad.\nHereda:\n    LoginRequiredMixin: Requiere que el usuario esté autenticado.\n    CreateView: Vista genérica para crear un objeto.\nAtributos:\n    model (Actividad): El modelo para la creación de una nueva actividad.\n    form_class (ActividadForm): El formulario asociado a la creación de la actividad.\n    template_name (str): La plantilla utilizada para renderizar la vista de creación.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2169,7 +2169,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadUpdateView(LoginRequiredMixin, UpdateView):\n    model = Actividad\n    form_class = ActividadForm\n    template_name = 'actividad_form.html'\n    success_url = reverse_lazy('actividad-list')\nclass ActividadDeleteView(LoginRequiredMixin, DeleteView):\n    model = Actividad\n    template_name = 'actividad_confirm_delete.html'\n    success_url = reverse_lazy('actividad-list')\nclass CalificacionActividadListView(LoginRequiredMixin, ListView):",
+        "peekOfCode": "class ActividadUpdateView(LoginRequiredMixin, UpdateView):\n    \"\"\"\nActividadUpdateView actualiza una actividad existente.\nHereda:\n    LoginRequiredMixin: Requiere que el usuario esté autenticado.\n    UpdateView: Vista genérica para actualizar un objeto.\nAtributos:\n    model (Actividad): El modelo para la actualización de la actividad.\n    form_class (ActividadForm): El formulario asociado a la actualización de la actividad.\n    template_name (str): La plantilla utilizada para renderizar la vista de actualización.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2178,7 +2178,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadDeleteView(LoginRequiredMixin, DeleteView):\n    model = Actividad\n    template_name = 'actividad_confirm_delete.html'\n    success_url = reverse_lazy('actividad-list')\nclass CalificacionActividadListView(LoginRequiredMixin, ListView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_list.html'\nclass CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    template_name = 'calificar_alumno_list.html'\n    def get_context_data(self, **kwargs):",
+        "peekOfCode": "class ActividadDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\nActividadDeleteView elimina una actividad.\nHereda:\n    LoginRequiredMixin: Requiere que el usuario esté autenticado.\n    DeleteView: Vista genérica para eliminar un objeto.\nAtributos:\n    model (Actividad): El modelo para eliminar la actividad.\n    template_name (str): La plantilla utilizada para renderizar la confirmación de eliminación.\n    success_url (str): La URL a la que se redirige tras la eliminación exitosa.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2187,7 +2187,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadListView(LoginRequiredMixin, ListView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_list.html'\nclass CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    template_name = 'calificar_alumno_list.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        actividad_id = self.kwargs['actividad_id']\n        actividad = get_object_or_404(Actividad, id=actividad_id)\n        # Solo alumnas activas",
+        "peekOfCode": "class CalificacionActividadListView(LoginRequiredMixin, ListView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_list.html'\nclass CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    \"\"\"\nCalificarAlumnoView muestra la vista para calificar alumnas en una actividad.\nHereda:\n    LoginRequiredMixin: Requiere que el usuario esté autenticado.\n    TemplateView: Vista genérica para renderizar una plantilla con contexto personalizado.\nAtributos:",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2196,16 +2196,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    template_name = 'calificar_alumno_list.html'\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        actividad_id = self.kwargs['actividad_id']\n        actividad = get_object_or_404(Actividad, id=actividad_id)\n        # Solo alumnas activas\n        asignaciones = AsignacionCiclo.objects.filter(grado=actividad.curso.grado, alumna__estado=True)\n        # Filtrando alumnos calificados y no calificados\n        alumnos_calificados = CalificacionActividad.objects.filter(actividad=actividad)",
-        "detail": "Actividad.views",
-        "documentation": {}
-    },
-    {
-        "label": "CalificacionActividadCreateView",
-        "kind": 6,
-        "importPath": "Actividad.views",
-        "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadCreateView(LoginRequiredMixin, CreateView):\n    model = CalificacionActividad\n    form_class = CalificacionActividadForm\n    template_name = 'calificacionactividad_form.html'\n    def post(self, request, *args, **kwargs):\n        actividad = get_object_or_404(Actividad, id=self.kwargs['actividad_id'])\n        for asignacion in AsignacionCiclo.objects.filter(grado=actividad.curso.grado, year=actividad.curso.year):\n            punteo = request.POST.get(f'punteo_{asignacion.id}')\n            descripcion = request.POST.get(f'descripcion_{asignacion.id}')\n            if punteo and descripcion:",
+        "peekOfCode": "class CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    \"\"\"\nCalificarAlumnoView muestra la vista para calificar alumnas en una actividad.\nHereda:\n    LoginRequiredMixin: Requiere que el usuario esté autenticado.\n    TemplateView: Vista genérica para renderizar una plantilla con contexto personalizado.\nAtributos:\n    template_name (str): La plantilla utilizada para mostrar las alumnas y sus calificaciones.\nMétodos:\n    get_context_data(**kwargs):",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2214,7 +2205,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):\n    model = CalificacionActividad\n    form_class = CalificacionActividadForm\n    template_name = 'calificacionactividad_form.html'\n    success_url = reverse_lazy('calificacionactividad-list')\nclass CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_confirm_delete.html'\n    success_url = reverse_lazy('calificacionactividad-list')\ndef calificaciones_alumna_view(request, alumna_id):",
+        "peekOfCode": "class CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):\n    \"\"\"\nCalificacionActividadUpdateView actualiza una calificación de actividad existente.\nHereda:\n    LoginRequiredMixin: Requiere que el usuario esté autenticado.\n    UpdateView: Vista genérica para actualizar un objeto.\nAtributos:\n    model (CalificacionActividad): El modelo para la actualización de la calificación de actividad.\n    form_class (CalificacionActividadForm): El formulario asociado a la actualización de la calificación.\n    template_name (str): La plantilla utilizada para renderizar la vista de actualización.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2223,7 +2214,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):\n    model = CalificacionActividad\n    template_name = 'calificacionactividad_confirm_delete.html'\n    success_url = reverse_lazy('calificacionactividad-list')\ndef calificaciones_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    grado_id = request.GET.get('grado')\n    year = request.GET.get('year')\n    curso_id = request.GET.get('curso')\n    calificaciones = CalificacionActividad.objects.filter(asignacion_ciclo__alumna=alumna).order_by('-actividad__fecha')",
+        "peekOfCode": "class CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\nCalificacionActividadDeleteView elimina una calificación de actividad.\nHereda:\n    LoginRequiredMixin: Requiere que el usuario esté autenticado.\n    DeleteView: Vista genérica para eliminar un objeto.\nAtributos:\n    model (CalificacionActividad): El modelo para eliminar la calificación de actividad.\n    template_name (str): La plantilla utilizada para renderizar la confirmación de eliminación.\n    success_url (str): La URL a la que se redirige tras la eliminación exitosa.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2232,7 +2223,7 @@
         "kind": 2,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "def calificaciones_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    grado_id = request.GET.get('grado')\n    year = request.GET.get('year')\n    curso_id = request.GET.get('curso')\n    calificaciones = CalificacionActividad.objects.filter(asignacion_ciclo__alumna=alumna).order_by('-actividad__fecha')\n    if grado_id:\n        calificaciones = calificaciones.filter(asignacion_ciclo__grado_id=grado_id)\n    if year:\n        calificaciones = calificaciones.filter(asignacion_ciclo__year=year)",
+        "peekOfCode": "def calificaciones_alumna_view(request, alumna_id):\n    \"\"\"\nMuestra las calificaciones de una alumna específica filtradas por grado, año y curso.\nParámetros:\n    request (HttpRequest): La solicitud HTTP.\n    alumna_id (int): El identificador de la alumna.\nRetorna:\n    HttpResponse: La respuesta HTTP que muestra la lista de calificaciones filtradas de la alumna.\nFiltra:\n    - Grado.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2241,7 +2232,7 @@
         "kind": 2,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "def get_anos_cursos(request):\n    grado_id = request.GET.get('grado_id')\n    asignaciones = AsignacionCiclo.objects.filter(grado_id=grado_id).distinct()\n    anos_list = list(asignaciones.values_list('year', flat=True).distinct())\n    return JsonResponse({'years': anos_list})\ndef get_cursos(request):\n    grado_id = request.GET.get('grado_id')\n    year = request.GET.get('year')\n    cursos = Curso.objects.filter(grado_id=grado_id, estado=True)\n    cursos_list = [{'id': curso.id, 'nombre': curso.nombre_curso} for curso in cursos]",
+        "peekOfCode": "def get_anos_cursos(request):\n    \"\"\"\nObtiene los años disponibles para un grado específico.\nParámetros:\n    request (HttpRequest): La solicitud HTTP con el grado especificado mediante el parámetro 'grado_id'.\nRetorna:\n    JsonResponse: Un diccionario JSON con la lista de años disponibles para el grado.\n\"\"\"\n    grado_id = request.GET.get('grado_id')\n    asignaciones = AsignacionCiclo.objects.filter(grado_id=grado_id).distinct()",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2250,7 +2241,7 @@
         "kind": 2,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "def get_cursos(request):\n    grado_id = request.GET.get('grado_id')\n    year = request.GET.get('year')\n    cursos = Curso.objects.filter(grado_id=grado_id, estado=True)\n    cursos_list = [{'id': curso.id, 'nombre': curso.nombre_curso} for curso in cursos]\n    return JsonResponse({'cursos': cursos_list})",
+        "peekOfCode": "def get_cursos(request):\n    \"\"\"\nObtiene los cursos activos para un grado específico y un año determinado.\nParámetros:\n    request (HttpRequest): La solicitud HTTP con el grado y el año especificados mediante los parámetros 'grado_id' y 'year'.\nRetorna:\n    JsonResponse: Un diccionario JSON con la lista de cursos activos.\n\"\"\"\n    grado_id = request.GET.get('grado_id')\n    year = request.GET.get('year')",
         "detail": "Actividad.views",
         "documentation": {}
     },
