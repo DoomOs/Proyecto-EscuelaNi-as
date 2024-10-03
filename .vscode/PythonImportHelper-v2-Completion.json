@@ -2952,7 +2952,7 @@
         "kind": 5,
         "importPath": "escuela.urls",
         "description": "escuela.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('',include('Web.urls')),\n    path('usuarios/',include('user.urls')),\n    path('login/',include('Login.urls')),\n    path('inicio/',include('Inicio.urls')), \n    path('Actividad/',include('Actividad.urls')), \n    path('Asignacion_Ciclo/',include('Asignacion_Ciclo.urls')), \n    path('Persona/',include('Persona.urls')), \n    path('Curso/',include('Curso.urls')), ",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('web',include('Web.urls')),\n    path('usuarios/',include('user.urls')),\n    path('',include('Login.urls')),\n    path('inicio/',include('Inicio.urls')), \n    path('Actividad/',include('Actividad.urls')), \n    path('Asignacion_Ciclo/',include('Asignacion_Ciclo.urls')), \n    path('Persona/',include('Persona.urls')), \n    path('Curso/',include('Curso.urls')), ",
         "detail": "escuela.urls",
         "documentation": {}
     },
@@ -3078,7 +3078,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class PersonaForm(forms.ModelForm):\n    class Meta:\n        model = Persona\n        fields = ['nombre', 'apellido', 'fecha_nacimiento', 'genero', 'direccion']\n        widgets = {\n            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}),\n            'genero': forms.Select(choices=[('M', 'Masculino'), ('F', 'Femenino')])\n        }\nclass AlumnaForm(forms.ModelForm):\n    persona = forms.ModelChoiceField(queryset=Persona.objects.all(), widget=forms.HiddenInput())",
+        "peekOfCode": "class PersonaForm(forms.ModelForm):\n    class Meta:\n        model = Persona\n        fields = ['nombre', 'apellido', 'fecha_nacimiento', 'genero', 'direccion']\n        widgets = {\n            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),  \n            'genero': forms.Select(choices=[ ('F', 'Femenino')]) # se dejo fuera Masculino('M', 'Masculino'),\n        }\n    def __init__(self, *args, **kwargs):\n        super(PersonaForm, self).__init__(*args, **kwargs)",
         "detail": "Persona.forms",
         "documentation": {}
     },

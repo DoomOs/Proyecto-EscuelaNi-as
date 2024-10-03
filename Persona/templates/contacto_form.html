@@ -23,7 +23,8 @@
     }
 </script>
 
-<h2>{{ form_title }}</h2>
+<h4>{{ form_title }}</h4>
+<br>
 
 <form method="post" class="form-container container-fluid bg-light p-4 rounded shadow-sm">
     {% csrf_token %}
@@ -63,13 +64,17 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <button type="submit" class="btn btn-primary w-40">Guardar</button>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'alumna-list' %}" class="btn btn-danger w-40">Terminar</a>
         </div>
     </div>
 </form>
 
-<h3>Contactos de la Alumna</h3>
+<br>
+<h4>Contactos de la Alumna</h4>
 <table class="table table-striped">
     <thead>
         <tr>

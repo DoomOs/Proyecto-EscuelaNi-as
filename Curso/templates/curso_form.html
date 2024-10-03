@@ -3,12 +3,41 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h1>{% if object %}Editar{% else %}Nuevo{% endif %} Curso</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">{% if object %}Actualizar{% else %}Crear{% endif %}</button>
-        <a href="{% url 'curso-list' %}" class="btn btn-secondary">Cancelar</a>
-    </form>
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h4 class="mb-0">{% if object %}Editar{% else %}Nuevo{% endif %} Curso</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="id_nombre_curso" class="form-label">Nombre del Curso</label>
+                            {{ form.nombre_curso }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="id_grado" class="form-label">Grado</label>
+                            {{ form.grado }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="id_estado" class="form-label">Estado</label>
+                            {{ form.estado }}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="submit" class="btn btn-success me-2">{% if object %}Actualizar{% else %}Crear{% endif %}</button>
+                    <a href="{% url 'curso-list' %}" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}

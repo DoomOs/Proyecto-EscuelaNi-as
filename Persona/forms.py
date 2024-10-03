@@ -8,9 +8,16 @@ class PersonaForm(forms.ModelForm):
         model = Persona
         fields = ['nombre', 'apellido', 'fecha_nacimiento', 'genero', 'direccion']
         widgets = {
-            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}),
-            'genero': forms.Select(choices=[('M', 'Masculino'), ('F', 'Femenino')])
+            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),  
+            'genero': forms.Select(choices=[ ('F', 'Femenino')]) # se dejo fuera Masculino('M', 'Masculino'),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(PersonaForm, self).__init__(*args, **kwargs)
+        # Si la persona ya tiene una fecha de nacimiento, formatearla como YYYY-MM-DD
+        if self.instance and self.instance.pk and self.instance.fecha_nacimiento:
+            self.fields['fecha_nacimiento'].initial = self.instance.fecha_nacimiento.strftime('%Y-%m-%d')
+
 
 class AlumnaForm(forms.ModelForm):
     persona = forms.ModelChoiceField(queryset=Persona.objects.all(), widget=forms.HiddenInput())
