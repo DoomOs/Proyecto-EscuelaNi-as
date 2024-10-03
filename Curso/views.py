@@ -5,26 +5,29 @@ from .models import Curso, Grado
 from .forms import CursoForm, GradoForm
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
-class CursoListView(ListView):
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+class CursoListView(LoginRequiredMixin,ListView):
     model = Curso
     template_name = 'curso_list.html'
 
     def get_queryset(self):
         return Curso.objects.filter(estado=True)  # Mostrar solo cursos activos
 
-class CursoCreateView(CreateView):
+class CursoCreateView(LoginRequiredMixin,CreateView):
     model = Curso
     form_class = CursoForm
     template_name = 'curso_form.html'
     success_url = reverse_lazy('curso-list')
 
-class CursoUpdateView(UpdateView):
+class CursoUpdateView(LoginRequiredMixin,UpdateView):
     model = Curso
     form_class = CursoForm
     template_name = 'curso_form.html'
     success_url = reverse_lazy('curso-list')
 
-class CursoDeleteView(View):
+class CursoDeleteView(LoginRequiredMixin,View):
     success_url = reverse_lazy('curso-list')
 
     def get(self, request, *args, **kwargs):
@@ -34,7 +37,7 @@ class CursoDeleteView(View):
         curso.save()
         return redirect(self.success_url)
     
-class CursoActivateView(View):
+class CursoActivateView(LoginRequiredMixin,View):
     success_url = reverse_lazy('curso-list')
 
     def get(self, request, *args, **kwargs):
@@ -43,26 +46,26 @@ class CursoActivateView(View):
         curso.save()
         return redirect(self.success_url)
 
-class GradoListView(ListView):
+class GradoListView(LoginRequiredMixin,ListView):
     model = Grado
     template_name = 'grado_list.html'
 
     def get_queryset(self):
         return Grado.objects.filter(estado=True)  # Mostrar solo grados activos
 
-class GradoCreateView(CreateView):
+class GradoCreateView(LoginRequiredMixin,CreateView):
     model = Grado
     form_class = GradoForm
     template_name = 'grado_form.html'
     success_url = reverse_lazy('grado-list')
 
-class GradoUpdateView(UpdateView):
+class GradoUpdateView(LoginRequiredMixin,UpdateView):
     model = Grado
     form_class = GradoForm
     template_name = 'grado_form.html'
     success_url = reverse_lazy('grado-list')
 
-class GradoDeleteView(View):
+class GradoDeleteView(LoginRequiredMixin,View):
     success_url = reverse_lazy('grado-list')
 
     def get(self, request, *args, **kwargs):
@@ -72,14 +75,14 @@ class GradoDeleteView(View):
         grado.save()
         return redirect(self.success_url)
     
-class CursoInactivoListView(ListView):
+class CursoInactivoListView(LoginRequiredMixin,ListView):
     model = Curso
     template_name = 'curso_inactivo_list.html'
 
     def get_queryset(self):
         return Curso.objects.filter(estado=False)  
 
-class GradoInactivoListView(ListView):
+class GradoInactivoListView(LoginRequiredMixin,ListView):
     model = Grado
     template_name = 'grado_inactivo_list.html'
 
@@ -87,7 +90,7 @@ class GradoInactivoListView(ListView):
         return Grado.objects.filter(estado=False)  # Mostrar solo grados inactivos
 
 
-class GradoActivateView(View):
+class GradoActivateView(LoginRequiredMixin,View):
     success_url = reverse_lazy('grado-list')
 
     def get(self, request, *args, **kwargs):
