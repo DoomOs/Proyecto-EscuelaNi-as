@@ -4,11 +4,11 @@ from .models import Asistencia, AsignacionCiclo
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
-from reportlab.lib.pagesizes import letter
-from reportlab.lib import colors
-from reportlab.lib.units import inch
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
-from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter # type: ignore
+from reportlab.lib import colors # type: ignore
+from reportlab.lib.units import inch # type: ignore
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle # type: ignore
+from reportlab.pdfgen import canvas # type: ignore
 import pandas as pd
 
 @login_required
