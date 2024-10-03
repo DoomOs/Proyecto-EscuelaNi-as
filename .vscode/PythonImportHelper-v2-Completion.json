@@ -3077,7 +3077,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class PersonaForm(forms.ModelForm):\n    class Meta:\n        model = Persona\n        fields = ['nombre', 'apellido', 'fecha_nacimiento', 'genero', 'direccion']\n        widgets = {\n            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),  \n            'genero': forms.Select(choices=[ ('F', 'Femenino')]) # se dejo fuera Masculino('M', 'Masculino'),\n        }\n    def __init__(self, *args, **kwargs):\n        super(PersonaForm, self).__init__(*args, **kwargs)",
+        "peekOfCode": "class PersonaForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o editar información de una persona.\n    Hereda:\n        forms.ModelForm: Clase base para crear formularios de modelos de Django.\n    Atributos:\n        Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.\n            model (Persona): Modelo al que se relaciona este formulario.\n            fields (list): Lista de campos a incluir en el formulario: nombre, apellido, fecha de nacimiento, género y dirección.\n            widgets (dict): Diccionario que define los widgets personalizados para ciertos campos:",
         "detail": "Persona.forms",
         "documentation": {}
     },
@@ -3086,7 +3086,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class AlumnaForm(forms.ModelForm):\n    persona = forms.ModelChoiceField(queryset=Persona.objects.all(), widget=forms.HiddenInput())\n    class Meta:\n        model = Alumna\n        fields = ['codigo']\nclass ContactoForm(forms.ModelForm):\n    telefono = forms.CharField(\n        max_length=8,\n        validators=[RegexValidator(r'^\\d{8}$', 'Ingrese un número de teléfono válido de 8 dígitos.')],\n        widget=forms.TextInput(attrs={",
+        "peekOfCode": "class AlumnaForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o editar información de una alumna.\n    Hereda:\n        forms.ModelForm: Clase base para crear formularios de modelos de Django.\n    Atributos:\n        persona (ModelChoiceField): Campo oculto que almacena la relación con el modelo Persona,\n            permitiendo seleccionar una persona existente.\n    Métodos:\n        Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.",
         "detail": "Persona.forms",
         "documentation": {}
     },
@@ -3095,7 +3095,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class ContactoForm(forms.ModelForm):\n    telefono = forms.CharField(\n        max_length=8,\n        validators=[RegexValidator(r'^\\d{8}$', 'Ingrese un número de teléfono válido de 8 dígitos.')],\n        widget=forms.TextInput(attrs={\n            'placeholder': 'Ingrese solo números',\n            'maxlength': '8',  # Limita la entrada a 8 caracteres en el frontend\n            'pattern': '[0-9]{8}',  # Solo permite números\n            'title': 'El número debe tener 8 dígitos'\n        })",
+        "peekOfCode": "class ContactoForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o editar información de un contacto asociado a una alumna.\n    Hereda:\n        forms.ModelForm: Clase base para crear formularios de modelos de Django.\n    Atributos:\n        telefono (CharField): Campo para ingresar el número de teléfono del contacto.\n            Incluye un validador que permite solo números de 8 dígitos.\n            widget (TextInput): Widget personalizado que limita la entrada a 8 caracteres y permite solo números.\n        email (EmailField): Campo para ingresar la dirección de correo electrónico del contacto.",
         "detail": "Persona.forms",
         "documentation": {}
     },
@@ -3104,7 +3104,7 @@
         "kind": 6,
         "importPath": "Persona.models",
         "description": "Persona.models",
-        "peekOfCode": "class Persona(models.Model):\n    nombre = models.CharField(max_length=100)\n    apellido = models.CharField(max_length=100)\n    fecha_nacimiento = models.DateField()\n    genero = models.CharField(max_length=1)\n    direccion = models.CharField(max_length=150)\n    def __str__(self):\n        return f\"{self.nombre} {self.apellido}\"\nclass Alumna(models.Model):\n    persona = models.OneToOneField(Persona, on_delete=models.CASCADE)",
+        "peekOfCode": "class Persona(models.Model):\n    \"\"\"\n        Representa a una persona con información básica.\n    Hereda:\n        models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n        nombre (CharField): El nombre de la persona, con una longitud máxima de 100 caracteres.\n        apellido (CharField): El apellido de la persona, con una longitud máxima de 100 caracteres.\n        fecha_nacimiento (DateField): La fecha de nacimiento de la persona.\n        genero (CharField): El género de la persona, representado por un solo carácter (por ejemplo, 'M' para masculino, 'F' para femenino).",
         "detail": "Persona.models",
         "documentation": {}
     },
@@ -3113,7 +3113,7 @@
         "kind": 6,
         "importPath": "Persona.models",
         "description": "Persona.models",
-        "peekOfCode": "class Alumna(models.Model):\n    persona = models.OneToOneField(Persona, on_delete=models.CASCADE)\n    codigo = models.CharField(max_length=30)\n    estado = models.BooleanField(default=True) \n    def __str__(self):\n        return self.codigo\nclass Contacto(models.Model):\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)\n    nombre = models.CharField(max_length=100)\n    apellido = models.CharField(max_length=100)",
+        "peekOfCode": "class Alumna(models.Model):\n    \"\"\"\n        Representa a una alumna con información específica relacionada con la educación.\n    Hereda:\n        models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n        persona (OneToOneField): Relación uno a uno con el modelo Persona, representando la información personal de la alumna.\n        codigo (CharField): Un código único para identificar a la alumna, con una longitud máxima de 30 caracteres.\n        estado (BooleanField): El estado de la alumna, activo (True) o inactivo (False), con un valor predeterminado de True.\n    Métodos:",
         "detail": "Persona.models",
         "documentation": {}
     },
@@ -3122,7 +3122,7 @@
         "kind": 6,
         "importPath": "Persona.models",
         "description": "Persona.models",
-        "peekOfCode": "class Contacto(models.Model):\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)\n    nombre = models.CharField(max_length=100)\n    apellido = models.CharField(max_length=100)\n    parentesco = models.CharField(max_length=100)\n    telefono = models.CharField(max_length=15)\n    email = models.EmailField()\n    def __str__(self):\n        return f\"{self.nombre} {self.apellido}\"",
+        "peekOfCode": "class Contacto(models.Model):\n    \"\"\"\n        Representa a un contacto asociado a una alumna.\n    Hereda:\n        models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n        alumna (ForeignKey): Relación con el modelo Alumna, permitiendo la asociación de múltiples contactos con una sola alumna.\n        nombre (CharField): El nombre del contacto, con una longitud máxima de 100 caracteres.\n        apellido (CharField): El apellido del contacto, con una longitud máxima de 100 caracteres.\n        parentesco (CharField): El parentesco del contacto con la alumna, con una longitud máxima de 100 caracteres.",
         "detail": "Persona.models",
         "documentation": {}
     },
@@ -3140,7 +3140,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def persona_create_view(request):\n    if request.method == 'POST':\n        form = PersonaForm(request.POST)\n        if form.is_valid():\n            persona = form.save()\n            return redirect(reverse('alumna-create') + f'?persona_id={persona.id}')\n    else:\n        form = PersonaForm()\n    return render(request, 'persona_form.html', {'form': form})\ndef alumna_create_view(request):",
+        "peekOfCode": "def persona_create_view(request):\n    \"\"\"\n        Maneja la creación de una nueva persona y redirige a la vista de creación de alumna.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de persona.\n    Retorna:\n        HttpResponse: Redirige a la vista de creación de alumna con el ID de la persona creada, o renderiza el formulario de persona si hay errores.\n    Proceso:\n        - Si el método de la solicitud es POST, se valida el formulario de Persona.\n        - Si el formulario es válido, se guarda la persona y se redirige a la vista de creación de alumna.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3149,7 +3149,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_create_view(request):\n    persona_id = request.GET.get('persona_id')\n    if request.method == 'POST':\n        form = AlumnaForm(request.POST)\n        if form.is_valid():\n            alumna = form.save(commit=False)\n            alumna.persona_id = persona_id\n            alumna.save()\n            return redirect(reverse('contacto-create', args=[alumna.id]))\n    else:",
+        "peekOfCode": "def alumna_create_view(request):\n    \"\"\"\n        Maneja la creación de una nueva alumna asociada a una persona existente.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.\n    Retorna:\n        HttpResponse: Redirige a la vista de creación de contacto con el ID de la alumna creada, o renderiza el formulario de alumna si hay errores.\n    Proceso:\n        - Obtiene el ID de la persona desde la URL.\n        - Si el método de la solicitud es POST, se valida el formulario de Alumna.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3158,7 +3158,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def contacto_create_view(request, alumna_id):\n    alumno = get_object_or_404(Alumna, id=alumna_id)\n    if request.method == 'POST':\n        contacto_form = ContactoForm(request.POST)\n        if contacto_form.is_valid():\n            contacto = contacto_form.save(commit=False)\n            contacto.alumna = alumno\n            contacto.save()\n            return redirect('contacto-create', alumna_id=alumna_id)\n        else:",
+        "peekOfCode": "def contacto_create_view(request, alumna_id):\n    \"\"\"\n        Maneja la creación de un nuevo contacto asociado a una alumna específica.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.\n        alumna_id (int): El ID de la alumna a la que se asociará el nuevo contacto.\n    Retorna:\n        HttpResponse: Renderiza el formulario de contacto con la lista de contactos existentes de la alumna.\n    Proceso:\n        - Obtiene la alumna usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3167,7 +3167,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def contacto_edit_view(request, contacto_id):\n    contacto = get_object_or_404(Contacto, id=contacto_id)\n    if request.method == 'POST':\n        contacto_form = ContactoForm(request.POST, instance=contacto)\n        if contacto_form.is_valid():\n            contacto_form.save()\n            messages.success(request, 'Contacto actualizado correctamente.')\n            return redirect('contacto-create', alumna_id=contacto.alumna.id)\n    else:\n        contacto_form = ContactoForm(instance=contacto)",
+        "peekOfCode": "def contacto_edit_view(request, contacto_id):\n    \"\"\"\n        Maneja la edición de un contacto existente.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.\n        contacto_id (int): El ID del contacto a editar.\n    Retorna:\n        HttpResponse: Renderiza el formulario de contacto editado y la lista de contactos de la alumna.\n    Proceso:\n        - Obtiene el contacto usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3176,7 +3176,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def contacto_delete_view(request, contacto_id):\n    contacto = get_object_or_404(Contacto, id=contacto_id)\n    if request.method == 'POST':\n        alumno_id = contacto.alumna.id\n        contacto.delete()\n        messages.success(request, 'Contacto eliminado correctamente.')\n        return redirect('contacto-create', alumna_id=alumno_id)\n    # Si no es POST, no debe llegar a esta vista por el enlace\n    return redirect('contacto-create', alumna_id=contacto.alumna.id)\n@login_required",
+        "peekOfCode": "def contacto_delete_view(request, contacto_id):\n    \"\"\"\n        Maneja la eliminación de un contacto existente.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene la acción de eliminación.\n        contacto_id (int): El ID del contacto a eliminar.\n    Retorna:\n        HttpResponse: Redirige a la vista de creación de contacto de la alumna correspondiente.\n    Proceso:\n        - Obtiene el contacto usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3185,7 +3185,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_list_view(request):\n    user = request.user  # Obtener el usuario logueado\n    grado_usuario_id = user.id_ciclo  # Obtener el grado asignado al usuario\n    # Obtener todas las alumnas activas\n    alumnas = Alumna.objects.filter(estado=True)\n    # Crear un diccionario para almacenar la mejor asignación por alumna\n    mejor_asignacion = {}\n    for alumna in alumnas:\n        # Obtener todas las asignaciones de la alumna, ordenadas por grado (mayor ID primero)\n        asignaciones = AsignacionCiclo.objects.filter(alumna=alumna).order_by('-grado_id')",
+        "peekOfCode": "def alumna_list_view(request):\n    \"\"\"\n        Maneja la visualización de la lista de alumnas activas.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene la información del usuario.\n    Retorna:\n        HttpResponse: Renderiza la lista de alumnas activas, organizadas por asignación.\n    Proceso:\n        - Obtiene el usuario logueado y su grado asignado.\n        - Filtra las alumnas activas y obtiene su mejor asignación.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3194,7 +3194,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_inactive_list_view(request):\n    alumnas = Alumna.objects.filter(estado=False)  # Solo alumnas inactivas\n    for alumna in alumnas:\n        alumna.edad = now().year - alumna.persona.fecha_nacimiento.year\n        asignacion = AsignacionCiclo.objects.filter(alumna=alumna).last()\n        alumna.asignacion = asignacion.grado.nombre_grado if asignacion else 'No asignada'\n    return render(request, 'alumna_inactive_list.html', {'alumnas': alumnas})\ndef desactivar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = False",
+        "peekOfCode": "def alumna_inactive_list_view(request):\n    \"\"\"\n        Maneja la visualización de la lista de alumnas inactivas.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP.\n    Retorna:\n        HttpResponse: Renderiza la lista de alumnas inactivas.\n    Proceso:\n        - Filtra las alumnas inactivas y calcula su edad y asignación.\n        - Renderiza la lista de alumnas inactivas en el contexto de la plantilla.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3203,7 +3203,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def desactivar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = False\n    alumna.save()\n    return redirect('alumna-list')  # Redirige al listado de alumnas activas\ndef activar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = True\n    alumna.save()\n    return redirect('alumna-inactive-list')  # Redirige al listado de alumnas inactivas",
+        "peekOfCode": "def desactivar_alumna_view(request, alumna_id):\n    \"\"\"\n        Maneja la desactivación de una alumna específica.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP.\n        alumna_id (int): El ID de la alumna a desactivar.\n    Retorna:\n        HttpResponse: Redirige a la lista de alumnas activas.\n    Proceso:\n        - Obtiene la alumna usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3212,7 +3212,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def activar_alumna_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    alumna.estado = True\n    alumna.save()\n    return redirect('alumna-inactive-list')  # Redirige al listado de alumnas inactivas\ndef alumna_edit_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    persona = alumna.persona\n    if request.method == 'POST':\n        # Incluye el valor del campo oculto 'persona' en los datos del formulario",
+        "peekOfCode": "def activar_alumna_view(request, alumna_id):\n    \"\"\"\n        Maneja la activación de una alumna específica.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP.\n        alumna_id (int): El ID de la alumna a activar.\n    Retorna:\n        HttpResponse: Redirige a la lista de alumnas inactivas.\n    Proceso:\n        - Obtiene la alumna usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3221,7 +3221,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_edit_view(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    persona = alumna.persona\n    if request.method == 'POST':\n        # Incluye el valor del campo oculto 'persona' en los datos del formulario\n        post_data = request.POST.copy()\n        post_data['persona'] = persona.id\n        # Recibe datos del formulario para Alumna y Persona\n        alumna_form = AlumnaForm(post_data, instance=alumna)\n        persona_form = PersonaForm(request.POST, instance=persona)",
+        "peekOfCode": "def alumna_edit_view(request, alumna_id):\n    \"\"\"\n        Maneja la edición de los datos de una alumna existente.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.\n        alumna_id (int): El ID de la alumna a editar.\n    Retorna:\n        HttpResponse: Renderiza el formulario de edición de alumna, persona y asignación.\n    Proceso:\n        - Obtiene la alumna y su persona asociada usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3284,7 +3284,7 @@
         "kind": 6,
         "importPath": "user.models",
         "description": "user.models",
-        "peekOfCode": "class Rol(models.Model):\n    rol = models.CharField(max_length=20)\n    def __str__(self):\n        return self.rol\nclass User(AbstractUser):\n    telefono = models.CharField(max_length=10, blank=True)\n    id_ciclo = models.IntegerField(blank=True, null=True)\n    id_rol = models.ForeignKey(Rol, on_delete=models.CASCADE, blank=True, null=True)\n    def __str__(self):\n        return self.username",
+        "peekOfCode": "class Rol(models.Model):\n    \"\"\"\n        Modelo que representa un rol de usuario en el sistema.\n    Hereda:\n        models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n        rol (CharField): Nombre del rol del usuario, con un máximo de 20 caracteres.\n    Métodos:\n        __str__(self): Devuelve una representación en cadena del rol, que es el nombre del rol.\n    \"\"\"",
         "detail": "user.models",
         "documentation": {}
     },
@@ -3293,7 +3293,7 @@
         "kind": 6,
         "importPath": "user.models",
         "description": "user.models",
-        "peekOfCode": "class User(AbstractUser):\n    telefono = models.CharField(max_length=10, blank=True)\n    id_ciclo = models.IntegerField(blank=True, null=True)\n    id_rol = models.ForeignKey(Rol, on_delete=models.CASCADE, blank=True, null=True)\n    def __str__(self):\n        return self.username",
+        "peekOfCode": "class User(AbstractUser):\n    \"\"\"\n        Modelo que extiende el modelo de usuario de Django para incluir campos adicionales.\n    Hereda:\n        AbstractUser: Clase base que proporciona la funcionalidad del modelo de usuario de Django.\n    Atributos heredados de AbstractUser:\n        username (CharField): Nombre de usuario único para la autenticación.\n        first_name (CharField): Nombre de pila del usuario.\n        last_name (CharField): Apellido del usuario.\n        email (EmailField): Correo electrónico del usuario, único por defecto.",
         "detail": "user.models",
         "documentation": {}
     },
