@@ -3078,7 +3078,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class PersonaForm(forms.ModelForm):\n    class Meta:\n        model = Persona\n        fields = ['nombre', 'apellido', 'fecha_nacimiento', 'genero', 'direccion']\n        widgets = {\n            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}),\n            'genero': forms.Select(choices=[('M', 'Masculino'), ('F', 'Femenino')])\n        }\nclass AlumnaForm(forms.ModelForm):\n    persona = forms.ModelChoiceField(queryset=Persona.objects.all(), widget=forms.HiddenInput())",
+        "peekOfCode": "class PersonaForm(forms.ModelForm):\n    class Meta:\n        model = Persona\n        fields = ['nombre', 'apellido', 'fecha_nacimiento', 'genero', 'direccion']\n        widgets = {\n            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),  \n            'genero': forms.Select(choices=[ ('F', 'Femenino')]) # se dejo fuera Masculino('M', 'Masculino'),\n        }\n    def __init__(self, *args, **kwargs):\n        super(PersonaForm, self).__init__(*args, **kwargs)",
         "detail": "Persona.forms",
         "documentation": {}
     },
