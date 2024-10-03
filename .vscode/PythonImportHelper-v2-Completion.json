@@ -1346,6 +1346,14 @@
         "documentation": {}
     },
     {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
         "label": "View",
         "importPath": "django.views",
         "description": "django.views",
@@ -2637,7 +2645,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoListView(ListView):\n    model = Curso\n    template_name = 'curso_list.html'\n    def get_queryset(self):\n        return Curso.objects.filter(estado=True)  # Mostrar solo cursos activos\nclass CursoCreateView(CreateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')",
+        "peekOfCode": "class CursoListView(LoginRequiredMixin,ListView):\n    model = Curso\n    template_name = 'curso_list.html'\n    def get_queryset(self):\n        return Curso.objects.filter(estado=True)  # Mostrar solo cursos activos\nclass CursoCreateView(LoginRequiredMixin,CreateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2646,7 +2654,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoCreateView(CreateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')\nclass CursoUpdateView(UpdateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')",
+        "peekOfCode": "class CursoCreateView(LoginRequiredMixin,CreateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')\nclass CursoUpdateView(LoginRequiredMixin,UpdateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2655,7 +2663,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoUpdateView(UpdateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')\nclass CursoDeleteView(View):\n    success_url = reverse_lazy('curso-list')\n    def get(self, request, *args, **kwargs):\n        #curso que deseas desactivar\n        curso = get_object_or_404(Curso, pk=kwargs['pk'])",
+        "peekOfCode": "class CursoUpdateView(LoginRequiredMixin,UpdateView):\n    model = Curso\n    form_class = CursoForm\n    template_name = 'curso_form.html'\n    success_url = reverse_lazy('curso-list')\nclass CursoDeleteView(LoginRequiredMixin,View):\n    success_url = reverse_lazy('curso-list')\n    def get(self, request, *args, **kwargs):\n        #curso que deseas desactivar\n        curso = get_object_or_404(Curso, pk=kwargs['pk'])",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2664,7 +2672,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoDeleteView(View):\n    success_url = reverse_lazy('curso-list')\n    def get(self, request, *args, **kwargs):\n        #curso que deseas desactivar\n        curso = get_object_or_404(Curso, pk=kwargs['pk'])\n        curso.estado = False  # Cambia el estado a inactivo\n        curso.save()\n        return redirect(self.success_url)\nclass CursoActivateView(View):\n    success_url = reverse_lazy('curso-list')",
+        "peekOfCode": "class CursoDeleteView(LoginRequiredMixin,View):\n    success_url = reverse_lazy('curso-list')\n    def get(self, request, *args, **kwargs):\n        #curso que deseas desactivar\n        curso = get_object_or_404(Curso, pk=kwargs['pk'])\n        curso.estado = False  # Cambia el estado a inactivo\n        curso.save()\n        return redirect(self.success_url)\nclass CursoActivateView(LoginRequiredMixin,View):\n    success_url = reverse_lazy('curso-list')",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2673,7 +2681,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoActivateView(View):\n    success_url = reverse_lazy('curso-list')\n    def get(self, request, *args, **kwargs):\n        curso = get_object_or_404(Curso, pk=self.kwargs['pk'])  \n        curso.estado = True  # Cambia el estado a activo\n        curso.save()\n        return redirect(self.success_url)\nclass GradoListView(ListView):\n    model = Grado\n    template_name = 'grado_list.html'",
+        "peekOfCode": "class CursoActivateView(LoginRequiredMixin,View):\n    success_url = reverse_lazy('curso-list')\n    def get(self, request, *args, **kwargs):\n        curso = get_object_or_404(Curso, pk=self.kwargs['pk'])  \n        curso.estado = True  # Cambia el estado a activo\n        curso.save()\n        return redirect(self.success_url)\nclass GradoListView(LoginRequiredMixin,ListView):\n    model = Grado\n    template_name = 'grado_list.html'",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2682,7 +2690,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoListView(ListView):\n    model = Grado\n    template_name = 'grado_list.html'\n    def get_queryset(self):\n        return Grado.objects.filter(estado=True)  # Mostrar solo grados activos\nclass GradoCreateView(CreateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')",
+        "peekOfCode": "class GradoListView(LoginRequiredMixin,ListView):\n    model = Grado\n    template_name = 'grado_list.html'\n    def get_queryset(self):\n        return Grado.objects.filter(estado=True)  # Mostrar solo grados activos\nclass GradoCreateView(LoginRequiredMixin,CreateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2691,7 +2699,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoCreateView(CreateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')\nclass GradoUpdateView(UpdateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')",
+        "peekOfCode": "class GradoCreateView(LoginRequiredMixin,CreateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')\nclass GradoUpdateView(LoginRequiredMixin,UpdateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2700,7 +2708,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoUpdateView(UpdateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')\nclass GradoDeleteView(View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        # Obtén el grado que deseas desactivar\n        grado = get_object_or_404(Grado, pk=kwargs['pk'])",
+        "peekOfCode": "class GradoUpdateView(LoginRequiredMixin,UpdateView):\n    model = Grado\n    form_class = GradoForm\n    template_name = 'grado_form.html'\n    success_url = reverse_lazy('grado-list')\nclass GradoDeleteView(LoginRequiredMixin,View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        # Obtén el grado que deseas desactivar\n        grado = get_object_or_404(Grado, pk=kwargs['pk'])",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2709,7 +2717,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoDeleteView(View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        # Obtén el grado que deseas desactivar\n        grado = get_object_or_404(Grado, pk=kwargs['pk'])\n        grado.estado = False  # Cambia el estado a inactivo\n        grado.save()\n        return redirect(self.success_url)\nclass CursoInactivoListView(ListView):\n    model = Curso",
+        "peekOfCode": "class GradoDeleteView(LoginRequiredMixin,View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        # Obtén el grado que deseas desactivar\n        grado = get_object_or_404(Grado, pk=kwargs['pk'])\n        grado.estado = False  # Cambia el estado a inactivo\n        grado.save()\n        return redirect(self.success_url)\nclass CursoInactivoListView(LoginRequiredMixin,ListView):\n    model = Curso",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2718,7 +2726,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoInactivoListView(ListView):\n    model = Curso\n    template_name = 'curso_inactivo_list.html'\n    def get_queryset(self):\n        return Curso.objects.filter(estado=False)  \nclass GradoInactivoListView(ListView):\n    model = Grado\n    template_name = 'grado_inactivo_list.html'\n    def get_queryset(self):\n        return Grado.objects.filter(estado=False)  # Mostrar solo grados inactivos",
+        "peekOfCode": "class CursoInactivoListView(LoginRequiredMixin,ListView):\n    model = Curso\n    template_name = 'curso_inactivo_list.html'\n    def get_queryset(self):\n        return Curso.objects.filter(estado=False)  \nclass GradoInactivoListView(LoginRequiredMixin,ListView):\n    model = Grado\n    template_name = 'grado_inactivo_list.html'\n    def get_queryset(self):\n        return Grado.objects.filter(estado=False)  # Mostrar solo grados inactivos",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2727,7 +2735,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoInactivoListView(ListView):\n    model = Grado\n    template_name = 'grado_inactivo_list.html'\n    def get_queryset(self):\n        return Grado.objects.filter(estado=False)  # Mostrar solo grados inactivos\nclass GradoActivateView(View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        grado = get_object_or_404(Grado, pk=self.kwargs['pk']) \n        grado.estado = True  # Reactivar el grado",
+        "peekOfCode": "class GradoInactivoListView(LoginRequiredMixin,ListView):\n    model = Grado\n    template_name = 'grado_inactivo_list.html'\n    def get_queryset(self):\n        return Grado.objects.filter(estado=False)  # Mostrar solo grados inactivos\nclass GradoActivateView(LoginRequiredMixin,View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        grado = get_object_or_404(Grado, pk=self.kwargs['pk']) \n        grado.estado = True  # Reactivar el grado",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2736,7 +2744,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoActivateView(View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        grado = get_object_or_404(Grado, pk=self.kwargs['pk']) \n        grado.estado = True  # Reactivar el grado\n        grado.save()\n        return redirect(self.success_url)",
+        "peekOfCode": "class GradoActivateView(LoginRequiredMixin,View):\n    success_url = reverse_lazy('grado-list')\n    def get(self, request, *args, **kwargs):\n        grado = get_object_or_404(Grado, pk=self.kwargs['pk']) \n        grado.estado = True  # Reactivar el grado\n        grado.save()\n        return redirect(self.success_url)",
         "detail": "Curso.views",
         "documentation": {}
     },
