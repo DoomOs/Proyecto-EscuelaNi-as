@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; documentación de ClassManager - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=4936afed"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script src="_static/translations.js?v=d190bf04"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="ClassManager" href="ClassManager.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            ClassManager
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contentido:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ClassManager.html">ClassManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Instalacion.html">Instalación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Actividad.html">Actividad:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Actividad.html#views">views:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadListView"><code class="docutils literal notranslate"><span class="pre">ActividadListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadInactivaListView"><code class="docutils literal notranslate"><span class="pre">ActividadInactivaListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadInactivarView"><code class="docutils literal notranslate"><span class="pre">ActividadInactivarView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadReactivarView"><code class="docutils literal notranslate"><span class="pre">ActividadReactivarView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadCreateView"><code class="docutils literal notranslate"><span class="pre">ActividadCreateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadUpdateView"><code class="docutils literal notranslate"><span class="pre">ActividadUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadDeleteView"><code class="docutils literal notranslate"><span class="pre">ActividadDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.CalificacionActividadListView"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.CalificarAlumnoView"><code class="docutils literal notranslate"><span class="pre">CalificarAlumnoView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.CalificacionActividadUpdateView"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.CalificacionActividadDeleteView"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.calificaciones_alumna_view"><code class="docutils literal notranslate"><span class="pre">calificaciones_alumna_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.get_anos_cursos"><code class="docutils literal notranslate"><span class="pre">get_anos_cursos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.get_cursos"><code class="docutils literal notranslate"><span class="pre">get_cursos()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Actividad.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.models.Actividad"><code class="docutils literal notranslate"><span class="pre">Actividad()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.models.CalificacionActividad"><code class="docutils literal notranslate"><span class="pre">CalificacionActividad()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Actividad.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.forms.ActividadForm"><code class="docutils literal notranslate"><span class="pre">ActividadForm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.forms.CalificacionActividadForm"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Asignacion_Ciclo.html">Asignacion Ciclo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Asignacion_Ciclo.html#views">views:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.AsignacionCicloListView"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.AsignacionCicloCreateView"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloCreateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.AsignacionCicloUpdateView"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.AsignacionCicloDeleteView"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.asignar_alumnas"><code class="docutils literal notranslate"><span class="pre">asignar_alumnas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.asignar_grado_usuario"><code class="docutils literal notranslate"><span class="pre">asignar_grado_usuario()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Asignacion_Ciclo.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.models.AsignacionCiclo"><code class="docutils literal notranslate"><span class="pre">AsignacionCiclo()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Asignacion_Ciclo.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.forms.AsignacionCicloForm"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Asistencia.html">Asistencia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Asistencia.html#views">views:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Asistencia.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asistencia.html#Asistencia.models.Asistencia"><code class="docutils literal notranslate"><span class="pre">Asistencia()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Asistencia.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asistencia.html#Asistencia.forms.AsistenciaForm"><code class="docutils literal notranslate"><span class="pre">AsistenciaForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Curso.html">Curso</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Curso.html#views">Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoListView"><code class="docutils literal notranslate"><span class="pre">CursoListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoCreateView"><code class="docutils literal notranslate"><span class="pre">CursoCreateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoUpdateView"><code class="docutils literal notranslate"><span class="pre">CursoUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoDeleteView"><code class="docutils literal notranslate"><span class="pre">CursoDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoActivateView"><code class="docutils literal notranslate"><span class="pre">CursoActivateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoInactivoListView"><code class="docutils literal notranslate"><span class="pre">CursoInactivoListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoListView"><code class="docutils literal notranslate"><span class="pre">GradoListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoCreateView"><code class="docutils literal notranslate"><span class="pre">GradoCreateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoUpdateView"><code class="docutils literal notranslate"><span class="pre">GradoUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoDeleteView"><code class="docutils literal notranslate"><span class="pre">GradoDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoInactivoListView"><code class="docutils literal notranslate"><span class="pre">GradoInactivoListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoActivateView"><code class="docutils literal notranslate"><span class="pre">GradoActivateView()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Curso.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.models.Grado"><code class="docutils literal notranslate"><span class="pre">Grado()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.models.Curso"><code class="docutils literal notranslate"><span class="pre">Curso()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Curso.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.forms.CursoForm"><code class="docutils literal notranslate"><span class="pre">CursoForm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.forms.GradoForm"><code class="docutils literal notranslate"><span class="pre">GradoForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Login.html">Login</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Login.html#views">Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Login.html#Login.views.login_in"><code class="docutils literal notranslate"><span class="pre">login_in()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Login.html#Login.views.logout_out"><code class="docutils literal notranslate"><span class="pre">logout_out()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Persona.html">Persona</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Persona.html#views">Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.persona_create_view"><code class="docutils literal notranslate"><span class="pre">persona_create_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.contacto_create_view"><code class="docutils literal notranslate"><span class="pre">contacto_create_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.contacto_edit_view"><code class="docutils literal notranslate"><span class="pre">contacto_edit_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.contacto_delete_view"><code class="docutils literal notranslate"><span class="pre">contacto_delete_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.alumna_create_view"><code class="docutils literal notranslate"><span class="pre">alumna_create_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.alumna_edit_view"><code class="docutils literal notranslate"><span class="pre">alumna_edit_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.alumna_list_view"><code class="docutils literal notranslate"><span class="pre">alumna_list_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.alumna_inactive_list_view"><code class="docutils literal notranslate"><span class="pre">alumna_inactive_list_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.desactivar_alumna_view"><code class="docutils literal notranslate"><span class="pre">desactivar_alumna_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.activar_alumna_view"><code class="docutils literal notranslate"><span class="pre">activar_alumna_view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Persona.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.models.Persona"><code class="docutils literal notranslate"><span class="pre">Persona()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.models.Alumna"><code class="docutils literal notranslate"><span class="pre">Alumna()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.models.Contacto"><code class="docutils literal notranslate"><span class="pre">Contacto()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Persona.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.forms.PersonaForm"><code class="docutils literal notranslate"><span class="pre">PersonaForm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.forms.AlumnaForm"><code class="docutils literal notranslate"><span class="pre">AlumnaForm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.forms.ContactoForm"><code class="docutils literal notranslate"><span class="pre">ContactoForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user.html#user.models.Rol"><code class="docutils literal notranslate"><span class="pre">Rol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user.html#user.models.User"><code class="docutils literal notranslate"><span class="pre">User()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">ClassManager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contentido:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ClassManager.html">ClassManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Instalacion.html">Instalación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Actividad.html">Actividad:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Actividad.html#views">views:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadListView"><code class="docutils literal notranslate"><span class="pre">ActividadListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadInactivaListView"><code class="docutils literal notranslate"><span class="pre">ActividadInactivaListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadInactivarView"><code class="docutils literal notranslate"><span class="pre">ActividadInactivarView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadReactivarView"><code class="docutils literal notranslate"><span class="pre">ActividadReactivarView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadCreateView"><code class="docutils literal notranslate"><span class="pre">ActividadCreateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadUpdateView"><code class="docutils literal notranslate"><span class="pre">ActividadUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.ActividadDeleteView"><code class="docutils literal notranslate"><span class="pre">ActividadDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.CalificacionActividadListView"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.CalificarAlumnoView"><code class="docutils literal notranslate"><span class="pre">CalificarAlumnoView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.CalificacionActividadUpdateView"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.CalificacionActividadDeleteView"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.calificaciones_alumna_view"><code class="docutils literal notranslate"><span class="pre">calificaciones_alumna_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.get_anos_cursos"><code class="docutils literal notranslate"><span class="pre">get_anos_cursos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.views.get_cursos"><code class="docutils literal notranslate"><span class="pre">get_cursos()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Actividad.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.models.Actividad"><code class="docutils literal notranslate"><span class="pre">Actividad()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.models.CalificacionActividad"><code class="docutils literal notranslate"><span class="pre">CalificacionActividad()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Actividad.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.forms.ActividadForm"><code class="docutils literal notranslate"><span class="pre">ActividadForm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Actividad.html#Actividad.forms.CalificacionActividadForm"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Asignacion_Ciclo.html">Asignacion Ciclo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Asignacion_Ciclo.html#views">views:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.AsignacionCicloListView"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.AsignacionCicloCreateView"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloCreateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.AsignacionCicloUpdateView"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.AsignacionCicloDeleteView"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.asignar_alumnas"><code class="docutils literal notranslate"><span class="pre">asignar_alumnas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.views.asignar_grado_usuario"><code class="docutils literal notranslate"><span class="pre">asignar_grado_usuario()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Asignacion_Ciclo.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.models.AsignacionCiclo"><code class="docutils literal notranslate"><span class="pre">AsignacionCiclo()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Asignacion_Ciclo.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asignacion_Ciclo.html#Asignacion_Ciclo.forms.AsignacionCicloForm"><code class="docutils literal notranslate"><span class="pre">AsignacionCicloForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Asistencia.html">Asistencia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Asistencia.html#views">views:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Asistencia.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asistencia.html#Asistencia.models.Asistencia"><code class="docutils literal notranslate"><span class="pre">Asistencia()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Asistencia.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Asistencia.html#Asistencia.forms.AsistenciaForm"><code class="docutils literal notranslate"><span class="pre">AsistenciaForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Curso.html">Curso</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Curso.html#views">Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoListView"><code class="docutils literal notranslate"><span class="pre">CursoListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoCreateView"><code class="docutils literal notranslate"><span class="pre">CursoCreateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoUpdateView"><code class="docutils literal notranslate"><span class="pre">CursoUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoDeleteView"><code class="docutils literal notranslate"><span class="pre">CursoDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoActivateView"><code class="docutils literal notranslate"><span class="pre">CursoActivateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.CursoInactivoListView"><code class="docutils literal notranslate"><span class="pre">CursoInactivoListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoListView"><code class="docutils literal notranslate"><span class="pre">GradoListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoCreateView"><code class="docutils literal notranslate"><span class="pre">GradoCreateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoUpdateView"><code class="docutils literal notranslate"><span class="pre">GradoUpdateView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoDeleteView"><code class="docutils literal notranslate"><span class="pre">GradoDeleteView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoInactivoListView"><code class="docutils literal notranslate"><span class="pre">GradoInactivoListView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.views.GradoActivateView"><code class="docutils literal notranslate"><span class="pre">GradoActivateView()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Curso.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.models.Grado"><code class="docutils literal notranslate"><span class="pre">Grado()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.models.Curso"><code class="docutils literal notranslate"><span class="pre">Curso()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Curso.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.forms.CursoForm"><code class="docutils literal notranslate"><span class="pre">CursoForm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Curso.html#Curso.forms.GradoForm"><code class="docutils literal notranslate"><span class="pre">GradoForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Login.html">Login</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Login.html#views">Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Login.html#Login.views.login_in"><code class="docutils literal notranslate"><span class="pre">login_in()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Login.html#Login.views.logout_out"><code class="docutils literal notranslate"><span class="pre">logout_out()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Persona.html">Persona</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Persona.html#views">Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.persona_create_view"><code class="docutils literal notranslate"><span class="pre">persona_create_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.contacto_create_view"><code class="docutils literal notranslate"><span class="pre">contacto_create_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.contacto_edit_view"><code class="docutils literal notranslate"><span class="pre">contacto_edit_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.contacto_delete_view"><code class="docutils literal notranslate"><span class="pre">contacto_delete_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.alumna_create_view"><code class="docutils literal notranslate"><span class="pre">alumna_create_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.alumna_edit_view"><code class="docutils literal notranslate"><span class="pre">alumna_edit_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.alumna_list_view"><code class="docutils literal notranslate"><span class="pre">alumna_list_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.alumna_inactive_list_view"><code class="docutils literal notranslate"><span class="pre">alumna_inactive_list_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.desactivar_alumna_view"><code class="docutils literal notranslate"><span class="pre">desactivar_alumna_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.views.activar_alumna_view"><code class="docutils literal notranslate"><span class="pre">activar_alumna_view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Persona.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.models.Persona"><code class="docutils literal notranslate"><span class="pre">Persona()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.models.Alumna"><code class="docutils literal notranslate"><span class="pre">Alumna()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.models.Contacto"><code class="docutils literal notranslate"><span class="pre">Contacto()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Persona.html#forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.forms.PersonaForm"><code class="docutils literal notranslate"><span class="pre">PersonaForm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.forms.AlumnaForm"><code class="docutils literal notranslate"><span class="pre">AlumnaForm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Persona.html#Persona.forms.ContactoForm"><code class="docutils literal notranslate"><span class="pre">ContactoForm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user.html#models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user.html#user.models.Rol"><code class="docutils literal notranslate"><span class="pre">Rol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user.html#user.models.User"><code class="docutils literal notranslate"><span class="pre">User()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="ClassManager.html" class="btn btn-neutral float-right" title="ClassManager" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2024, Bryan Jancarlo Sosa Mejía.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -13,11 +13,11 @@ class CursoListView(LoginRequiredMixin,ListView):
         Vista basada en clase para listar los cursos activos.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        ListView: Vista genérica para mostrar una lista de objetos.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - ListView: Vista genérica para mostrar una lista de objetos.
 
     Métodos:
-        get_queryset(): Devuelve un queryset que filtra solo los cursos con estado activo.
+       - get_queryset(): Devuelve un queryset que filtra solo los cursos con estado activo.
 
     """
     model = Curso
@@ -31,14 +31,14 @@ class CursoCreateView(LoginRequiredMixin,CreateView):
         Vista basada en clase para crear un nuevo curso.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        CreateView: Vista genérica para crear un nuevo objeto.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - CreateView: Vista genérica para crear un nuevo objeto.
 
     Atributos:
-        model (Model): El modelo asociado a la vista (Curso).
-        form_class (Form): El formulario para crear un nuevo curso (CursoForm).
-        template_name (str): Nombre de la plantilla utilizada para el formulario.
-        success_url (str): URL a la que se redirigirá tras la creación exitosa.
+       - model (Model): El modelo asociado a la vista (Curso).
+       - form_class (Form): El formulario para crear un nuevo curso (CursoForm).
+       - template_name (str): Nombre de la plantilla utilizada para el formulario.
+       - success_url (str): URL a la que se redirigirá tras la creación exitosa.
 
     """
     model = Curso
@@ -51,14 +51,14 @@ class CursoUpdateView(LoginRequiredMixin,UpdateView):
         Vista basada en clase para actualizar un curso existente.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        UpdateView: Vista genérica para actualizar un objeto existente.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - UpdateView: Vista genérica para actualizar un objeto existente.
 
     Atributos:
-        model (Model): El modelo asociado a la vista (Curso).
-        form_class (Form): El formulario para actualizar el curso (CursoForm).
-        template_name (str): Nombre de la plantilla utilizada para el formulario.
-        success_url (str): URL a la que se redirigirá tras la actualización exitosa.
+       - model (Model): El modelo asociado a la vista (Curso).
+       - form_class (Form): El formulario para actualizar el curso (CursoForm).
+       - template_name (str): Nombre de la plantilla utilizada para el formulario.
+       - success_url (str): URL a la que se redirigirá tras la actualización exitosa.
 
     """
     model = Curso
@@ -71,14 +71,14 @@ class CursoDeleteView(LoginRequiredMixin,View):
         Vista basada en clase para desactivar un curso existente.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        View: Vista base para definir métodos HTTP.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - View: Vista base para definir métodos HTTP.
 
     Atributos:
-        success_url (str): URL a la que se redirigirá tras desactivar el curso.
+       - success_url (str): URL a la que se redirigirá tras desactivar el curso.
 
     Métodos:
-        get(request, *args, **kwargs): Maneja la solicitud GET para desactivar un curso
+       - get(request, *args, **kwargs): Maneja la solicitud GET para desactivar un curso
         y redirigir a la lista de cursos.
 
     """
@@ -96,14 +96,14 @@ class CursoActivateView(LoginRequiredMixin,View):
         Vista basada en clase para activar un curso existente.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        View: Vista base para definir métodos HTTP.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - View: Vista base para definir métodos HTTP.
 
     Atributos:
-        success_url (str): URL a la que se redirigirá tras activar el curso.
+       - success_url (str): URL a la que se redirigirá tras activar el curso.
 
     Métodos:
-        get(request, *args, **kwargs): Maneja la solicitud GET para activar un curso 
+       - get(request, *args, **kwargs): Maneja la solicitud GET para activar un curso 
         y redirigir a la lista de cursos.
 
     """
@@ -121,11 +121,11 @@ class GradoListView(LoginRequiredMixin,ListView):
         Vista basada en clase para listar los grados activos.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        ListView: Vista genérica para mostrar una lista de objetos.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - ListView: Vista genérica para mostrar una lista de objetos.
 
     Métodos:
-        get_queryset(): Devuelve un queryset que filtra solo los grados con estado activo.
+       - get_queryset(): Devuelve un queryset que filtra solo los grados con estado activo.
 
     """
     model = Grado
@@ -139,14 +139,14 @@ class GradoCreateView(LoginRequiredMixin,CreateView):
         Vista basada en clase para crear un nuevo grado.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        CreateView: Vista genérica para crear un nuevo objeto.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - CreateView: Vista genérica para crear un nuevo objeto.
 
     Atributos:
-        model (Model): El modelo asociado a la vista (Grado).
-        form_class (Form): El formulario para crear un nuevo grado (GradoForm).
-        template_name (str): Nombre de la plantilla utilizada para el formulario.
-        success_url (str): URL a la que se redirigirá tras la creación exitosa.
+       - model (Model): El modelo asociado a la vista (Grado).
+       - form_class (Form): El formulario para crear un nuevo grado (GradoForm).
+       - template_name (str): Nombre de la plantilla utilizada para el formulario.
+       - success_url (str): URL a la que se redirigirá tras la creación exitosa.
 
     """
     model = Grado
@@ -159,14 +159,14 @@ class GradoUpdateView(LoginRequiredMixin,UpdateView):
         Vista basada en clase para actualizar un grado existente.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        UpdateView: Vista genérica para actualizar un objeto existente.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - UpdateView: Vista genérica para actualizar un objeto existente.
 
     Atributos:
-        model (Model): El modelo asociado a la vista (Grado).
-        form_class (Form): El formulario para actualizar el grado (GradoForm).
-        template_name (str): Nombre de la plantilla utilizada para el formulario.
-        success_url (str): URL a la que se redirigirá tras la actualización exitosa.
+       - model (Model): El modelo asociado a la vista (Grado).
+       - form_class (Form): El formulario para actualizar el grado (GradoForm).
+       - template_name (str): Nombre de la plantilla utilizada para el formulario.
+       - success_url (str): URL a la que se redirigirá tras la actualización exitosa.
 
     """
     model = Grado
@@ -179,14 +179,14 @@ class GradoDeleteView(LoginRequiredMixin,View):
         Vista basada en clase para desactivar un grado existente.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        View: Vista base para definir métodos HTTP.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - View: Vista base para definir métodos HTTP.
 
     Atributos:
-        success_url (str): URL a la que se redirigirá tras desactivar el grado.
+       - success_url (str): URL a la que se redirigirá tras desactivar el grado.
 
     Métodos:
-        get(request, *args, **kwargs): Maneja la solicitud GET para desactivar un grado 
+       - get(request, *args, **kwargs): Maneja la solicitud GET para desactivar un grado 
         y redirigir a la lista de grados.
 
     """
@@ -204,11 +204,11 @@ class CursoInactivoListView(LoginRequiredMixin,ListView):
         Vista basada en clase para listar los cursos inactivos.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        ListView: Vista genérica para mostrar una lista de objetos.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - ListView: Vista genérica para mostrar una lista de objetos.
 
     Métodos:
-        get_queryset(): Devuelve un queryset que filtra solo los cursos con estado inactivo.
+       - get_queryset(): Devuelve un queryset que filtra solo los cursos con estado inactivo.
 
     """
     model = Curso
@@ -222,11 +222,11 @@ class GradoInactivoListView(LoginRequiredMixin,ListView):
         Vista basada en clase para listar los grados inactivos.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        ListView: Vista genérica para mostrar una lista de objetos.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - ListView: Vista genérica para mostrar una lista de objetos.
 
     Métodos:
-        get_queryset(): Devuelve un queryset que filtra solo los grados con estado inactivo.
+       - get_queryset(): Devuelve un queryset que filtra solo los grados con estado inactivo.
 
     """
     model = Grado
@@ -241,14 +241,14 @@ class GradoActivateView(LoginRequiredMixin,View):
         Vista basada en clase para activar un grado existente.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        View: Vista base para definir métodos HTTP.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - View: Vista base para definir métodos HTTP.
 
     Atributos:
-        success_url (str): URL a la que se redirigirá tras activar el grado.
+       - success_url (str): URL a la que se redirigirá tras activar el grado.
 
     Métodos:
-        get(request, *args, **kwargs): Maneja la solicitud GET para activar un grado 
+       - get(request, *args, **kwargs): Maneja la solicitud GET para activar un grado 
         y redirigir a la lista de grados.
 
     """

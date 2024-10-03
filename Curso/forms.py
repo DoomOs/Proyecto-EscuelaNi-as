@@ -7,10 +7,10 @@ class CursoForm(forms.ModelForm):
         Formulario para crear o actualizar un curso.
 
     Hereda:
-        forms.ModelForm: Clase base para formularios basados en modelos.
+       - forms.ModelForm: Clase base para formularios basados en modelos.
 
     Atributos:
-        Meta (class): Configuración de la clase, incluyendo el modelo y los campos a incluir en el formulario.
+       - Meta (class): Configuración de la clase, incluyendo el modelo y los campos a incluir en el formulario.
 
     """
     class Meta:
@@ -23,10 +23,10 @@ class GradoForm(forms.ModelForm):
         Formulario para crear o actualizar un grado.
 
     Hereda:
-        forms.ModelForm: Clase base para formularios basados en modelos.
+        - forms.ModelForm: Clase base para formularios basados en modelos.
 
     Atributos:
-        Meta (class): Configuración de la clase, incluyendo el modelo y los campos a incluir en el formulario.
+       - Meta (class): Configuración de la clase, incluyendo el modelo y los campos a incluir en el formulario.
 
     """
     class Meta:

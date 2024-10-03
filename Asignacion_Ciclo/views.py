@@ -18,10 +18,10 @@ def AsignacionCicloListView(request):
         Vista que gestiona la visualización de la lista de asignaciones de ciclos.
 
     Parámetros:
-        request (HttpRequest): Objeto de solicitud HTTP que contiene los parámetros de búsqueda.
+       - request (HttpRequest): Objeto de solicitud HTTP que contiene los parámetros de búsqueda.
 
     Retorna:
-        HttpResponse: Renderiza la plantilla 'asignacion_ciclo_list.html' con el contexto que incluye la lista de asignaciones y grados disponibles.
+        - HttpResponse: Renderiza la plantilla 'asignacion_ciclo_list.html' con el contexto que incluye la lista de asignaciones y grados disponibles.
     
     Filtra las asignaciones de ciclos según el año, grado y consulta de búsqueda proporcionados en los parámetros GET.
 
@@ -57,29 +57,33 @@ class AsignacionCicloCreateView(LoginRequiredMixin, CreateView):
         Clase que gestiona la creación de una nueva asignación de ciclo.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        CreateView: Vista genérica para crear un objeto.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - CreateView: Vista genérica para crear un objeto.
 
     Atributos:
-        model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.
-        form_class (AsignacionCicloForm): Formulario utilizado para crear la asignación.
-        template_name (str): Nombre del template a utilizar para renderizar la vista.
-        success_url (str): URL a la que se redirige después de crear la asignación.
+       - model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.
+       - form_class (AsignacionCicloForm): Formulario utilizado para crear la asignación.
+       - template_name (str): Nombre del template a utilizar para renderizar la vista.
+       - success_url (str): URL a la que se redirige después de crear la asignación.
 
     Métodos:
         get_context_data(**kwargs):
             Añade la alumna y los grados al contexto de la vista.
+            
             Parámetros:
-                **kwargs: Argumentos adicionales que se pueden pasar al contexto.
+               - **kwargs: Argumentos adicionales que se pueden pasar al contexto.
+            
             Retorna:
-                dict: El contexto actualizado que incluye la alumna y los grados disponibles.
+               - dict: El contexto actualizado que incluye la alumna y los grados disponibles.
 
         form_valid(form):
             Procesa el formulario cuando es válido, asignando la alumna y verificando si ya está asignada en el mismo año.
+            
             Parámetros:
-                form (AsignacionCicloForm): Formulario con los datos de la asignación.
+               - form (AsignacionCicloForm): Formulario con los datos de la asignación.
+            
             Retorna:
-                HttpResponseRedirect: Redirección a la URL de éxito si el formulario es válido, o vuelve a mostrar el formulario con errores.
+               - HttpResponseRedirect: Redirección a la URL de éxito si el formulario es válido, o vuelve a mostrar el formulario con errores.
 
     """
     
@@ -113,22 +117,24 @@ class AsignacionCicloUpdateView(LoginRequiredMixin,UpdateView):
         Clase que gestiona la actualización de una asignación de ciclo existente.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        UpdateView: Vista genérica para actualizar un objeto.
+        - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        - UpdateView: Vista genérica para actualizar un objeto.
 
     Atributos:
-        model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.
-        form_class (AsignacionCicloForm): Formulario utilizado para actualizar la asignación.
-        template_name (str): Nombre del template a utilizar para renderizar la vista.
-        success_url (str): URL a la que se redirige después de actualizar la asignación.
+       - model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.
+       - form_class (AsignacionCicloForm): Formulario utilizado para actualizar la asignación.
+       - template_name (str): Nombre del template a utilizar para renderizar la vista.
+       - success_url (str): URL a la que se redirige después de actualizar la asignación.
 
     Métodos:
         get_context_data(**kwargs):
-            Añade los grados y la alumna al contexto de la vista.
+           - Añade los grados y la alumna al contexto de la vista.
+            
             Parámetros:
-                **kwargs: Argumentos adicionales que se pueden pasar al contexto.
+               - **kwargs: Argumentos adicionales que se pueden pasar al contexto.
+            
             Retorna:
-                dict: El contexto actualizado que incluye los grados disponibles y la alumna.
+               - dict: El contexto actualizado que incluye los grados disponibles y la alumna.
 
     """
     
@@ -151,13 +157,13 @@ class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):
         Clase que gestiona la eliminación de una asignación de ciclo existente.
 
     Hereda:
-        LoginRequiredMixin: Requiere que el usuario esté autenticado.
-        DeleteView: Vista genérica para eliminar un objeto.
+       - LoginRequiredMixin: Requiere que el usuario esté autenticado.
+       - DeleteView: Vista genérica para eliminar un objeto.
 
     Atributos:
-        model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.
-        template_name (str): Nombre del template a utilizar para confirmar la eliminación.
-        success_url (str): URL a la que se redirige después de eliminar la asignación.
+       - model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.
+       - template_name (str): Nombre del template a utilizar para confirmar la eliminación.
+       - success_url (str): URL a la que se redirige después de eliminar la asignación.
 
     """
 
@@ -174,11 +180,11 @@ def asignar_alumnas(request, grado_id):
     Vista que gestiona la asignación de alumnas a un grado específico.
 
     Parámetros:
-        request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.
-        grado_id (int): ID del grado al que se asignarán las alumnas.
+       - request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.
+       - grado_id (int): ID del grado al que se asignarán las alumnas.
 
     Retorna:
-        HttpResponse: Renderiza la plantilla 'asignar_alumnas.html' con el contexto que incluye el grado, alumnas asignadas y no asignadas.
+       - HttpResponse: Renderiza la plantilla 'asignar_alumnas.html' con el contexto que incluye el grado, alumnas asignadas y no asignadas.
     
     Permite agregar o remover alumnas de un grado según la acción especificada en la solicitud POST.
 """
@@ -225,10 +231,10 @@ def asignar_grado_usuario(request):
         Vista que gestiona la asignación de un grado a un usuario.
 
     Parámetros:
-        request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.
+       - request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.
 
     Retorna:
-        HttpResponse: Renderiza la plantilla 'asignar_grado_usuario.html' con el contexto que incluye el usuario y los grados activos.
+       - HttpResponse: Renderiza la plantilla 'asignar_grado_usuario.html' con el contexto que incluye el usuario y los grados activos.
     
     Permite al usuario seleccionar un grado, que se guardará en su perfil. 
 

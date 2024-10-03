@@ -7,10 +7,10 @@ class AsistenciaForm(forms.ModelForm):
 
     Atributos:
         Meta (class): Clase interna que define la configuración del formulario.
-            model (Model): El modelo asociado al formulario (Asistencia).
-            fields (list): Lista de campos que se incluirán en el formulario, en este caso solo 'presente'.
-            widgets (dict): Diccionario que define la representación de los campos del formulario; 
-            el campo 'presente' se representará como un checkbox con clase 'form-check-input'.
+           - model (Model): El modelo asociado al formulario (Asistencia).
+           - fields (list): Lista de campos que se incluirán en el formulario, en este caso solo 'presente'.
+           - widgets (dict): Diccionario que define la representación de los campos del formulario; 
+           - el campo 'presente' se representará como un checkbox con clase 'form-check-input'.
 
     """
     class Meta:

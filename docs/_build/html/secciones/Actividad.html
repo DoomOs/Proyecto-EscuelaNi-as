@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad: &mdash; documentación de ClassManager - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=4936afed"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/translations.js?v=d190bf04"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ClassManager
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Actividad:</a><ul>
+<li><a class="reference internal" href="#views">views:</a><ul>
+<li><a class="reference internal" href="#Actividad.views.ActividadListView"><code class="docutils literal notranslate"><span class="pre">ActividadListView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.ActividadInactivaListView"><code class="docutils literal notranslate"><span class="pre">ActividadInactivaListView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.ActividadInactivarView"><code class="docutils literal notranslate"><span class="pre">ActividadInactivarView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.ActividadReactivarView"><code class="docutils literal notranslate"><span class="pre">ActividadReactivarView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.ActividadCreateView"><code class="docutils literal notranslate"><span class="pre">ActividadCreateView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.ActividadUpdateView"><code class="docutils literal notranslate"><span class="pre">ActividadUpdateView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.ActividadDeleteView"><code class="docutils literal notranslate"><span class="pre">ActividadDeleteView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.CalificacionActividadListView"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadListView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.CalificarAlumnoView"><code class="docutils literal notranslate"><span class="pre">CalificarAlumnoView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.CalificacionActividadUpdateView"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadUpdateView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.CalificacionActividadDeleteView"><code class="docutils literal notranslate"><span class="pre">CalificacionActividadDeleteView()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.calificaciones_alumna_view"><code class="docutils literal notranslate"><span class="pre">calificaciones_alumna_view()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.get_anos_cursos"><code class="docutils literal notranslate"><span class="pre">get_anos_cursos()</span></code></a></li>
+<li><a class="reference internal" href="#Actividad.views.get_cursos"><code class="docutils literal notranslate"><span class="pre">get_cursos()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#models">Models</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ClassManager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Actividad:</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/secciones/Actividad.md.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="actividad">
+<h1>Actividad:<a class="headerlink" href="#actividad" title="Link to this heading"></a></h1>
+<section id="views">
+<h2>views:<a class="headerlink" href="#views" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.ActividadListView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">ActividadListView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.ActividadListView" title="Link to this definition"></a></dt>
+<dd><p>Clase que gestiona la vista de lista de actividades activas.</p>
+<dl>
+<dt>Hereda:</dt><dd><ul class="simple">
+<li><p>LoginRequiredMixin: Requiere que el usuario esté autenticado.</p></li>
+<li><p>ListView: Vista genérica para listar objetos de un modelo.</p></li>
+</ul>
+</dd>
+<dt>Atributos:</dt><dd><ul class="simple">
+<li><p>model (Actividad): Modelo utilizado para representar las actividades.</p></li>
+<li><p>template_name (str): Nombre del template a utilizar para renderizar la vista.</p></li>
+<li><p>context_object_name (str): Nombre del contexto que se utilizará en la plantilla.</p></li>
+</ul>
+</dd>
+<dt>Métodos:</dt><dd><dl>
+<dt>get_queryset():</dt><dd><p>Obtiene el conjunto de consultas filtrado y ordenado por fecha.</p>
+<dl class="simple">
+<dt>Retorna:</dt><dd><p>QuerySet: Un conjunto de actividades activas filtradas por curso y fecha, ordenadas por fecha descendente.</p>
+</dd>
+</dl>
+</dd>
+<dt>get_context_data(kwargs):</dt><dd><p>Añade cursos activos al contexto de la vista.</p>
+<dl class="simple">
+<dt>Parámetros:</dt><dd><p>kwargs: Argumentos adicionales que se pueden pasar al contexto.</p>
+</dd>
+<dt>Retorna:</dt><dd><p>dict: El contexto actualizado que incluye los cursos activos.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.ActividadInactivaListView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">ActividadInactivaListView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.ActividadInactivaListView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la vista de lista de actividades inactivas.</p>
+</div></blockquote>
+<dl>
+<dt>Hereda:</dt><dd><ul class="simple">
+<li><p>LoginRequiredMixin: Requiere que el usuario esté autenticado.</p></li>
+<li><p>ListView: Vista genérica para listar objetos de un modelo.</p></li>
+</ul>
+</dd>
+<dt>Atributos:</dt><dd><ul class="simple">
+<li><p>model (Actividad): Modelo utilizado para representar las actividades.</p></li>
+<li><p>template_name (str): Nombre del template a utilizar para renderizar la vista.</p></li>
+<li><p>context_object_name (str): Nombre del contexto que se utilizará en la plantilla.</p></li>
+</ul>
+</dd>
+<dt>Métodos:</dt><dd><dl>
+<dt>get_queryset(): </dt><dd><p>Obtiene el conjunto de consultas filtrado y ordenado por fecha.</p>
+<dl class="simple">
+<dt>Retorna:</dt><dd><p>QuerySet: Un conjunto de actividades inactivas filtradas por curso, ordenadas por fecha descendente.</p>
+</dd>
+</dl>
+</dd>
+<dt>get_context_data(kwargs):</dt><dd><p>Añade todos los cursos al contexto de la vista.
+Parámetros:</p>
+<blockquote>
+<div><p>kwargs: Argumentos adicionales que se pueden pasar al contexto.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Retorna:</dt><dd><p>dict: El contexto actualizado que incluye todos los cursos.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.ActividadInactivarView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">ActividadInactivarView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.ActividadInactivarView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la inactivación de una actividad específica.</p>
+</div></blockquote>
+<dl>
+<dt>Hereda:</dt><dd><p>View: Clase base para todas las vistas.</p>
+</dd>
+<dt>Atributos:</dt><dd><p>success_url (str): URL a la que se redirige después de inactivar la actividad.</p>
+</dd>
+<dt>Métodos:</dt><dd><dl>
+<dt>get(request, args, kwargs):</dt><dd><p>Inactiva una actividad y redirige a la URL de éxito.
+Parámetros:</p>
+<blockquote>
+<div><p>request (HttpRequest): Objeto de solicitud HTTP.
+args: Argumentos adicionales para el método.
+kwargs: Argumentos adicionales que se pueden pasar al método.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Retorna:</dt><dd><p>HttpResponseRedirect: Redirección a la URL especificada en success_url.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.ActividadReactivarView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">ActividadReactivarView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.ActividadReactivarView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la reactivación de una actividad específica.</p>
+</div></blockquote>
+<dl>
+<dt>Hereda:</dt><dd><p>View: Clase base para todas las vistas.</p>
+</dd>
+<dt>Atributos:</dt><dd><p>success_url (str): URL a la que se redirige después de reactivar la actividad.</p>
+</dd>
+<dt>Métodos:</dt><dd><dl>
+<dt>get(request, <a href="#id1"><span class="problematic" id="id2">*</span></a>args, <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs):</dt><dd><p>Reactiva una actividad y redirige a la URL de éxito.
+Parámetros:</p>
+<blockquote>
+<div><p>request (HttpRequest): Objeto de solicitud HTTP.
+<a href="#id5"><span class="problematic" id="id6">*</span></a>args: Argumentos adicionales para el método.
+<a href="#id7"><span class="problematic" id="id8">**</span></a>kwargs: Argumentos adicionales que se pueden pasar al método.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Retorna:</dt><dd><p>HttpResponseRedirect: Redirección a la URL especificada en success_url.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.ActividadCreateView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">ActividadCreateView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.ActividadCreateView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la creación de una nueva actividad.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Hereda:</dt><dd><p>LoginRequiredMixin: Requiere que el usuario esté autenticado.
+CreateView: Vista genérica para crear un objeto.</p>
+</dd>
+<dt>Atributos:</dt><dd><p>model (Actividad): Modelo utilizado para representar las actividades.
+form_class (ActividadForm): Formulario utilizado para crear la actividad.
+template_name (str): Nombre del template a utilizar para renderizar la vista.
+success_url (str): URL a la que se redirige después de crear la actividad.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.ActividadUpdateView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">ActividadUpdateView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.ActividadUpdateView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la actualización de una actividad existente.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Hereda:</dt><dd><p>LoginRequiredMixin: Requiere que el usuario esté autenticado.
+UpdateView: Vista genérica para actualizar un objeto.</p>
+</dd>
+<dt>Atributos:</dt><dd><p>model (Actividad): Modelo utilizado para representar las actividades.
+form_class (ActividadForm): Formulario utilizado para actualizar la actividad.
+template_name (str): Nombre del template a utilizar para renderizar la vista.
+success_url (str): URL a la que se redirige después de actualizar la actividad.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.ActividadDeleteView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">ActividadDeleteView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.ActividadDeleteView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la eliminación de una actividad existente.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Hereda:</dt><dd><p>LoginRequiredMixin: Requiere que el usuario esté autenticado.
+DeleteView: Vista genérica para eliminar un objeto.</p>
+</dd>
+<dt>Atributos:</dt><dd><p>model (Actividad): Modelo utilizado para representar las actividades.
+template_name (str): Nombre del template a utilizar para confirmar la eliminación.
+success_url (str): URL a la que se redirige después de eliminar la actividad.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.CalificacionActividadListView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">CalificacionActividadListView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.CalificacionActividadListView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la vista de lista de calificaciones de actividades.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Hereda:</dt><dd><p>LoginRequiredMixin: Requiere que el usuario esté autenticado.
+ListView: Vista genérica para listar objetos de un modelo.</p>
+</dd>
+<dt>Atributos:</dt><dd><p>model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.
+template_name (str): Nombre del template a utilizar para renderizar la vista.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.CalificarAlumnoView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">CalificarAlumnoView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.CalificarAlumnoView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la vista para calificar a los alumnos en una actividad específica.</p>
+</div></blockquote>
+<dl>
+<dt>Hereda:</dt><dd><p>LoginRequiredMixin: Requiere que el usuario esté autenticado.
+TemplateView: Vista que utiliza un template para renderizar.</p>
+</dd>
+<dt>Atributos:</dt><dd><p>template_name (str): Nombre del template a utilizar para renderizar la vista.</p>
+</dd>
+<dt>Métodos:</dt><dd><dl>
+<dt>get_context_data(<a href="#id9"><span class="problematic" id="id10">**</span></a>kwargs):</dt><dd><p>Prepara el contexto para la calificación de alumnos, incluyendo la actividad y listas de alumnos calificados y no calificados.
+Parámetros:</p>
+<blockquote>
+<div><p><a href="#id11"><span class="problematic" id="id12">**</span></a>kwargs: Argumentos adicionales que se pueden pasar al contexto.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Retorna:</dt><dd><p>dict: El contexto actualizado con la actividad y las listas de alumnos.</p>
+</dd>
+</dl>
+</dd>
+<dt>post(request, <a href="#id13"><span class="problematic" id="id14">*</span></a>args, <a href="#id15"><span class="problematic" id="id16">**</span></a>kwargs):</dt><dd><p>Maneja la solicitud POST para guardar las calificaciones de los alumnos.
+Parámetros:</p>
+<blockquote>
+<div><p>request (HttpRequest): Objeto de solicitud HTTP.
+<a href="#id17"><span class="problematic" id="id18">*</span></a>args: Argumentos adicionales para el método.
+<a href="#id19"><span class="problematic" id="id20">**</span></a>kwargs: Argumentos adicionales que se pueden pasar al método.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Retorna:</dt><dd><p>HttpResponseRedirect: Redirección a la misma vista para reflejar los cambios guardados.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.CalificacionActividadUpdateView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">CalificacionActividadUpdateView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.CalificacionActividadUpdateView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la actualización de una calificación de actividad existente.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Hereda:</dt><dd><p>LoginRequiredMixin: Requiere que el usuario esté autenticado.
+UpdateView: Vista genérica para actualizar un objeto.</p>
+</dd>
+<dt>Atributos:</dt><dd><p>model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.
+form_class (CalificacionActividadForm): Formulario utilizado para actualizar la calificación.
+template_name (str): Nombre del template a utilizar para renderizar la vista.
+success_url (str): URL a la que se redirige después de actualizar la calificación.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.CalificacionActividadDeleteView">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">CalificacionActividadDeleteView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.CalificacionActividadDeleteView" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Clase que gestiona la eliminación de una calificación de actividad existente.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Hereda:</dt><dd><p>LoginRequiredMixin: Requiere que el usuario esté autenticado.
+DeleteView: Vista genérica para eliminar un objeto.</p>
+</dd>
+<dt>Atributos:</dt><dd><p>model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.
+template_name (str): Nombre del template a utilizar para confirmar la eliminación.
+success_url (str): URL a la que se redirige después de eliminar la calificación.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.calificaciones_alumna_view">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">calificaciones_alumna_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alumna_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.calificaciones_alumna_view" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Vista que gestiona la visualización de calificaciones de una alumna específica.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Parámetros:</dt><dd><p>request (HttpRequest): Objeto de solicitud HTTP.
+alumna_id (int): ID de la alumna cuyas calificaciones se van a visualizar.</p>
+</dd>
+<dt>Retorna:</dt><dd><p>HttpResponse: Renderiza la plantilla “calificaciones_alumna.html” con el contexto de la alumna y sus calificaciones.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.get_anos_cursos">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">get_anos_cursos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.get_anos_cursos" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Vista que obtiene los años asociados a un grado específico y devuelve la lista de años en formato JSON.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Parámetros:</dt><dd><p>request (HttpRequest): Objeto de solicitud HTTP.</p>
+</dd>
+<dt>Retorna:</dt><dd><p>JsonResponse: Respuesta JSON con la lista de años disponibles para el grado especificado.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Actividad.views.get_cursos">
+<span class="sig-prename descclassname"><span class="pre">Actividad.views.</span></span><span class="sig-name descname"><span class="pre">get_cursos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Actividad.views.get_cursos" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Vista que obtiene los cursos asociados a un grado específico y año, y devuelve la lista de cursos en formato JSON.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Parámetros:</dt><dd><p>request (HttpRequest): Objeto de solicitud HTTP.</p>
+</dd>
+<dt>Retorna:</dt><dd><p>JsonResponse: Respuesta JSON con la lista de cursos disponibles para el grado y año especificados.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="models">
+<h2>Models<a class="headerlink" href="#models" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2024, Bryan Jancarlo Sosa Mejía.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

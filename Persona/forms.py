@@ -8,18 +8,18 @@ class PersonaForm(forms.ModelForm):
         Formulario para crear o editar información de una persona.
 
     Hereda:
-        forms.ModelForm: Clase base para crear formularios de modelos de Django.
+       - forms.ModelForm: Clase base para crear formularios de modelos de Django.
 
     Atributos:
         Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.
-            model (Persona): Modelo al que se relaciona este formulario.
-            fields (list): Lista de campos a incluir en el formulario: nombre, apellido, fecha de nacimiento, género y dirección.
-            widgets (dict): Diccionario que define los widgets personalizados para ciertos campos:
-                fecha_nacimiento (DateInput): Campo de fecha con un formato específico.
-                genero (Select): Campo de selección para el género, limitado a 'Femenino'.
+           - model (Persona): Modelo al que se relaciona este formulario.
+           - fields (list): Lista de campos a incluir en el formulario: nombre, apellido, fecha de nacimiento, género y dirección.
+           - widgets (dict): Diccionario que define los widgets personalizados para ciertos campos:
+               - fecha_nacimiento (DateInput): Campo de fecha con un formato específico.
+               - genero (Select): Campo de selección para el género, limitado a 'Femenino'.
 
     Métodos:
-        __init__(self, *args, **kwargs): Inicializa el formulario.
+       - __init__(self, *args, **kwargs): Inicializa el formulario.
             Si la instancia ya existe y tiene una fecha de nacimiento, formatea la fecha en el formato YYYY-MM-DD.
 
     """
@@ -43,16 +43,16 @@ class AlumnaForm(forms.ModelForm):
         Formulario para crear o editar información de una alumna.
 
     Hereda:
-        forms.ModelForm: Clase base para crear formularios de modelos de Django.
+       - forms.ModelForm: Clase base para crear formularios de modelos de Django.
 
     Atributos:
-        persona (ModelChoiceField): Campo oculto que almacena la relación con el modelo Persona,
+       - persona (ModelChoiceField): Campo oculto que almacena la relación con el modelo Persona,
             permitiendo seleccionar una persona existente.
 
     Métodos:
-        Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.
-            model (Alumna): Modelo al que se relaciona este formulario.
-            fields (list): Lista de campos a incluir en el formulario: código.
+      -  Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.
+           - model (Alumna): Modelo al que se relaciona este formulario.
+           - fields (list): Lista de campos a incluir en el formulario: código.
 
     """
     persona = forms.ModelChoiceField(queryset=Persona.objects.all(), widget=forms.HiddenInput())
@@ -68,22 +68,22 @@ class ContactoForm(forms.ModelForm):
         Formulario para crear o editar información de un contacto asociado a una alumna.
 
     Hereda:
-        forms.ModelForm: Clase base para crear formularios de modelos de Django.
+       - forms.ModelForm: Clase base para crear formularios de modelos de Django.
 
     Atributos:
-        telefono (CharField): Campo para ingresar el número de teléfono del contacto.
-            Incluye un validador que permite solo números de 8 dígitos.
-            widget (TextInput): Widget personalizado que limita la entrada a 8 caracteres y permite solo números.
+       - telefono (CharField): Campo para ingresar el número de teléfono del contacto.
+           - Incluye un validador que permite solo números de 8 dígitos.
+           - widget (TextInput): Widget personalizado que limita la entrada a 8 caracteres y permite solo números.
 
-        email (EmailField): Campo para ingresar la dirección de correo electrónico del contacto.
-            widget (EmailInput): Widget personalizado que proporciona un marcador de posición para el campo de correo electrónico.
+       - email (EmailField): Campo para ingresar la dirección de correo electrónico del contacto.
+           - widget (EmailInput): Widget personalizado que proporciona un marcador de posición para el campo de correo electrónico.
 
     Métodos:
-        Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.
-            model (Contacto): Modelo al que se relaciona este formulario.
-            fields (list): Lista de campos a incluir en el formulario: nombre, apellido, parentesco, teléfono y email.
-            widgets (dict): Diccionario que define widgets personalizados para ciertos campos:
-                parentesco (Select): Campo de selección para elegir el parentesco, con opciones predefinidas.
+       - Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.
+           - model (Contacto): Modelo al que se relaciona este formulario.
+           - fields (list): Lista de campos a incluir en el formulario: nombre, apellido, parentesco, teléfono y email.
+           - widgets (dict): Diccionario que define widgets personalizados para ciertos campos:
+               - parentesco (Select): Campo de selección para elegir el parentesco, con opciones predefinidas.
 
     """
     telefono = forms.CharField(
