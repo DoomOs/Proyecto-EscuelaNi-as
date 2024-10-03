@@ -2457,7 +2457,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def generar_excel(request, fecha):\n    \"\"\"\n        Vista que genera un archivo Excel con la asistencia registrada en una fecha específica.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        fecha (date): Fecha para la cual se generará el archivo Excel de asistencias.\n    Retorna:\n        HttpResponse: Archivo Excel que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
+        "peekOfCode": "def generar_excel(request, fecha):\n    \"\"\"\n        Vista que genera un archivo Excel con la asistencia registrada en una fecha específica..\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        fecha (date): Fecha para la cual se generará el archivo Excel de asistencias.\n    Retorna:\n        HttpResponse: Archivo Excel que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
         "detail": "Asistencia.views",
         "documentation": {}
     },

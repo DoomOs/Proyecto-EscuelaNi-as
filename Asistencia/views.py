@@ -178,7 +178,7 @@ def generar_pdf(request, fecha):
 @login_required
 def generar_excel(request, fecha):
     """
-        Vista que genera un archivo Excel con la asistencia registrada en una fecha específica.
+        Vista que genera un archivo Excel con la asistencia registrada en una fecha específica..
 
     Parámetros:
         request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
