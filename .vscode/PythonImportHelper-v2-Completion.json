@@ -2286,7 +2286,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.forms",
         "description": "Asignacion_Ciclo.forms",
-        "peekOfCode": "class AsignacionCicloForm(forms.ModelForm):\n    class Meta:\n        model = AsignacionCiclo\n        fields = ['grado', 'year']",
+        "peekOfCode": "class AsignacionCicloForm(forms.ModelForm):\n    \"\"\"\n        Formulario que se utiliza para crear o actualizar una asignación de ciclo.\n    Hereda:\n        forms.ModelForm: Clase base para crear formularios a partir de modelos de Django.\n    Meta:\n        model (AsignacionCiclo): Modelo que se utilizará para generar el formulario.\n        fields (list): Lista de campos que se incluirán en el formulario, en este caso 'grado' y 'year'.\n    \"\"\"\n    class Meta:",
         "detail": "Asignacion_Ciclo.forms",
         "documentation": {}
     },
@@ -2295,7 +2295,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.models",
         "description": "Asignacion_Ciclo.models",
-        "peekOfCode": "class AsignacionCiclo(models.Model):\n    grado = models.ForeignKey(Grado, on_delete=models.CASCADE)\n    alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    year = models.IntegerField()\n    class Meta:\n        unique_together = ('alumna', 'grado', 'year')  # Modificamos la restricción de unicidad\n    def __str__(self):\n        return f\"{self.alumna.persona.nombre} {self.alumna.persona.apellido} - {self.grado.nombre_grado} ({self.year})\"",
+        "peekOfCode": "class AsignacionCiclo(models.Model):\n    \"\"\"\n        Modelo que representa la asignación de una alumna a un grado en un año específico.\n    Atributos:\n        grado (ForeignKey): Clave foránea que relaciona la asignación con el modelo Grado. \n            Elimina la asignación si el grado asociado se elimina.\n        alumna (ForeignKey): Clave foránea que relaciona la asignación con el modelo Alumna.\n            Elimina la asignación si la alumna asociada se elimina.\n        user (ForeignKey): Clave foránea que relaciona la asignación con el modelo User.\n            Elimina la asignación si el usuario asociado se elimina.",
         "detail": "Asignacion_Ciclo.models",
         "documentation": {}
     },
@@ -2313,7 +2313,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "class AsignacionCicloCreateView(LoginRequiredMixin, CreateView):\n    model = AsignacionCiclo\n    form_class = AsignacionCicloForm\n    template_name = 'asignacion_ciclo_form.html'\n    success_url = reverse_lazy('alumna-list')\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        context['alumna'] = get_object_or_404(Alumna, id=self.kwargs['pk'])\n        context['grados'] = Grado.objects.all()\n        return context",
+        "peekOfCode": "class AsignacionCicloCreateView(LoginRequiredMixin, CreateView):\n    \"\"\"\n        Clase que gestiona la creación de una nueva asignación de ciclo.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        CreateView: Vista genérica para crear un objeto.\n    Atributos:\n        model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.\n        form_class (AsignacionCicloForm): Formulario utilizado para crear la asignación.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2322,7 +2322,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "class AsignacionCicloUpdateView(UpdateView):\n    model = AsignacionCiclo\n    form_class = AsignacionCicloForm\n    template_name = 'asignacion_ciclo_form.html'\n    success_url = reverse_lazy('asignacionciclo-list')\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        context['grados'] = Grado.objects.all()\n        context['alumna'] = self.object.alumna\n        return context",
+        "peekOfCode": "class AsignacionCicloUpdateView(LoginRequiredMixin,UpdateView):\n    \"\"\"\n        Clase que gestiona la actualización de una asignación de ciclo existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        UpdateView: Vista genérica para actualizar un objeto.\n    Atributos:\n        model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.\n        form_class (AsignacionCicloForm): Formulario utilizado para actualizar la asignación.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2331,7 +2331,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):\n    model = AsignacionCiclo\n    template_name = 'asignacion_ciclo_confirm_delete.html'\n    success_url = reverse_lazy('asignacionciclo-list')\n@login_required\ndef asignar_alumnas(request, grado_id):\n    grado = Grado.objects.get(id=grado_id)\n    year_actual = timezone.localtime(timezone.now()).year\n    # Alumnas asignadas al grado",
+        "peekOfCode": "class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\n        Clase que gestiona la eliminación de una asignación de ciclo existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        DeleteView: Vista genérica para eliminar un objeto.\n    Atributos:\n        model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.\n        template_name (str): Nombre del template a utilizar para confirmar la eliminación.\n        success_url (str): URL a la que se redirige después de eliminar la asignación.",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2340,7 +2340,7 @@
         "kind": 2,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "def AsignacionCicloListView(request):\n    query = Q()\n    grados = Grado.objects.all()\n    year = request.GET.get('year')\n    grado = request.GET.get('grado')\n    search_query = request.GET.get('q')\n    if year:\n        query &= Q(year=year)\n    if grado:\n        query &= Q(grado__id=grado)",
+        "peekOfCode": "def AsignacionCicloListView(request):\n    \"\"\"\n        Vista que gestiona la visualización de la lista de asignaciones de ciclos.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene los parámetros de búsqueda.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'asignacion_ciclo_list.html' con el contexto que incluye la lista de asignaciones y grados disponibles.\n    Filtra las asignaciones de ciclos según el año, grado y consulta de búsqueda proporcionados en los parámetros GET.\n    \"\"\"\n    query = Q()",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2349,7 +2349,7 @@
         "kind": 2,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "def asignar_alumnas(request, grado_id):\n    grado = Grado.objects.get(id=grado_id)\n    year_actual = timezone.localtime(timezone.now()).year\n    # Alumnas asignadas al grado\n    alumnas_asignadas = AsignacionCiclo.objects.filter(grado=grado, year=year_actual)\n    # Alumnas activas que no están asignadas al grado\n    alumnas_no_asignadas = Alumna.objects.filter(estado=True).exclude(id__in=alumnas_asignadas.values_list('alumna_id', flat=True))\n    if request.method == 'POST':\n        alumna_id = request.POST.get('alumna_id')\n        accion = request.POST.get('accion')",
+        "peekOfCode": "def asignar_alumnas(request, grado_id):\n    \"\"\"   \n    Vista que gestiona la asignación de alumnas a un grado específico.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.\n        grado_id (int): ID del grado al que se asignarán las alumnas.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'asignar_alumnas.html' con el contexto que incluye el grado, alumnas asignadas y no asignadas.\n    Permite agregar o remover alumnas de un grado según la acción especificada en la solicitud POST.\n\"\"\"",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2358,7 +2358,7 @@
         "kind": 2,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "def asignar_grado_usuario(request):\n    user = request.user  # Usuario logueado\n    grados_activos = Grado.objects.filter(estado=True)  \n    if request.method == 'POST':\n        grado_id = request.POST.get('grado')  \n        if grado_id:\n            user.id_ciclo = grado_id  \n            user.save()  \n        return redirect('grado-list')  \n    context = {",
+        "peekOfCode": "def asignar_grado_usuario(request):\n    \"\"\"\n        Vista que gestiona la asignación de un grado a un usuario.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'asignar_grado_usuario.html' con el contexto que incluye el usuario y los grados activos.\n    Permite al usuario seleccionar un grado, que se guardará en su perfil. \n    \"\"\"\n    user = request.user  # Usuario logueado",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
