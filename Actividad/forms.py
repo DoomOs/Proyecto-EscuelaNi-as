@@ -9,15 +9,15 @@ class ActividadForm(forms.ModelForm):
 Formulario para crear o actualizar instancias del modelo `Actividad`.
 
 Atributos:
-    model (Actividad): El modelo asociado al formulario, que es `Actividad`.
-    fields (list): Lista de campos que serán incluidos en el formulario (`actividad`, `punteo`, `curso`).
+    - model (Actividad): El modelo asociado al formulario, que es `Actividad`.
+    - fields (list): Lista de campos que serán incluidos en el formulario (`actividad`, `punteo`, `curso`).
 
 Métodos:
-    __init__: Inicializa el formulario. Sobrescribe el queryset del campo `curso` para mostrar solo los cursos activos.
+   - __init__: Inicializa el formulario. Sobrescribe el queryset del campo `curso` para mostrar solo los cursos activos.
 
     Args:
-        *args: Argumentos posicionales.
-        **kwargs: Argumentos clave.
+       - *args: Argumentos posicionales.
+       - **kwargs: Argumentos clave.
 
     Notas:
         - Este método filtra los cursos activos, es decir, aquellos cuyo estado es `1`.
@@ -39,8 +39,8 @@ class CalificacionActividadForm(forms.ModelForm):
 Formulario para crear o actualizar instancias del modelo `CalificacionActividad`.
 
 Atributos:
-    model (CalificacionActividad): El modelo asociado al formulario, que es `CalificacionActividad`.
-    fields (str): Especifica que todos los campos del modelo serán incluidos en el formulario.
+    - model (CalificacionActividad): El modelo asociado al formulario, que es `CalificacionActividad`.
+    - fields (str): Especifica que todos los campos del modelo serán incluidos en el formulario.
 """
 
     

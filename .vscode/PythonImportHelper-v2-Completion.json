@@ -537,6 +537,15 @@
         "documentation": {}
     },
     {
+        "label": "django",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django",
+        "description": "django",
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "forms",
         "importPath": "django",
         "description": "django",
@@ -1826,6 +1835,15 @@
         "documentation": {}
     },
     {
+        "label": "sphinx_rtd_theme",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sphinx_rtd_theme",
+        "description": "sphinx_rtd_theme",
+        "detail": "sphinx_rtd_theme",
+        "documentation": {}
+    },
+    {
         "label": "get_asgi_application",
         "importPath": "django.core.asgi",
         "description": "django.core.asgi",
@@ -2069,7 +2087,7 @@
         "kind": 6,
         "importPath": "Actividad.forms",
         "description": "Actividad.forms",
-        "peekOfCode": "class ActividadForm(forms.ModelForm):\n    \"\"\"\nFormulario para crear o actualizar instancias del modelo `Actividad`.\nAtributos:\n    model (Actividad): El modelo asociado al formulario, que es `Actividad`.\n    fields (list): Lista de campos que serán incluidos en el formulario (`actividad`, `punteo`, `curso`).\nMétodos:\n    __init__: Inicializa el formulario. Sobrescribe el queryset del campo `curso` para mostrar solo los cursos activos.\n    Args:\n        *args: Argumentos posicionales.",
+        "peekOfCode": "class ActividadForm(forms.ModelForm):\n    \"\"\"\nFormulario para crear o actualizar instancias del modelo `Actividad`.\nAtributos:\n    - model (Actividad): El modelo asociado al formulario, que es `Actividad`.\n    - fields (list): Lista de campos que serán incluidos en el formulario (`actividad`, `punteo`, `curso`).\nMétodos:\n   - __init__: Inicializa el formulario. Sobrescribe el queryset del campo `curso` para mostrar solo los cursos activos.\n    Args:\n       - *args: Argumentos posicionales.",
         "detail": "Actividad.forms",
         "documentation": {}
     },
@@ -2078,7 +2096,7 @@
         "kind": 6,
         "importPath": "Actividad.forms",
         "description": "Actividad.forms",
-        "peekOfCode": "class CalificacionActividadForm(forms.ModelForm):\n    \"\"\"\nFormulario para crear o actualizar instancias del modelo `CalificacionActividad`.\nAtributos:\n    model (CalificacionActividad): El modelo asociado al formulario, que es `CalificacionActividad`.\n    fields (str): Especifica que todos los campos del modelo serán incluidos en el formulario.\n\"\"\"\n    class Meta:\n        model = CalificacionActividad\n        fields = '__all__'",
+        "peekOfCode": "class CalificacionActividadForm(forms.ModelForm):\n    \"\"\"\nFormulario para crear o actualizar instancias del modelo `CalificacionActividad`.\nAtributos:\n    - model (CalificacionActividad): El modelo asociado al formulario, que es `CalificacionActividad`.\n    - fields (str): Especifica que todos los campos del modelo serán incluidos en el formulario.\n\"\"\"\n    class Meta:\n        model = CalificacionActividad\n        fields = '__all__'",
         "detail": "Actividad.forms",
         "documentation": {}
     },
@@ -2087,7 +2105,7 @@
         "kind": 6,
         "importPath": "Actividad.models",
         "description": "Actividad.models",
-        "peekOfCode": "class Actividad(models.Model):\n    \"\"\"\nModelo que representa una actividad asignada en un curso.\nAtributos:\n    ACTIVIDAD_ESTADOS (tuple): Opciones de estado de la actividad (activa o inactiva).\n    actividad (str): Nombre de la actividad, con un máximo de 100 caracteres.\n    punteo (int): Valor máximo de punteo asignado a la actividad.\n    curso (ForeignKey): Relación con el modelo `Curso`. La actividad pertenece a un curso específico.\n    fecha (date): Fecha en la que se creó la actividad, asignada automáticamente.\n    estado (int): Estado de la actividad (1 para activa, 0 para inactiva). Por defecto, el valor es 1 (activa).",
+        "peekOfCode": "class Actividad(models.Model):\n    \"\"\"\nModelo que representa una actividad asignada en un curso.\nAtributos:\n    - ACTIVIDAD_ESTADOS (tuple): Opciones de estado de la actividad (activa o inactiva).\n    - actividad (str): Nombre de la actividad, con un máximo de 100 caracteres.\n    - punteo (int): Valor máximo de punteo asignado a la actividad.\n    - curso (ForeignKey): Relación con el modelo `Curso`. La actividad pertenece a un curso específico.\n    - fecha (date): Fecha en la que se creó la actividad, asignada automáticamente.\n    - estado (int): Estado de la actividad (1 para activa, 0 para inactiva). Por defecto, el valor es 1 (activa).",
         "detail": "Actividad.models",
         "documentation": {}
     },
@@ -2096,7 +2114,7 @@
         "kind": 6,
         "importPath": "Actividad.models",
         "description": "Actividad.models",
-        "peekOfCode": "class CalificacionActividad(models.Model):\n    \"\"\"\nModelo que representa la calificación de una actividad para una alumna específica.\nAtributos:\n    descripcion (str): Descripción de la calificación, con un máximo de 100 caracteres. Puede ser nula.\n    punteo (int): Punteo otorgado a la alumna para la actividad.\n    actividad (ForeignKey): Relación con el modelo `Actividad`. La calificación pertenece a una actividad específica.\n    asignacion_ciclo (ForeignKey): Relación con el modelo `AsignacionCiclo`. Identifica a la alumna a la que pertenece la calificación.\nMeta:\n    unique_together: Garantiza que cada alumna tenga una única calificación por actividad.",
+        "peekOfCode": "class CalificacionActividad(models.Model):\n    \"\"\"\nModelo que representa la calificación de una actividad para una alumna específica.\nAtributos:\n   - descripcion (str): Descripción de la calificación, con un máximo de 100 caracteres. Puede ser nula.\n   - punteo (int): Punteo otorgado a la alumna para la actividad.\n   - actividad (ForeignKey): Relación con el modelo `Actividad`. La calificación pertenece a una actividad específica.\n   - asignacion_ciclo (ForeignKey): Relación con el modelo `AsignacionCiclo`. Identifica a la alumna a la que pertenece la calificación.\nMeta:\n   - unique_together: Garantiza que cada alumna tenga una única calificación por actividad.",
         "detail": "Actividad.models",
         "documentation": {}
     },
@@ -2132,7 +2150,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadListView(LoginRequiredMixin, ListView):\n    \"\"\"\n        Clase que gestiona la vista de lista de actividades activas. \n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        ListView: Vista genérica para listar objetos de un modelo.\n    Atributos:\n        model (Actividad): Modelo utilizado para representar las actividades.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.\n        context_object_name (str): Nombre del contexto que se utilizará en la plantilla.",
+        "peekOfCode": "class ActividadListView(LoginRequiredMixin, ListView):\n    \"\"\"\n    Clase que gestiona la vista de lista de actividades activas.\n    Hereda:\n        - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        - ListView: Vista genérica para listar objetos de un modelo.\n    Atributos:\n        - model (Actividad): Modelo utilizado para representar las actividades.\n        - template_name (str): Nombre del template a utilizar para renderizar la vista.\n        - context_object_name (str): Nombre del contexto que se utilizará en la plantilla.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2141,7 +2159,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadInactivaListView(LoginRequiredMixin, ListView):\n    \"\"\"\n        Clase que gestiona la vista de lista de actividades inactivas. \n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        ListView: Vista genérica para listar objetos de un modelo.\n    Atributos:\n        model (Actividad): Modelo utilizado para representar las actividades.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.\n        context_object_name (str): Nombre del contexto que se utilizará en la plantilla.",
+        "peekOfCode": "class ActividadInactivaListView(LoginRequiredMixin, ListView):\n    \"\"\"\n        Clase que gestiona la vista de lista de actividades inactivas. \n    Hereda:\n        - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        - ListView: Vista genérica para listar objetos de un modelo.\n    Atributos:\n        - model (Actividad): Modelo utilizado para representar las actividades. \n        - template_name (str): Nombre del template a utilizar para renderizar la vista. \n        - context_object_name (str): Nombre del contexto que se utilizará en la plantilla. ",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2150,7 +2168,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadInactivarView(View):\n    \"\"\"\n        Clase que gestiona la inactivación de una actividad específica. \n    Hereda:\n        View: Clase base para todas las vistas.\n    Atributos:\n        success_url (str): URL a la que se redirige después de inactivar la actividad.\n    Métodos:\n        get(request, *args, **kwargs):\n            Inactiva una actividad y redirige a la URL de éxito.",
+        "peekOfCode": "class ActividadInactivarView(View):\n    \"\"\"\n        Clase que gestiona la inactivación de una actividad específica. \n    Hereda:\n        View: Clase base para todas las vistas.\n    Atributos:\n        success_url (str): URL a la que se redirige después de inactivar la actividad.\n    Métodos:\n        get(request, args, kwargs):\n            Inactiva una actividad y redirige a la URL de éxito.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2168,7 +2186,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadCreateView(LoginRequiredMixin,CreateView):\n    \"\"\"\n        Clase que gestiona la creación de una nueva actividad. \n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        CreateView: Vista genérica para crear un objeto.\n    Atributos:\n        model (Actividad): Modelo utilizado para representar las actividades.\n        form_class (ActividadForm): Formulario utilizado para crear la actividad.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.",
+        "peekOfCode": "class ActividadCreateView(LoginRequiredMixin,CreateView):\n    \"\"\"\n        Clase que gestiona la creación de una nueva actividad. \n    Hereda:\n        - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        - CreateView: Vista genérica para crear un objeto.\n    Atributos:\n       - model (Actividad): Modelo utilizado para representar las actividades.\n       - form_class (ActividadForm): Formulario utilizado para crear la actividad.\n       - template_name (str): Nombre del template a utilizar para renderizar la vista.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2177,7 +2195,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadUpdateView(LoginRequiredMixin, UpdateView):\n    \"\"\"\n        Clase que gestiona la actualización de una actividad existente. \n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        UpdateView: Vista genérica para actualizar un objeto.\n    Atributos:\n        model (Actividad): Modelo utilizado para representar las actividades.\n        form_class (ActividadForm): Formulario utilizado para actualizar la actividad.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.",
+        "peekOfCode": "class ActividadUpdateView(LoginRequiredMixin, UpdateView):\n    \"\"\"\n        Clase que gestiona la actualización de una actividad existente. \n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - UpdateView: Vista genérica para actualizar un objeto.\n    Atributos:\n       - model (Actividad): Modelo utilizado para representar las actividades.\n       - form_class (ActividadForm): Formulario utilizado para actualizar la actividad.\n       - template_name (str): Nombre del template a utilizar para renderizar la vista.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2186,7 +2204,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class ActividadDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\n        Clase que gestiona la eliminación de una actividad existente. \n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        DeleteView: Vista genérica para eliminar un objeto.\n    Atributos:\n        model (Actividad): Modelo utilizado para representar las actividades.\n        template_name (str): Nombre del template a utilizar para confirmar la eliminación.\n        success_url (str): URL a la que se redirige después de eliminar la actividad.",
+        "peekOfCode": "class ActividadDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\n        Clase que gestiona la eliminación de una actividad existente. \n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - DeleteView: Vista genérica para eliminar un objeto.\n    Atributos:\n       - model (Actividad): Modelo utilizado para representar las actividades.\n       - template_name (str): Nombre del template a utilizar para confirmar la eliminación.\n       - success_url (str): URL a la que se redirige después de eliminar la actividad.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2195,7 +2213,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadListView(LoginRequiredMixin, ListView):\n    \"\"\"\n        Clase que gestiona la vista de lista de calificaciones de actividades. \n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        ListView: Vista genérica para listar objetos de un modelo.\n    Atributos:\n        model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.\n    \"\"\"",
+        "peekOfCode": "class CalificacionActividadListView(LoginRequiredMixin, ListView):\n    \"\"\"\n        Clase que gestiona la vista de lista de calificaciones de actividades. \n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - ListView: Vista genérica para listar objetos de un modelo.\n    Atributos:\n       - model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.\n       - template_name (str): Nombre del template a utilizar para renderizar la vista.\n    \"\"\"",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2204,7 +2222,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    \"\"\"\n        Clase que gestiona la vista para calificar a los alumnos en una actividad específica. \n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        TemplateView: Vista que utiliza un template para renderizar.\n    Atributos:\n        template_name (str): Nombre del template a utilizar para renderizar la vista.\n    Métodos:\n        get_context_data(**kwargs):",
+        "peekOfCode": "class CalificarAlumnoView(LoginRequiredMixin, TemplateView):\n    \"\"\"\n        Clase que gestiona la vista para calificar a los alumnos en una actividad específica. \n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - TemplateView: Vista que utiliza un template para renderizar.\n    Atributos:\n       - template_name (str): Nombre del template a utilizar para renderizar la vista.\n    Métodos:\n        get_context_data(**kwargs):",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2213,7 +2231,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):\n    \"\"\"\n        Clase que gestiona la actualización de una calificación de actividad existente. \n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        UpdateView: Vista genérica para actualizar un objeto.\n    Atributos:\n        model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.\n        form_class (CalificacionActividadForm): Formulario utilizado para actualizar la calificación.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.",
+        "peekOfCode": "class CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):\n    \"\"\"\n        Clase que gestiona la actualización de una calificación de actividad existente. \n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - UpdateView: Vista genérica para actualizar un objeto.\n    Atributos:\n       - model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.\n       - form_class (CalificacionActividadForm): Formulario utilizado para actualizar la calificación.\n       - template_name (str): Nombre del template a utilizar para renderizar la vista.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2222,7 +2240,7 @@
         "kind": 6,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "class CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\n        Clase que gestiona la eliminación de una calificación de actividad existente. \n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        DeleteView: Vista genérica para eliminar un objeto.\n    Atributos:\n        model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.\n        template_name (str): Nombre del template a utilizar para confirmar la eliminación.\n        success_url (str): URL a la que se redirige después de eliminar la calificación.",
+        "peekOfCode": "class CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\n        Clase que gestiona la eliminación de una calificación de actividad existente. \n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - DeleteView: Vista genérica para eliminar un objeto.\n    Atributos:\n       - model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.\n       - template_name (str): Nombre del template a utilizar para confirmar la eliminación.\n       - success_url (str): URL a la que se redirige después de eliminar la calificación.",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2231,7 +2249,7 @@
         "kind": 2,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "def calificaciones_alumna_view(request, alumna_id):\n    \"\"\"\n        Vista que gestiona la visualización de calificaciones de una alumna específica.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP.\n        alumna_id (int): ID de la alumna cuyas calificaciones se van a visualizar.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'calificaciones_alumna.html' con el contexto de la alumna y sus calificaciones.\n    \"\"\"\n    alumna = get_object_or_404(Alumna, id=alumna_id)",
+        "peekOfCode": "def calificaciones_alumna_view(request, alumna_id):\n    \"\"\"\n        Vista que gestiona la visualización de calificaciones de una alumna específica.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP.\n       - alumna_id (int): ID de la alumna cuyas calificaciones se van a visualizar.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'calificaciones_alumna.html' con el contexto de la alumna y sus calificaciones.\n    \"\"\"\n    alumna = get_object_or_404(Alumna, id=alumna_id)",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2240,7 +2258,7 @@
         "kind": 2,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "def get_anos_cursos(request):\n    \"\"\"\n        Vista que obtiene los años asociados a un grado específico y devuelve la lista de años en formato JSON.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP.\n    Retorna:\n        JsonResponse: Respuesta JSON con la lista de años disponibles para el grado especificado.\n    \"\"\"\n    grado_id = request.GET.get('grado_id')\n    asignaciones = AsignacionCiclo.objects.filter(grado_id=grado_id).distinct()",
+        "peekOfCode": "def get_anos_cursos(request):\n    \"\"\"\n        Vista que obtiene los años asociados a un grado específico y devuelve la lista de años en formato JSON.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP.\n    Retorna:\n       - JsonResponse: Respuesta JSON con la lista de años disponibles para el grado especificado.\n    \"\"\"\n    grado_id = request.GET.get('grado_id')\n    asignaciones = AsignacionCiclo.objects.filter(grado_id=grado_id).distinct()",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2249,7 +2267,7 @@
         "kind": 2,
         "importPath": "Actividad.views",
         "description": "Actividad.views",
-        "peekOfCode": "def get_cursos(request):\n    \"\"\"\n        Vista que obtiene los cursos asociados a un grado específico y año, y devuelve la lista de cursos en formato JSON.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP.\n    Retorna:\n        JsonResponse: Respuesta JSON con la lista de cursos disponibles para el grado y año especificados.\n    \"\"\"\n    grado_id = request.GET.get('grado_id')\n    year = request.GET.get('year')",
+        "peekOfCode": "def get_cursos(request):\n    \"\"\"\n        Vista que obtiene los cursos asociados a un grado específico y año, y devuelve la lista de cursos en formato JSON.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP.\n    Retorna:\n       - JsonResponse: Respuesta JSON con la lista de cursos disponibles para el grado y año especificados.\n    \"\"\"\n    grado_id = request.GET.get('grado_id')\n    year = request.GET.get('year')",
         "detail": "Actividad.views",
         "documentation": {}
     },
@@ -2294,7 +2312,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.forms",
         "description": "Asignacion_Ciclo.forms",
-        "peekOfCode": "class AsignacionCicloForm(forms.ModelForm):\n    \"\"\"\n        Formulario que se utiliza para crear o actualizar una asignación de ciclo.\n    Hereda:\n        forms.ModelForm: Clase base para crear formularios a partir de modelos de Django.\n    Meta:\n        model (AsignacionCiclo): Modelo que se utilizará para generar el formulario.\n        fields (list): Lista de campos que se incluirán en el formulario, en este caso 'grado' y 'year'.\n    \"\"\"\n    class Meta:",
+        "peekOfCode": "class AsignacionCicloForm(forms.ModelForm):\n    \"\"\"\n        Formulario que se utiliza para crear o actualizar una asignación de ciclo.\n    Hereda:\n       - forms.ModelForm: Clase base para crear formularios a partir de modelos de Django.\n    Meta:\n       - model (AsignacionCiclo): Modelo que se utilizará para generar el formulario.\n       - fields (list): Lista de campos que se incluirán en el formulario, en este caso 'grado' y 'year'.\n    \"\"\"\n    class Meta:",
         "detail": "Asignacion_Ciclo.forms",
         "documentation": {}
     },
@@ -2303,7 +2321,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.models",
         "description": "Asignacion_Ciclo.models",
-        "peekOfCode": "class AsignacionCiclo(models.Model):\n    \"\"\"\n        Modelo que representa la asignación de una alumna a un grado en un año específico.\n    Atributos:\n        grado (ForeignKey): Clave foránea que relaciona la asignación con el modelo Grado. \n            Elimina la asignación si el grado asociado se elimina.\n        alumna (ForeignKey): Clave foránea que relaciona la asignación con el modelo Alumna.\n            Elimina la asignación si la alumna asociada se elimina.\n        user (ForeignKey): Clave foránea que relaciona la asignación con el modelo User.\n            Elimina la asignación si el usuario asociado se elimina.",
+        "peekOfCode": "class AsignacionCiclo(models.Model):\n    \"\"\"\n        Modelo que representa la asignación de una alumna a un grado en un año específico.\n    Atributos:\n       - grado (ForeignKey): Clave foránea que relaciona la asignación con el modelo Grado. \n            Elimina la asignación si el grado asociado se elimina.\n       - alumna (ForeignKey): Clave foránea que relaciona la asignación con el modelo Alumna.\n            Elimina la asignación si la alumna asociada se elimina.\n       - user (ForeignKey): Clave foránea que relaciona la asignación con el modelo User.\n            Elimina la asignación si el usuario asociado se elimina.",
         "detail": "Asignacion_Ciclo.models",
         "documentation": {}
     },
@@ -2321,7 +2339,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "class AsignacionCicloCreateView(LoginRequiredMixin, CreateView):\n    \"\"\"\n        Clase que gestiona la creación de una nueva asignación de ciclo.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        CreateView: Vista genérica para crear un objeto.\n    Atributos:\n        model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.\n        form_class (AsignacionCicloForm): Formulario utilizado para crear la asignación.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.",
+        "peekOfCode": "class AsignacionCicloCreateView(LoginRequiredMixin, CreateView):\n    \"\"\"\n        Clase que gestiona la creación de una nueva asignación de ciclo.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - CreateView: Vista genérica para crear un objeto.\n    Atributos:\n       - model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.\n       - form_class (AsignacionCicloForm): Formulario utilizado para crear la asignación.\n       - template_name (str): Nombre del template a utilizar para renderizar la vista.",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2330,7 +2348,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "class AsignacionCicloUpdateView(LoginRequiredMixin,UpdateView):\n    \"\"\"\n        Clase que gestiona la actualización de una asignación de ciclo existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        UpdateView: Vista genérica para actualizar un objeto.\n    Atributos:\n        model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.\n        form_class (AsignacionCicloForm): Formulario utilizado para actualizar la asignación.\n        template_name (str): Nombre del template a utilizar para renderizar la vista.",
+        "peekOfCode": "class AsignacionCicloUpdateView(LoginRequiredMixin,UpdateView):\n    \"\"\"\n        Clase que gestiona la actualización de una asignación de ciclo existente.\n    Hereda:\n        - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        - UpdateView: Vista genérica para actualizar un objeto.\n    Atributos:\n       - model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.\n       - form_class (AsignacionCicloForm): Formulario utilizado para actualizar la asignación.\n       - template_name (str): Nombre del template a utilizar para renderizar la vista.",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2339,7 +2357,7 @@
         "kind": 6,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\n        Clase que gestiona la eliminación de una asignación de ciclo existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        DeleteView: Vista genérica para eliminar un objeto.\n    Atributos:\n        model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.\n        template_name (str): Nombre del template a utilizar para confirmar la eliminación.\n        success_url (str): URL a la que se redirige después de eliminar la asignación.",
+        "peekOfCode": "class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\n        Clase que gestiona la eliminación de una asignación de ciclo existente.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - DeleteView: Vista genérica para eliminar un objeto.\n    Atributos:\n       - model (AsignacionCiclo): Modelo utilizado para representar las asignaciones de ciclos.\n       - template_name (str): Nombre del template a utilizar para confirmar la eliminación.\n       - success_url (str): URL a la que se redirige después de eliminar la asignación.",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2348,7 +2366,7 @@
         "kind": 2,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "def AsignacionCicloListView(request):\n    \"\"\"\n        Vista que gestiona la visualización de la lista de asignaciones de ciclos.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene los parámetros de búsqueda.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'asignacion_ciclo_list.html' con el contexto que incluye la lista de asignaciones y grados disponibles.\n    Filtra las asignaciones de ciclos según el año, grado y consulta de búsqueda proporcionados en los parámetros GET.\n    \"\"\"\n    query = Q()",
+        "peekOfCode": "def AsignacionCicloListView(request):\n    \"\"\"\n        Vista que gestiona la visualización de la lista de asignaciones de ciclos.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene los parámetros de búsqueda.\n    Retorna:\n        - HttpResponse: Renderiza la plantilla 'asignacion_ciclo_list.html' con el contexto que incluye la lista de asignaciones y grados disponibles.\n    Filtra las asignaciones de ciclos según el año, grado y consulta de búsqueda proporcionados en los parámetros GET.\n    \"\"\"\n    query = Q()",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2357,7 +2375,7 @@
         "kind": 2,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "def asignar_alumnas(request, grado_id):\n    \"\"\"   \n    Vista que gestiona la asignación de alumnas a un grado específico.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.\n        grado_id (int): ID del grado al que se asignarán las alumnas.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'asignar_alumnas.html' con el contexto que incluye el grado, alumnas asignadas y no asignadas.\n    Permite agregar o remover alumnas de un grado según la acción especificada en la solicitud POST.\n\"\"\"",
+        "peekOfCode": "def asignar_alumnas(request, grado_id):\n    \"\"\"   \n    Vista que gestiona la asignación de alumnas a un grado específico.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.\n       - grado_id (int): ID del grado al que se asignarán las alumnas.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'asignar_alumnas.html' con el contexto que incluye el grado, alumnas asignadas y no asignadas.\n    Permite agregar o remover alumnas de un grado según la acción especificada en la solicitud POST.\n\"\"\"",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2366,7 +2384,7 @@
         "kind": 2,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "def asignar_grado_usuario(request):\n    \"\"\"\n        Vista que gestiona la asignación de un grado a un usuario.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'asignar_grado_usuario.html' con el contexto que incluye el usuario y los grados activos.\n    Permite al usuario seleccionar un grado, que se guardará en su perfil. \n    \"\"\"\n    user = request.user  # Usuario logueado",
+        "peekOfCode": "def asignar_grado_usuario(request):\n    \"\"\"\n        Vista que gestiona la asignación de un grado a un usuario.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'asignar_grado_usuario.html' con el contexto que incluye el usuario y los grados activos.\n    Permite al usuario seleccionar un grado, que se guardará en su perfil. \n    \"\"\"\n    user = request.user  # Usuario logueado",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },
@@ -2393,7 +2411,7 @@
         "kind": 6,
         "importPath": "Asistencia.forms",
         "description": "Asistencia.forms",
-        "peekOfCode": "class AsistenciaForm(forms.ModelForm):\n    \"\"\"\n        Formulario para registrar la asistencia de una alumna en un día específico.\n    Atributos:\n        Meta (class): Clase interna que define la configuración del formulario.\n            model (Model): El modelo asociado al formulario (Asistencia).\n            fields (list): Lista de campos que se incluirán en el formulario, en este caso solo 'presente'.\n            widgets (dict): Diccionario que define la representación de los campos del formulario; \n            el campo 'presente' se representará como un checkbox con clase 'form-check-input'.\n    \"\"\"",
+        "peekOfCode": "class AsistenciaForm(forms.ModelForm):\n    \"\"\"\n        Formulario para registrar la asistencia de una alumna en un día específico.\n    Atributos:\n        Meta (class): Clase interna que define la configuración del formulario.\n           - model (Model): El modelo asociado al formulario (Asistencia).\n           - fields (list): Lista de campos que se incluirán en el formulario, en este caso solo 'presente'.\n           - widgets (dict): Diccionario que define la representación de los campos del formulario; \n           - el campo 'presente' se representará como un checkbox con clase 'form-check-input'.\n    \"\"\"",
         "detail": "Asistencia.forms",
         "documentation": {}
     },
@@ -2402,7 +2420,7 @@
         "kind": 6,
         "importPath": "Asistencia.models",
         "description": "Asistencia.models",
-        "peekOfCode": "class Asistencia(models.Model):\n    \"\"\"\n        Modelo que representa la asistencia de una alumna en un día específico.\n    Atributos:\n        fecha (DateField): Fecha de la asistencia.\n        presente (BooleanField): Indica si la alumna estuvo presente (True) o ausente (False).\n        asignacion_ciclo (ForeignKey): Relación con el modelo AsignacionCiclo, representando la asignación \n        del ciclo escolar de la alumna a la que se refiere esta asistencia.\n    Métodos:\n        __str__(): Retorna una representación en cadena de la fecha de asistencia.",
+        "peekOfCode": "class Asistencia(models.Model):\n    \"\"\"\n        Modelo que representa la asistencia de una alumna en un día específico.\n    Atributos:\n       - fecha (DateField): Fecha de la asistencia.\n       - presente (BooleanField): Indica si la alumna estuvo presente (True) o ausente (False).\n       - asignacion_ciclo (ForeignKey): Relación con el modelo AsignacionCiclo, representando la asignación \n        del ciclo escolar de la alumna a la que se refiere esta asistencia.\n    Métodos:\n       - __str__(): Retorna una representación en cadena de la fecha de asistencia.",
         "detail": "Asistencia.models",
         "documentation": {}
     },
@@ -2420,7 +2438,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def lista_asistencia(request):\n    \"\"\"\n        Vista que muestra la lista de alumnas y su asistencia del día actual para el grado asignado al usuario logueado.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'lista_asistencia.html' con el contexto que incluye \n        las asignaciones sin asistencia y las asistencias registradas para el día actual.\n    \"\"\"\n    hoy = timezone.localtime(timezone.now()).date()",
+        "peekOfCode": "def lista_asistencia(request):\n    \"\"\"\n        Vista que muestra la lista de alumnas y su asistencia del día actual para el grado asignado al usuario logueado.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'lista_asistencia.html' con el contexto que incluye \n        las asignaciones sin asistencia y las asistencias registradas para el día actual.\n    \"\"\"\n    hoy = timezone.localtime(timezone.now()).date()",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2429,7 +2447,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def actualizar_asistencia(request, asignacion_id, presente):\n    \"\"\"\n        Vista que actualiza el estado de asistencia de una alumna para el día actual.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        asignacion_id (int): ID de la asignación de ciclo de la alumna.\n        presente (bool): Indica si la alumna estuvo presente (1) o ausente (0).\n    Retorna:\n        HttpResponse: Redirige a la vista de lista de asistencia después de actualizar el estado de asistencia.\n    \"\"\"",
+        "peekOfCode": "def actualizar_asistencia(request, asignacion_id, presente):\n    \"\"\"\n        Vista que actualiza el estado de asistencia de una alumna para el día actual.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n       - asignacion_id (int): ID de la asignación de ciclo de la alumna.\n       - presente (bool): Indica si la alumna estuvo presente (1) o ausente (0).\n    Retorna:\n       - HttpResponse: Redirige a la vista de lista de asistencia después de actualizar el estado de asistencia.\n    \"\"\"",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2438,7 +2456,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def ver_asistencias(request):\n    \"\"\"\n        Vista que muestra las fechas en las que se han registrado asistencias.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'ver_asistencias.html' con el contexto que incluye \n        las fechas de las asistencias registradas.\n    \"\"\"\n    fechas_asistencias = Asistencia.objects.values('fecha').distinct().order_by('-fecha')",
+        "peekOfCode": "def ver_asistencias(request):\n    \"\"\"\n        Vista que muestra las fechas en las que se han registrado asistencias.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'ver_asistencias.html' con el contexto que incluye \n        las fechas de las asistencias registradas.\n    \"\"\"\n    fechas_asistencias = Asistencia.objects.values('fecha').distinct().order_by('-fecha')",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2447,7 +2465,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def detalle_asistencia(request, fecha):\n    \"\"\"\n        Vista que muestra el detalle de asistencias registradas en una fecha específica.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        fecha (date): Fecha para la cual se desea ver las asistencias.\n    Retorna:\n        HttpResponse: Renderiza la plantilla 'detalle_asistencia.html' con el contexto que incluye \n        las asistencias registradas en la fecha especificada.\n    \"\"\"",
+        "peekOfCode": "def detalle_asistencia(request, fecha):\n    \"\"\"\n        Vista que muestra el detalle de asistencias registradas en una fecha específica.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n       - fecha (date): Fecha para la cual se desea ver las asistencias.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'detalle_asistencia.html' con el contexto que incluye \n        las asistencias registradas en la fecha especificada.\n    \"\"\"",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2456,7 +2474,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def generar_pdf(request, fecha):\n    \"\"\"\n        Vista que genera un archivo PDF con la asistencia registrada en una fecha específica.\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        fecha (date): Fecha para la cual se generará el PDF de asistencias.\n    Retorna:\n        HttpResponse: Archivo PDF que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
+        "peekOfCode": "def generar_pdf(request, fecha):\n    \"\"\"\n        Vista que genera un archivo PDF con la asistencia registrada en una fecha específica.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n       - fecha (date): Fecha para la cual se generará el PDF de asistencias.\n    Retorna:\n       - HttpResponse: Archivo PDF que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2465,7 +2483,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def generar_excel(request, fecha):\n    \"\"\"\n        Vista que genera un archivo Excel con la asistencia registrada en una fecha específica..\n    Parámetros:\n        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        fecha (date): Fecha para la cual se generará el archivo Excel de asistencias.\n    Retorna:\n        HttpResponse: Archivo Excel que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
+        "peekOfCode": "def generar_excel(request, fecha):\n    \"\"\"\n        Vista que genera un archivo Excel con la asistencia registrada en una fecha específica..\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n       - fecha (date): Fecha para la cual se generará el archivo Excel de asistencias.\n    Retorna:\n       - HttpResponse: Archivo Excel que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2600,7 +2618,7 @@
         "kind": 6,
         "importPath": "Curso.forms",
         "description": "Curso.forms",
-        "peekOfCode": "class CursoForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o actualizar un curso.\n    Hereda:\n        forms.ModelForm: Clase base para formularios basados en modelos.\n    Atributos:\n        Meta (class): Configuración de la clase, incluyendo el modelo y los campos a incluir en el formulario.\n    \"\"\"\n    class Meta:\n        model = Curso",
+        "peekOfCode": "class CursoForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o actualizar un curso.\n    Hereda:\n       - forms.ModelForm: Clase base para formularios basados en modelos.\n    Atributos:\n       - Meta (class): Configuración de la clase, incluyendo el modelo y los campos a incluir en el formulario.\n    \"\"\"\n    class Meta:\n        model = Curso",
         "detail": "Curso.forms",
         "documentation": {}
     },
@@ -2609,7 +2627,7 @@
         "kind": 6,
         "importPath": "Curso.forms",
         "description": "Curso.forms",
-        "peekOfCode": "class GradoForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o actualizar un grado.\n    Hereda:\n        forms.ModelForm: Clase base para formularios basados en modelos.\n    Atributos:\n        Meta (class): Configuración de la clase, incluyendo el modelo y los campos a incluir en el formulario.\n    \"\"\"\n    class Meta:\n        model = Grado",
+        "peekOfCode": "class GradoForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o actualizar un grado.\n    Hereda:\n        - forms.ModelForm: Clase base para formularios basados en modelos.\n    Atributos:\n       - Meta (class): Configuración de la clase, incluyendo el modelo y los campos a incluir en el formulario.\n    \"\"\"\n    class Meta:\n        model = Grado",
         "detail": "Curso.forms",
         "documentation": {}
     },
@@ -2618,7 +2636,7 @@
         "kind": 6,
         "importPath": "Curso.models",
         "description": "Curso.models",
-        "peekOfCode": "class Grado(models.Model):\n    \"\"\"\n        Modelo que representa un grado académico.\n    Atributos:\n        nombre_grado (str): Nombre del grado, con un máximo de 50 caracteres.\n        estado (bool): Estado del grado, que indica si está activo (True) o inactivo (False).\n    Métodos:\n        __str__(): Devuelve una representación en forma de cadena del grado, que es su nombre.\n    \"\"\"\n    nombre_grado = models.CharField(max_length=50)",
+        "peekOfCode": "class Grado(models.Model):\n    \"\"\"\n        Modelo que representa un grado académico.\n    Atributos:\n       - nombre_grado (str): Nombre del grado, con un máximo de 50 caracteres.\n       - estado (bool): Estado del grado, que indica si está activo (True) o inactivo (False).\n    Métodos:\n      - __str__(): Devuelve una representación en forma de cadena del grado, que es su nombre.\n    \"\"\"\n    nombre_grado = models.CharField(max_length=50)",
         "detail": "Curso.models",
         "documentation": {}
     },
@@ -2627,7 +2645,7 @@
         "kind": 6,
         "importPath": "Curso.models",
         "description": "Curso.models",
-        "peekOfCode": "class Curso(models.Model):\n    \"\"\"\n        Modelo que representa un curso académico.\n    Atributos:\n        nombre_curso (str): Nombre del curso, con un máximo de 100 caracteres.\n        grado (ForeignKey): Relación con el modelo Grado, que indica a qué grado pertenece el curso.\n        estado (bool): Estado del curso, que indica si está activo (True) o inactivo (False).\n    Métodos:\n        __str__(): Devuelve una representación en forma de cadena del curso, que es su nombre.\n    \"\"\"",
+        "peekOfCode": "class Curso(models.Model):\n    \"\"\"\n        Modelo que representa un curso académico.\n    Atributos:\n       - nombre_curso (str): Nombre del curso, con un máximo de 100 caracteres.\n       - grado (ForeignKey): Relación con el modelo Grado, que indica a qué grado pertenece el curso.\n       - estado (bool): Estado del curso, que indica si está activo (True) o inactivo (False).\n    Métodos:\n       - __str__(): Devuelve una representación en forma de cadena del curso, que es su nombre.\n    \"\"\"",
         "detail": "Curso.models",
         "documentation": {}
     },
@@ -2645,7 +2663,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoListView(LoginRequiredMixin,ListView):\n    \"\"\"\n        Vista basada en clase para listar los cursos activos.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        ListView: Vista genérica para mostrar una lista de objetos.\n    Métodos:\n        get_queryset(): Devuelve un queryset que filtra solo los cursos con estado activo.\n    \"\"\"\n    model = Curso",
+        "peekOfCode": "class CursoListView(LoginRequiredMixin,ListView):\n    \"\"\"\n        Vista basada en clase para listar los cursos activos.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - ListView: Vista genérica para mostrar una lista de objetos.\n    Métodos:\n       - get_queryset(): Devuelve un queryset que filtra solo los cursos con estado activo.\n    \"\"\"\n    model = Curso",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2654,7 +2672,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoCreateView(LoginRequiredMixin,CreateView):\n    \"\"\"\n        Vista basada en clase para crear un nuevo curso.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        CreateView: Vista genérica para crear un nuevo objeto.\n    Atributos:\n        model (Model): El modelo asociado a la vista (Curso).\n        form_class (Form): El formulario para crear un nuevo curso (CursoForm).\n        template_name (str): Nombre de la plantilla utilizada para el formulario.",
+        "peekOfCode": "class CursoCreateView(LoginRequiredMixin,CreateView):\n    \"\"\"\n        Vista basada en clase para crear un nuevo curso.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - CreateView: Vista genérica para crear un nuevo objeto.\n    Atributos:\n       - model (Model): El modelo asociado a la vista (Curso).\n       - form_class (Form): El formulario para crear un nuevo curso (CursoForm).\n       - template_name (str): Nombre de la plantilla utilizada para el formulario.",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2663,7 +2681,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoUpdateView(LoginRequiredMixin,UpdateView):\n    \"\"\"\n        Vista basada en clase para actualizar un curso existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        UpdateView: Vista genérica para actualizar un objeto existente.\n    Atributos:\n        model (Model): El modelo asociado a la vista (Curso).\n        form_class (Form): El formulario para actualizar el curso (CursoForm).\n        template_name (str): Nombre de la plantilla utilizada para el formulario.",
+        "peekOfCode": "class CursoUpdateView(LoginRequiredMixin,UpdateView):\n    \"\"\"\n        Vista basada en clase para actualizar un curso existente.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - UpdateView: Vista genérica para actualizar un objeto existente.\n    Atributos:\n       - model (Model): El modelo asociado a la vista (Curso).\n       - form_class (Form): El formulario para actualizar el curso (CursoForm).\n       - template_name (str): Nombre de la plantilla utilizada para el formulario.",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2672,7 +2690,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoDeleteView(LoginRequiredMixin,View):\n    \"\"\"\n        Vista basada en clase para desactivar un curso existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        View: Vista base para definir métodos HTTP.\n    Atributos:\n        success_url (str): URL a la que se redirigirá tras desactivar el curso.\n    Métodos:\n        get(request, *args, **kwargs): Maneja la solicitud GET para desactivar un curso",
+        "peekOfCode": "class CursoDeleteView(LoginRequiredMixin,View):\n    \"\"\"\n        Vista basada en clase para desactivar un curso existente.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - View: Vista base para definir métodos HTTP.\n    Atributos:\n       - success_url (str): URL a la que se redirigirá tras desactivar el curso.\n    Métodos:\n       - get(request, *args, **kwargs): Maneja la solicitud GET para desactivar un curso",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2681,7 +2699,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoActivateView(LoginRequiredMixin,View):\n    \"\"\"\n        Vista basada en clase para activar un curso existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        View: Vista base para definir métodos HTTP.\n    Atributos:\n        success_url (str): URL a la que se redirigirá tras activar el curso.\n    Métodos:\n        get(request, *args, **kwargs): Maneja la solicitud GET para activar un curso ",
+        "peekOfCode": "class CursoActivateView(LoginRequiredMixin,View):\n    \"\"\"\n        Vista basada en clase para activar un curso existente.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - View: Vista base para definir métodos HTTP.\n    Atributos:\n       - success_url (str): URL a la que se redirigirá tras activar el curso.\n    Métodos:\n       - get(request, *args, **kwargs): Maneja la solicitud GET para activar un curso ",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2690,7 +2708,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoListView(LoginRequiredMixin,ListView):\n    \"\"\"\n        Vista basada en clase para listar los grados activos.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        ListView: Vista genérica para mostrar una lista de objetos.\n    Métodos:\n        get_queryset(): Devuelve un queryset que filtra solo los grados con estado activo.\n    \"\"\"\n    model = Grado",
+        "peekOfCode": "class GradoListView(LoginRequiredMixin,ListView):\n    \"\"\"\n        Vista basada en clase para listar los grados activos.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - ListView: Vista genérica para mostrar una lista de objetos.\n    Métodos:\n       - get_queryset(): Devuelve un queryset que filtra solo los grados con estado activo.\n    \"\"\"\n    model = Grado",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2699,7 +2717,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoCreateView(LoginRequiredMixin,CreateView):\n    \"\"\"\n        Vista basada en clase para crear un nuevo grado.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        CreateView: Vista genérica para crear un nuevo objeto.\n    Atributos:\n        model (Model): El modelo asociado a la vista (Grado).\n        form_class (Form): El formulario para crear un nuevo grado (GradoForm).\n        template_name (str): Nombre de la plantilla utilizada para el formulario.",
+        "peekOfCode": "class GradoCreateView(LoginRequiredMixin,CreateView):\n    \"\"\"\n        Vista basada en clase para crear un nuevo grado.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - CreateView: Vista genérica para crear un nuevo objeto.\n    Atributos:\n       - model (Model): El modelo asociado a la vista (Grado).\n       - form_class (Form): El formulario para crear un nuevo grado (GradoForm).\n       - template_name (str): Nombre de la plantilla utilizada para el formulario.",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2708,7 +2726,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoUpdateView(LoginRequiredMixin,UpdateView):\n    \"\"\"\n        Vista basada en clase para actualizar un grado existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        UpdateView: Vista genérica para actualizar un objeto existente.\n    Atributos:\n        model (Model): El modelo asociado a la vista (Grado).\n        form_class (Form): El formulario para actualizar el grado (GradoForm).\n        template_name (str): Nombre de la plantilla utilizada para el formulario.",
+        "peekOfCode": "class GradoUpdateView(LoginRequiredMixin,UpdateView):\n    \"\"\"\n        Vista basada en clase para actualizar un grado existente.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - UpdateView: Vista genérica para actualizar un objeto existente.\n    Atributos:\n       - model (Model): El modelo asociado a la vista (Grado).\n       - form_class (Form): El formulario para actualizar el grado (GradoForm).\n       - template_name (str): Nombre de la plantilla utilizada para el formulario.",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2717,7 +2735,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoDeleteView(LoginRequiredMixin,View):\n    \"\"\"\n        Vista basada en clase para desactivar un grado existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        View: Vista base para definir métodos HTTP.\n    Atributos:\n        success_url (str): URL a la que se redirigirá tras desactivar el grado.\n    Métodos:\n        get(request, *args, **kwargs): Maneja la solicitud GET para desactivar un grado ",
+        "peekOfCode": "class GradoDeleteView(LoginRequiredMixin,View):\n    \"\"\"\n        Vista basada en clase para desactivar un grado existente.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - View: Vista base para definir métodos HTTP.\n    Atributos:\n       - success_url (str): URL a la que se redirigirá tras desactivar el grado.\n    Métodos:\n       - get(request, *args, **kwargs): Maneja la solicitud GET para desactivar un grado ",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2726,7 +2744,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class CursoInactivoListView(LoginRequiredMixin,ListView):\n    \"\"\"\n        Vista basada en clase para listar los cursos inactivos.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        ListView: Vista genérica para mostrar una lista de objetos.\n    Métodos:\n        get_queryset(): Devuelve un queryset que filtra solo los cursos con estado inactivo.\n    \"\"\"\n    model = Curso",
+        "peekOfCode": "class CursoInactivoListView(LoginRequiredMixin,ListView):\n    \"\"\"\n        Vista basada en clase para listar los cursos inactivos.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - ListView: Vista genérica para mostrar una lista de objetos.\n    Métodos:\n       - get_queryset(): Devuelve un queryset que filtra solo los cursos con estado inactivo.\n    \"\"\"\n    model = Curso",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2735,7 +2753,7 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoInactivoListView(LoginRequiredMixin,ListView):\n    \"\"\"\n        Vista basada en clase para listar los grados inactivos.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        ListView: Vista genérica para mostrar una lista de objetos.\n    Métodos:\n        get_queryset(): Devuelve un queryset que filtra solo los grados con estado inactivo.\n    \"\"\"\n    model = Grado",
+        "peekOfCode": "class GradoInactivoListView(LoginRequiredMixin,ListView):\n    \"\"\"\n        Vista basada en clase para listar los grados inactivos.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - ListView: Vista genérica para mostrar una lista de objetos.\n    Métodos:\n       - get_queryset(): Devuelve un queryset que filtra solo los grados con estado inactivo.\n    \"\"\"\n    model = Grado",
         "detail": "Curso.views",
         "documentation": {}
     },
@@ -2744,8 +2762,143 @@
         "kind": 6,
         "importPath": "Curso.views",
         "description": "Curso.views",
-        "peekOfCode": "class GradoActivateView(LoginRequiredMixin,View):\n    \"\"\"\n        Vista basada en clase para activar un grado existente.\n    Hereda:\n        LoginRequiredMixin: Requiere que el usuario esté autenticado.\n        View: Vista base para definir métodos HTTP.\n    Atributos:\n        success_url (str): URL a la que se redirigirá tras activar el grado.\n    Métodos:\n        get(request, *args, **kwargs): Maneja la solicitud GET para activar un grado ",
+        "peekOfCode": "class GradoActivateView(LoginRequiredMixin,View):\n    \"\"\"\n        Vista basada en clase para activar un grado existente.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - View: Vista base para definir métodos HTTP.\n    Atributos:\n       - success_url (str): URL a la que se redirigirá tras activar el grado.\n    Métodos:\n       - get(request, *args, **kwargs): Maneja la solicitud GET para activar un grado ",
         "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "project",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "project = 'ClassManager'\ncopyright = '2024, Bryan Jancarlo Sosa Mejía'\nauthor = 'Bryan Jancarlo Sosa Mejía'\nrelease = '1.0'\n# -- General configuration ---------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration\nextensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "copyright",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "copyright = '2024, Bryan Jancarlo Sosa Mejía'\nauthor = 'Bryan Jancarlo Sosa Mejía'\nrelease = '1.0'\n# -- General configuration ---------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration\nextensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',\n]",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "author",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "author = 'Bryan Jancarlo Sosa Mejía'\nrelease = '1.0'\n# -- General configuration ---------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration\nextensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',\n]\ntemplates_path = ['_templates']",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "release",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "release = '1.0'\n# -- General configuration ---------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration\nextensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',\n]\ntemplates_path = ['_templates']\nexclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "extensions",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "extensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',\n]\ntemplates_path = ['_templates']\nexclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']\nlanguage = 'es'\n# -- Options for HTML output -------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "templates_path",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "templates_path = ['_templates']\nexclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']\nlanguage = 'es'\n# -- Options for HTML output -------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output\nimport sphinx_rtd_theme\nhtml_theme = 'sphinx_rtd_theme'\nhtml_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "exclude_patterns",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']\nlanguage = 'es'\n# -- Options for HTML output -------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output\nimport sphinx_rtd_theme\nhtml_theme = 'sphinx_rtd_theme'\nhtml_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  ",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "language",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "language = 'es'\n# -- Options for HTML output -------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output\nimport sphinx_rtd_theme\nhtml_theme = 'sphinx_rtd_theme'\nhtml_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  \n}",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_theme",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "html_theme = 'sphinx_rtd_theme'\nhtml_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  \n}\n#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]\n#html_theme = 'furo'\n#html_static_path = ['_static']\nimport os",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_static_path",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "html_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  \n}\n#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]\n#html_theme = 'furo'\n#html_static_path = ['_static']\nimport os\nimport sys",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_theme_options",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "html_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  \n}\n#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]\n#html_theme = 'furo'\n#html_static_path = ['_static']\nimport os\nimport sys\nimport django",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "#html_theme_path",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]\n#html_theme = 'furo'\n#html_static_path = ['_static']\nimport os\nimport sys\nimport django\nsys.path.insert(0, os.path.abspath('../'))\nos.environ['DJANGO_SETTINGS_MODULE'] = 'escuela.settings'\ndjango.setup()\n# Configuración para Read the Docs",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "#html_theme",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "#html_theme = 'furo'\n#html_static_path = ['_static']\nimport os\nimport sys\nimport django\nsys.path.insert(0, os.path.abspath('../'))\nos.environ['DJANGO_SETTINGS_MODULE'] = 'escuela.settings'\ndjango.setup()\n# Configuración para Read the Docs\nif os.environ.get('READTHEDOCS'):",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "#html_static_path",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "#html_static_path = ['_static']\nimport os\nimport sys\nimport django\nsys.path.insert(0, os.path.abspath('../'))\nos.environ['DJANGO_SETTINGS_MODULE'] = 'escuela.settings'\ndjango.setup()\n# Configuración para Read the Docs\nif os.environ.get('READTHEDOCS'):\n    html_output = os.path.join(os.environ['READTHEDOCS_OUTPUT'], 'html')",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ['DJANGO_SETTINGS_MODULE']",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "os.environ['DJANGO_SETTINGS_MODULE'] = 'escuela.settings'\ndjango.setup()\n# Configuración para Read the Docs\nif os.environ.get('READTHEDOCS'):\n    html_output = os.path.join(os.environ['READTHEDOCS_OUTPUT'], 'html')\n    os.makedirs(html_output, exist_ok=True)",
+        "detail": "docs.conf",
         "documentation": {}
     },
     {
@@ -3014,7 +3167,7 @@
         "kind": 2,
         "importPath": "Login.views",
         "description": "Login.views",
-        "peekOfCode": "def login_in(request):\n    \"\"\"\n        Maneja el proceso de inicio de sesión de un usuario.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene datos del formulario de inicio de sesión.\n    Retorna:\n        HttpResponse: Redirige a la página de inicio si las credenciales son válidas, o de lo contrario, renderiza el formulario de inicio de sesión con un mensaje de error.\n    Excepciones:\n        AttributeError: Si hay un problema al acceder a los datos del formulario, muestra un mensaje de error de credenciales inválidas.\n    Proceso:",
+        "peekOfCode": "def login_in(request):\n    \"\"\"\n        Maneja el proceso de inicio de sesión de un usuario.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP que contiene datos del formulario de inicio de sesión.\n    Retorna:\n       - HttpResponse: Redirige a la página de inicio si las credenciales son válidas, o de lo contrario, renderiza el formulario de inicio de sesión con un mensaje de error.\n    Excepciones:\n       - AttributeError: Si hay un problema al acceder a los datos del formulario, muestra un mensaje de error de credenciales inválidas.\n    Proceso:",
         "detail": "Login.views",
         "documentation": {}
     },
@@ -3023,7 +3176,7 @@
         "kind": 2,
         "importPath": "Login.views",
         "description": "Login.views",
-        "peekOfCode": "def logout_out(request):\n    \"\"\"\n        Maneja el proceso de cierre de sesión de un usuario.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene la información de la sesión del usuario.\n    Retorna:\n        HttpResponse: Redirige a la página de inicio de sesión después de cerrar la sesión.\n    Excepciones:\n        AttributeError: Si hay un problema al acceder a la sesión, redirige a la página principal.\n    Proceso:",
+        "peekOfCode": "def logout_out(request):\n    \"\"\"\n        Maneja el proceso de cierre de sesión de un usuario.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP que contiene la información de la sesión del usuario.\n    Retorna:\n       - HttpResponse: Redirige a la página de inicio de sesión después de cerrar la sesión.\n    Excepciones:\n       - AttributeError: Si hay un problema al acceder a la sesión, redirige a la página principal.\n    Proceso:",
         "detail": "Login.views",
         "documentation": {}
     },
@@ -3077,7 +3230,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class PersonaForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o editar información de una persona.\n    Hereda:\n        forms.ModelForm: Clase base para crear formularios de modelos de Django.\n    Atributos:\n        Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.\n            model (Persona): Modelo al que se relaciona este formulario.\n            fields (list): Lista de campos a incluir en el formulario: nombre, apellido, fecha de nacimiento, género y dirección.\n            widgets (dict): Diccionario que define los widgets personalizados para ciertos campos:",
+        "peekOfCode": "class PersonaForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o editar información de una persona.\n    Hereda:\n       - forms.ModelForm: Clase base para crear formularios de modelos de Django.\n    Atributos:\n        Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.\n           - model (Persona): Modelo al que se relaciona este formulario.\n           - fields (list): Lista de campos a incluir en el formulario: nombre, apellido, fecha de nacimiento, género y dirección.\n           - widgets (dict): Diccionario que define los widgets personalizados para ciertos campos:",
         "detail": "Persona.forms",
         "documentation": {}
     },
@@ -3086,7 +3239,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class AlumnaForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o editar información de una alumna.\n    Hereda:\n        forms.ModelForm: Clase base para crear formularios de modelos de Django.\n    Atributos:\n        persona (ModelChoiceField): Campo oculto que almacena la relación con el modelo Persona,\n            permitiendo seleccionar una persona existente.\n    Métodos:\n        Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.",
+        "peekOfCode": "class AlumnaForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o editar información de una alumna.\n    Hereda:\n       - forms.ModelForm: Clase base para crear formularios de modelos de Django.\n    Atributos:\n       - persona (ModelChoiceField): Campo oculto que almacena la relación con el modelo Persona,\n            permitiendo seleccionar una persona existente.\n    Métodos:\n      -  Meta: Clase interna que define el modelo asociado y los campos a incluir en el formulario.",
         "detail": "Persona.forms",
         "documentation": {}
     },
@@ -3095,7 +3248,7 @@
         "kind": 6,
         "importPath": "Persona.forms",
         "description": "Persona.forms",
-        "peekOfCode": "class ContactoForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o editar información de un contacto asociado a una alumna.\n    Hereda:\n        forms.ModelForm: Clase base para crear formularios de modelos de Django.\n    Atributos:\n        telefono (CharField): Campo para ingresar el número de teléfono del contacto.\n            Incluye un validador que permite solo números de 8 dígitos.\n            widget (TextInput): Widget personalizado que limita la entrada a 8 caracteres y permite solo números.\n        email (EmailField): Campo para ingresar la dirección de correo electrónico del contacto.",
+        "peekOfCode": "class ContactoForm(forms.ModelForm):\n    \"\"\"\n        Formulario para crear o editar información de un contacto asociado a una alumna.\n    Hereda:\n       - forms.ModelForm: Clase base para crear formularios de modelos de Django.\n    Atributos:\n       - telefono (CharField): Campo para ingresar el número de teléfono del contacto.\n           - Incluye un validador que permite solo números de 8 dígitos.\n           - widget (TextInput): Widget personalizado que limita la entrada a 8 caracteres y permite solo números.\n       - email (EmailField): Campo para ingresar la dirección de correo electrónico del contacto.",
         "detail": "Persona.forms",
         "documentation": {}
     },
@@ -3104,7 +3257,7 @@
         "kind": 6,
         "importPath": "Persona.models",
         "description": "Persona.models",
-        "peekOfCode": "class Persona(models.Model):\n    \"\"\"\n        Representa a una persona con información básica.\n    Hereda:\n        models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n        nombre (CharField): El nombre de la persona, con una longitud máxima de 100 caracteres.\n        apellido (CharField): El apellido de la persona, con una longitud máxima de 100 caracteres.\n        fecha_nacimiento (DateField): La fecha de nacimiento de la persona.\n        genero (CharField): El género de la persona, representado por un solo carácter (por ejemplo, 'M' para masculino, 'F' para femenino).",
+        "peekOfCode": "class Persona(models.Model):\n    \"\"\"\n        Representa a una persona con información básica.\n    Hereda:\n       - models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n       - nombre (CharField): El nombre de la persona, con una longitud máxima de 100 caracteres.\n       - apellido (CharField): El apellido de la persona, con una longitud máxima de 100 caracteres.\n       - fecha_nacimiento (DateField): La fecha de nacimiento de la persona.\n       - genero (CharField): El género de la persona, representado por un solo carácter (por ejemplo, 'M' para masculino, 'F' para femenino).",
         "detail": "Persona.models",
         "documentation": {}
     },
@@ -3113,7 +3266,7 @@
         "kind": 6,
         "importPath": "Persona.models",
         "description": "Persona.models",
-        "peekOfCode": "class Alumna(models.Model):\n    \"\"\"\n        Representa a una alumna con información específica relacionada con la educación.\n    Hereda:\n        models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n        persona (OneToOneField): Relación uno a uno con el modelo Persona, representando la información personal de la alumna.\n        codigo (CharField): Un código único para identificar a la alumna, con una longitud máxima de 30 caracteres.\n        estado (BooleanField): El estado de la alumna, activo (True) o inactivo (False), con un valor predeterminado de True.\n    Métodos:",
+        "peekOfCode": "class Alumna(models.Model):\n    \"\"\"\n        Representa a una alumna con información específica relacionada con la educación.\n    Hereda:\n       - models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n       - persona (OneToOneField): Relación uno a uno con el modelo Persona, representando la información personal de la alumna.\n       - codigo (CharField): Un código único para identificar a la alumna, con una longitud máxima de 30 caracteres.\n       - estado (BooleanField): El estado de la alumna, activo (True) o inactivo (False), con un valor predeterminado de True.\n    Métodos:",
         "detail": "Persona.models",
         "documentation": {}
     },
@@ -3122,7 +3275,7 @@
         "kind": 6,
         "importPath": "Persona.models",
         "description": "Persona.models",
-        "peekOfCode": "class Contacto(models.Model):\n    \"\"\"\n        Representa a un contacto asociado a una alumna.\n    Hereda:\n        models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n        alumna (ForeignKey): Relación con el modelo Alumna, permitiendo la asociación de múltiples contactos con una sola alumna.\n        nombre (CharField): El nombre del contacto, con una longitud máxima de 100 caracteres.\n        apellido (CharField): El apellido del contacto, con una longitud máxima de 100 caracteres.\n        parentesco (CharField): El parentesco del contacto con la alumna, con una longitud máxima de 100 caracteres.",
+        "peekOfCode": "class Contacto(models.Model):\n    \"\"\"\n        Representa a un contacto asociado a una alumna.\n    Hereda:\n       - models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n       - alumna (ForeignKey): Relación con el modelo Alumna, permitiendo la asociación de múltiples contactos con una sola alumna.\n       - nombre (CharField): El nombre del contacto, con una longitud máxima de 100 caracteres.\n       - apellido (CharField): El apellido del contacto, con una longitud máxima de 100 caracteres.\n       - parentesco (CharField): El parentesco del contacto con la alumna, con una longitud máxima de 100 caracteres.",
         "detail": "Persona.models",
         "documentation": {}
     },
@@ -3140,7 +3293,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def persona_create_view(request):\n    \"\"\"\n        Maneja la creación de una nueva persona y redirige a la vista de creación de alumna.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de persona.\n    Retorna:\n        HttpResponse: Redirige a la vista de creación de alumna con el ID de la persona creada, o renderiza el formulario de persona si hay errores.\n    Proceso:\n        - Si el método de la solicitud es POST, se valida el formulario de Persona.\n        - Si el formulario es válido, se guarda la persona y se redirige a la vista de creación de alumna.",
+        "peekOfCode": "def persona_create_view(request):\n    \"\"\"\n        Maneja la creación de una nueva persona y redirige a la vista de creación de alumna.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de persona.\n    Retorna:\n       - HttpResponse: Redirige a la vista de creación de alumna con el ID de la persona creada, o renderiza el formulario de persona si hay errores.\n    Proceso:\n        - Si el método de la solicitud es POST, se valida el formulario de Persona.\n        - Si el formulario es válido, se guarda la persona y se redirige a la vista de creación de alumna.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3149,7 +3302,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_create_view(request):\n    \"\"\"\n        Maneja la creación de una nueva alumna asociada a una persona existente.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.\n    Retorna:\n        HttpResponse: Redirige a la vista de creación de contacto con el ID de la alumna creada, o renderiza el formulario de alumna si hay errores.\n    Proceso:\n        - Obtiene el ID de la persona desde la URL.\n        - Si el método de la solicitud es POST, se valida el formulario de Alumna.",
+        "peekOfCode": "def alumna_create_view(request):\n    \"\"\"\n        Maneja la creación de una nueva alumna asociada a una persona existente.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.\n    Retorna:\n       - HttpResponse: Redirige a la vista de creación de contacto con el ID de la alumna creada, o renderiza el formulario de alumna si hay errores.\n    Proceso:\n        - Obtiene el ID de la persona desde la URL.\n        - Si el método de la solicitud es POST, se valida el formulario de Alumna.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3158,7 +3311,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def contacto_create_view(request, alumna_id):\n    \"\"\"\n        Maneja la creación de un nuevo contacto asociado a una alumna específica.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.\n        alumna_id (int): El ID de la alumna a la que se asociará el nuevo contacto.\n    Retorna:\n        HttpResponse: Renderiza el formulario de contacto con la lista de contactos existentes de la alumna.\n    Proceso:\n        - Obtiene la alumna usando el ID proporcionado.",
+        "peekOfCode": "def contacto_create_view(request, alumna_id):\n    \"\"\"\n        Maneja la creación de un nuevo contacto asociado a una alumna específica.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.\n       - alumna_id (int): El ID de la alumna a la que se asociará el nuevo contacto.\n    Retorna:\n       - HttpResponse: Renderiza el formulario de contacto con la lista de contactos existentes de la alumna.\n    Proceso:\n        - Obtiene la alumna usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3167,7 +3320,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def contacto_edit_view(request, contacto_id):\n    \"\"\"\n        Maneja la edición de un contacto existente.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.\n        contacto_id (int): El ID del contacto a editar.\n    Retorna:\n        HttpResponse: Renderiza el formulario de contacto editado y la lista de contactos de la alumna.\n    Proceso:\n        - Obtiene el contacto usando el ID proporcionado.",
+        "peekOfCode": "def contacto_edit_view(request, contacto_id):\n    \"\"\"\n        Maneja la edición de un contacto existente.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.\n       - contacto_id (int): El ID del contacto a editar.\n    Retorna:\n       - HttpResponse: Renderiza el formulario de contacto editado y la lista de contactos de la alumna.\n    Proceso:\n        - Obtiene el contacto usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3176,7 +3329,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def contacto_delete_view(request, contacto_id):\n    \"\"\"\n        Maneja la eliminación de un contacto existente.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene la acción de eliminación.\n        contacto_id (int): El ID del contacto a eliminar.\n    Retorna:\n        HttpResponse: Redirige a la vista de creación de contacto de la alumna correspondiente.\n    Proceso:\n        - Obtiene el contacto usando el ID proporcionado.",
+        "peekOfCode": "def contacto_delete_view(request, contacto_id):\n    \"\"\"\n        Maneja la eliminación de un contacto existente.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP que contiene la acción de eliminación.\n       - contacto_id (int): El ID del contacto a eliminar.\n    Retorna:\n       - HttpResponse: Redirige a la vista de creación de contacto de la alumna correspondiente.\n    Proceso:\n        - Obtiene el contacto usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3185,7 +3338,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_list_view(request):\n    \"\"\"\n        Maneja la visualización de la lista de alumnas activas.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene la información del usuario.\n    Retorna:\n        HttpResponse: Renderiza la lista de alumnas activas, organizadas por asignación.\n    Proceso:\n        - Obtiene el usuario logueado y su grado asignado.\n        - Filtra las alumnas activas y obtiene su mejor asignación.",
+        "peekOfCode": "def alumna_list_view(request):\n    \"\"\"\n        Maneja la visualización de la lista de alumnas activas.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP que contiene la información del usuario.\n    Retorna:\n       - HttpResponse: Renderiza la lista de alumnas activas, organizadas por asignación.\n    Proceso:\n        - Obtiene el usuario logueado y su grado asignado.\n        - Filtra las alumnas activas y obtiene su mejor asignación.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3194,7 +3347,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_inactive_list_view(request):\n    \"\"\"\n        Maneja la visualización de la lista de alumnas inactivas.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP.\n    Retorna:\n        HttpResponse: Renderiza la lista de alumnas inactivas.\n    Proceso:\n        - Filtra las alumnas inactivas y calcula su edad y asignación.\n        - Renderiza la lista de alumnas inactivas en el contexto de la plantilla.",
+        "peekOfCode": "def alumna_inactive_list_view(request):\n    \"\"\"\n        Maneja la visualización de la lista de alumnas inactivas.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP.\n    Retorna:\n       - HttpResponse: Renderiza la lista de alumnas inactivas.\n    Proceso:\n        - Filtra las alumnas inactivas y calcula su edad y asignación.\n        - Renderiza la lista de alumnas inactivas en el contexto de la plantilla.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3203,7 +3356,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def desactivar_alumna_view(request, alumna_id):\n    \"\"\"\n        Maneja la desactivación de una alumna específica.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP.\n        alumna_id (int): El ID de la alumna a desactivar.\n    Retorna:\n        HttpResponse: Redirige a la lista de alumnas activas.\n    Proceso:\n        - Obtiene la alumna usando el ID proporcionado.",
+        "peekOfCode": "def desactivar_alumna_view(request, alumna_id):\n    \"\"\"\n        Maneja la desactivación de una alumna específica.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP.\n       - alumna_id (int): El ID de la alumna a desactivar.\n    Retorna:\n       - HttpResponse: Redirige a la lista de alumnas activas.\n    Proceso:\n        - Obtiene la alumna usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3212,7 +3365,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def activar_alumna_view(request, alumna_id):\n    \"\"\"\n        Maneja la activación de una alumna específica.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP.\n        alumna_id (int): El ID de la alumna a activar.\n    Retorna:\n        HttpResponse: Redirige a la lista de alumnas inactivas.\n    Proceso:\n        - Obtiene la alumna usando el ID proporcionado.",
+        "peekOfCode": "def activar_alumna_view(request, alumna_id):\n    \"\"\"\n        Maneja la activación de una alumna específica.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP.\n       - alumna_id (int): El ID de la alumna a activar.\n    Retorna:\n       - HttpResponse: Redirige a la lista de alumnas inactivas.\n    Proceso:\n        - Obtiene la alumna usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3221,7 +3374,7 @@
         "kind": 2,
         "importPath": "Persona.views",
         "description": "Persona.views",
-        "peekOfCode": "def alumna_edit_view(request, alumna_id):\n    \"\"\"\n        Maneja la edición de los datos de una alumna existente.\n    Parámetros:\n        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.\n        alumna_id (int): El ID de la alumna a editar.\n    Retorna:\n        HttpResponse: Renderiza el formulario de edición de alumna, persona y asignación.\n    Proceso:\n        - Obtiene la alumna y su persona asociada usando el ID proporcionado.",
+        "peekOfCode": "def alumna_edit_view(request, alumna_id):\n    \"\"\"\n        Maneja la edición de los datos de una alumna existente.\n    Parámetros:\n       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.\n       - alumna_id (int): El ID de la alumna a editar.\n    Retorna:\n       - HttpResponse: Renderiza el formulario de edición de alumna, persona y asignación.\n    Proceso:\n        - Obtiene la alumna y su persona asociada usando el ID proporcionado.",
         "detail": "Persona.views",
         "documentation": {}
     },
@@ -3284,7 +3437,7 @@
         "kind": 6,
         "importPath": "user.models",
         "description": "user.models",
-        "peekOfCode": "class Rol(models.Model):\n    \"\"\"\n        Modelo que representa un rol de usuario en el sistema.\n    Hereda:\n        models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n        rol (CharField): Nombre del rol del usuario, con un máximo de 20 caracteres.\n    Métodos:\n        __str__(self): Devuelve una representación en cadena del rol, que es el nombre del rol.\n    \"\"\"",
+        "peekOfCode": "class Rol(models.Model):\n    \"\"\"\n        Modelo que representa un rol de usuario en el sistema.\n    Hereda:\n       - models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n       - rol (CharField): Nombre del rol del usuario, con un máximo de 20 caracteres.\n    Métodos:\n       - __str__(self): Devuelve una representación en cadena del rol, que es el nombre del rol.\n    \"\"\"",
         "detail": "user.models",
         "documentation": {}
     },
@@ -3293,7 +3446,7 @@
         "kind": 6,
         "importPath": "user.models",
         "description": "user.models",
-        "peekOfCode": "class User(AbstractUser):\n    \"\"\"\n        Modelo que extiende el modelo de usuario de Django para incluir campos adicionales.\n    Hereda:\n        AbstractUser: Clase base que proporciona la funcionalidad del modelo de usuario de Django.\n    Atributos heredados de AbstractUser:\n        username (CharField): Nombre de usuario único para la autenticación.\n        first_name (CharField): Nombre de pila del usuario.\n        last_name (CharField): Apellido del usuario.\n        email (EmailField): Correo electrónico del usuario, único por defecto.",
+        "peekOfCode": "class User(AbstractUser):\n    \"\"\"\n        Modelo que extiende el modelo de usuario de Django para incluir campos adicionales.\n    Hereda:\n       - AbstractUser: Clase base que proporciona la funcionalidad del modelo de usuario de Django.\n    Atributos heredados de AbstractUser:\n       - username (CharField): Nombre de usuario único para la autenticación.\n       - first_name (CharField): Nombre de pila del usuario.\n       - last_name (CharField): Apellido del usuario.\n       - email (EmailField): Correo electrónico del usuario, único por defecto.",
         "detail": "user.models",
         "documentation": {}
     },

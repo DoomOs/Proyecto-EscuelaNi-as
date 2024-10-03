@@ -10,21 +10,22 @@ class AsignacionCiclo(models.Model):
         Modelo que representa la asignación de una alumna a un grado en un año específico.
 
     Atributos:
-        grado (ForeignKey): Clave foránea que relaciona la asignación con el modelo Grado. 
+       - grado (ForeignKey): Clave foránea que relaciona la asignación con el modelo Grado. 
             Elimina la asignación si el grado asociado se elimina.
-        alumna (ForeignKey): Clave foránea que relaciona la asignación con el modelo Alumna.
+       - alumna (ForeignKey): Clave foránea que relaciona la asignación con el modelo Alumna.
             Elimina la asignación si la alumna asociada se elimina.
-        user (ForeignKey): Clave foránea que relaciona la asignación con el modelo User.
+       - user (ForeignKey): Clave foránea que relaciona la asignación con el modelo User.
             Elimina la asignación si el usuario asociado se elimina.
-        year (IntegerField): Campo que almacena el año de la asignación.
+       - year (IntegerField): Campo que almacena el año de la asignación.
 
     Meta:
-        unique_together: Restringe que no se puedan crear asignaciones duplicadas para la misma alumna, grado y año.
+       - unique_together: Restringe que no se puedan crear asignaciones duplicadas para la misma alumna, grado y año.
 
     Métodos:
-        __str__():
+       - __str__():
             Devuelve una representación en forma de cadena de la asignación, que incluye el nombre y apellido de la alumna, 
             el nombre del grado y el año.
+            
             Retorna:
                 str: Cadena formateada que describe la asignación.
 

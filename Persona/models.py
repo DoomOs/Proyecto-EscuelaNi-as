@@ -9,17 +9,17 @@ class Persona(models.Model):
         Representa a una persona con información básica.
 
     Hereda:
-        models.Model: Clase base para todos los modelos de Django.
+       - models.Model: Clase base para todos los modelos de Django.
 
     Atributos:
-        nombre (CharField): El nombre de la persona, con una longitud máxima de 100 caracteres.
-        apellido (CharField): El apellido de la persona, con una longitud máxima de 100 caracteres.
-        fecha_nacimiento (DateField): La fecha de nacimiento de la persona.
-        genero (CharField): El género de la persona, representado por un solo carácter (por ejemplo, 'M' para masculino, 'F' para femenino).
-        direccion (CharField): La dirección de la persona, con una longitud máxima de 150 caracteres.
+       - nombre (CharField): El nombre de la persona, con una longitud máxima de 100 caracteres.
+       - apellido (CharField): El apellido de la persona, con una longitud máxima de 100 caracteres.
+       - fecha_nacimiento (DateField): La fecha de nacimiento de la persona.
+       - genero (CharField): El género de la persona, representado por un solo carácter (por ejemplo, 'M' para masculino, 'F' para femenino).
+       - direccion (CharField): La dirección de la persona, con una longitud máxima de 150 caracteres.
 
     Métodos:
-        __str__(): Devuelve una representación en cadena del objeto, que consiste en el nombre y apellido de la persona.
+       - __str__(): Devuelve una representación en cadena del objeto, que consiste en el nombre y apellido de la persona.
 
     """
     nombre = models.CharField(max_length=100)
@@ -36,15 +36,15 @@ class Alumna(models.Model):
         Representa a una alumna con información específica relacionada con la educación.
 
     Hereda:
-        models.Model: Clase base para todos los modelos de Django.
+       - models.Model: Clase base para todos los modelos de Django.
 
     Atributos:
-        persona (OneToOneField): Relación uno a uno con el modelo Persona, representando la información personal de la alumna.
-        codigo (CharField): Un código único para identificar a la alumna, con una longitud máxima de 30 caracteres.
-        estado (BooleanField): El estado de la alumna, activo (True) o inactivo (False), con un valor predeterminado de True.
+       - persona (OneToOneField): Relación uno a uno con el modelo Persona, representando la información personal de la alumna.
+       - codigo (CharField): Un código único para identificar a la alumna, con una longitud máxima de 30 caracteres.
+       - estado (BooleanField): El estado de la alumna, activo (True) o inactivo (False), con un valor predeterminado de True.
 
     Métodos:
-        __str__(): Devuelve una representación en cadena del objeto, que consiste en el código de la alumna.
+       - __str__(): Devuelve una representación en cadena del objeto, que consiste en el código de la alumna.
 
     """
     persona = models.OneToOneField(Persona, on_delete=models.CASCADE)
@@ -59,18 +59,18 @@ class Contacto(models.Model):
         Representa a un contacto asociado a una alumna.
 
     Hereda:
-        models.Model: Clase base para todos los modelos de Django.
+       - models.Model: Clase base para todos los modelos de Django.
 
     Atributos:
-        alumna (ForeignKey): Relación con el modelo Alumna, permitiendo la asociación de múltiples contactos con una sola alumna.
-        nombre (CharField): El nombre del contacto, con una longitud máxima de 100 caracteres.
-        apellido (CharField): El apellido del contacto, con una longitud máxima de 100 caracteres.
-        parentesco (CharField): El parentesco del contacto con la alumna, con una longitud máxima de 100 caracteres.
-        telefono (CharField): El número de teléfono del contacto, con una longitud máxima de 15 caracteres.
-        email (EmailField): La dirección de correo electrónico del contacto.
+       - alumna (ForeignKey): Relación con el modelo Alumna, permitiendo la asociación de múltiples contactos con una sola alumna.
+       - nombre (CharField): El nombre del contacto, con una longitud máxima de 100 caracteres.
+       - apellido (CharField): El apellido del contacto, con una longitud máxima de 100 caracteres.
+       - parentesco (CharField): El parentesco del contacto con la alumna, con una longitud máxima de 100 caracteres.
+       - telefono (CharField): El número de teléfono del contacto, con una longitud máxima de 15 caracteres.
+       - email (EmailField): La dirección de correo electrónico del contacto.
 
     Métodos:
-        __str__(): Devuelve una representación en cadena del objeto, que consiste en el nombre y apellido del contacto.
+       - __str__(): Devuelve una representación en cadena del objeto, que consiste en el nombre y apellido del contacto.
 
     """
     alumna = models.ForeignKey(Alumna, on_delete=models.CASCADE)

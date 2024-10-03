@@ -10,13 +10,13 @@ def login_in(request):
         Maneja el proceso de inicio de sesión de un usuario.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP que contiene datos del formulario de inicio de sesión.
+       - request (HttpRequest): La solicitud HTTP que contiene datos del formulario de inicio de sesión.
 
     Retorna:
-        HttpResponse: Redirige a la página de inicio si las credenciales son válidas, o de lo contrario, renderiza el formulario de inicio de sesión con un mensaje de error.
+       - HttpResponse: Redirige a la página de inicio si las credenciales son válidas, o de lo contrario, renderiza el formulario de inicio de sesión con un mensaje de error.
 
     Excepciones:
-        AttributeError: Si hay un problema al acceder a los datos del formulario, muestra un mensaje de error de credenciales inválidas.
+       - AttributeError: Si hay un problema al acceder a los datos del formulario, muestra un mensaje de error de credenciales inválidas.
 
     Proceso:
         - Si el método de la solicitud es POST, se valida el formulario con las credenciales proporcionadas.
@@ -56,13 +56,13 @@ def logout_out(request):
         Maneja el proceso de cierre de sesión de un usuario.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP que contiene la información de la sesión del usuario.
+       - request (HttpRequest): La solicitud HTTP que contiene la información de la sesión del usuario.
 
     Retorna:
-        HttpResponse: Redirige a la página de inicio de sesión después de cerrar la sesión.
+       - HttpResponse: Redirige a la página de inicio de sesión después de cerrar la sesión.
 
     Excepciones:
-        AttributeError: Si hay un problema al acceder a la sesión, redirige a la página principal.
+       - AttributeError: Si hay un problema al acceder a la sesión, redirige a la página principal.
 
     Proceso:
         - Se eliminan los datos de la sesión del usuario.

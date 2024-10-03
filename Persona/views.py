@@ -18,10 +18,10 @@ def persona_create_view(request):
         Maneja la creación de una nueva persona y redirige a la vista de creación de alumna.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de persona.
+       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de persona.
 
     Retorna:
-        HttpResponse: Redirige a la vista de creación de alumna con el ID de la persona creada, o renderiza el formulario de persona si hay errores.
+       - HttpResponse: Redirige a la vista de creación de alumna con el ID de la persona creada, o renderiza el formulario de persona si hay errores.
 
     Proceso:
         - Si el método de la solicitud es POST, se valida el formulario de Persona.
@@ -46,10 +46,10 @@ def alumna_create_view(request):
         Maneja la creación de una nueva alumna asociada a una persona existente.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.
+       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.
 
     Retorna:
-        HttpResponse: Redirige a la vista de creación de contacto con el ID de la alumna creada, o renderiza el formulario de alumna si hay errores.
+       - HttpResponse: Redirige a la vista de creación de contacto con el ID de la alumna creada, o renderiza el formulario de alumna si hay errores.
 
     Proceso:
         - Obtiene el ID de la persona desde la URL.
@@ -79,11 +79,11 @@ def contacto_create_view(request, alumna_id):
         Maneja la creación de un nuevo contacto asociado a una alumna específica.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.
-        alumna_id (int): El ID de la alumna a la que se asociará el nuevo contacto.
+       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.
+       - alumna_id (int): El ID de la alumna a la que se asociará el nuevo contacto.
 
     Retorna:
-        HttpResponse: Renderiza el formulario de contacto con la lista de contactos existentes de la alumna.
+       - HttpResponse: Renderiza el formulario de contacto con la lista de contactos existentes de la alumna.
 
     Proceso:
         - Obtiene la alumna usando el ID proporcionado.
@@ -119,11 +119,11 @@ def contacto_edit_view(request, contacto_id):
         Maneja la edición de un contacto existente.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.
-        contacto_id (int): El ID del contacto a editar.
+       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de contacto.
+       - contacto_id (int): El ID del contacto a editar.
 
     Retorna:
-        HttpResponse: Renderiza el formulario de contacto editado y la lista de contactos de la alumna.
+       - HttpResponse: Renderiza el formulario de contacto editado y la lista de contactos de la alumna.
 
     Proceso:
         - Obtiene el contacto usando el ID proporcionado.
@@ -155,11 +155,11 @@ def contacto_delete_view(request, contacto_id):
         Maneja la eliminación de un contacto existente.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP que contiene la acción de eliminación.
-        contacto_id (int): El ID del contacto a eliminar.
+       - request (HttpRequest): La solicitud HTTP que contiene la acción de eliminación.
+       - contacto_id (int): El ID del contacto a eliminar.
 
     Retorna:
-        HttpResponse: Redirige a la vista de creación de contacto de la alumna correspondiente.
+       - HttpResponse: Redirige a la vista de creación de contacto de la alumna correspondiente.
 
     Proceso:
         - Obtiene el contacto usando el ID proporcionado.
@@ -184,10 +184,10 @@ def alumna_list_view(request):
         Maneja la visualización de la lista de alumnas activas.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP que contiene la información del usuario.
+       - request (HttpRequest): La solicitud HTTP que contiene la información del usuario.
 
     Retorna:
-        HttpResponse: Renderiza la lista de alumnas activas, organizadas por asignación.
+       - HttpResponse: Renderiza la lista de alumnas activas, organizadas por asignación.
 
     Proceso:
         - Obtiene el usuario logueado y su grado asignado.
@@ -248,10 +248,10 @@ def alumna_inactive_list_view(request):
         Maneja la visualización de la lista de alumnas inactivas.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP.
+       - request (HttpRequest): La solicitud HTTP.
 
     Retorna:
-        HttpResponse: Renderiza la lista de alumnas inactivas.
+       - HttpResponse: Renderiza la lista de alumnas inactivas.
 
     Proceso:
         - Filtra las alumnas inactivas y calcula su edad y asignación.
@@ -273,11 +273,11 @@ def desactivar_alumna_view(request, alumna_id):
         Maneja la desactivación de una alumna específica.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP.
-        alumna_id (int): El ID de la alumna a desactivar.
+       - request (HttpRequest): La solicitud HTTP.
+       - alumna_id (int): El ID de la alumna a desactivar.
 
     Retorna:
-        HttpResponse: Redirige a la lista de alumnas activas.
+       - HttpResponse: Redirige a la lista de alumnas activas.
 
     Proceso:
         - Obtiene la alumna usando el ID proporcionado.
@@ -295,11 +295,11 @@ def activar_alumna_view(request, alumna_id):
         Maneja la activación de una alumna específica.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP.
-        alumna_id (int): El ID de la alumna a activar.
+       - request (HttpRequest): La solicitud HTTP.
+       - alumna_id (int): El ID de la alumna a activar.
 
     Retorna:
-        HttpResponse: Redirige a la lista de alumnas inactivas.
+       - HttpResponse: Redirige a la lista de alumnas inactivas.
 
     Proceso:
         - Obtiene la alumna usando el ID proporcionado.
@@ -319,11 +319,11 @@ def alumna_edit_view(request, alumna_id):
         Maneja la edición de los datos de una alumna existente.
 
     Parámetros:
-        request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.
-        alumna_id (int): El ID de la alumna a editar.
+       - request (HttpRequest): La solicitud HTTP que contiene los datos del formulario de alumna.
+       - alumna_id (int): El ID de la alumna a editar.
 
     Retorna:
-        HttpResponse: Renderiza el formulario de edición de alumna, persona y asignación.
+       - HttpResponse: Renderiza el formulario de edición de alumna, persona y asignación.
 
     Proceso:
         - Obtiene la alumna y su persona asociada usando el ID proporcionado.

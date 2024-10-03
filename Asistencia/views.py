@@ -17,10 +17,10 @@ def lista_asistencia(request):
         Vista que muestra la lista de alumnas y su asistencia del día actual para el grado asignado al usuario logueado.
 
     Parámetros:
-        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
 
     Retorna:
-        HttpResponse: Renderiza la plantilla 'lista_asistencia.html' con el contexto que incluye 
+       - HttpResponse: Renderiza la plantilla 'lista_asistencia.html' con el contexto que incluye 
         las asignaciones sin asistencia y las asistencias registradas para el día actual.
 
     """
@@ -61,12 +61,12 @@ def actualizar_asistencia(request, asignacion_id, presente):
         Vista que actualiza el estado de asistencia de una alumna para el día actual.
 
     Parámetros:
-        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
-        asignacion_id (int): ID de la asignación de ciclo de la alumna.
-        presente (bool): Indica si la alumna estuvo presente (1) o ausente (0).
+       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+       - asignacion_id (int): ID de la asignación de ciclo de la alumna.
+       - presente (bool): Indica si la alumna estuvo presente (1) o ausente (0).
 
     Retorna:
-        HttpResponse: Redirige a la vista de lista de asistencia después de actualizar el estado de asistencia.
+       - HttpResponse: Redirige a la vista de lista de asistencia después de actualizar el estado de asistencia.
 
     """
     hoy = timezone.localtime(timezone.now()).date()
@@ -86,10 +86,10 @@ def ver_asistencias(request):
         Vista que muestra las fechas en las que se han registrado asistencias.
 
     Parámetros:
-        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
 
     Retorna:
-        HttpResponse: Renderiza la plantilla 'ver_asistencias.html' con el contexto que incluye 
+       - HttpResponse: Renderiza la plantilla 'ver_asistencias.html' con el contexto que incluye 
         las fechas de las asistencias registradas.
 
     """
@@ -106,11 +106,11 @@ def detalle_asistencia(request, fecha):
         Vista que muestra el detalle de asistencias registradas en una fecha específica.
 
     Parámetros:
-        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
-        fecha (date): Fecha para la cual se desea ver las asistencias.
+       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+       - fecha (date): Fecha para la cual se desea ver las asistencias.
 
     Retorna:
-        HttpResponse: Renderiza la plantilla 'detalle_asistencia.html' con el contexto que incluye 
+       - HttpResponse: Renderiza la plantilla 'detalle_asistencia.html' con el contexto que incluye 
         las asistencias registradas en la fecha especificada.
 
     """
@@ -129,11 +129,11 @@ def generar_pdf(request, fecha):
         Vista que genera un archivo PDF con la asistencia registrada en una fecha específica.
 
     Parámetros:
-        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
-        fecha (date): Fecha para la cual se generará el PDF de asistencias.
+       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+       - fecha (date): Fecha para la cual se generará el PDF de asistencias.
 
     Retorna:
-        HttpResponse: Archivo PDF que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.
+       - HttpResponse: Archivo PDF que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.
 
     """
     # Filtrar asistencias por fecha
@@ -181,11 +181,11 @@ def generar_excel(request, fecha):
         Vista que genera un archivo Excel con la asistencia registrada en una fecha específica..
 
     Parámetros:
-        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
-        fecha (date): Fecha para la cual se generará el archivo Excel de asistencias.
+       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+       - fecha (date): Fecha para la cual se generará el archivo Excel de asistencias.
 
     Retorna:
-        HttpResponse: Archivo Excel que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.
+       - HttpResponse: Archivo Excel que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.
 
     """
     # Filtrar asistencias por fecha
