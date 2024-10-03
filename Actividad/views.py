@@ -17,6 +17,34 @@ from django.contrib import messages
 from django.shortcuts import render
 
 class ActividadListView(LoginRequiredMixin, ListView):
+    """
+        Clase que gestiona la vista de lista de actividades activas. 
+
+    Hereda:
+        LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        ListView: Vista genérica para listar objetos de un modelo.
+
+    Atributos:
+        model (Actividad): Modelo utilizado para representar las actividades.
+        template_name (str): Nombre del template a utilizar para renderizar la vista.
+        context_object_name (str): Nombre del contexto que se utilizará en la plantilla.
+
+    Métodos:
+        get_queryset(): 
+            Obtiene el conjunto de consultas filtrado y ordenado por fecha.
+            Retorna:
+                QuerySet: Un conjunto de actividades activas filtradas por curso y fecha, ordenadas por fecha descendente.
+
+        get_context_data(**kwargs):
+            Añade cursos activos al contexto de la vista.
+            Parámetros:
+                **kwargs: Argumentos adicionales que se pueden pasar al contexto.
+            Retorna:
+                dict: El contexto actualizado que incluye los cursos activos.
+
+    
+    """
+    
     model = Actividad
     template_name = 'actividad_list.html'
     context_object_name = 'actividades'
@@ -43,6 +71,36 @@ class ActividadListView(LoginRequiredMixin, ListView):
         return context
 
 class ActividadInactivaListView(LoginRequiredMixin, ListView):
+    
+    """
+        Clase que gestiona la vista de lista de actividades inactivas. 
+
+    Hereda:
+        LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        ListView: Vista genérica para listar objetos de un modelo.
+
+    Atributos:
+        model (Actividad): Modelo utilizado para representar las actividades.
+        template_name (str): Nombre del template a utilizar para renderizar la vista.
+        context_object_name (str): Nombre del contexto que se utilizará en la plantilla.
+
+    Métodos:
+        get_queryset(): 
+            Obtiene el conjunto de consultas filtrado y ordenado por fecha.
+            Retorna:
+                QuerySet: Un conjunto de actividades inactivas filtradas por curso, ordenadas por fecha descendente.
+
+        get_context_data(**kwargs):
+            Añade todos los cursos al contexto de la vista.
+            Parámetros:
+                **kwargs: Argumentos adicionales que se pueden pasar al contexto.
+            Retorna:
+                dict: El contexto actualizado que incluye todos los cursos.
+
+    
+    """
+
+    
     model = Actividad
     template_name = 'actividad_inactiva_list.html'
     context_object_name = 'actividades'
@@ -67,6 +125,29 @@ class ActividadInactivaListView(LoginRequiredMixin, ListView):
 
     
 class ActividadInactivarView(View):
+    
+    """
+        Clase que gestiona la inactivación de una actividad específica. 
+
+    Hereda:
+        View: Clase base para todas las vistas.
+
+    Atributos:
+        success_url (str): URL a la que se redirige después de inactivar la actividad.
+
+    Métodos:
+        get(request, *args, **kwargs):
+            Inactiva una actividad y redirige a la URL de éxito.
+            Parámetros:
+                request (HttpRequest): Objeto de solicitud HTTP.
+                *args: Argumentos adicionales para el método.
+                **kwargs: Argumentos adicionales que se pueden pasar al método.
+            Retorna:
+                HttpResponseRedirect: Redirección a la URL especificada en success_url.
+
+    """
+
+    
     success_url = reverse_lazy('actividad-list')
 
     def get(self, request, *args, **kwargs):
@@ -76,6 +157,28 @@ class ActividadInactivarView(View):
         return redirect(self.success_url)
 
 class ActividadReactivarView(View):
+    
+    """
+        Clase que gestiona la reactivación de una actividad específica. 
+
+    Hereda:
+        View: Clase base para todas las vistas.
+
+    Atributos:
+        success_url (str): URL a la que se redirige después de reactivar la actividad.
+
+    Métodos:
+        get(request, *args, **kwargs):
+            Reactiva una actividad y redirige a la URL de éxito.
+            Parámetros:
+                request (HttpRequest): Objeto de solicitud HTTP.
+                *args: Argumentos adicionales para el método.
+                **kwargs: Argumentos adicionales que se pueden pasar al método.
+            Retorna:
+                HttpResponseRedirect: Redirección a la URL especificada en success_url.
+
+    """
+    
     success_url = reverse_lazy('actividad-inactiva-list')
 
     def get(self, request, *args, **kwargs):
@@ -86,28 +189,118 @@ class ActividadReactivarView(View):
 
 
 class ActividadCreateView(LoginRequiredMixin,CreateView):
+    
+    """
+        Clase que gestiona la creación de una nueva actividad. 
+
+    Hereda:
+        LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        CreateView: Vista genérica para crear un objeto.
+
+    Atributos:
+        model (Actividad): Modelo utilizado para representar las actividades.
+        form_class (ActividadForm): Formulario utilizado para crear la actividad.
+        template_name (str): Nombre del template a utilizar para renderizar la vista.
+        success_url (str): URL a la que se redirige después de crear la actividad.
+
+    """
+
+    
     model = Actividad
     form_class = ActividadForm
     template_name = 'actividad_form.html'
     success_url = reverse_lazy('actividad-list')
 
 class ActividadUpdateView(LoginRequiredMixin, UpdateView):
+    """
+        Clase que gestiona la actualización de una actividad existente. 
+
+    Hereda:
+        LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        UpdateView: Vista genérica para actualizar un objeto.
+
+    Atributos:
+        model (Actividad): Modelo utilizado para representar las actividades.
+        form_class (ActividadForm): Formulario utilizado para actualizar la actividad.
+        template_name (str): Nombre del template a utilizar para renderizar la vista.
+        success_url (str): URL a la que se redirige después de actualizar la actividad.
+
+    """
+   
     model = Actividad
     form_class = ActividadForm
     template_name = 'actividad_form.html'
     success_url = reverse_lazy('actividad-list')
 
 class ActividadDeleteView(LoginRequiredMixin, DeleteView):
+    
+    """
+        Clase que gestiona la eliminación de una actividad existente. 
+
+    Hereda:
+        LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        DeleteView: Vista genérica para eliminar un objeto.
+
+    Atributos:
+        model (Actividad): Modelo utilizado para representar las actividades.
+        template_name (str): Nombre del template a utilizar para confirmar la eliminación.
+        success_url (str): URL a la que se redirige después de eliminar la actividad.
+
+    """
+    
     model = Actividad
     template_name = 'actividad_confirm_delete.html'
     success_url = reverse_lazy('actividad-list')
 
 class CalificacionActividadListView(LoginRequiredMixin, ListView):
+    
+    """
+        Clase que gestiona la vista de lista de calificaciones de actividades. 
+
+    Hereda:
+        LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        ListView: Vista genérica para listar objetos de un modelo.
+
+    Atributos:
+        model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.
+        template_name (str): Nombre del template a utilizar para renderizar la vista.
+
+    """
+    
     model = CalificacionActividad
     template_name = 'calificacionactividad_list.html'
 
 
 class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
+
+    """
+        Clase que gestiona la vista para calificar a los alumnos en una actividad específica. 
+
+    Hereda:
+        LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        TemplateView: Vista que utiliza un template para renderizar.
+
+    Atributos:
+        template_name (str): Nombre del template a utilizar para renderizar la vista.
+
+    Métodos:
+        get_context_data(**kwargs):
+            Prepara el contexto para la calificación de alumnos, incluyendo la actividad y listas de alumnos calificados y no calificados.
+            Parámetros:
+                **kwargs: Argumentos adicionales que se pueden pasar al contexto.
+            Retorna:
+                dict: El contexto actualizado con la actividad y las listas de alumnos.
+
+        post(request, *args, **kwargs):
+            Maneja la solicitud POST para guardar las calificaciones de los alumnos.
+            Parámetros:
+                request (HttpRequest): Objeto de solicitud HTTP.
+                *args: Argumentos adicionales para el método.
+                **kwargs: Argumentos adicionales que se pueden pasar al método.
+            Retorna:
+                HttpResponseRedirect: Redirección a la misma vista para reflejar los cambios guardados.
+
+    """
     template_name = 'calificar_alumno_list.html'
 
     def get_context_data(self, **kwargs):
@@ -172,33 +365,46 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
         return redirect('calificar-alumno', actividad_id=actividad.id)
 
 
-class CalificacionActividadCreateView(LoginRequiredMixin, CreateView):
-    model = CalificacionActividad
-    form_class = CalificacionActividadForm
-    template_name = 'calificacionactividad_form.html'
 
-    def post(self, request, *args, **kwargs):
-        actividad = get_object_or_404(Actividad, id=self.kwargs['actividad_id'])
-        for asignacion in AsignacionCiclo.objects.filter(grado=actividad.curso.grado, year=actividad.curso.year):
-            punteo = request.POST.get(f'punteo_{asignacion.id}')
-            descripcion = request.POST.get(f'descripcion_{asignacion.id}')
-            if punteo and descripcion:
-                CalificacionActividad.objects.create(
-                    actividad=actividad,
-                    asignacion_ciclo=asignacion,
-                    punteo=punteo,
-                    descripcion=descripcion
-                )
-        return redirect('calificar-alumno', actividad_id=actividad.id)
 
 
 class CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):
+    
+    """
+        Clase que gestiona la actualización de una calificación de actividad existente. 
+
+    Hereda:
+        LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        UpdateView: Vista genérica para actualizar un objeto.
+
+    Atributos:
+        model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.
+        form_class (CalificacionActividadForm): Formulario utilizado para actualizar la calificación.
+        template_name (str): Nombre del template a utilizar para renderizar la vista.
+        success_url (str): URL a la que se redirige después de actualizar la calificación.
+
+    """
+    
     model = CalificacionActividad
     form_class = CalificacionActividadForm
     template_name = 'calificacionactividad_form.html'
     success_url = reverse_lazy('calificacionactividad-list')
 
 class CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):
+
+    """
+        Clase que gestiona la eliminación de una calificación de actividad existente. 
+
+    Hereda:
+        LoginRequiredMixin: Requiere que el usuario esté autenticado.
+        DeleteView: Vista genérica para eliminar un objeto.
+
+    Atributos:
+        model (CalificacionActividad): Modelo utilizado para representar las calificaciones de actividades.
+        template_name (str): Nombre del template a utilizar para confirmar la eliminación.
+        success_url (str): URL a la que se redirige después de eliminar la calificación.
+
+    """
     model = CalificacionActividad
     template_name = 'calificacionactividad_confirm_delete.html'
     success_url = reverse_lazy('calificacionactividad-list')
@@ -207,6 +413,17 @@ class CalificacionActividadDeleteView(LoginRequiredMixin, DeleteView):
 
 
 def calificaciones_alumna_view(request, alumna_id):
+    """
+        Vista que gestiona la visualización de calificaciones de una alumna específica.
+
+    Parámetros:
+        request (HttpRequest): Objeto de solicitud HTTP.
+        alumna_id (int): ID de la alumna cuyas calificaciones se van a visualizar.
+
+    Retorna:
+        HttpResponse: Renderiza la plantilla 'calificaciones_alumna.html' con el contexto de la alumna y sus calificaciones.
+
+    """
     alumna = get_object_or_404(Alumna, id=alumna_id)
     grado_id = request.GET.get('grado')
     year = request.GET.get('year')
@@ -230,12 +447,33 @@ def calificaciones_alumna_view(request, alumna_id):
     })
 
 def get_anos_cursos(request):
+    """
+        Vista que obtiene los años asociados a un grado específico y devuelve la lista de años en formato JSON.
+
+    Parámetros:
+        request (HttpRequest): Objeto de solicitud HTTP.
+
+    Retorna:
+        JsonResponse: Respuesta JSON con la lista de años disponibles para el grado especificado.
+
+    """
     grado_id = request.GET.get('grado_id')
     asignaciones = AsignacionCiclo.objects.filter(grado_id=grado_id).distinct()
     anos_list = list(asignaciones.values_list('year', flat=True).distinct())
     return JsonResponse({'years': anos_list})
 
 def get_cursos(request):
+
+    """
+        Vista que obtiene los cursos asociados a un grado específico y año, y devuelve la lista de cursos en formato JSON.
+
+    Parámetros:
+        request (HttpRequest): Objeto de solicitud HTTP.
+
+    Retorna:
+        JsonResponse: Respuesta JSON con la lista de cursos disponibles para el grado y año especificados.
+
+    """
     grado_id = request.GET.get('grado_id')
     year = request.GET.get('year')
     cursos = Curso.objects.filter(grado_id=grado_id, estado=True)

@@ -3,7 +3,7 @@ from django.urls import path
 from Actividad.reportes import exportar_calificaciones_excel, exportar_punteo_acumulado_excel
 from .views import (
     ActividadInactivaListView, ActividadInactivarView, ActividadListView, ActividadCreateView, ActividadReactivarView, ActividadUpdateView, ActividadDeleteView,
-    CalificacionActividadListView, CalificacionActividadCreateView, CalificacionActividadUpdateView, CalificacionActividadDeleteView, CalificarAlumnoView, get_anos_cursos, get_cursos
+    CalificacionActividadListView, CalificacionActividadUpdateView, CalificacionActividadDeleteView, CalificarAlumnoView, get_anos_cursos, get_cursos
 )
 from .views import  calificaciones_alumna_view
 from . import views
@@ -17,7 +17,6 @@ urlpatterns = [
     path('actividades-inactivas/', ActividadInactivaListView.as_view(), name='actividad-inactiva-list'),
 
     path('calificaciones/', CalificacionActividadListView.as_view(), name='calificacionactividad-list'),
-    path('calificaciones/nueva/', CalificacionActividadCreateView.as_view(), name='calificacionactividad-create'),
     path('calificaciones/<int:pk>/editar/', CalificacionActividadUpdateView.as_view(), name='calificacionactividad-update'),
     path('calificaciones/<int:pk>/eliminar/', CalificacionActividadDeleteView.as_view(), name='calificacionactividad-delete'),
     path('calificar/<int:actividad_id>/', CalificarAlumnoView.as_view(), name='calificar-alumno'),

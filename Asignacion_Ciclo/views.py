@@ -13,6 +13,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 def AsignacionCicloListView(request):
+    
+    
     query = Q()
     grados = Grado.objects.all()
 
@@ -38,6 +40,11 @@ def AsignacionCicloListView(request):
     return render(request, 'asignacion_ciclo_list.html', context)
 
 class AsignacionCicloCreateView(LoginRequiredMixin, CreateView):
+    
+  
+
+
+    
     model = AsignacionCiclo
     form_class = AsignacionCicloForm
     template_name = 'asignacion_ciclo_form.html'
@@ -62,6 +69,9 @@ class AsignacionCicloCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 class AsignacionCicloUpdateView(UpdateView):
+    
+
+    
     model = AsignacionCiclo
     form_class = AsignacionCicloForm
     template_name = 'asignacion_ciclo_form.html'
@@ -74,6 +84,10 @@ class AsignacionCicloUpdateView(UpdateView):
         return context
 
 class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):
+    
+
+
+    
     model = AsignacionCiclo
     template_name = 'asignacion_ciclo_confirm_delete.html'
     success_url = reverse_lazy('asignacionciclo-list')
@@ -81,6 +95,10 @@ class AsignacionCicloDeleteView(LoginRequiredMixin, DeleteView):
     
 @login_required
 def asignar_alumnas(request, grado_id):
+    
+
+
+    
     grado = Grado.objects.get(id=grado_id)
     year_actual = timezone.localtime(timezone.now()).year
 
@@ -115,7 +133,11 @@ def asignar_alumnas(request, grado_id):
 
 
 @login_required
+   
 def asignar_grado_usuario(request):
+    
+
+    
     user = request.user  # Usuario logueado
     grados_activos = Grado.objects.filter(estado=True)  
 
