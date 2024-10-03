@@ -4,15 +4,26 @@ from .models import Asistencia, AsignacionCiclo
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
-from reportlab.lib.pagesizes import letter
-from reportlab.lib import colors
-from reportlab.lib.units import inch
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
-from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter # type: ignore
+from reportlab.lib import colors # type: ignore
+from reportlab.lib.units import inch # type: ignore
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle # type: ignore
+from reportlab.pdfgen import canvas # type: ignore
 import pandas as pd
 
 @login_required
 def lista_asistencia(request):
+    """
+        Vista que muestra la lista de alumnas y su asistencia del día actual para el grado asignado al usuario logueado.
+
+    Parámetros:
+        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+
+    Retorna:
+        HttpResponse: Renderiza la plantilla 'lista_asistencia.html' con el contexto que incluye 
+        las asignaciones sin asistencia y las asistencias registradas para el día actual.
+
+    """
     hoy = timezone.localtime(timezone.now()).date()
     user = request.user  # Usuario logueado
 
@@ -46,6 +57,18 @@ def lista_asistencia(request):
 
 @login_required
 def actualizar_asistencia(request, asignacion_id, presente):
+    """
+        Vista que actualiza el estado de asistencia de una alumna para el día actual.
+
+    Parámetros:
+        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+        asignacion_id (int): ID de la asignación de ciclo de la alumna.
+        presente (bool): Indica si la alumna estuvo presente (1) o ausente (0).
+
+    Retorna:
+        HttpResponse: Redirige a la vista de lista de asistencia después de actualizar el estado de asistencia.
+
+    """
     hoy = timezone.localtime(timezone.now()).date()
     asignacion = get_object_or_404(AsignacionCiclo, id=asignacion_id)
     
@@ -59,6 +82,18 @@ def actualizar_asistencia(request, asignacion_id, presente):
 
 @login_required
 def ver_asistencias(request):
+    """
+        Vista que muestra las fechas en las que se han registrado asistencias.
+
+    Parámetros:
+        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+
+    Retorna:
+        HttpResponse: Renderiza la plantilla 'ver_asistencias.html' con el contexto que incluye 
+        las fechas de las asistencias registradas.
+
+    """
+    
     fechas_asistencias = Asistencia.objects.values('fecha').distinct().order_by('-fecha')
     context = {
         'fechas_asistencias': fechas_asistencias,
@@ -67,6 +102,18 @@ def ver_asistencias(request):
 
 @login_required
 def detalle_asistencia(request, fecha):
+    """
+        Vista que muestra el detalle de asistencias registradas en una fecha específica.
+
+    Parámetros:
+        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+        fecha (date): Fecha para la cual se desea ver las asistencias.
+
+    Retorna:
+        HttpResponse: Renderiza la plantilla 'detalle_asistencia.html' con el contexto que incluye 
+        las asistencias registradas en la fecha especificada.
+
+    """
     asistencias = Asistencia.objects.filter(fecha=fecha, asignacion_ciclo__user=request.user)
     context = {
         'asistencias': asistencias,
@@ -78,6 +125,17 @@ def detalle_asistencia(request, fecha):
 
 @login_required
 def generar_pdf(request, fecha):
+    """
+        Vista que genera un archivo PDF con la asistencia registrada en una fecha específica.
+
+    Parámetros:
+        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+        fecha (date): Fecha para la cual se generará el PDF de asistencias.
+
+    Retorna:
+        HttpResponse: Archivo PDF que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.
+
+    """
     # Filtrar asistencias por fecha
     asistencias = Asistencia.objects.filter(fecha=fecha)
 
@@ -119,6 +177,17 @@ def generar_pdf(request, fecha):
 
 @login_required
 def generar_excel(request, fecha):
+    """
+        Vista que genera un archivo Excel con la asistencia registrada en una fecha específica..
+
+    Parámetros:
+        request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.
+        fecha (date): Fecha para la cual se generará el archivo Excel de asistencias.
+
+    Retorna:
+        HttpResponse: Archivo Excel que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.
+
+    """
     # Filtrar asistencias por fecha
     asistencias = Asistencia.objects.filter(fecha=fecha)
 
