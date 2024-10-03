@@ -3284,7 +3284,7 @@
         "kind": 6,
         "importPath": "user.models",
         "description": "user.models",
-        "peekOfCode": "class Rol(models.Model):\n    rol = models.CharField(max_length=20)\n    def __str__(self):\n        return self.rol\nclass User(AbstractUser):\n    telefono = models.CharField(max_length=10, blank=True)\n    id_ciclo = models.IntegerField(blank=True, null=True)\n    id_rol = models.ForeignKey(Rol, on_delete=models.CASCADE, blank=True, null=True)\n    def __str__(self):\n        return self.username",
+        "peekOfCode": "class Rol(models.Model):\n    \"\"\"\n        Modelo que representa un rol de usuario en el sistema.\n    Hereda:\n        models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n        rol (CharField): Nombre del rol del usuario, con un máximo de 20 caracteres.\n    Métodos:\n        __str__(self): Devuelve una representación en cadena del rol, que es el nombre del rol.\n    \"\"\"",
         "detail": "user.models",
         "documentation": {}
     },
@@ -3293,7 +3293,7 @@
         "kind": 6,
         "importPath": "user.models",
         "description": "user.models",
-        "peekOfCode": "class User(AbstractUser):\n    telefono = models.CharField(max_length=10, blank=True)\n    id_ciclo = models.IntegerField(blank=True, null=True)\n    id_rol = models.ForeignKey(Rol, on_delete=models.CASCADE, blank=True, null=True)\n    def __str__(self):\n        return self.username",
+        "peekOfCode": "class User(AbstractUser):\n    \"\"\"\n        Modelo que extiende el modelo de usuario de Django para incluir campos adicionales.\n    Hereda:\n        AbstractUser: Clase base que proporciona la funcionalidad del modelo de usuario de Django.\n    Atributos heredados de AbstractUser:\n        username (CharField): Nombre de usuario único para la autenticación.\n        first_name (CharField): Nombre de pila del usuario.\n        last_name (CharField): Apellido del usuario.\n        email (EmailField): Correo electrónico del usuario, único por defecto.",
         "detail": "user.models",
         "documentation": {}
     },
