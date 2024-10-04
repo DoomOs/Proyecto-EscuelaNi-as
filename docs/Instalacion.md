@@ -1,6 +1,6 @@
 ## Instalación 
 
-Para instalar usar software además de Python necesitas:
+Para instalar este software además de Python necesitas:
 
 ```{code-block}
 :class: copybutton
