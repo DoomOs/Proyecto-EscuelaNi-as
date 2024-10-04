@@ -1,6 +1,6 @@
 ## Asistencia
 
-### views:
+### Views
 
 ```{eval-rst}
     .. autofunction:: Asistencia.views.lista_asistencia
