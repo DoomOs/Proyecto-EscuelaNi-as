@@ -12,5 +12,6 @@ pip install sqlparse==0.5.1
 pip install tzdata==2024.1
 pip install pandas
 pip install openpyxl
+pip install reportlab
 
 ```
