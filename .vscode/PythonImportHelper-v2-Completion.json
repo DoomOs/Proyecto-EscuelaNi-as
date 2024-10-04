@@ -2438,7 +2438,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def lista_asistencia(request):\n    \"\"\"\n        Vista que muestra la lista de alumnas y su asistencia del día actual para el grado asignado al usuario logueado.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'lista_asistencia.html' con el contexto que incluye \n        las asignaciones sin asistencia y las asistencias registradas para el día actual.\n    \"\"\"\n    hoy = timezone.localtime(timezone.now()).date()",
+        "peekOfCode": "def lista_asistencia(request):\n    \"\"\"\n    Vista que muestra la lista de alumnas y su asistencia del día actual para el grado asignado al usuario logueado.\n    Parámetros:\n        - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n    Retorna:\n        - HttpResponse: Renderiza la plantilla 'lista_asistencia.html' con el contexto que incluye las asignaciones sin asistencia y las asistencias registradas para el día actual.\n    \"\"\"\n    hoy = timezone.localtime(timezone.now()).date()\n    user = request.user  # Usuario logueado",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2447,7 +2447,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def actualizar_asistencia(request, asignacion_id, presente):\n    \"\"\"\n        Vista que actualiza el estado de asistencia de una alumna para el día actual.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n       - asignacion_id (int): ID de la asignación de ciclo de la alumna.\n       - presente (bool): Indica si la alumna estuvo presente (1) o ausente (0).\n    Retorna:\n       - HttpResponse: Redirige a la vista de lista de asistencia después de actualizar el estado de asistencia.\n    \"\"\"",
+        "peekOfCode": "def actualizar_asistencia(request, asignacion_id, presente):\n    \"\"\"\n    Vista que actualiza el estado de asistencia de una alumna para el día actual.\n    Parámetros:\n        - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        - asignacion_id (int): ID de la asignación de ciclo de la alumna.\n        - presente (bool): Indica si la alumna estuvo presente (1) o ausente (0).\n    Retorna:\n        - HttpResponse: Redirige a la vista de lista de asistencia después de actualizar el estado de asistencia.\n    \"\"\"",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2456,7 +2456,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def ver_asistencias(request):\n    \"\"\"\n        Vista que muestra las fechas en las que se han registrado asistencias.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'ver_asistencias.html' con el contexto que incluye \n        las fechas de las asistencias registradas.\n    \"\"\"\n    fechas_asistencias = Asistencia.objects.values('fecha').distinct().order_by('-fecha')",
+        "peekOfCode": "def ver_asistencias(request):\n    \"\"\"\n    Vista que muestra las fechas en las que se han registrado asistencias.\n    Parámetros:\n        - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n    Retorna:\n        - HttpResponse: Renderiza la plantilla 'ver_asistencias.html' con el contexto que incluye las fechas de las asistencias registradas.\n    \"\"\"\n    fechas_asistencias = Asistencia.objects.values('fecha').distinct().order_by('-fecha')\n    context = {",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2465,7 +2465,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def detalle_asistencia(request, fecha):\n    \"\"\"\n        Vista que muestra el detalle de asistencias registradas en una fecha específica.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n       - fecha (date): Fecha para la cual se desea ver las asistencias.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'detalle_asistencia.html' con el contexto que incluye \n        las asistencias registradas en la fecha especificada.\n    \"\"\"",
+        "peekOfCode": "def detalle_asistencia(request, fecha):\n    \"\"\"\n    Vista que muestra el detalle de asistencias registradas en una fecha específica.\n    Parámetros:\n        - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        - fecha (date): Fecha para la cual se desea ver las asistencias.\n    Retorna:\n        - HttpResponse: Renderiza la plantilla 'detalle_asistencia.html' con el contexto que incluye \n        las asistencias registradas en la fecha especificada.\n    \"\"\"",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2474,7 +2474,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def generar_pdf(request, fecha):\n    \"\"\"\n        Vista que genera un archivo PDF con la asistencia registrada en una fecha específica.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n       - fecha (date): Fecha para la cual se generará el PDF de asistencias.\n    Retorna:\n       - HttpResponse: Archivo PDF que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
+        "peekOfCode": "def generar_pdf(request, fecha):\n    \"\"\"\n    Vista que genera un archivo PDF con la asistencia registrada en una fecha específica.\n    Parámetros:\n        - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        - fecha (date): Fecha para la cual se generará el PDF de asistencias.\n    Retorna:\n        - HttpResponse: Archivo PDF que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
         "detail": "Asistencia.views",
         "documentation": {}
     },
@@ -2483,7 +2483,7 @@
         "kind": 2,
         "importPath": "Asistencia.views",
         "description": "Asistencia.views",
-        "peekOfCode": "def generar_excel(request, fecha):\n    \"\"\"\n        Vista que genera un archivo Excel con la asistencia registrada en una fecha específica..\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n       - fecha (date): Fecha para la cual se generará el archivo Excel de asistencias.\n    Retorna:\n       - HttpResponse: Archivo Excel que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
+        "peekOfCode": "def generar_excel(request, fecha):\n    \"\"\"\n    Vista que genera un archivo Excel con la asistencia registrada en una fecha específica..\n    Parámetros:\n        - request (HttpRequest): Objeto de solicitud HTTP que contiene información sobre la solicitud del usuario.\n        - fecha (date): Fecha para la cual se generará el archivo Excel de asistencias.\n    Retorna:\n        - HttpResponse: Archivo Excel que contiene la lista de alumnas y su estado de asistencia para la fecha especificada.\n    \"\"\"\n    # Filtrar asistencias por fecha",
         "detail": "Asistencia.views",
         "documentation": {}
     },

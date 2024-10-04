@@ -1,3 +1,5 @@
+ClassManager
+====================
 
 .. toctree::
    :maxdepth: 4
