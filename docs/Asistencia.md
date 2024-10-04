@@ -4,12 +4,12 @@
 
 ```{eval-rst}
 
-    .. autofunction:: Asistencia.views.lista_asistencia
-    .. autofunction:: Asistencia.views.actualizar_asistencia
-    .. autofunction:: Asistencia.views.ver_asistencias
-    .. autofunction:: Asistencia.views.detalle_asistencia
-    .. autofunction:: Asistencia.views.generar_pdf
-    .. autofunction:: Asistencia.views.generar_excel
+.. autofunction:: Asistencia.views.lista_asistencia
+.. autofunction:: Asistencia.views.actualizar_asistencia
+.. autofunction:: Asistencia.views.ver_asistencias
+.. autofunction:: Asistencia.views.detalle_asistencia
+.. autofunction:: Asistencia.views.generar_pdf
+.. autofunction:: Asistencia.views.generar_excel
 
 ```
 
