@@ -682,6 +682,14 @@
         "documentation": {}
     },
     {
+        "label": "Actividad",
+        "importPath": "Actividad.models",
+        "description": "Actividad.models",
+        "isExtraImport": true,
+        "detail": "Actividad.models",
+        "documentation": {}
+    },
+    {
         "label": "Curso",
         "importPath": "Curso.models",
         "description": "Curso.models",
@@ -715,6 +723,14 @@
     },
     {
         "label": "Grado",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
+        "isExtraImport": true,
+        "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
+        "label": "Curso",
         "importPath": "Curso.models",
         "description": "Curso.models",
         "isExtraImport": true,
@@ -2499,7 +2515,16 @@
         "kind": 2,
         "importPath": "Asignacion_Ciclo.views",
         "description": "Asignacion_Ciclo.views",
-        "peekOfCode": "def asignar_grado_usuario(request):\n    \"\"\"\n        Vista que gestiona la asignación de un grado a un usuario.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'asignar_grado_usuario.html' con el contexto que incluye el usuario y los grados activos.\n    Permite al usuario seleccionar un grado, que se guardará en su perfil. \n    \"\"\"\n    user = request.user  # Usuario logueado",
+        "peekOfCode": "def asignar_grado_usuario(request):\n    \"\"\"\n        Vista que gestiona la asignación de un grado a un usuario.\n    Parámetros:\n       - request (HttpRequest): Objeto de solicitud HTTP que contiene los datos de la asignación.\n    Retorna:\n       - HttpResponse: Renderiza la plantilla 'asignar_grado_usuario.html' con el contexto que incluye el usuario y los grados activos.\n    Permite al usuario seleccionar un grado, que se guardará en su perfil. \n    \"\"\"\ndef asignar_grado_usuario(request):",
+        "detail": "Asignacion_Ciclo.views",
+        "documentation": {}
+    },
+    {
+        "label": "asignar_grado_usuario",
+        "kind": 2,
+        "importPath": "Asignacion_Ciclo.views",
+        "description": "Asignacion_Ciclo.views",
+        "peekOfCode": "def asignar_grado_usuario(request):\n    user = request.user  # Usuario logueado\n    grados_activos = Grado.objects.filter(estado=True)  \n    if request.method == 'POST':\n        grado_id = request.POST.get('grado')  \n        if grado_id:\n            # Obtener el ciclo anterior\n            ciclo_anterior = user.id_ciclo\n            # Obtener el nuevo ciclo seleccionado\n            nuevo_ciclo = int(grado_id)",
         "detail": "Asignacion_Ciclo.views",
         "documentation": {}
     },

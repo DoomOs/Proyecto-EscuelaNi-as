@@ -4,7 +4,8 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
-from Curso.models import Grado
+from Actividad.models import Actividad
+from Curso.models import Curso, Grado
 from Persona.models import Alumna
 from .models import AsignacionCiclo
 from .forms import AsignacionCicloForm
@@ -263,14 +264,47 @@ def asignar_grado_usuario(request):
     """
 
     
+def asignar_grado_usuario(request):
     user = request.user  # Usuario logueado
     grados_activos = Grado.objects.filter(estado=True)  
 
     if request.method == 'POST':
         grado_id = request.POST.get('grado')  
         if grado_id:
-            user.id_ciclo = grado_id  
-            user.save()  
+            # Obtener el ciclo anterior
+            ciclo_anterior = user.id_ciclo
+            # Obtener el nuevo ciclo seleccionado
+            nuevo_ciclo = int(grado_id)
+
+            if ciclo_anterior != nuevo_ciclo:
+                # Inactivar actividades y cursos del ciclo anterior
+                if ciclo_anterior:
+                    cursos_anteriores = Curso.objects.filter(grado__id=ciclo_anterior, estado=True)
+                    for curso in cursos_anteriores:
+                        # Inactivar las actividades del curso
+                        Actividad.objects.filter(curso=curso, estado=1).update(estado=0)
+                        # Inactivar el curso
+                        curso.estado = False
+                        curso.save()
+                
+                # Crear o activar cursos para el nuevo ciclo
+                cursos_anteriores = Curso.objects.filter(grado__id=ciclo_anterior)
+                for curso in cursos_anteriores:
+                    # Intentar encontrar un curso igual en el nuevo ciclo
+                    curso_nuevo, creado = Curso.objects.get_or_create(
+                        nombre_curso=curso.nombre_curso,
+                        grado_id=nuevo_ciclo,
+                        defaults={'estado': True}
+                    )
+                    # Si el curso ya existe, simplemente asegúrate de que esté activo
+                    if not creado:
+                        curso_nuevo.estado = True
+                        curso_nuevo.save()
+
+                # Actualizar el ciclo del usuario
+                user.id_ciclo = nuevo_ciclo  
+                user.save()
+                
         return redirect('grado-list')  
 
     context = {
