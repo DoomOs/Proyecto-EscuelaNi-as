@@ -5,7 +5,7 @@ from .views import (
     ActividadInactivaListView, ActividadInactivarView, ActividadListView, ActividadCreateView, ActividadReactivarView, ActividadUpdateView, ActividadDeleteView,
     CalificacionActividadListView, CalificacionActividadUpdateView, CalificacionActividadDeleteView, CalificarAlumnoView, get_anos_cursos, get_cursos
 )
-from .views import  calificaciones_alumna_view
+from .views import  calificaciones_alumna_view,get_total_punteo
 from . import views
 
 urlpatterns = [
@@ -28,4 +28,7 @@ urlpatterns = [
     
     path('exportar_calificaciones/<int:alumna_id>/', exportar_calificaciones_excel, name='exportar_calificaciones'),
     path('exportar_punteo_acumulado/<int:alumna_id>/', exportar_punteo_acumulado_excel, name='exportar_punteo_acumulado'),
+
+    path('get-total-punteo/<int:curso_id>/', get_total_punteo, name='get-total-punteo'),
+
 ]

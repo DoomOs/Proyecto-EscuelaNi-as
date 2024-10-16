@@ -45,12 +45,20 @@
     </div>
     <!-- Botones de Exportación -->
     <div class="mb-4 text-end">
-        <a id="export-button" href="{% url 'exportar_calificaciones' alumna.id %}?grado=&year=&curso=" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Exportar a Excel</a>
-    </div>
-    <div class="mb-4 text-end">
-        <a id="export-punteo-button" href="{% url 'exportar_punteo_acumulado' alumna.id %}?grado=&year=&curso=" class="btn btn-primary">Exportar Punteo Acumulado</a>
-    </div>
+        <div class="d-inline-block">
+            <a id="export-button" href="{% url 'exportar_calificaciones' alumna.id %}?grado=&year=&curso=" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Exportar a Excel</a>
+        </div>
+        <div class="d-inline-block">
+            <a id="export-punteo-button" href="{% url 'exportar_punteo_acumulado' alumna.id %}?grado=&year=&curso=" class="btn btn-primary"> <i class="fa fa-file-excel-o" aria-hidden="true"></i> Exportar Punteo Acumulado</a>
+        </div>
 
+        <div class="d-inline-block">
+            <a href="{% url 'alumna-list' %}" class="btn btn-secondary">Atras</a>
+        </div>
+    </div>
+    
+    
+    
     <!-- Tabla de Calificaciones -->
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
