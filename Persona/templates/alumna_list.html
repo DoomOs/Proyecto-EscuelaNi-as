@@ -1,5 +1,6 @@
 {% extends 'BaseInicio/base.html' %}
 {% block content %}
+<div class="container mt-4">
 <h2>Listado de Alumnas</h2>
 
 <div class="form-group row">
@@ -34,15 +35,15 @@
                 <a href="{% url 'alumna-edit' alumna.id %}" class="btn btn-warning">Editar</a>
                 <a href="{% url 'contacto-create' alumna.id %}" class="btn btn-info">Contactos</a>
                 <a href="{% url 'calificaciones-alumna' alumna.id %}" class="btn btn-primary">Calificaciones</a>
-                <a href="{% url 'alumna-desactivar' alumna.id %}" class="btn btn-danger">Desactivar</a>
+                <button  class="btn btn-danger"  onclick="confirmDeletion({{ alumna.id }}, '{{ alumna.persona.nombre }}')">Desactivar</button>
 
-
+               
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-
+</div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("search").addEventListener("keyup", function() {
@@ -58,4 +59,25 @@
     });
     
 </script>
+
+
+<script>
+    function confirmDeletion(id, nombre) {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Estás a punto de desactivar la Alumna: " + nombre,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, desactivar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirige a la URL de eliminación del grado
+                window.location.href = "{% url 'alumna-desactivar' 0 %}".replace(0, id);
+            }
+        })
+    }
+    </script>
 {% endblock %}

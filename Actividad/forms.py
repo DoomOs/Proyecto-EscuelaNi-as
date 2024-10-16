@@ -1,3 +1,4 @@
+from datetime import datetime
 from django import forms
 
 from Actividad.models import Actividad, CalificacionActividad
@@ -32,6 +33,29 @@ Métodos:
         super().__init__(*args, **kwargs)
         # Filtrar los cursos activos en el campo 'curso'
         self.fields['curso'].queryset = Curso.objects.filter(estado=1)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        punteo = cleaned_data.get('punteo')
+        curso = cleaned_data.get('curso')
+        
+        if punteo is not None and punteo < 0:
+            raise forms.ValidationError("El puntaje no puede ser negativo.")
+        
+        if not curso:
+            return cleaned_data
+
+        actividades = Actividad.objects.filter(curso=curso, fecha__year=datetime.now().year, estado=1)  # Solo actividades activas
+        total_punteo = sum(actividad.punteo for actividad in actividades)
+
+        if self.instance.pk:
+            total_punteo -= self.instance.punteo
+
+        if punteo + total_punteo > 100:
+            raise forms.ValidationError(f"El total de punteo no puede exceder 100. Punteo acumulado actual: {total_punteo}. Punteo restante: {100 - total_punteo}.")
+
+        return cleaned_data
+
         
 class CalificacionActividadForm(forms.ModelForm):
     

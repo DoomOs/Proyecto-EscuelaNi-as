@@ -1,5 +1,7 @@
 {% extends 'BaseInicio/base.html' %}
 {% block content %}
+<div class="container mt-4">
+
 <h2>Listado de Alumnas Inactivas</h2>
 
 <table class="table">
@@ -22,10 +24,31 @@
             <td>{{ alumna.edad }}</td>
             <td>{{ alumna.asignacion }}</td>
             <td>
-                <a href="{% url 'alumna-activar' alumna.id %}" class="btn btn-success">Activar</a>  <!-- Botón para activar -->
+                <button  class="btn btn-success"  onclick="confirmActivate({{ alumna.id }}, '{{ alumna.persona.nombre }}')">Reactivar</button>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+</div>
+
+<script>
+    function confirmActivate(id, nombre) {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Estás a punto de reactivar la Alumna: " + nombre,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, reactivar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirige a la URL de activación del curso
+                window.location.href = "{% url 'alumna-activar' 0 %}".replace(0, id);
+            }
+        })
+    }
+</script>
 {% endblock %}

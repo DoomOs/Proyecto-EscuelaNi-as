@@ -2,26 +2,11 @@
 {% load static %}
 
 {% block content %}
-
-{% if messages %}
-    {% for message in messages %}
-        {% if forloop.first %}  
-            <script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: "{{ message }}",  <!-- Mostrar el mensaje -->
-                    confirmButtonText: 'OK'
-                });
-            </script>
-        {% endif %}
-    {% endfor %}
-{% endif %}
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <div class="container mt-4">
     <h1>Calificar Alumnos - {{ actividad.actividad }}</h1>
-    <h3>Punteo Maximo - {{ actividad.punteo }}</h3>
+    <h3>Punteo Máximo - {{ actividad.punteo }}</h3>
     <h2>Alumnos No Calificados</h2>
     <form method="post">
         {% csrf_token %}
@@ -44,6 +29,8 @@
             </tbody>
         </table>
         <button type="submit" class="btn btn-primary">Guardar Calificaciones</button>
+        <a href="{% url 'actividad-list' %}" class="btn btn-secondary">Cancelar</a>
+
     </form>
 
     <h2 class="mt-4">Alumnos Calificados</h2>
@@ -63,12 +50,47 @@
                 <td>{{ calificacion.punteo }}</td>
                 <td>{{ calificacion.descripcion }}</td>
                 <td>
-                    <a href="{% url 'calificacionactividad-update' calificacion.id %}" class="btn btn-warning btn-sm">Editar</a>
-                    <a href="{% url 'calificacionactividad-delete' calificacion.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                    <a href="#" class="btn btn-danger btn-sm quitar-btn" 
+                    data-id="{{ calificacion.id }}" 
+                    data-nombre="{{ calificacion.asignacion_ciclo.alumna.persona.nombre }} {{ calificacion.asignacion_ciclo.alumna.persona.apellido }}">
+                    Quitar</a>                
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const quitarBtns = document.querySelectorAll('.quitar-btn');
+        
+        quitarBtns.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const calificacionId = this.dataset.id;
+                const actividadId = "{{ actividad.id }}";
+                const nombreAlumna = this.dataset.nombre;
+                
+                Swal.fire({
+                    title: `¿Estás seguro de querer quitar la calificación de ${nombreAlumna}?`,
+                    text: "La calificación de la alumna volverá a estar disponible para calificar.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Sí, quitar',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = `{% url 'eliminar_calificacion' %}?id=` + calificacionId + `&actividad_id=` + actividadId;
+                    }
+                });
+            });
+        });
+    });
+    </script>
+    
+    
+
 {% endblock %}

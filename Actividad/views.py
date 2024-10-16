@@ -1,4 +1,5 @@
-from django.http import JsonResponse, HttpResponse
+from datetime import datetime
+from django.http import Http404, JsonResponse, HttpResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -15,6 +16,12 @@ from .forms import ActividadForm, CalificacionActividadForm
 from django.db.models import Q
 from django.contrib import messages
 from django.shortcuts import render
+from django.utils.timezone import now
+from django.utils import timezone
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
+
 
 class ActividadListView(LoginRequiredMixin, ListView):
     """
@@ -220,6 +227,30 @@ class ActividadCreateView(LoginRequiredMixin,CreateView):
     template_name = 'actividad_form.html'
     success_url = reverse_lazy('actividad-list')
 
+    def form_valid(self, form):
+        form.instance.fecha = timezone.now()
+        
+        # Obtén el total de puntaje actual del curso
+        total_punteo = self.get_total_punteo(form.cleaned_data['curso'])
+        nuevo_punteo = form.cleaned_data['punteo']
+
+        # Verifica si el puntaje total excede 100
+        if total_punteo + nuevo_punteo > 100:
+            messages.error(self.request, 'El puntaje de la actividad supera el total permitido de 100 puntos.')
+            return self.form_invalid(form)
+
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, 'Por favor, Verifica que todos los datos sean correctos.')
+        return super().form_invalid(form)
+
+    def get_total_punteo(self, curso):
+        current_year = timezone.now().year
+        actividades = Actividad.objects.filter(curso=curso, fecha__year=current_year, estado=1)
+        total_punteo = sum(actividad.punteo for actividad in actividades)
+        return total_punteo
+
 class ActividadUpdateView(LoginRequiredMixin, UpdateView):
     """
         Clase que gestiona la actualización de una actividad existente. 
@@ -240,6 +271,47 @@ class ActividadUpdateView(LoginRequiredMixin, UpdateView):
     form_class = ActividadForm
     template_name = 'actividad_form.html'
     success_url = reverse_lazy('actividad-list')
+
+    def form_valid(self, form):
+        form.instance.fecha = self.object.fecha
+        
+        # Obtén el total de puntaje actual del curso
+        total_punteo = self.get_total_punteo(form.cleaned_data['curso'])
+        nuevo_punteo = form.cleaned_data['punteo']
+
+        # Calcula el total de punteo después de la actualización
+        if self.object.punteo:  # Asegúrate de que la actividad existe y tiene un puntaje
+            total_punteo -= self.object.punteo  # Resta el puntaje anterior
+
+        # Verifica si el nuevo puntaje total excede 100
+        if total_punteo + nuevo_punteo > 100:
+            messages.error(self.request, 'El puntaje de la actividad supera el total permitido de 100 puntos.')
+            return self.form_invalid(form)
+
+        return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        messages.error(self.request, 'Por favor, Verifica que todos los datos sean correctos.')
+        return super().form_invalid(form)
+    
+    def get_total_punteo(self, curso):
+        current_year = timezone.now().year
+        actividades = Actividad.objects.filter(curso=curso, fecha__year=current_year, estado=1)
+        total_punteo = sum(actividad.punteo for actividad in actividades)
+        return total_punteo
+ 
+    
+
+
+
+def get_total_punteo(request, curso_id):
+    # Obtener el año actual
+    current_year = now().year
+    # Filtrar actividades activas del curso y del año actual
+    actividades = Actividad.objects.filter(curso_id=curso_id, fecha__year=current_year, estado=1)
+    total_punteo = sum(actividad.punteo for actividad in actividades)
+    return JsonResponse({'total_punteo': total_punteo})
+
 
 class ActividadDeleteView(LoginRequiredMixin, DeleteView):
     
@@ -334,7 +406,7 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
         context['alumnos_calificados'] = alumnos_calificados
         return context
 
-
+    
     def post(self, request, *args, **kwargs):
         actividad = get_object_or_404(Actividad, id=self.kwargs['actividad_id'])
         
@@ -357,6 +429,8 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
                 except ValueError:
                     errores.append(f"El punteo para {asignacion.alumna.persona.nombre} no es válido.")
 
+        
+        
         # Mostrar los errores con SweetAlert para los alumnos con problemas
         if errores:
             for error in errores:
@@ -383,9 +457,17 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
         # Redirigir a la misma vista para reflejar los cambios guardados
         return redirect('calificar-alumno', actividad_id=actividad.id)
 
-
-
-
+def eliminar_calificacion(request):
+    calificacion_id = request.GET.get('id')
+    actividad_id = request.GET.get('actividad_id')
+    
+    calificacion = get_object_or_404(CalificacionActividad, id=calificacion_id)
+    
+    # Eliminar la calificación
+    calificacion.delete()
+    messages.success(request, 'Calificación quitada correctamente.')
+    
+    return redirect('calificar-alumno', actividad_id=actividad_id)
 
 class CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):
     

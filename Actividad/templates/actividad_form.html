@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+
+
+
 <div class="container mt-4">
     <div class="card shadow-sm">
         <div class="card-header">
@@ -30,6 +33,15 @@
                         </div>
                     </div>
                 </div>
+                <!-- Mostrar el total acumulado y puntos restantes -->
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <p><strong>Punteo acumulado:</strong> <span id="punteo-acumulado">0</span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Puntos restantes:</strong> <span id="puntos-restantes">100</span></p>
+                    </div>
+                </div>
                 <div class="d-flex justify-content-end mt-3">
                     <button type="submit" class="btn btn-success me-2">{% if object %}Actualizar{% else %}Crear{% endif %}</button>
                     <a href="{% url 'actividad-list' %}" class="btn btn-secondary">Cancelar</a>
@@ -38,4 +50,89 @@
         </div>
     </div>
 </div>
+
+{% for message in messages %}
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: '{{ message }}',
+        });
+    </script>
+{% endfor %}
+
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mostrar alertas de error si hay mensajes
+        {% if messages %}
+            {% for message in messages %}
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: '{{ message }}',
+                });
+            {% endfor %}
+        {% endif %}
+
+        const cursoSelect = document.getElementById('id_curso');
+        const punteoAcumuladoEl = document.getElementById('punteo-acumulado');
+        const puntosRestantesEl = document.getElementById('puntos-restantes');
+
+        function actualizarPunteo(cursoId) {
+            fetch(`/Actividad/get-total-punteo/${cursoId}/`)
+                .then(response => response.json())
+                .then(data => {
+                    const totalPunteo = data.total_punteo;
+                    punteoAcumuladoEl.textContent = totalPunteo;
+                    puntosRestantesEl.textContent = 100 - totalPunteo;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Ocurrió un error al obtener el punteo acumulado. Por favor, inténtalo de nuevo.',
+                    });
+                });
+        }
+
+        if (cursoSelect) {
+            cursoSelect.addEventListener('change', function () {
+                const selectedCursoId = this.value;
+                if (selectedCursoId) {
+                    actualizarPunteo(selectedCursoId);
+                }
+            });
+
+            // Llamar a la función al cargar la página para el curso seleccionado
+            if (cursoSelect.value) {
+                actualizarPunteo(cursoSelect.value);
+            }
+        }
+    });
+
+    // Función para obtener el token CSRF
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Comprobar si este es el cookie que buscamos
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+
+
+
+
 {% endblock %}
