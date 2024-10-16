@@ -49,27 +49,27 @@ class ActividadListView(LoginRequiredMixin, ListView):
     model = Actividad
     template_name = 'actividad_list.html'
     context_object_name = 'actividades'
-    
+
     def get_queryset(self):
-        
-        
-        queryset = super().get_queryset().order_by('-fecha')  # Ordenar por fecha descendente
-        
-        # Obtener parámetros de filtrado
+        queryset = super().get_queryset().order_by('-fecha')
         curso_id = self.request.GET.get('curso')
         fecha = self.request.GET.get('fecha')
-        
+        calificado = self.request.GET.get('calificado')
+
         if curso_id:
             queryset = queryset.filter(curso_id=curso_id)
         if fecha:
             queryset = queryset.filter(fecha=fecha)
         
-        # Solo mostrar actividades activas
+        if calificado == "1":  # Calificado
+            queryset = queryset.filter(calificacion_estado=1)
+        elif calificado == "0":  # No Calificado
+            queryset = queryset.filter(calificacion_estado=0)
+
         return queryset.filter(estado=1)
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Añadir los cursos activos al contexto
         context['cursos'] = Curso.objects.filter(estado=True)
         return context
 
@@ -374,7 +374,12 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
                     asignacion_ciclo=asignacion,
                     defaults={'punteo': punteo, 'descripcion': descripcion}
                 )
-
+        total_asignaciones = asignaciones.count()
+        total_calificados = CalificacionActividad.objects.filter(actividad=actividad).count()
+        
+        if total_asignaciones == total_calificados:
+            actividad.calificacion_estado = 1
+            actividad.save()
         # Redirigir a la misma vista para reflejar los cambios guardados
         return redirect('calificar-alumno', actividad_id=actividad.id)
 
