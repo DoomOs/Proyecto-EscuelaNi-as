@@ -30,5 +30,8 @@ urlpatterns = [
     path('exportar_punteo_acumulado/<int:alumna_id>/', exportar_punteo_acumulado_excel, name='exportar_punteo_acumulado'),
 
     path('get-total-punteo/<int:curso_id>/', get_total_punteo, name='get-total-punteo'),
+    path('calificacionactividad/delete/<int:pk>/', CalificacionActividadDeleteView.as_view(), name='calificacionactividad-delete'),
+
+    path('eliminar-calificacion/', views.eliminar_calificacion, name='eliminar_calificacion'),
 
 ]

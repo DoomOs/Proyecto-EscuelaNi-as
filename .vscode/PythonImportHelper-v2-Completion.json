@@ -1652,6 +1652,22 @@
         "documentation": {}
     },
     {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
+        "documentation": {}
+    },
+    {
+        "label": "method_decorator",
+        "importPath": "django.utils.decorators",
+        "description": "django.utils.decorators",
+        "isExtraImport": true,
+        "detail": "django.utils.decorators",
+        "documentation": {}
+    },
+    {
         "label": "settings",
         "importPath": "django.conf",
         "description": "django.conf",
@@ -2331,6 +2347,15 @@
         "importPath": "Actividad.views",
         "description": "Actividad.views",
         "peekOfCode": "def get_total_punteo(request, curso_id):\n    # Obtener el año actual\n    current_year = now().year\n    # Filtrar actividades activas del curso y del año actual\n    actividades = Actividad.objects.filter(curso_id=curso_id, fecha__year=current_year, estado=1)\n    total_punteo = sum(actividad.punteo for actividad in actividades)\n    return JsonResponse({'total_punteo': total_punteo})\nclass ActividadDeleteView(LoginRequiredMixin, DeleteView):\n    \"\"\"\n        Clase que gestiona la eliminación de una actividad existente. ",
+        "detail": "Actividad.views",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_calificacion",
+        "kind": 2,
+        "importPath": "Actividad.views",
+        "description": "Actividad.views",
+        "peekOfCode": "def eliminar_calificacion(request):\n    calificacion_id = request.GET.get('id')\n    actividad_id = request.GET.get('actividad_id')\n    calificacion = get_object_or_404(CalificacionActividad, id=calificacion_id)\n    # Eliminar la calificación\n    calificacion.delete()\n    messages.success(request, 'Calificación quitada correctamente.')\n    return redirect('calificar-alumno', actividad_id=actividad_id)\nclass CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):\n    \"\"\"",
         "detail": "Actividad.views",
         "documentation": {}
     },

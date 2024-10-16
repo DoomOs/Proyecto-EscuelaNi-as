@@ -18,6 +18,9 @@ from django.contrib import messages
 from django.shortcuts import render
 from django.utils.timezone import now
 from django.utils import timezone
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
 
 
 class ActividadListView(LoginRequiredMixin, ListView):
@@ -403,7 +406,7 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
         context['alumnos_calificados'] = alumnos_calificados
         return context
 
-
+    
     def post(self, request, *args, **kwargs):
         actividad = get_object_or_404(Actividad, id=self.kwargs['actividad_id'])
         
@@ -426,6 +429,8 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
                 except ValueError:
                     errores.append(f"El punteo para {asignacion.alumna.persona.nombre} no es válido.")
 
+        
+        
         # Mostrar los errores con SweetAlert para los alumnos con problemas
         if errores:
             for error in errores:
@@ -452,9 +457,17 @@ class CalificarAlumnoView(LoginRequiredMixin, TemplateView):
         # Redirigir a la misma vista para reflejar los cambios guardados
         return redirect('calificar-alumno', actividad_id=actividad.id)
 
-
-
-
+def eliminar_calificacion(request):
+    calificacion_id = request.GET.get('id')
+    actividad_id = request.GET.get('actividad_id')
+    
+    calificacion = get_object_or_404(CalificacionActividad, id=calificacion_id)
+    
+    # Eliminar la calificación
+    calificacion.delete()
+    messages.success(request, 'Calificación quitada correctamente.')
+    
+    return redirect('calificar-alumno', actividad_id=actividad_id)
 
 class CalificacionActividadUpdateView(LoginRequiredMixin, UpdateView):
     
