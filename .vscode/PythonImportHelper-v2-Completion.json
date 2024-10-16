@@ -41,6 +41,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -2071,6 +2087,15 @@
         "description": "Actividad.migrations.0002_actividad_estado",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"Actividad\", \"0001_initial\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"actividad\",\n            name=\"estado\",\n            field=models.IntegerField(\n                choices=[(1, \"Activa\"), (0, \"Inactiva\")], default=1",
         "detail": "Actividad.migrations.0002_actividad_estado",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Actividad.migrations.0003_actividad_calificacion_estado",
+        "description": "Actividad.migrations.0003_actividad_calificacion_estado",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"Actividad\", \"0002_actividad_estado\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"actividad\",\n            name=\"calificacion_estado\",\n            field=models.IntegerField(default=0),\n        ),",
+        "detail": "Actividad.migrations.0003_actividad_calificacion_estado",
         "documentation": {}
     },
     {
