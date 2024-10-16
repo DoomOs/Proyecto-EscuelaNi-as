@@ -2,6 +2,22 @@
 {% load static %}
 
 {% block content %}
+
+{% if messages %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            {% for message in messages %}
+                Swal.fire({
+                    icon: '{% if message.tags == "success" %}success{% else %}error{% endif %}',
+                    title: '{% if message.tags == "success" %}¡Éxito!{% else %}Error{% endif %}',
+                    text: "{{ message }}",
+                    confirmButtonText: 'OK'
+                });
+            {% endfor %}
+        });
+    </script>
+{% endif %}
+
 <div class="container mt-4">
     <h1>Asignar Ciclo a {{ alumna.persona.nombre }} {{ alumna.persona.apellido }}</h1>
     <form method="post">
@@ -22,4 +38,5 @@
         <a href="{% url 'asignacionciclo-list' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
+
 {% endblock %}
