@@ -2,6 +2,23 @@
 {% load static %}
 
 {% block content %}
+
+<!-- Mostrar mensajes de éxito o error con SweetAlert -->
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: "{{ message }}",
+                    confirmButtonText: 'OK'
+                });
+            </script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
 <div class="container mt-4">
     <h1>Listado de Asignaciones de Ciclo</h1>
 
@@ -56,4 +73,5 @@
         </tbody>
     </table>
 </div>
+
 {% endblock %}

@@ -28,7 +28,9 @@
             <td>{{ alumna.edad }}</td>
             <td>{{ alumna.asignacion }}</td>
             <td>
+                {% if alumna.asignacion == 'No asignada' %}                
                 <a href="{% url 'asignacionciclo-create' alumna.id %}" class="btn btn-success">Asignar</a>
+                {% endif %}                
                 <a href="{% url 'alumna-edit' alumna.id %}" class="btn btn-warning">Editar</a>
                 <a href="{% url 'contacto-create' alumna.id %}" class="btn btn-info">Contactos</a>
                 <a href="{% url 'calificaciones-alumna' alumna.id %}" class="btn btn-primary">Calificaciones</a>

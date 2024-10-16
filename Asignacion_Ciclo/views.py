@@ -11,6 +11,9 @@ from .forms import AsignacionCicloForm
 from .models import AsignacionCiclo, Alumna, Grado
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.contrib import messages
+from django.db import IntegrityError
+
 
 @login_required
 def AsignacionCicloListView(request):
@@ -148,6 +151,25 @@ class AsignacionCicloUpdateView(LoginRequiredMixin,UpdateView):
         context['grados'] = Grado.objects.all()
         context['alumna'] = self.object.alumna
         return context
+
+    def form_valid(self, form):
+        try:
+            # Intentar guardar la asignación
+            response = super().form_valid(form)
+            # Mostrar mensaje de éxito con SweetAlert
+            messages.success(self.request, 'Asignación actualizada correctamente.')
+            return response
+        except IntegrityError:
+            # Capturar error de duplicación y mostrar mensaje de error
+            messages.error(self.request, 'Error: La asignación ya existe para esta alumna, grado y año.')
+            return self.form_invalid(form)
+
+    def form_invalid(self, form):
+        # Mostrar mensajes de error con SweetAlert
+        for field, errors in form.errors.items():
+            for error in errors:
+                messages.error(self.request, f"{form.fields[field].label}: {error}")
+        return super().form_invalid(form)
 
 
 

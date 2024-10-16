@@ -60,16 +60,19 @@
             <div class="row">
                 <div class="col-md-6">
                     {{ asignacion_form.grado.label_tag }}
-                    {{ asignacion_form.grado }}
+                    <input type="text" class="form-control-plaintext" value="{{ asignacion_form.instance.grado }}" readonly>
                 </div>
                 <div class="col-md-6">
-                    {{ asignacion_form.year.label_tag }}
-                    {{ asignacion_form.year }}
+                    <label for="id_year" class="form-label">Año:</label>
+                    <input type="text" class="form-control-plaintext" value="{{ asignacion_form.year.value }}" readonly>
                 </div>
             </div>
         </div>
     </div>
-
+    
+    
+    
+    
     <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 
