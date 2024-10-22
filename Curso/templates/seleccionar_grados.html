@@ -1,0 +1,38 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Seleccionar Grados</h2>
+    <div class="card">
+        <div class="card-body">
+            <form method="post" id="confirm-form">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" id="confirm-button" class="btn btn-primary">Confirmar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    document.getElementById("confirm-form").onsubmit = function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Esta acción procesará la promoción de las alumnas.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, proceder',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                e.target.submit();
+            }
+        });
+    }
+</script>
+{% endblock %}

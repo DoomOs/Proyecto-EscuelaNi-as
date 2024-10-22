@@ -1,0 +1,20 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Verificar Contraseña</h2>
+    <div class="card">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña:</label>
+                    <input type="password" name="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Verificar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

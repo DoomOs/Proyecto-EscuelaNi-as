@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Grado(models.Model):
     """
         Modelo que representa un grado académico.
@@ -38,3 +39,5 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.nombre_curso
+
+
