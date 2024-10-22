@@ -32,3 +32,19 @@ class GradoForm(forms.ModelForm):
     class Meta:
         model = Grado
         fields = '__all__'
+        
+        
+        
+class SeleccionarGradosForm(forms.Form):
+    grados = forms.ModelMultipleChoiceField(
+        queryset=Grado.objects.filter(estado=True), 
+        widget=forms.CheckboxSelectMultiple,
+        label="Seleccionar 4 Grados",
+        help_text="Debes seleccionar exactamente 4 grados."
+    )
+
+    def clean_grados(self):
+        grados = self.cleaned_data.get('grados')
+        if len(grados) != 4:
+            raise forms.ValidationError("Debes seleccionar exactamente 4 grados.")
+        return grados

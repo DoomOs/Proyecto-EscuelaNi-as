@@ -1,0 +1,45 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Listado de Alumnas - Año {{ año }}</h2>
+    
+    <form method="post" action="{% url 'detalle_promocion' año %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary mb-4">Descargar Reporte Excel</button>
+    </form>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Aprobó</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumna in alumnas %}
+            <tr style="background-color: {% if alumna.aprobo %}lightgreen{% else %}lightcoral{% endif %};">
+                <td>{{ alumna.nombre }}</td>
+                <td>{{ alumna.apellido }}</td>
+                <td>{{ alumna.aprobo|yesno:"Sí,No" }}</td>
+                <td>
+                    <!-- Aquí puedes agregar más acciones si es necesario -->
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -97,6 +97,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -185,6 +201,14 @@
         "documentation": {}
     },
     {
+        "label": "transaction",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -409,7 +433,31 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
         "importPath": "django.contrib",
         "description": "django.contrib",
         "isExtraImport": true,
@@ -457,22 +505,6 @@
         "documentation": {}
     },
     {
-        "label": "messages",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -566,6 +598,22 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -690,6 +738,22 @@
         "documentation": {}
     },
     {
+        "label": "Actividad",
+        "importPath": "Actividad.models",
+        "description": "Actividad.models",
+        "isExtraImport": true,
+        "detail": "Actividad.models",
+        "documentation": {}
+    },
+    {
+        "label": "CalificacionActividad",
+        "importPath": "Actividad.models",
+        "description": "Actividad.models",
+        "isExtraImport": true,
+        "detail": "Actividad.models",
+        "documentation": {}
+    },
+    {
         "label": "Curso",
         "importPath": "Curso.models",
         "description": "Curso.models",
@@ -699,6 +763,22 @@
     },
     {
         "label": "Curso",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
+        "isExtraImport": true,
+        "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
+        "label": "Curso",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
+        "isExtraImport": true,
+        "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
+        "label": "Grado",
         "importPath": "Curso.models",
         "description": "Curso.models",
         "isExtraImport": true,
@@ -786,6 +866,22 @@
         "documentation": {}
     },
     {
+        "label": "Promocion",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCiclo",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
         "label": "AsignacionCiclo",
         "importPath": "Asignacion_Ciclo.models",
         "description": "Asignacion_Ciclo.models",
@@ -807,6 +903,30 @@
         "description": "Asignacion_Ciclo.models",
         "isExtraImport": true,
         "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "Promocion",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCiclo",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "Cell",
+        "importPath": "matplotlib.table",
+        "description": "matplotlib.table",
+        "isExtraImport": true,
+        "detail": "matplotlib.table",
         "documentation": {}
     },
     {
@@ -836,6 +956,14 @@
     },
     {
         "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -995,6 +1123,14 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -1139,6 +1275,14 @@
         "documentation": {}
     },
     {
+        "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
         "label": "Sum",
         "importPath": "django.db.models",
         "description": "django.db.models",
@@ -1147,7 +1291,7 @@
         "documentation": {}
     },
     {
-        "label": "Q",
+        "label": "Avg",
         "importPath": "django.db.models",
         "description": "django.db.models",
         "isExtraImport": true,
@@ -1164,6 +1308,46 @@
     },
     {
         "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Avg",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "F",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Min",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Count",
         "importPath": "django.db.models",
         "description": "django.db.models",
         "isExtraImport": true,
@@ -1315,6 +1499,14 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "reverse_lazy",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -1420,6 +1612,14 @@
     },
     {
         "label": "exportar_punteo_acumulado_excel",
+        "importPath": "Actividad.reportes",
+        "description": "Actividad.reportes",
+        "isExtraImport": true,
+        "detail": "Actividad.reportes",
+        "documentation": {}
+    },
+    {
+        "label": "generar_reporte_excel",
         "importPath": "Actividad.reportes",
         "description": "Actividad.reportes",
         "isExtraImport": true,
@@ -1788,6 +1988,14 @@
         "documentation": {}
     },
     {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
         "label": "letter",
         "importPath": "reportlab.lib.pagesizes",
         "description": "reportlab.lib.pagesizes",
@@ -1972,6 +2180,46 @@
         "documentation": {}
     },
     {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
         "label": "sphinx_rtd_theme",
         "kind": 6,
         "isExtraImport": true,
@@ -2050,30 +2298,6 @@
         "description": "django.contrib.auth.forms",
         "isExtraImport": true,
         "detail": "django.contrib.auth.forms",
-        "documentation": {}
-    },
-    {
-        "label": "login",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth",
-        "documentation": {}
-    },
-    {
-        "label": "logout",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth",
-        "documentation": {}
-    },
-    {
-        "label": "authenticate",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth",
         "documentation": {}
     },
     {
@@ -2246,6 +2470,15 @@
         "importPath": "Actividad.reportes",
         "description": "Actividad.reportes",
         "peekOfCode": "def exportar_punteo_acumulado_excel(request, alumna_id):\n    alumna = get_object_or_404(Alumna, id=alumna_id)\n    # Obtener los filtros\n    grado_id = request.GET.get('grado')\n    year = request.GET.get('year')\n    curso_id = request.GET.get('curso')\n    # Imprimir valores para depuración\n    print(f\"Grado ID: {grado_id}\")\n    print(f\"Año: {year}\")\n    print(f\"Curso ID: {curso_id}\")",
+        "detail": "Actividad.reportes",
+        "documentation": {}
+    },
+    {
+        "label": "generar_reporte_excel",
+        "kind": 2,
+        "importPath": "Actividad.reportes",
+        "description": "Actividad.reportes",
+        "peekOfCode": "def generar_reporte_excel(grados_ids, year):\n    # Crear nuevo libro de Excel\n    wb = Workbook()\n    ws = wb.active\n    ws.title = \"Reporte de Notas\"\n    # Definir estilos\n    header_style = Font(bold=True)\n    center_align = Alignment(horizontal='center')\n    header_fill = PatternFill(start_color=\"E6E6E6\", end_color=\"E6E6E6\", fill_type=\"solid\")\n    # Obtener grados y sus cursos",
         "detail": "Actividad.reportes",
         "documentation": {}
     },
@@ -2430,6 +2663,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Asignacion_Ciclo.migrations.0004_promocion",
+        "description": "Asignacion_Ciclo.migrations.0004_promocion",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"Asignacion_Ciclo\", \"0003_alter_asignacionciclo_unique_together\"),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name=\"Promocion\",\n            fields=[\n                (\n                    \"id\",",
+        "detail": "Asignacion_Ciclo.migrations.0004_promocion",
+        "documentation": {}
+    },
+    {
         "label": "AsignacionCicloConfig",
         "kind": 6,
         "importPath": "Asignacion_Ciclo.apps",
@@ -2453,6 +2695,15 @@
         "importPath": "Asignacion_Ciclo.models",
         "description": "Asignacion_Ciclo.models",
         "peekOfCode": "class AsignacionCiclo(models.Model):\n    \"\"\"\n        Modelo que representa la asignación de una alumna a un grado en un año específico.\n    Atributos:\n       - grado (ForeignKey): Clave foránea que relaciona la asignación con el modelo Grado. \n            Elimina la asignación si el grado asociado se elimina.\n       - alumna (ForeignKey): Clave foránea que relaciona la asignación con el modelo Alumna.\n            Elimina la asignación si la alumna asociada se elimina.\n       - user (ForeignKey): Clave foránea que relaciona la asignación con el modelo User.\n            Elimina la asignación si el usuario asociado se elimina.",
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "Promocion",
+        "kind": 6,
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "peekOfCode": "class Promocion(models.Model):\n    año = models.IntegerField()\n    asignacion_ciclo = models.ForeignKey(AsignacionCiclo, on_delete=models.CASCADE)\n    aprobado = models.BooleanField()\n    def __str__(self):\n        estado = \"Aprobado\" if self.aprobado else \"Reprobado\"\n        return f\"{self.asignacion_ciclo.alumna.persona.nombre} {self.asignacion_ciclo.alumna.persona.apellido} - {estado} ({self.año})\"",
         "detail": "Asignacion_Ciclo.models",
         "documentation": {}
     },
@@ -2772,6 +3023,15 @@
         "documentation": {}
     },
     {
+        "label": "SeleccionarGradosForm",
+        "kind": 6,
+        "importPath": "Curso.forms",
+        "description": "Curso.forms",
+        "peekOfCode": "class SeleccionarGradosForm(forms.Form):\n    grados = forms.ModelMultipleChoiceField(\n        queryset=Grado.objects.filter(estado=True), \n        widget=forms.CheckboxSelectMultiple,\n        label=\"Seleccionar 4 Grados\",\n        help_text=\"Debes seleccionar exactamente 4 grados.\"\n    )\n    def clean_grados(self):\n        grados = self.cleaned_data.get('grados')\n        if len(grados) != 4:",
+        "detail": "Curso.forms",
+        "documentation": {}
+    },
+    {
         "label": "Grado",
         "kind": 6,
         "importPath": "Curso.models",
@@ -2903,6 +3163,69 @@
         "importPath": "Curso.views",
         "description": "Curso.views",
         "peekOfCode": "class GradoActivateView(LoginRequiredMixin,View):\n    \"\"\"\n        Vista basada en clase para activar un grado existente.\n    Hereda:\n       - LoginRequiredMixin: Requiere que el usuario esté autenticado.\n       - View: Vista base para definir métodos HTTP.\n    Atributos:\n       - success_url (str): URL a la que se redirigirá tras activar el grado.\n    Métodos:\n       - get(request, *args, **kwargs): Maneja la solicitud GET para activar un grado ",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "verificar_contrasena",
+        "kind": 2,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "def verificar_contrasena(request):\n    if request.method == 'POST':\n        password = request.POST.get('password')\n        # Re-autenticar al usuario con su contraseña actual\n        user = authenticate(username=request.user.username, password=password)\n        if user is not None:\n            # Si la autenticación es exitosa, redirigir a seleccionar grados\n            return redirect(reverse('seleccionar_grados'))\n        else:\n            messages.error(request, \"Contraseña incorrecta. Inténtalo de nuevo.\")",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "seleccionar_grados",
+        "kind": 2,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "def seleccionar_grados(request):\n    if request.method == 'POST':\n        form = SeleccionarGradosForm(request.POST)\n        if form.is_valid():\n            grados = form.cleaned_data['grados']\n            current_year = datetime.now().year\n            return calcular_promociones(grados, current_year)\n    else:\n        form = SeleccionarGradosForm()\n    return render(request, 'seleccionar_grados.html', {'form': form})",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "calcular_promociones",
+        "kind": 2,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "def calcular_promociones(grados_ids, year):\n    \"\"\"\n    Calcula las promociones de las alumnas basado en sus calificaciones en los ciclos seleccionados\n    y crea un único registro de promoción por alumna.\n    Args:\n        grados_ids (list): Lista de IDs de los grados a considerar\n        year (int): Año para el cual se calculan las promociones\n    \"\"\"\n    # Obtener todas las asignaciones de ciclo para los grados y año especificados\n    asignaciones = AsignacionCiclo.objects.filter(",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "calcular_promedio_puntos",
+        "kind": 2,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "def calcular_promedio_puntos(asignacion):\n    calificaciones = CalificacionActividad.objects.filter(asignacion_ciclo=asignacion)\n    total_puntos = sum([cal.punteo for cal in calificaciones])\n    total_actividades = len(calificaciones)\n    # Retornar el promedio, asegurándose de no dividir por 0\n    return total_puntos / total_actividades if total_actividades > 0 else 0\ndef listar_promociones(request):\n    # Obtener los años únicos de las promociones\n    años = Promocion.objects.values_list('año', flat=True).distinct()\n    return render(request, 'listar_promociones.html', {'años': años})",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "listar_promociones",
+        "kind": 2,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "def listar_promociones(request):\n    # Obtener los años únicos de las promociones\n    años = Promocion.objects.values_list('año', flat=True).distinct()\n    return render(request, 'listar_promociones.html', {'años': años})\n@login_required\ndef detalle_promocion(request, año):\n    # Obtener las promociones del año específico\n    promociones = Promocion.objects.filter(año=año)\n    # Crear una lista con la información de cada alumna y su estado de aprobación\n    alumnas = [",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "detalle_promocion",
+        "kind": 2,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "def detalle_promocion(request, año):\n    # Obtener las promociones del año específico\n    promociones = Promocion.objects.filter(año=año)\n    # Crear una lista con la información de cada alumna y su estado de aprobación\n    alumnas = [\n        {\n            'nombre': promo.asignacion_ciclo.alumna.persona.nombre,\n            'apellido': promo.asignacion_ciclo.alumna.persona.apellido,\n            'aprobo': promo.aprobado,\n            'id': promo.asignacion_ciclo.alumna.id,",
+        "detail": "Curso.views",
+        "documentation": {}
+    },
+    {
+        "label": "descargar_reporte",
+        "kind": 2,
+        "importPath": "Curso.views",
+        "description": "Curso.views",
+        "peekOfCode": "def descargar_reporte(request, grados_ids, año):\n    try:\n        # Generar el archivo Excel\n        excel_file = generar_reporte_excel(grados_ids, año)  # Usar el año pasado como parámetro\n        # Crear respuesta HTTP\n        response = HttpResponse(\n            excel_file,\n            content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'\n        )\n        response['Content-Disposition'] = f'attachment; filename=reporte_notas_{año}.xlsx'  # Cambiar a año específico",
         "detail": "Curso.views",
         "documentation": {}
     },

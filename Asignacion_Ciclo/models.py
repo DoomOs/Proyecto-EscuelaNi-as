@@ -41,3 +41,14 @@ class AsignacionCiclo(models.Model):
 
     def __str__(self):
         return f"{self.alumna.persona.nombre} {self.alumna.persona.apellido} - {self.grado.nombre_grado} ({self.year})"
+
+
+
+class Promocion(models.Model):
+    año = models.IntegerField()
+    asignacion_ciclo = models.ForeignKey(AsignacionCiclo, on_delete=models.CASCADE)
+    aprobado = models.BooleanField()
+
+    def __str__(self):
+        estado = "Aprobado" if self.aprobado else "Reprobado"
+        return f"{self.asignacion_ciclo.alumna.persona.nombre} {self.asignacion_ciclo.alumna.persona.apellido} - {estado} ({self.año})"

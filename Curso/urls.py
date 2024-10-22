@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import (
-    CursoActivateView, CursoListView, CursoCreateView, CursoUpdateView, CursoDeleteView,
-    CursoInactivoListView, GradoActivateView, GradoListView, GradoCreateView, GradoUpdateView, GradoDeleteView, GradoInactivoListView
-)
+from .views import (CursoActivateView, CursoCreateView, CursoDeleteView, CursoInactivoListView,
+    CursoListView, CursoUpdateView, GradoActivateView, GradoCreateView, GradoDeleteView,
+    GradoInactivoListView, GradoListView, GradoUpdateView, detalle_promocion, listar_promociones, seleccionar_grados, verificar_contrasena)
 
 urlpatterns = [
     path('cursos/', CursoListView.as_view(), name='curso-list'),
@@ -20,4 +19,10 @@ urlpatterns = [
     path('grados/inactivos/', GradoInactivoListView.as_view(), name='grado-inactivo-list'),  # Grados inactivos
     path('grados/<int:pk>/activar/', GradoActivateView.as_view(), name='grado-activar'),
 
+    
+    path('verificar-contraseña/', verificar_contrasena, name='verificar_contraseña'),
+    path('seleccionar-grados/', seleccionar_grados, name='seleccionar_grados'),
+    
+    path('promociones/', listar_promociones, name='listar_promociones'),
+    path('promocion/<int:año>/', detalle_promocion, name='detalle_promocion'),
 ]

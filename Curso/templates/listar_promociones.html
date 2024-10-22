@@ -1,0 +1,26 @@
+{% extends 'BaseInicio/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Listado de Años de Promociones</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Año</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for año in años %}
+            <tr>
+                <td>{{ año }}</td>
+                <td>
+                    <a href="{% url 'detalle_promocion' año %}" class="btn btn-primary btn-sm">Ver</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
