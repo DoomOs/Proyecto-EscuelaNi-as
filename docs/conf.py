@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'ClassManager'
-copyright = '2024, Bryan Jancarlo Sosa Mejía'
-author = 'Bryan Jancarlo Sosa Mejía'
+copyright = '2024, Bryan Jancarlo Sosa Mejía, Danny Josué Orellana Osorio, Roél Andreé Madrid Rivera'
+author = 'Bryan Jancarlo Sosa Mejía, Danny Josué Orellana Osorio, Roél Andreé Madrid Rivera'
 release = '1.0'
 
 # -- General configuration ---------------------------------------------------
