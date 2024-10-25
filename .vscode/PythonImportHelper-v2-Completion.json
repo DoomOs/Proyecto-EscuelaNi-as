@@ -441,6 +441,14 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -738,6 +746,22 @@
         "documentation": {}
     },
     {
+        "label": "CalificacionActividad",
+        "importPath": "Actividad.models",
+        "description": "Actividad.models",
+        "isExtraImport": true,
+        "detail": "Actividad.models",
+        "documentation": {}
+    },
+    {
+        "label": "Actividad",
+        "importPath": "Actividad.models",
+        "description": "Actividad.models",
+        "isExtraImport": true,
+        "detail": "Actividad.models",
+        "documentation": {}
+    },
+    {
         "label": "Actividad",
         "importPath": "Actividad.models",
         "description": "Actividad.models",
@@ -802,6 +826,30 @@
         "documentation": {}
     },
     {
+        "label": "Curso",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
+        "isExtraImport": true,
+        "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
+        "label": "Grado",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
+        "isExtraImport": true,
+        "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
+        "label": "Grado",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
+        "isExtraImport": true,
+        "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
         "label": "Grado",
         "importPath": "Curso.models",
         "description": "Curso.models",
@@ -826,7 +874,23 @@
         "documentation": {}
     },
     {
+        "label": "Grado",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
+        "isExtraImport": true,
+        "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
         "label": "Curso",
+        "importPath": "Curso.models",
+        "description": "Curso.models",
+        "isExtraImport": true,
+        "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
+        "label": "Grado",
         "importPath": "Curso.models",
         "description": "Curso.models",
         "isExtraImport": true,
@@ -867,6 +931,22 @@
     },
     {
         "label": "Promocion",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCiclo",
+        "importPath": "Asignacion_Ciclo.models",
+        "description": "Asignacion_Ciclo.models",
+        "isExtraImport": true,
+        "detail": "Asignacion_Ciclo.models",
+        "documentation": {}
+    },
+    {
+        "label": "AsignacionCiclo",
         "importPath": "Asignacion_Ciclo.models",
         "description": "Asignacion_Ciclo.models",
         "isExtraImport": true,
@@ -1259,6 +1339,14 @@
         "documentation": {}
     },
     {
+        "label": "Persona",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
         "label": "Alumna",
         "importPath": "Persona.models",
         "description": "Persona.models",
@@ -1268,6 +1356,30 @@
     },
     {
         "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "Alumna",
+        "importPath": "Persona.models",
+        "description": "Persona.models",
+        "isExtraImport": true,
+        "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "Persona",
         "importPath": "Persona.models",
         "description": "Persona.models",
         "isExtraImport": true,
@@ -1371,95 +1483,24 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "messages",
+        "importPath": "pyexpat.errors",
+        "description": "pyexpat.errors",
         "isExtraImport": true,
-        "detail": "django.test",
+        "detail": "pyexpat.errors",
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "pytest",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "django.test",
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "reverse_lazy",
+        "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -1483,7 +1524,47 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse_lazy",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -1547,7 +1628,23 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -1600,6 +1697,111 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "django.contrib.auth.models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractUser",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
         "documentation": {}
     },
     {
@@ -1868,6 +2070,14 @@
         "documentation": {}
     },
     {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
         "label": "csrf_exempt",
         "importPath": "django.views.decorators.csrf",
         "description": "django.views.decorators.csrf",
@@ -1956,11 +2166,11 @@
         "documentation": {}
     },
     {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
+        "label": "User",
+        "importPath": "user.models",
+        "description": "user.models",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
+        "detail": "user.models",
         "documentation": {}
     },
     {
@@ -1993,6 +2203,22 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "Asistencia",
+        "importPath": "Asistencia.models",
+        "description": "Asistencia.models",
+        "isExtraImport": true,
+        "detail": "Asistencia.models",
         "documentation": {}
     },
     {
@@ -2180,43 +2406,35 @@
         "documentation": {}
     },
     {
-        "label": "authenticate",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
         "isExtraImport": true,
-        "detail": "django.contrib.auth",
+        "detail": "django.test",
         "documentation": {}
     },
     {
-        "label": "login",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
         "isExtraImport": true,
-        "detail": "django.contrib.auth",
+        "detail": "django.test",
         "documentation": {}
     },
     {
-        "label": "login",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
         "isExtraImport": true,
-        "detail": "django.contrib.auth",
+        "detail": "django.test",
         "documentation": {}
     },
     {
-        "label": "logout",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
         "isExtraImport": true,
-        "detail": "django.contrib.auth",
-        "documentation": {}
-    },
-    {
-        "label": "authenticate",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth",
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -2298,31 +2516,6 @@
         "description": "django.contrib.auth.forms",
         "isExtraImport": true,
         "detail": "django.contrib.auth.forms",
-        "documentation": {}
-    },
-    {
-        "label": "django.contrib.auth.models",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "AbstractUser",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -2480,6 +2673,105 @@
         "description": "Actividad.reportes",
         "peekOfCode": "def generar_reporte_excel(grados_ids, year):\n    # Crear nuevo libro de Excel\n    wb = Workbook()\n    ws = wb.active\n    ws.title = \"Reporte de Notas\"\n    # Definir estilos\n    header_style = Font(bold=True)\n    center_align = Alignment(horizontal='center')\n    header_fill = PatternFill(start_color=\"E6E6E6\", end_color=\"E6E6E6\", fill_type=\"solid\")\n    # Obtener grados y sus cursos",
         "detail": "Actividad.reportes",
+        "documentation": {}
+    },
+    {
+        "label": "test_registrar_actividad_correcta",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_registrar_actividad_correcta(client):\n    \"\"\"\n    Caso de prueba: TC-003 - Registrar Actividades\n    Precondiciones: Usuario logueado.\n    Datos de entrada:\n        - Nombre de la actividad: 'Examen'\n        - Punteo de la actividad: 30\n        - Curso asignado: 'Matemáticas'\n    Pasos:\n        1. Navegar hacia el módulo de Actividades.",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "test_registrar_actividad_sin_datos",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_registrar_actividad_sin_datos(client):\n    \"\"\"\n    Caso de prueba: TC-004 - Intentar Registrar Actividades Sin Datos de Entrada\n    Precondiciones: Usuario logueado.\n    Datos de entrada: Ninguno.\n    Pasos:\n        1. Navegar hacia el módulo de Actividades.\n        2. Clic en “Nueva actividad”.\n        3. Dejar campos en blanco.\n        4. Clic en guardar actividad.",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "test_editar_actividad",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_editar_actividad(client):\n    \"\"\"\n    Caso de prueba: TC-005 - Editar Actividad\n    Precondiciones: Actividad existente.\n    Datos de entrada:\n        - Nombre de la actividad: 'Examen Final'\n        - Punteo de la actividad: 40\n        - Curso asignado: 'Matemáticas'\n    Pasos:\n        1. Navegar hacia el módulo de Actividades.",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "test_eliminar_actividad",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_eliminar_actividad(client):\n    \"\"\"\n    Caso de prueba: TC-006 - Inactivar Actividad\n    Precondiciones: Actividad existente.\n    Datos de entrada: Ninguno.\n    Pasos:\n        1. Navegar hacia el módulo de Actividades.\n        2. Buscar la actividad deseada.\n        3. Clic en inactivar.\n    Resultado esperado:",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "test_calificar_actividades",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_calificar_actividades(client, django_user_model):\n    \"\"\"\n    Caso de prueba: TC-007 - Calificar actividades\n    Precondiciones: Que la actividad exista y no haya sido eliminada.\n    Datos de entrada:\n        1. Punteo o nota\n        2. Descripción de la nota\n    Pasos para la ejecución:\n        1. Listar las actividades existentes.\n        2. Clic en calificar.",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "test_calificar_actividades_fallido",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_calificar_actividades_fallido(client):\n    \"\"\"\n    Caso de prueba: TC-008 - Calificar actividades fallido\n    Precondiciones: Que la actividad exista y no haya sido eliminada.\n    Datos de entrada: Ninguno\n    Pasos para la ejecución:\n        1. Listar las actividades existentes.\n        2. Clic en calificar.\n        3. Seleccionar al alumno asignado.\n        4. No ingresar datos.",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "test_listar_calificaciones",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_listar_calificaciones(client):\n    \"\"\"\n    Caso de prueba: TC-009 - Listar calificaciones\n    Precondiciones: Que existan registros de calificaciones.\n    Datos de entrada:  como parámetros de búsqueda\n        1. Alumno\n    Pasos para la ejecución:\n        1. Navegar hacia el módulo de calificaciones.\n        2. Llenar los campos para filtrar la búsqueda si se desea.\n    Resultado esperado:",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "test_editar_calificacion",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_editar_calificacion(client):\n    \"\"\"\n    Caso de prueba: TC-010 - Editar calificación\n    Precondiciones: Que la nota haya sido ingresada con anterioridad.\n    Datos de entrada:\n        1. Punteo o nota\n        2. Descripción\n    Pasos para la ejecución:\n        1. Navegar hacia el módulo de calificaciones.\n        2. Llenar los campos para filtrar la búsqueda si se desea.",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "test_editar_calificacion_fallido",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_editar_calificacion_fallido(client):\n    \"\"\"\n    Caso de prueba: TC-011 - Editar calificación fallido\n    Precondiciones: Que la nota haya sido ingresada con anterioridad.\n    Datos de entrada: Ninguno\n    Pasos para la ejecución:\n        1. Navegar hacia el módulo de calificaciones.\n        2. Llenar los campos para filtrar la búsqueda si se desea.\n        3. Clic en editar.\n        4. No ingresar datos.",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "test_eliminar_calificacion",
+        "kind": 2,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "def test_eliminar_calificacion(client):\n    \"\"\"\n    Caso de prueba: TC-012 - Eliminar calificación\n    Precondiciones: Que la nota haya sido ingresada con anterioridad.\n    Pasos para la ejecución:\n        1. Navegar hacia el módulo de calificaciones.\n        2. Llenar los campos para filtrar la búsqueda si se desea.\n        3. Clic en eliminar.\n    Resultado esperado:\n        Que no haya registros de calificaciones de ese alumno.",
+        "detail": "Actividad.test_actividad",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 5,
+        "importPath": "Actividad.test_actividad",
+        "description": "Actividad.test_actividad",
+        "peekOfCode": "User = get_user_model()\n@pytest.mark.django_db\ndef test_calificar_actividades(client, django_user_model):\n    \"\"\"\n    Caso de prueba: TC-007 - Calificar actividades\n    Precondiciones: Que la actividad exista y no haya sido eliminada.\n    Datos de entrada:\n        1. Punteo o nota\n        2. Descripción de la nota\n    Pasos para la ejecución:",
+        "detail": "Actividad.test_actividad",
         "documentation": {}
     },
     {
@@ -2708,6 +3000,15 @@
         "documentation": {}
     },
     {
+        "label": "TestAsignarDocentesViews",
+        "kind": 6,
+        "importPath": "Asignacion_Ciclo.test_asignacion",
+        "description": "Asignacion_Ciclo.test_asignacion",
+        "peekOfCode": "class TestAsignarDocentesViews:\n    @pytest.fixture\n    def grado(self):\n        \"\"\"Fixture para crear un grado para las pruebas.\"\"\"\n        return Grado.objects.create(nombre_grado='Matemáticas', estado=True)\n    @pytest.fixture\n    def user(self, django_user_model):\n        \"\"\"Fixture para crear un usuario administrativo para las pruebas.\"\"\"\n        return django_user_model.objects.create_user(username='adminuser', password='adminpass')\n    def test_asignar_docente(self, client, user, grado):",
+        "detail": "Asignacion_Ciclo.test_asignacion",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "Asignacion_Ciclo.urls",
@@ -2813,6 +3114,15 @@
         "description": "Asistencia.models",
         "peekOfCode": "class Asistencia(models.Model):\n    \"\"\"\n        Modelo que representa la asistencia de una alumna en un día específico.\n    Atributos:\n       - fecha (DateField): Fecha de la asistencia.\n       - presente (BooleanField): Indica si la alumna estuvo presente (True) o ausente (False).\n       - asignacion_ciclo (ForeignKey): Relación con el modelo AsignacionCiclo, representando la asignación \n        del ciclo escolar de la alumna a la que se refiere esta asistencia.\n    Métodos:\n       - __str__(): Retorna una representación en cadena de la fecha de asistencia.",
         "detail": "Asistencia.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestAsistenciaViews",
+        "kind": 6,
+        "importPath": "Asistencia.test_Asistencia",
+        "description": "Asistencia.test_Asistencia",
+        "peekOfCode": "class TestAsistenciaViews:\n    @pytest.fixture\n    def user(self, django_user_model):\n        # Crear un usuario normal\n        return django_user_model.objects.create_user(username='testuser', password='testpass')\n    @pytest.fixture\n    def persona(self):\n        # Crear una instancia de Persona\n        return Persona.objects.create(\n            nombre='Test',",
+        "detail": "Asistencia.test_Asistencia",
         "documentation": {}
     },
     {
@@ -3047,6 +3357,51 @@
         "description": "Curso.models",
         "peekOfCode": "class Curso(models.Model):\n    \"\"\"\n        Modelo que representa un curso académico.\n    Atributos:\n       - nombre_curso (str): Nombre del curso, con un máximo de 100 caracteres.\n       - grado (ForeignKey): Relación con el modelo Grado, que indica a qué grado pertenece el curso.\n       - estado (bool): Estado del curso, que indica si está activo (True) o inactivo (False).\n    Métodos:\n       - __str__(): Devuelve una representación en forma de cadena del curso, que es su nombre.\n    \"\"\"",
         "detail": "Curso.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestGradoViews",
+        "kind": 6,
+        "importPath": "Curso.test_Curso",
+        "description": "Curso.test_Curso",
+        "peekOfCode": "class TestGradoViews:\n    @pytest.fixture\n    def grado(self):\n        \"\"\"Fixture para crear un grado para las pruebas.\"\"\"\n        return Grado.objects.create(nombre_grado='Matemáticas', estado=True)\n    @pytest.fixture\n    def user(self, django_user_model):\n        \"\"\"Fixture para crear un usuario para las pruebas.\"\"\"\n        return django_user_model.objects.create_user(username='testuser', password='testpass')\n    def test_registrar_grado(self, client, user):",
+        "detail": "Curso.test_Curso",
+        "documentation": {}
+    },
+    {
+        "label": "test_registrar_curso",
+        "kind": 2,
+        "importPath": "Curso.test_Curso",
+        "description": "Curso.test_Curso",
+        "peekOfCode": "def test_registrar_curso(client, django_user_model):\n    \"\"\"\n    Caso de prueba: TC-013 - Registrar curso\n    Descripción: Registrar nuevo curso\n    Precondiciones:\n        1. Que exista grados registrados.\n        2. Que el curso no exista.\n    Datos de entrada:\n        1. Nombre del curso.\n        2. Grado asignado.",
+        "detail": "Curso.test_Curso",
+        "documentation": {}
+    },
+    {
+        "label": "test_registrar_curso_fallido",
+        "kind": 2,
+        "importPath": "Curso.test_Curso",
+        "description": "Curso.test_Curso",
+        "peekOfCode": "def test_registrar_curso_fallido(client, django_user_model):\n    \"\"\"\n    Caso de prueba: TC-014 - Registrar curso fallido\n    Descripción: Intentar registrar un curso sin datos\n    Precondiciones:\n        1. Que exista grados registrados.\n    Datos de entrada: Ninguno.\n    Pasos para la ejecución:\n        1. Navegar hacia el módulo de cursos.\n        2. Clic en nuevo curso.",
+        "detail": "Curso.test_Curso",
+        "documentation": {}
+    },
+    {
+        "label": "test_editar_curso",
+        "kind": 2,
+        "importPath": "Curso.test_Curso",
+        "description": "Curso.test_Curso",
+        "peekOfCode": "def test_editar_curso(client, django_user_model):\n    \"\"\"\n    Caso de prueba: TC-015 - Editar curso\n    Descripción: Actualizar un curso existente\n    Precondiciones: Que el curso exista.\n    Datos de entrada:\n        1. Nombre del curso.\n        2. Grado asignado.\n        3. Estado.\n    Pasos para la ejecución:",
+        "detail": "Curso.test_Curso",
+        "documentation": {}
+    },
+    {
+        "label": "test_eliminar_curso",
+        "kind": 2,
+        "importPath": "Curso.test_Curso",
+        "description": "Curso.test_Curso",
+        "peekOfCode": "def test_eliminar_curso(client, django_user_model):\n    \"\"\"\n    Caso de prueba: TC-016 - Eliminar curso\n    Descripción: Eliminar un curso\n    Precondiciones: Que el curso exista.\n    Datos de entrada: Ninguno.\n    Pasos para la ejecución:\n        1. Navegar al módulo de cursos.\n        2. Listar todos los cursos y/o filtrar por nombre del curso.\n        3. Clic en eliminar.",
+        "detail": "Curso.test_Curso",
         "documentation": {}
     },
     {
@@ -3617,6 +3972,24 @@
         "documentation": {}
     },
     {
+        "label": "test_login_correcto",
+        "kind": 2,
+        "importPath": "Login.test_login",
+        "description": "Login.test_login",
+        "peekOfCode": "def test_login_correcto(client):\n    \"\"\"\n    Caso de prueba: TC-001 - Login correcto\n    Precondiciones: Usuario registrado.\n    Datos de entrada:\n        - Usuario: 'testuser'\n        - Contraseña: 'testpassword123'\n    Pasos:\n        1. Ir a la página de inicio de sesión.\n        2. Ingresar credenciales correctas.",
+        "detail": "Login.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "test_login_incorrecto",
+        "kind": 2,
+        "importPath": "Login.test_login",
+        "description": "Login.test_login",
+        "peekOfCode": "def test_login_incorrecto(client):\n    \"\"\"\n    Caso de prueba: TC-002 - Login incorrecto\n    Precondiciones: Usuario registrado.\n    Datos de entrada:\n        - Usuario: 'testuser'\n        - Contraseña: 'wrongpassword'\n    Pasos:\n        1. Ir a la página de inicio de sesión.\n        2. Ingresar credenciales incorrectas.",
+        "detail": "Login.test_login",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "Login.urls",
@@ -3740,6 +4113,24 @@
         "description": "Persona.models",
         "peekOfCode": "class Contacto(models.Model):\n    \"\"\"\n        Representa a un contacto asociado a una alumna.\n    Hereda:\n       - models.Model: Clase base para todos los modelos de Django.\n    Atributos:\n       - alumna (ForeignKey): Relación con el modelo Alumna, permitiendo la asociación de múltiples contactos con una sola alumna.\n       - nombre (CharField): El nombre del contacto, con una longitud máxima de 100 caracteres.\n       - apellido (CharField): El apellido del contacto, con una longitud máxima de 100 caracteres.\n       - parentesco (CharField): El parentesco del contacto con la alumna, con una longitud máxima de 100 caracteres.",
         "detail": "Persona.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestAlumnaViews",
+        "kind": 6,
+        "importPath": "Persona.test_Persona",
+        "description": "Persona.test_Persona",
+        "peekOfCode": "class TestAlumnaViews:\n    @pytest.fixture\n    def user(self):\n        \"\"\"Crea un usuario de prueba.\"\"\"\n        return User.objects.create_user(username='testuser', password='testpass')\n    @pytest.fixture\n    def grado(self):\n        \"\"\"Crea un grado de prueba.\"\"\"\n        return Grado.objects.create(nombre_grado='Matemáticas')\n    @pytest.fixture",
+        "detail": "Persona.test_Persona",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 5,
+        "importPath": "Persona.test_Persona",
+        "description": "Persona.test_Persona",
+        "peekOfCode": "User = get_user_model()  # Obtiene el modelo de usuario personalizado\n@pytest.mark.django_db\nclass TestAlumnaViews:\n    @pytest.fixture\n    def user(self):\n        \"\"\"Crea un usuario de prueba.\"\"\"\n        return User.objects.create_user(username='testuser', password='testpass')\n    @pytest.fixture\n    def grado(self):\n        \"\"\"Crea un grado de prueba.\"\"\"",
+        "detail": "Persona.test_Persona",
         "documentation": {}
     },
     {
