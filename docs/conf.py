@@ -8,7 +8,7 @@
 
 project = 'ClassManager'
 copyright = '2024, Bryan Jancarlo Sosa Mejía'
-author = 'Bryan Jancarlo Sosa Mejía
+author = 'Bryan Jancarlo Sosa Mejía'
 release = '1.0'
 
 # -- General configuration ---------------------------------------------------
