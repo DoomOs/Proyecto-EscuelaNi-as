@@ -7,7 +7,7 @@ asgiref==3.8.1
 Django==5.1.15
 pillow==12.2.0
 PyMySQL==1.1.1
-sqlparse==0.5.4
+sqlparse==0.6.0
 tzdata==2024.1
 openpyxl
 pandas
